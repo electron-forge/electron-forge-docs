@@ -14,7 +14,7 @@ Configuration options are documented in [`MakerFlatpakConfig`](https://js.electr
   config: {
     options: {
       categories: ['Video'],
-      mimeType: '['video/h264']
+      mimeType: ['video/h264']
     }
   }
 }
