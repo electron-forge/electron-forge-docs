@@ -128,6 +128,10 @@ Hooks allow you to run your own logic at different points in the Electron Forge 
 
 This hook is called before `start` launches the application and before `package` is run, you should use this hook to generate any static files or resources your app requires but aren't in source code.  For instance you could use this hook to generate a license file containing the license of all your dependencies.
 
+#### postStart
+
+This hook is called after `start` launches the application, you should use this hook to attach listeners to the spawned child process.  The spawned process is passed through as the second hook argument.
+
 #### prePackage
 
 This hook is called before the `package` step runs.
