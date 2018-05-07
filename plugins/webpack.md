@@ -20,6 +20,8 @@ yarn add @electron-forge/plugin-webpack --dev
 
 ## Basic Usage
 
+### Configuration
+
 You must provide two webpack config files, one for the main process in `mainConfig` and one for the renderer process' in `renderer.config`. See an example below:
 
 ```javascript
@@ -77,4 +79,8 @@ mainWindow.loadUrl(MAIN_WINDOW_WEBPACK_ENTRY);
 ## Hot Reloading
 
 All your renderer processes in development will have hot reloading enabled by default, it is unfortunately impossible to do hot module reloading inside a renderer preload script or for the main process itself.  However Webpack is constantly watching and recompiling those files so to get updates for preload scripts simply reload the window, and for the main process just type "rs" in the console you launched `electron-forge` from and we will restart your app for you with the new main process code.
+
+## What happens in production?
+
+In theory, you shouldn't need to care.  In development we spin up `webpack-dev-server` instances to power your renderer processes, in prod we just build the static files.  Assuming you use the globals we explained in [Project Setup](webpack.md#project-setup), everything should Just Work\(tm\) when your app is packaged.
 
