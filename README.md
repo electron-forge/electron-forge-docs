@@ -1,9 +1,7 @@
 # Electron Forge
 
 {% hint style="danger" %}
-**Woah there, Electron Forge v6 is still in beta and it's API / usage could change at any time.**
-
-**All who venture here, consider ye'self warned**
+**Be warned, there be dragons! Electron Forge v6 is still in beta and its API / usage could change at any time.**
 {% endhint %}
 
 {% hint style="success" %}
