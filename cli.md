@@ -68,8 +68,8 @@ Maps to `electronForge.package`, will package your application into a platform s
 
 | Flag | Value | Required | Description |
 | --- | --- | --- |
-| `--arch` | Architecture E.g. `x64` | No | Target architecture to package for |
-| `--platform` | Platform E.g. `mas` | No | Target platform to package for |
+| `--arch` | Architecture E.g. `x64` | No | Target architecture to package for. Defaults to the host arch. |
+| `--platform` | Platform E.g. `mas` | No | Target platform to package for. Defaults to the host platform. |
 
 ### Publish
 

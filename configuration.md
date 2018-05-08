@@ -138,15 +138,15 @@ This hook is called before the `package` step runs.
 
 #### packageAfterCopy
 
-This hook is called inside the [`afterCopy`](https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#aftercopy) hook of Electron Packager  The hook is passed all the arguments that Electron Packager provides its `afterCopy` hooks.
+This hook is called inside the [`afterCopy`](https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#aftercopy) hook of Electron Packager.  The hook is passed all the arguments that Electron Packager provides its `afterCopy` hooks.
 
 #### packageAfterPrune
 
-This hook is called inside the [`afterPrune`](https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#afterprune) hook of `electron-packager`.  The hook is passed all the arguments that `electron-packager` provides its `afterPrune` hooks.
+This hook is called inside the [`afterPrune`](https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#afterprune) hook of Electron Packager.  The hook is passed all the arguments that Electron Packager provides its `afterPrune` hooks.
 
 #### packageAfterExtract
 
-This hook is called inside the [`afterExtract`](https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#afterextract) hook of `electron-packager`.  The hook is passed all of the arguments that `electron-packager` provides its `afterExtract` hooks.
+This hook is called inside the [`afterExtract`](https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#afterextract) hook of Electron Packager.  The hook is passed all of the arguments that Electron Packager provides its `afterExtract` hooks.
 
 #### postPackage
 
@@ -179,5 +179,5 @@ module.exports = {
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-In this example the `appBundleId` option passed to `electron-packager` will be selected based on the `buildIdentifer` \(based on whether you are building for `prod` or `beta`.  This allows you to make shared configs incredibly easily as only the values that change need to be wrapped with this function.
+In this example the `appBundleId` option passed to Electron Packager will be selected based on the `buildIdentifer` based on whether you are building for `prod` or `beta`.  This allows you to make shared configs incredibly easily as only the values that change need to be wrapped with this function.
 
