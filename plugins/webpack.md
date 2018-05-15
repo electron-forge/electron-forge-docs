@@ -80,7 +80,7 @@ mainWindow.loadUrl(MAIN_WINDOW_WEBPACK_ENTRY);
 
 ## Hot Reloading
 
-All your renderer processes in development will have hot reloading enabled by default, it is unfortunately impossible to do hot module reloading inside a renderer preload script or for the main process itself.  However Webpack is constantly watching and recompiling those files so to get updates for preload scripts simply reload the window, and for the main process just type "rs" in the console you launched `electron-forge` from and we will restart your app for you with the new main process code.
+All your renderer processes in development will have hot reloading enabled by default, it is unfortunately impossible to do hot module reloading inside a renderer preload script, WebWorker or for the main process itself.  However Webpack is constantly watching and recompiling those files so to get updates for preload scripts simply reload the window, and for the main process just type "rs" in the console you launched `electron-forge` from and we will restart your app for you with the new main process code.
 
 ## What happens in production?
 
