@@ -66,7 +66,7 @@ Putting the config directly in the `package.json` is by far the more simpler app
 {% code-tabs-item title="example.forge.config.js" %}
 ```text
 {
-  packagedConfig: { ... },
+  packagerConfig: { ... },
   electronRebuildConfig: { ... },
   makers: [ ... ],
   publishers: [ ... ],
