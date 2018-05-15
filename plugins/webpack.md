@@ -86,3 +86,7 @@ All your renderer processes in development will have hot reloading enabled by de
 
 In theory, you shouldn't need to care.  In development we spin up `webpack-dev-server` instances to power your renderer processes, in prod we just build the static files.  Assuming you use the globals we explained in [Project Setup](webpack.md#project-setup), everything should Just Work\(tm\) when your app is packaged.
 
+## How do I do virtual routing?
+
+If you want to use something like [`react-router`](https://github.com/ReactTraining/react-router) to do virtual routing in your app you will need to ensure you use a history method that is not based on the browser history APIs.  Browser history will work in development but not in production as your code will be loaded from the filesystem not a webserver.  In the `react-router` case you should use the [`MemoryRouter`](https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/api/MemoryRouter.md) to make everything work.
+
