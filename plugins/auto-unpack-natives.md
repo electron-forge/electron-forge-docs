@@ -19,14 +19,10 @@ The complete config options are available at [`AutoUnpackNativesConfig`](https:/
 ```javascript
 module.exports = {
   plugins: [
-    ['@electron-forge/plugin-auto-unpack-natives', {
-      extensions: ['.node']
-    }]
+    ['@electron-forge/plugin-auto-unpack-natives']
   ]
 }
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
-
-The `extensions` configuration option in the example above is completely optional, the default is `.node` .
 
