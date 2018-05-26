@@ -160,6 +160,10 @@ This hook is called before the `make` step runs.
 
 This hook is called after the `make` step has successfully completed.  It is passed a single argument which is an array of [`MakeResult`](http://localhost:5000/utils/types/interfaces/forgemakeresult.html) objects, if your hooks wishes to modify those make results it must return a new array of [`MakeResult`](http://localhost:5000/utils/types/interfaces/forgemakeresult.html) objects that Electron Forge can use from then on.
 
+#### readPackageJson
+
+This hook is called every time forge attempts to read your package.json file, you will be passed in the package.json object we have loaded and if you want to modify that object in any way you must do so and return the new value for forge to use.  This is useful to set things like the "version" field at runtime.
+
 ### Build Identifier
 
 This property can be used to identify different build configurations, normally this property is set to the channel the build will release to or some other unique identifier.  For example common values are `prod` and `beta`.  This identifier can be used in conjunction with the `fromBuildIdentifier` function to generate release channel or environment specific configuration.  E.g.
