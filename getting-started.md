@@ -28,7 +28,7 @@ electron-forge init my-app
 {% endtab %}
 {% endtabs %}
 
-You should now have a directory called `my-app` with a ulta-minimal Electron app boilerplate inside.  If you head into that directory and start up the app you'll be all set to start developing.
+You should now have a directory called `my-app` with a ultra-minimal Electron app boilerplate inside.  If you head into that directory and start up the app you'll be all set to start developing.
 
 ```bash
 cd my-app
