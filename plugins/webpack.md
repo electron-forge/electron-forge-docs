@@ -48,7 +48,7 @@ The complete config options are available at [`WebpackPluginConfig`](https://js.
 
 You need to do two things in your project files as well in order to make this plugin work.
 
-First, your `main` entry in your `package.json` file needs to point at `"./webpack/main"` like so:
+First, your `main` entry in your `package.json` file needs to point at `"./.webpack/main"` like so:
 
 {% code-tabs %}
 {% code-tabs-item title="package.json" %}
