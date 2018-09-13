@@ -23,6 +23,7 @@
   * [WiX MSI](makers/wix-msi.md)
   * [Zip](makers/zip.md)
 * [Publishers](publishers/README.md)
+  * [Bitbucket](publishers/bitbucket.md)
   * [Electron Release Server](publishers/electron-release-server.md)
   * [GitHub](publishers/github.md)
   * [Nucleus](publishers/nucleus.md)

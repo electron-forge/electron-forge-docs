@@ -33,7 +33,7 @@ Maps to `electronForge.init`, will initialize a new Forge powered application in
 Please note if you want to use a template it must be installed globally before running the `init` command.
 
 | Flag | Value | Required | Description |
-| --- | --- | --- |
+| :--- | :--- | :--- | :--- |
 | `--template` | Template Name | No | Name of the template to use to make this new app |
 | `--copy-ci-files` | N/A | No | Set if you want to copy templated CI files for Travis CI and Appveyor |
 
@@ -56,7 +56,7 @@ Maps to `electronForge.lint`, will run the `lint` command that your `package.jso
 Maps to `electronForge.make`, will make distributables for your application based on your forge config and the parameters you pass in.
 
 | Flag | Value | Required | Description |
-| --- | --- | --- | --- | --- |
+| :--- | :--- | :--- | :--- |
 | `--arch` | Architecture E.g. `x64` | No | Target architecture to make for |
 | `--platform` | Platform E.g. `mas` | No | Target platform to make for, please note you normally can only target platform X from platform X |
 | `--targets` | Comma separated list of maker names | No | Override your make targets for this run |
@@ -67,7 +67,7 @@ Maps to `electronForge.make`, will make distributables for your application base
 Maps to `electronForge.package`, will package your application into a platform specific format and put the result in a folder. Please note that this does not make a distributable format, to make proper distributables please use the [make](cli.md#make) command.
 
 | Flag | Value | Required | Description |
-| --- | --- | --- |
+| :--- | :--- | :--- | :--- |
 | `--arch` | Architecture E.g. `x64` | No | Target architecture to package for. Defaults to the host arch. |
 | `--platform` | Platform E.g. `mas` | No | Target platform to package for. Defaults to the host platform. |
 
@@ -78,7 +78,7 @@ Maps to `electronForge.publish`, will attempt to make the forge application and 
 If you want to publish previously created `make` artifacts you will have to use the `dry-run` options explained below.
 
 | Flag | Value | Required | Description |
-| --- | --- | --- | --- |
+| :--- | :--- | :--- | :--- |
 | `--target` | Comma separated list of publisher names | No | Override your publish targets for this run |
 | `--dry-run` | N/A | No | Triggers a publish dry run which saves state and doesn't upload anything |
 | `--from-dry-run` | N/A | No | Attempts to publish artifacts from any dry runs saved on disk |
@@ -88,7 +88,7 @@ If you want to publish previously created `make` artifacts you will have to use 
 Maps to `electronForge.start`, will launch the Forge powered application in the given directory \(defaults to `.`\).
 
 | Flag | Value | Required | Description |
-| --- | --- | --- | --- | --- |
+| :--- | :--- | :--- | :--- |
 | `--app-path` | Path to your app from CWD | No | Override the path to the Electron app to launch \(defaults to `.`\) |
 | `--enable-logging` | N/A | No | Enable advanced logging. This will log internal Electron things |
 | `--run-as-node` | N/A | No | Run the Electron app as a Node.JS script |

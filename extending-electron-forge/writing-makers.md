@@ -5,7 +5,7 @@ An Electron Forge Maker has to export a single class that extends our base maker
 The \`MakerBase\` class has some helper methods for your convenience. Check out the interface of [`Makerbase`](https://js.electronforge.io/maker/base/classes/maker.html) for more advanced API details.
 
 | Method | Description |
-| --- | --- | --- | --- |
+| :--- | :--- |
 | `ensureDirectory(path)` | Ensures the directory exists and is forced to be empty.  This is a destructive operation. |
 | `ensureFile(path)` | Ensures the path to the file exists and the file does not exist, if the file exists it is deleted and the path created. |
 | `isInstalled(moduleName)` | Checks if the given module is installed, used for testing if optional dependencies are installed or not. |
