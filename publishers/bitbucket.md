@@ -10,7 +10,7 @@ description: >-
 This publish target is for [Bitbucket Cloud](https://bitbucket.org) only and will not work with self hosted Bitbucket Server instances.
 {% endhint %}
 
-Full configuration options are documented in [`PublisherBitbucketConfig`](https://js.electronforge.io/publisher/bitbucket/classes/publisherbitbucket).
+Full configuration options are documented in [`PublisherBitbucketConfig`](https://js.electronforge.io/publisher/bitbucket/interfaces/publisherbitbucketconfig).
 
 ### Usage
 
