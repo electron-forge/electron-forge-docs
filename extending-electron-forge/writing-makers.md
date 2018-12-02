@@ -2,7 +2,7 @@
 
 An Electron Forge Maker has to export a single class that extends our base maker. The base plugin can be depended on by installing`@electron-forge/maker-base`.
 
-The \`MakerBase\` class has some helper methods for your convenience. Check out the interface of [`Makerbase`](https://js.electronforge.io/maker/base/classes/maker.html) for more advanced API details.
+The `MakerBase` class has some helper methods for your convenience. Check out the interface of [`MakerBase`](https://js.electronforge.io/maker/base/classes/maker.html) for more advanced API details.
 
 | Method | Description |
 | :--- | :--- |
@@ -12,7 +12,7 @@ The \`MakerBase\` class has some helper methods for your convenience. Check out 
 
 Your maker **must** implement two methods:
 
-### isSupportedOnCurrentPlatform\(\): boolean
+### `isSupportedOnCurrentPlatform(): boolean`
 
 This method must synchronously return a boolean indicating whether or not this maker can run on the current platform. Normally this is just a `process.platform` check but it can be a deeper check for dependencies like `fake-root` or other required external build tools.
 
@@ -28,13 +28,13 @@ export default class MyMaker extends MakerBase {
 }
 ```
 
-### make\(options: MakerOptions\): Promise&lt;string\[\]&gt;
+### `make(options: MakerOptions): Promise<string[]>`
 
-Makers must implement this method and return an array of **absolute** paths to the artifacts this maker generated. If an error occurs, simply reject the promise and Electron Forge will stop the make process.
+Makers must implement this method and return an array of **absolute** paths to the artifacts this maker generated. If an error occurs, reject the promise and Electron Forge will stop the `make` process.
 
 The `config` for the maker will be available on `this.config`.
 
-The options object is documented in [`MakerOptions`](https://js.electronforge.io/maker/base/interfaces/makeroptions.html) 
+The options object is documented in [`MakerOptions`](https://js.electronforge.io/maker/base/interfaces/makeroptions.html).
 
 ```javascript
 export default class MyMaker extends MakerBase {

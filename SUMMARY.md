@@ -10,7 +10,7 @@
   * [Parcel](plugins/parcel.md)
   * [Electron Compile](plugins/electron-compile.md)
   * [Local Electron](plugins/local-electron.md)
-  * [Auto Unpack Natives](plugins/auto-unpack-natives.md)
+  * [Auto Unpack Native Modules](plugins/auto-unpack-natives.md)
 * [Makers](makers/README.md)
   * [AppX](makers/appx.md)
   * [deb](makers/deb.md)
