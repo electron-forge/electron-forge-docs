@@ -26,7 +26,7 @@ If you are using &lt; 1.8 you should really be updating Electron anyway.
 {
   "type": "node",
   "request": "launch",
-  "name: "Electron Main",
+  "name": "Electron Main",
   "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron-forge-vscode-nix",
   "windows": {
     "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron-forge-vscode-win.cmd"
@@ -34,7 +34,7 @@ If you are using &lt; 1.8 you should really be updating Electron anyway.
   // runtimeArgs will be passed directly to your Electron application
   "runtimeArgs": [
     "foo",
-    "bar" 
+    "bar"
   ],
   "cwd": "${workspaceFolder}"
 }
