@@ -92,7 +92,7 @@ Please note that you can not override the `dir`, `arch`, `platform`,`out`or `ele
 
 ### Rebuild Config
 
-The top level property `electronRebuildConfig` on the configuration object maps directly to the options sent to [`electron-rebuild`](https://github.com/electron/electron-rebuild) during both the package and start step of Electron Forge's build process.  The options you can put in this object are document in the [Electron Rebuild API docs](https://github.com/electron/electron-rebuild#how-can-i-integrate-this-into-grunt--gulp--whatever).
+The top level property `electronRebuildConfig` on the configuration object maps directly to the options sent to [`electron-rebuild`](https://github.com/electron/electron-rebuild) during both the package and start step of Electron Forge's build process.  The options you can put in this object are documented in the [Electron Rebuild API docs](https://github.com/electron/electron-rebuild#how-can-i-integrate-this-into-grunt--gulp--whatever).
 
 {% hint style="info" %}
 Please note you can not override the `buildPath`, `arch`or `electronVersion` options as they are set by Electron Forge internally
@@ -124,49 +124,49 @@ Hooks allow you to run your own logic at different points in the Electron Forge 
 }
 ```
 
-#### generateAssets
+#### `generateAssets`
 
 This hook is called before `start` launches the application and before `package` is run, you should use this hook to generate any static files or resources your app requires but aren't in source code.  For instance you could use this hook to generate a license file containing the license of all your dependencies.
 
-#### postStart
+#### `postStart`
 
 This hook is called after `start` launches the application, you should use this hook to attach listeners to the spawned child process.  The spawned process is passed through as the second hook argument.
 
-#### prePackage
+#### `prePackage`
 
 This hook is called before the `package` step runs.
 
-#### packageAfterCopy
+#### `packageAfterCopy`
 
 This hook is called inside the [`afterCopy`](https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#aftercopy) hook of Electron Packager.  The hook is passed all the arguments that Electron Packager provides its `afterCopy` hooks.
 
-#### packageAfterPrune
+#### `packageAfterPrune`
 
 This hook is called inside the [`afterPrune`](https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#afterprune) hook of Electron Packager.  The hook is passed all the arguments that Electron Packager provides its `afterPrune` hooks.
 
-#### packageAfterExtract
+#### `packageAfterExtract`
 
 This hook is called inside the [`afterExtract`](https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#afterextract) hook of Electron Packager.  The hook is passed all of the arguments that Electron Packager provides its `afterExtract` hooks.
 
-#### postPackage
+#### `postPackage`
 
 This hook is called after the `package` step has successfully completed.
 
-#### preMake
+#### `preMake`
 
 This hook is called before the `make` step runs.
 
-#### postMake
+#### `postMake`
 
-This hook is called after the `make` step has successfully completed.  It is passed a single argument which is an array of [`MakeResult`](http://localhost:5000/utils/types/interfaces/forgemakeresult.html) objects, if your hooks wishes to modify those make results it must return a new array of [`MakeResult`](http://localhost:5000/utils/types/interfaces/forgemakeresult.html) objects that Electron Forge can use from then on.
+This hook is called after the `make` step has successfully completed.  It is passed a single argument which is an array of [`MakeResult`](https://js.electronforge.io/utils/types/interfaces/forgemakeresult.html) objects, if your hooks wishes to modify those make results it must return a new array of [`MakeResult`](https://js.electronforge.io/utils/types/interfaces/forgemakeresult) objects that Electron Forge can use from then on.
 
-#### readPackageJson
+#### `readPackageJson`
 
-This hook is called every time forge attempts to read your package.json file, you will be passed in the package.json object we have loaded and if you want to modify that object in any way you must do so and return the new value for forge to use.  This is useful to set things like the "version" field at runtime.
+This hook is called every time forge attempts to read your `package.json` file, you will be passed in the `package.json` object we have loaded and if you want to modify that object in any way you must do so and return the new value for Forge to use.  This is useful to set things like the `version` field at runtime.
 
 ### Build Identifier
 
-This property can be used to identify different build configurations, normally this property is set to the channel the build will release to or some other unique identifier.  For example common values are `prod` and `beta`.  This identifier can be used in conjunction with the `fromBuildIdentifier` function to generate release channel or environment specific configuration.  E.g.
+This property can be used to identify different build configurations. Normally, this property is set to the channel the build will release to, or some other unique identifier.  For example, common values are `prod` and `beta`.  This identifier can be used in conjunction with the `fromBuildIdentifier` function to generate release channel or environment specific configuration.  For example:
 
 {% code-tabs %}
 {% code-tabs-item title="config.forge.js" %}
