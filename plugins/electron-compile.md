@@ -1,12 +1,6 @@
 # Electron Compile
 
-{% hint style="danger" %}
-The API of this plugin is not stable could change at any time without following semver.
-
-Please do not use this plugin until this warning has been removed
-{% endhint %}
-
-{% hint style="info" %}
-These docs are incomplete
+{% hint style="warning" %}
+This plugin is deprecated and will be removed in a future major release, it was created as part of Forge@6 to make the migration from `electron-forge@5` easier.  If you are using this plugin you should look into dropping it in favour of vanilla JS or the [Webpack Plugin](webpack.md).
 {% endhint %}
 
