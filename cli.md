@@ -2,7 +2,7 @@
 
 ## Installation
 
-Electron forge's CLI is separate from the core module, to install it you will have to use the `@electron-forge/cli` module from npm.
+Electron forge's CLI is separate from the core module, to install it you will have to use the `@electron-forge/cli` module from NPM.
 
 ```bash
 # NPM
@@ -86,6 +86,8 @@ If you want to publish previously created `make` artifacts you will have to use 
 ### Start
 
 Maps to `electronForge.start`, will launch the Forge powered application in the given directory \(defaults to `.`\).
+
+If you type `rs` \(and hit enter\) in the same terminal where you ran the start command, the running app will be terminated and restarted.
 
 | Flag | Value | Required | Description |
 | :--- | :--- | :--- | :--- |
