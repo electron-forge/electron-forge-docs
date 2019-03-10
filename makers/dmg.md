@@ -11,7 +11,7 @@ Configuration options are documented in [`MakerDMGConfig`](https://js.electronfo
   name: '@electron-forge/maker-dmg',
   config: {
     background: './assets/dmg-background.png',
-    format: 'UFLO'
+    format: 'ULFO'
   }
 }
 ```
