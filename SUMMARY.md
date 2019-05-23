@@ -1,7 +1,6 @@
 # Table of contents
 
-* [Electron Forge](README.md)
-* [Getting Started](getting-started.md)
+* [Getting Started](README.md)
 * [Configuration](configuration.md)
 * [CLI](cli.md)
 * [API Docs](https://js.electronforge.io/api/core)
