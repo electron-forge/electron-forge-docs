@@ -6,7 +6,6 @@
 * [API Docs](https://js.electronforge.io/api/core)
 * [Plugins](plugins/README.md)
   * [Webpack](plugins/webpack.md)
-  * [Parcel](plugins/parcel.md)
   * [Electron Compile](plugins/electron-compile.md)
   * [Local Electron](plugins/local-electron.md)
   * [Auto Unpack Native Modules](plugins/auto-unpack-natives.md)
