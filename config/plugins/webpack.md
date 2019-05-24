@@ -68,6 +68,37 @@ mainWindow.loadUrl(MAIN_WINDOW_WEBPACK_ENTRY);
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
+## Native Modules
+
+If you used the Webpack Template to create your application native modules will work out of the box, if you are setting up the plugin manually you can make native modules work by adding the following two loaders to your `module.rules` configuration in your webpack config.  Ensure you install both `node-loader` and `@marshallofsound/webpack-asset-relocator-loader` as development dependencies.
+
+{% code-tabs %}
+{% code-tabs-item title="webpack.main.config.js" %}
+```javascript
+module.exports = {
+  modules: {
+    rules: [
+      {
+        test: /\.node$/,
+        use: 'node-loader',
+      },
+      {
+        test: /\.(m?js|node)$/,
+        parser: { amd: false },
+        use: {
+          loader: '@marshallofsound/webpack-asset-relocator-loader',
+          options: {
+            outputAssetBase: 'native_modules',
+          },
+        },
+      },
+    ]
+  }
+}
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
 ## Hot Reloading
 
 All your renderer processes in development will have hot reloading enabled by default, it is unfortunately impossible to do hot module reloading inside a renderer preload script, WebWorker or for the main process itself.  However Webpack is constantly watching and recompiling those files so to get updates for preload scripts simply reload the window, and for the main process just type "rs" in the console you launched `electron-forge` from and we will restart your app for you with the new main process code.

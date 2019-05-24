@@ -44,7 +44,7 @@ npm start
 
 ## Building Distributables
 
-So you've got an **amazing** application there, and you want to package it all up and share it with the world.  If you run the `make` script Electron Forge will generate you platform specific distributables for you to share with everyone.  For more information on what kind of distributables you can make, check out the [Makers ](makers/)documentation.
+So you've got an **amazing** application there, and you want to package it all up and share it with the world.  If you run the `make` script Electron Forge will generate you platform specific distributables for you to share with everyone.  For more information on what kind of distributables you can make, check out the [Makers ](config/makers/)documentation.
 
 ```text
 electron-forge make
@@ -54,8 +54,8 @@ electron-forge make
 
 Once you've got a basic app going and you can make distributables for it, you should check out the documentation on some of our more advanced features like:
 
-* [Publishers](publishers/)
-* [Debugging your app](debugging.md)
-* [Webpack support](plugins/webpack.md)
-* [Writing your own makers, publishers and plugins](extending-electron-forge/)
+* [Publishers](config/publishers/)
+* [Debugging your app](advanced/debugging.md)
+* [Webpack support](config/plugins/webpack.md)
+* [Writing your own makers, publishers and plugins](advanced/extending-electron-forge/)
 

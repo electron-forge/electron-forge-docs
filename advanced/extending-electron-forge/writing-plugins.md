@@ -6,7 +6,7 @@ An Electron Forge Plugin has to export a single class that extends our base plug
 
 If implemented this method will be called every time a hook fires inside Forge and you must look at the `hookName` and either return a function to run for that hook or return a falsey value to indicate you have no hook to run.  If you wish to run multiple hooks you should compose them into a single function yourself and return that composition.
 
-The possible `hookName` values and the parameters passed to the hook function you return are documented over in the [Configuration](../configuration.md) section of the docs.
+The possible `hookName` values and the parameters passed to the hook function you return are documented over in the [Configuration](../../configuration.md) section of the docs.
 
 ```javascript
 export default class MyPlugin extends PluginBase {

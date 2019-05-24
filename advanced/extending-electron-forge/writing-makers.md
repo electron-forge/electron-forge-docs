@@ -1,6 +1,6 @@
 # Writing Makers
 
-An Electron Forge Maker has to export a single class that extends our base maker. The base plugin can be depended on by installing`@electron-forge/maker-base`.
+An Electron Forge Maker has to export a single class that extends our base maker. The base maker can be depended on by installing`@electron-forge/maker-base`.
 
 The `MakerBase` class has some helper methods for your convenience. Check out the interface of [`MakerBase`](https://js.electronforge.io/maker/base/classes/maker.html) for more advanced API details.
 

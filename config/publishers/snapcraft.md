@@ -10,7 +10,8 @@ Configuration options are documented in [`PublisherSnapConfig`](https://js.elect
 
 ```javascript
 {
-  name: '@electron-forge/publisher-snapcraft'
+  name: '@electron-forge/publisher-snapcraft',
+  config: {}
 }
 ```
 

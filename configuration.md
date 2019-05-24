@@ -100,15 +100,15 @@ Please note you can not override the `buildPath`, `arch`or `electronVersion` opt
 
 ### Makers
 
-The top level property `makers` on the configuration object is an array of maker configurations.  Check out the [Makers ](makers/)documentation for all possible makers and their config options.
+The top level property `makers` on the configuration object is an array of maker configurations.  Check out the [Makers ](config/makers/)documentation for all possible makers and their config options.
 
 ### Publishers
 
-The top level property `publishers` on the configuration object is an array of publisher configurations.  Check out the [Publishers ](publishers/)documentation for all possible publishers and their config options.
+The top level property `publishers` on the configuration object is an array of publisher configurations.  Check out the [Publishers ](config/publishers/)documentation for all possible publishers and their config options.
 
 ### Plugins
 
-The top level property `plugins` on the configuration object is an array of plugin configurations.  Check out the [Plugins ](plugins/)documentation for all possible plugins and their config options.
+The top level property `plugins` on the configuration object is an array of plugin configurations.  Check out the [Plugins ](config/plugins/)documentation for all possible plugins and their config options.
 
 ### Hooks
 
