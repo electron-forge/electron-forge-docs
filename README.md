@@ -13,9 +13,7 @@ Electron Forge is a super easy tool to get started with, first off we need to in
 {% tabs %}
 {% tab title="NPM" %}
 ```bash
-npx @electron-forge/cli init my-app
-# While Electron Forge 6 is in beta, you need to specify the version, too:
-# npx @electron-forge/cli@^6.0.0-beta.5 init my-app
+npx create-electron-app my-app
 ```
 {% endtab %}
 
