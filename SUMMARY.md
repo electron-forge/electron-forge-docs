@@ -8,7 +8,7 @@
 
 * [Webpack Template](templates/webpack-template.md)
 
-## Forge Configuration
+## Forge Configuration <a id="config"></a>
 
 * [Plugins](config/plugins/README.md)
   * [Webpack](config/plugins/webpack.md)

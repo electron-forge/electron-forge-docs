@@ -95,4 +95,5 @@ If you type `rs` \(and hit enter\) in the same terminal where you ran the start 
 | `--enable-logging` | N/A | No | Enable advanced logging. This will log internal Electron things |
 | `--run-as-node` | N/A | No | Run the Electron app as a Node.JS script |
 | `--inspect-electron` | N/A | No | Triggers inspect mode on Electron to allow debugging the main process |
+| `--` | extra arguments | No | Any additional arguments to pass to Electron or the app itself. For example: `-- --my-app-argument` |
 
