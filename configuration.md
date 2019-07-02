@@ -45,7 +45,7 @@ Electron Forge configuration is all centralized in your "Forge Config", this can
 {% code-tabs-item title="forge.config.js" %}
 ```javascript
 module.exports = {
-  packageConfig: {},
+  packagerConfig: {},
   makers: [
     {
       name: '@electron-forge/maker-zip'
