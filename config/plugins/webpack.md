@@ -50,7 +50,7 @@ First, your `main` entry in your `package.json` file needs to point at `"./.webp
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-Second, all `loadUrl` and `preload` paths need to reference the magical globals that this plugin will define for you for each of your entry points.  For an entry point with the name `main_window`, two variables will be defined: `MAIN_WINDOW_WEBPACK_ENTRY` and `MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY`. These point to the paths for your renderer entry point and your preload script path, respectively.  An example is given below:
+Second, all `loadUrl` and `preload` paths need to reference the entry points' magic global variables that this plugin will define for you. Each entry point has two globals defined: one suffixed with `_WEBPACK_ENTRY`, and the other suffixed with `_PRELOAD_WEBPACK_ENTRY`. These point to the paths for your renderer entry point and your preload script path, respectively. In the case of the `main_window` entry point in the earlier example, the global variables will be named `MAIN_WINDOW_WEBPACK_ENTRY` and `MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY`.  An example of how to use them is given below:
 
 {% code-tabs %}
 {% code-tabs-item title="main.js" %}
