@@ -1,6 +1,6 @@
 # Webpack
 
-The Webpack plugin allows you to use standard Webpack tooling to compile both your main process code and your renderer process code with built in support forHot Module Reloading in the renderer process and support for multiple renderers.
+The Webpack plugin allows you to use standard Webpack tooling to compile both your main process code and your renderer process code, with built in support for Hot Module Reloading in the renderer process and support for multiple renderers.
 
 ## Installation
 
@@ -12,9 +12,7 @@ yarn add @electron-forge/plugin-webpack --dev
 
 ### Configuration
 
-You must provide two webpack config files, one for the main process in `mainConfig` and one for the renderer process' in `renderer.config`. See an example below:
-
-The complete config options are available at [`WebpackPluginConfig`](https://js.electronforge.io/plugin/webpack/interfaces/webpackpluginconfig.html) 
+You must provide two Webpack config files: one for the main process in `mainConfig`, and one for the renderer process in `renderer.config`. The complete config options are available at [`WebpackPluginConfig`](https://js.electronforge.io/plugin/webpack/interfaces/webpackpluginconfig.html). See an example below:
 
 ```javascript
 {
@@ -52,7 +50,7 @@ First, your `main` entry in your `package.json` file needs to point at `"./.webp
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-Secondly, all `loadUrl` and `preload` paths need to reference the magical globals that this plugin will define for you for each of your entry points.  For an entry point with the name `main_window` two variables will be defined `MAIN_WINDOW_WEBPACK_ENTRY` and `MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY` , this point to the paths for your renderer entry point and your preload script path respectively.  An example is given below.
+Second, all `loadUrl` and `preload` paths need to reference the magical globals that this plugin will define for you for each of your entry points.  For an entry point with the name `main_window`, two variables will be defined: `MAIN_WINDOW_WEBPACK_ENTRY` and `MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY`. These point to the paths for your renderer entry point and your preload script path, respectively.  An example is given below:
 
 {% code-tabs %}
 {% code-tabs-item title="main.js" %}
@@ -70,7 +68,7 @@ mainWindow.loadUrl(MAIN_WINDOW_WEBPACK_ENTRY);
 
 ## Native Modules
 
-If you used the Webpack Template to create your application native modules will work out of the box, if you are setting up the plugin manually you can make native modules work by adding the following two loaders to your `module.rules` configuration in your webpack config.  Ensure you install both `node-loader` and `@marshallofsound/webpack-asset-relocator-loader` as development dependencies.
+If you used the Webpack Template to create your application, native modules will work out of the box. If you are setting up the plugin manually, you can make native modules work by adding the following two loaders to your `module.rules` configuration in your Webpack config.  Ensure you install both `node-loader` and `@marshallofsound/webpack-asset-relocator-loader` as development dependencies.
 
 {% code-tabs %}
 {% code-tabs-item title="webpack.main.config.js" %}
@@ -101,11 +99,11 @@ module.exports = {
 
 ## Hot Reloading
 
-All your renderer processes in development will have hot reloading enabled by default, it is unfortunately impossible to do hot module reloading inside a renderer preload script, WebWorker or for the main process itself.  However Webpack is constantly watching and recompiling those files so to get updates for preload scripts simply reload the window, and for the main process just type "rs" in the console you launched `electron-forge` from and we will restart your app for you with the new main process code.
+All your renderer processes in development will have hot reloading enabled by default. It is unfortunately impossible to do hot module reloading inside a renderer preload script, WebWorkers, and the main process itself.  However, Webpack is constantly watching and recompiling those files so to get updates for preload scripts simply reload the window. For the main process, just type `rs` in the console you launched `electron-forge` from and we will restart your app for you with the new main process code.
 
 ## What happens in production?
 
-In theory, you shouldn't need to care.  In development we spin up `webpack-dev-server` instances to power your renderer processes, in prod we just build the static files.  Assuming you use the globals we explained in [Project Setup](webpack.md#project-setup), everything should Just Work\(tm\) when your app is packaged.
+In theory, you shouldn't need to care.  In development we spin up `webpack-dev-server` instances to power your renderer processes, in prod we just build the static files.  Assuming you use the globals we explained in [Project Setup](webpack.md#project-setup), everything should Just Work™ when your app is packaged.
 
 ## How do I do virtual routing?
 
