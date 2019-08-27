@@ -66,6 +66,24 @@ mainWindow.loadUrl(MAIN_WINDOW_WEBPACK_ENTRY);
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
+If you are using typescript, we provide a package to simplify consuming these magic global variables.
+
+{% code-tabs %}
+{% code-tabs-item title="main.ts" %}
+```typescript
+import { mainWindowWebpackEntry, mainWindowPreloadWebpackEntry } from "@electron-forge/webpack-constants";
+
+const mainWindow = new BrowserWindow({
+  webPreferences: {
+    preload: mainWindowPreloadWebpackEntry
+  }
+});
+
+mainWindow.loadUrl(mainWindowWebpackEntry);
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
 ## Native Modules
 
 If you used the Webpack Template to create your application, native modules will work out of the box. If you are setting up the plugin manually, you can make native modules work by adding the following two loaders to your `module.rules` configuration in your Webpack config.  Ensure you install both `node-loader` and `@marshallofsound/webpack-asset-relocator-loader` as development dependencies.
