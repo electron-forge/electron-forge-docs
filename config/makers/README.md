@@ -4,8 +4,7 @@ Makers are Electron Forge's way of taking your packaged application and making p
 
 Each maker has to be configured in the `makers` section of your forge configuration with which platforms to run for and the maker specific config. E.g.
 
-{% code-tabs %}
-{% code-tabs-item title="forge.config.js" %}
+{% code title="forge.config.js" %}
 ```javascript
 module.exports = {
     makers: [
@@ -19,8 +18,7 @@ module.exports = {
     ]
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Please note that all makers have logical defaults for the `platforms` value so you normally don't need to specify that property.
 

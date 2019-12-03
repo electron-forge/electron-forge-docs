@@ -31,14 +31,12 @@ Full configuration options are documented in [`PublisherBitbucketConfig`](https:
 
 Alternatively you can \(and should\) use environment variables for the authentication
 
-{% code-tabs %}
-{% code-tabs-item title="env.sh" %}
+{% code title="env.sh" %}
 ```bash
 BITBUCKET_USERNAME="myusername"
 BITBUCKET_APP_PASSWORD="mysecretapppassword"
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 ```bash
 $ source env.sh

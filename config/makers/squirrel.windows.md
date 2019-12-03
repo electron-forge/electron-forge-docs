@@ -24,14 +24,12 @@ When Squirrel installs your app it actually launches it a few times with some sp
 
 The easiest way to handle these arguments and stop your app launching multiple times during install is to use [`electron-squirrel-startup`](https://github.com/mongodb-js/electron-squirrel-startup) as one of the first things your app does.  E.g.
 
-{% code-tabs %}
-{% code-tabs-item title="main.js" %}
+{% code title="main.js" %}
 ```javascript
 const { app } = require('electron');
 
 if (require('electron-squirrel-startup')) return app.quit();
 
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 

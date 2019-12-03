@@ -20,8 +20,7 @@ You need to be using Electron 1.8 or later for this launch config to work.
 If you are using &lt; 1.8 you should really be updating Electron anyway.
 {% endhint %}
 
-{% code-tabs %}
-{% code-tabs-item title="launch.config" %}
+{% code title="launch.config" %}
 ```javascript
 {
   "type": "node",
@@ -39,6 +38,5 @@ If you are using &lt; 1.8 you should really be updating Electron anyway.
   "cwd": "${workspaceFolder}"
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 

@@ -8,8 +8,7 @@ This plugin allows you to both run and package/make your app using a **local** b
 
 ### Usage
 
-{% code-tabs %}
-{% code-tabs-item title="forge.config.js" %}
+{% code title="forge.config.js" %}
 ```javascript
 {
   plugins: [
@@ -19,8 +18,7 @@ This plugin allows you to both run and package/make your app using a **local** b
   ]
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 ### Configuration
 

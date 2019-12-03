@@ -4,8 +4,7 @@ Electron Forge configuration is all centralized in your "Forge Config", this can
 
 {% tabs %}
 {% tab title="Object" %}
-{% code-tabs %}
-{% code-tabs-item title="package.json" %}
+{% code title="package.json" %}
 ```javascript
 {
   "name": "my-app",
@@ -22,13 +21,11 @@ Electron Forge configuration is all centralized in your "Forge Config", this can
   }
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 {% endtab %}
 
 {% tab title="Path" %}
-{% code-tabs %}
-{% code-tabs-item title="package.json" %}
+{% code title="package.json" %}
 ```javascript
 {
   "name": "my-app",
@@ -38,11 +35,9 @@ Electron Forge configuration is all centralized in your "Forge Config", this can
   }
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
-{% code-tabs %}
-{% code-tabs-item title="forge.config.js" %}
+{% code title="forge.config.js" %}
 ```javascript
 module.exports = {
   packagerConfig: {},
@@ -53,8 +48,7 @@ module.exports = {
   ]
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 {% endtab %}
 {% endtabs %}
 
@@ -62,8 +56,7 @@ Putting the config directly in the `package.json` is by far the more simpler app
 
 ## Possible Configuration
 
-{% code-tabs %}
-{% code-tabs-item title="example.forge.config.js" %}
+{% code title="example.forge.config.js" %}
 ```text
 {
   packagerConfig: { ... },
@@ -75,8 +68,7 @@ Putting the config directly in the `package.json` is by far the more simpler app
   buildIdentifier: 'my-build'
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 {% hint style="success" %}
  All properties are optional
@@ -168,8 +160,7 @@ This hook is called every time forge attempts to read your `package.json` file, 
 
 This property can be used to identify different build configurations. Normally, this property is set to the channel the build will release to, or some other unique identifier.  For example, common values are `prod` and `beta`.  This identifier can be used in conjunction with the `fromBuildIdentifier` function to generate release channel or environment specific configuration.  For example:
 
-{% code-tabs %}
-{% code-tabs-item title="config.forge.js" %}
+{% code title="config.forge.js" %}
 ```javascript
 const { utils: { fromBuildIdentifier } } = require('@electron-forge/core');
 
@@ -180,8 +171,7 @@ module.exports = {
   }
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 In this example the `appBundleId` option passed to Electron Packager will be selected based on the `buildIdentifer` based on whether you are building for `prod` or `beta`.  This allows you to make shared configs incredibly easily as only the values that change need to be wrapped with this function.
 

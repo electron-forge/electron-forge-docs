@@ -1,14 +1,14 @@
 ---
 description: >-
-  Electron Forge is a complete tool for creating, publishing, and publishing
-  modern Electron applications
+  Electron Forge is a complete tool for creating, publishing, and installing
+  modern Electron applications.
 ---
 
 # Getting Started
 
 ## The Basics
 
-Electron Forge is a super easy tool to get started with, first off we need to install the CLI utility and initialize a new project.
+To get started with Electron Forge, we first need to initialize a new project.
 
 {% tabs %}
 {% tab title="NPM" %}
@@ -32,7 +32,7 @@ electron-forge init my-app
 {% endtab %}
 {% endtabs %}
 
-You should now have a directory called `my-app` with a ultra-minimal Electron app boilerplate inside.  If you head into that directory and start up the app you'll be all set to start developing.
+You should now have a directory called `my-app` with a ultra-minimal Electron app boilerplate inside.  If you head into that directory and start up the app, you'll be all set to start developing.
 
 ```bash
 cd my-app
@@ -48,7 +48,7 @@ So you've got an **amazing** application there, and you want to package it all u
 electron-forge make
 ```
 
-## Advanced Stuff
+## Advanced Usage
 
 Once you've got a basic app going and you can make distributables for it, you should check out the documentation on some of our more advanced features like:
 

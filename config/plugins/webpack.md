@@ -38,8 +38,7 @@ You need to do two things in your project files as well in order to make this pl
 
 First, your `main` entry in your `package.json` file needs to point at `"./.webpack/main"` like so:
 
-{% code-tabs %}
-{% code-tabs-item title="package.json" %}
+{% code title="package.json" %}
 ```javascript
 {
   "name": "my-app",
@@ -47,13 +46,11 @@ First, your `main` entry in your `package.json` file needs to point at `"./.webp
   ...
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Second, all `loadUrl` and `preload` paths need to reference the entry points' magic global variables that this plugin will define for you. Each entry point has two globals defined: one suffixed with `_WEBPACK_ENTRY`, and the other suffixed with `_PRELOAD_WEBPACK_ENTRY`. These point to the paths for your renderer entry point and your preload script path, respectively. In the case of the `main_window` entry point in the earlier example, the global variables will be named `MAIN_WINDOW_WEBPACK_ENTRY` and `MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY`.  An example of how to use them is given below:
 
-{% code-tabs %}
-{% code-tabs-item title="main.js" %}
+{% code title="main.js" %}
 ```javascript
 const mainWindow = new BrowserWindow({
   webPreferences: {
@@ -63,15 +60,13 @@ const mainWindow = new BrowserWindow({
 
 mainWindow.loadUrl(MAIN_WINDOW_WEBPACK_ENTRY);
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 ## Native Modules
 
 If you used the Webpack Template to create your application, native modules will work out of the box. If you are setting up the plugin manually, you can make native modules work by adding the following two loaders to your `module.rules` configuration in your Webpack config.  Ensure you install both `node-loader` and `@marshallofsound/webpack-asset-relocator-loader` as development dependencies.
 
-{% code-tabs %}
-{% code-tabs-item title="webpack.main.config.js" %}
+{% code title="webpack.main.config.js" %}
 ```javascript
 module.exports = {
   modules: {
@@ -94,8 +89,7 @@ module.exports = {
   }
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 ## Hot Reloading
 

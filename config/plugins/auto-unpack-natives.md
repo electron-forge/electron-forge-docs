@@ -14,8 +14,7 @@ You must add this plugin to your [`plugins`](../../configuration.md#plugins) arr
 
 The complete config options are available at [`AutoUnpackNativesConfig`](https://js.electronforge.io/plugin/auto-unpack-natives/interfaces/autounpacknativesconfig.html). 
 
-{% code-tabs %}
-{% code-tabs-item title="forge.config.js" %}
+{% code title="forge.config.js" %}
 ```javascript
 module.exports = {
   plugins: [
@@ -23,6 +22,5 @@ module.exports = {
   ]
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
