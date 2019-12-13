@@ -6,6 +6,7 @@
 
 ## Templates
 
+* [TypeScript Template](templates/typescript-template.md)
 * [Webpack Template](templates/webpack-template.md)
 
 ## Forge Configuration <a id="config"></a>
