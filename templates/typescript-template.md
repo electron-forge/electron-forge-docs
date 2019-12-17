@@ -1,6 +1,6 @@
 # TypeScript Template
 
-To get you up and running as fast as possible we provide a TypeScript template that makes use of the `@electron-forge/plugin-typescript` module.  This is by far the quickest way to getting a working  TypeScript setup with Electron.
+To get you up and running as fast as possible we provide a basic TypeScript template.  This is by far the quickest way to getting a working TypeScript setup with Electron.
 
 {% tabs %}
 {% tab title="npm" %}
