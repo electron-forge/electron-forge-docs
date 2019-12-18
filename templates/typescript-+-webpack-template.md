@@ -1,4 +1,4 @@
-# TypeScript + Webpack Template
+# TypeScript + Webpack
 
 To get you up and running as fast as possible with [TypeScript](https://www.typescriptlang.org/) and [Webpack](https://webpack.js.org/), we provide a template that makes use of the [`@electron-forge/plugin-webpack` module](../config/plugins/webpack.md) with sane TypeScript configuration defaults.
 

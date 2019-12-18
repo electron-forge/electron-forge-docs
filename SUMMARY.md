@@ -4,11 +4,11 @@
 * [Configuration](configuration.md)
 * [CLI](cli.md)
 
-## Templates
+## Built-in Templates <a id="templates"></a>
 
-* [TypeScript Template](templates/typescript-template.md)
-* [TypeScript + Webpack Template](templates/typescript-+-webpack-template.md)
-* [Webpack Template](templates/webpack-template.md)
+* [TypeScript](templates/typescript-template.md)
+* [TypeScript + Webpack](templates/typescript-+-webpack-template.md)
+* [Webpack](templates/webpack-template.md)
 
 ## Forge Configuration <a id="config"></a>
 

@@ -1,4 +1,4 @@
-# TypeScript Template
+# TypeScript
 
 To get you up and running as fast as possible with [TypeScript](https://www.typescriptlang.org/) and Electron, we have provided a basic template that utilizes `tsc` and `tslint`.
 

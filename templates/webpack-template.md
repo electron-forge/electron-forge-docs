@@ -1,4 +1,4 @@
-# Webpack Template
+# Webpack
 
 To get you up and running as fast as possible with the [Webpack](https://webpack.js.org) bundler, we provide a template that makes use of the [`@electron-forge/plugin-webpack` module](../config/plugins/webpack.md), plus some preset Webpack configuration options.  This is by far the quickest way to getting a working Webpack setup with Electron.
 

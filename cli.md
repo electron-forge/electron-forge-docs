@@ -18,11 +18,11 @@ At a high level the CLI module is just a proxy to the raw [API](https://js.elect
 
 ## Commands
 
-Please note these commands are sorted in alphabetical order, the ones you probably need to care about are [start](cli.md#start), [package](cli.md#package), [make](cli.md#make) and [publish](cli.md#publish). 
+Please note these commands are sorted in alphabetical order, the ones you probably need to care about are [start](cli.md#start), [package](cli.md#package), [make](cli.md#make), and [publish](cli.md#publish). 
 
 ### Import
 
-Maps to `electronForge.import`, will attempt to take an existing Electron app and make it Forge compatible. Normally this is just creates a base forge config and adds the required dependencies.
+Maps to `electronForge.import`, will attempt to take an existing Electron app and make it Forge compatible. Normally this just creates a base Electron Forge config and adds the required dependencies.
 
 > There are no flags for the Import command
 
@@ -30,7 +30,7 @@ Maps to `electronForge.import`, will attempt to take an existing Electron app an
 
 Maps to `electronForge.init`, will initialize a new Forge powered application in the given directory \(defaults to `.`\).
 
-Please note if you want to use a template it must be installed globally before running the `init` command.
+Please note if you want to use a template, it must be installed globally before running the `init` command.
 
 | Flag | Value | Required | Description |
 | :--- | :--- | :--- | :--- |
