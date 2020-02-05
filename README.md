@@ -11,23 +11,15 @@ description: >-
 To get started with Electron Forge, we first need to initialize a new project.
 
 {% tabs %}
-{% tab title="NPM" %}
-```bash
-npx create-electron-app my-app
-```
-{% endtab %}
-
 {% tab title="Yarn" %}
 ```bash
 yarn create electron-app my-app
 ```
 {% endtab %}
 
-{% tab title="Old-style NPM" %}
+{% tab title="NPM" %}
 ```bash
-# If you have npm >= 5 you should use the npx trick
-npm i -g @electron-forge/cli
-electron-forge init my-app
+npx create-electron-app my-app
 ```
 {% endtab %}
 {% endtabs %}
@@ -36,16 +28,17 @@ You should now have a directory called `my-app` with a ultra-minimal Electron ap
 
 ```bash
 cd my-app
-npm start
-# or with yarn: yarn start
+yarn start
+# or with npm: npm start
 ```
 
 ## Building Distributables
 
 So you've got an **amazing** application there, and you want to package it all up and share it with the world.  If you run the `make` script Electron Forge will generate you platform specific distributables for you to share with everyone.  For more information on what kind of distributables you can make, check out the [Makers ](config/makers/)documentation.
 
-```text
-electron-forge make
+```bash
+yarn make
+# or with npm: npm run make
 ```
 
 ## Advanced Usage
