@@ -76,7 +76,7 @@ Putting the config directly in the `package.json` is by far the more simpler app
 
 ### Packager Config
 
-The top level property `packagerConfig` on the configuration object maps directly to the options sent to [`electron-packager`](https://github.com/electron-userland/electron-packager) during the package step of Electron Forge's build process.  The options you can put in this object are documented in the [Electron Packager API docs](https://github.com/electron-userland/electron-packager/blob/master/docs/api.md).
+The top level property `packagerConfig` on the configuration object maps directly to the options sent to [`electron-packager`](https://github.com/electron/electron-packager) during the package step of Electron Forge's build process.  The options you can put in this object are documented in the [Electron Packager API docs](https://electron.github.io/electron-packager/master/interfaces/electronpackager.options.html).
 
 {% hint style="info" %}
 Please note that you can not override the `dir`, `arch`, `platform`,`out`or `electronVersion`options as they are set by Electron Forge internally
