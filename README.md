@@ -26,20 +26,39 @@ npx create-electron-app my-app
 
 You should now have a directory called `my-app` with a ultra-minimal Electron app boilerplate inside.  If you head into that directory and start up the app, you'll be all set to start developing.
 
+{% tabs %}
+{% tab title="Yarn" %}
 ```bash
 cd my-app
 yarn start
-# or with npm: npm start
 ```
+{% endtab %}
+
+{% tab title="NPM" %}
+```bash
+cd my-app
+npm start
+```
+{% endtab %}
+{% endtabs %}
 
 ## Building Distributables
 
 So you've got an **amazing** application there, and you want to package it all up and share it with the world.  If you run the `make` script Electron Forge will generate you platform specific distributables for you to share with everyone.  For more information on what kind of distributables you can make, check out the [Makers ](config/makers/)documentation.
 
+{% tabs %}
+{% tab title="Yarn" %}
 ```bash
 yarn make
-# or with npm: npm run make
 ```
+{% endtab %}
+
+{% tab title="NPM" %}
+```bash
+npm run make
+```
+{% endtab %}
+{% endtabs %}
 
 ## Advanced Usage
 
