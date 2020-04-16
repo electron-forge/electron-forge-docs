@@ -69,7 +69,7 @@ If you used the Webpack Template to create your application, native modules will
 {% code title="webpack.main.config.js" %}
 ```javascript
 module.exports = {
-  modules: {
+  module: {
     rules: [
       {
         test: /\.node$/,
