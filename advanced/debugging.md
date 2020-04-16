@@ -20,22 +20,24 @@ You need to be using Electron 1.8 or later for this launch config to work.
 If you are using &lt; 1.8 you should really be updating Electron anyway.
 {% endhint %}
 
-{% code title="launch.config" %}
-```javascript
+{% code title="launch.json" %}
+```json
 {
-  "type": "node",
-  "request": "launch",
-  "name": "Electron Main",
-  "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron-forge-vscode-nix",
-  "windows": {
-    "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron-forge-vscode-win.cmd"
-  },
-  // runtimeArgs will be passed directly to your Electron application
-  "runtimeArgs": [
-    "foo",
-    "bar"
-  ],
-  "cwd": "${workspaceFolder}"
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Main Process",
+      "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron-forge-vscode-nix",
+      "windows": {
+        "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron-forge-vscode-win.cmd"
+      },
+      "runtimeArgs": [],
+      "cwd": "${workspaceFolder}",
+      "timeout": 60000
+    }
+  ]
 }
 ```
 {% endcode %}
