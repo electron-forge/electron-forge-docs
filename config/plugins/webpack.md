@@ -95,6 +95,25 @@ module.exports = {
 
 All your renderer processes in development will have hot reloading enabled by default. It is unfortunately impossible to do hot module reloading inside a renderer preload script, WebWorkers, and the main process itself.  However, Webpack is constantly watching and recompiling those files so to get updates for preload scripts simply reload the window. For the main process, just type `rs` in the console you launched `electron-forge` from and we will restart your app for you with the new main process code.
 
+### Hot Reloading for React
+
+If you're using react components you may want to have HMR automatically pick up a change and reload the component without having to manually refresh the page.  This is possible by installing [`react-hot-loader`](https://github.com/gaearon/react-hot-loader) to define which modules should be hot reloaded.
+
+Here's a usage example in typescript with `App` being the topmost component in a react component tree: 
+```typescript
+import { hot } from "react-hot-loader";
+
+const App: FunctionComponent = () => (
+  <div>
+    ...
+  </div>
+);
+
+export default hot(module)(App)
+```
+
+You can use this pattern in any other other components depending on what you want to reload. For example, if you use the `hot()` HOC for an `AppBar` component and make a change to a child of `AppBar` then the entire `AppBar` gets reloaded, but the higher-level `App` layout remains otherwise unchanged.  In essence, a change will propogate up to the first `hot()` HOC found in a component tree.
+
 ## What happens in production?
 
 In theory, you shouldn't need to care.  In development we spin up `webpack-dev-server` instances to power your renderer processes, in prod we just build the static files.  Assuming you use the globals we explained in [Project Setup](webpack.md#project-setup), everything should Just Work™ when your app is packaged.
