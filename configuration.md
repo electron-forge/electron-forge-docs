@@ -142,7 +142,29 @@ This hook is called inside the [`afterExtract`](https://github.com/electron-user
 
 #### `postPackage`
 
-This hook is called after the `package` step has successfully completed.
+This hook is called after the `package` step has successfully completed. The hook is passed the
+following parameters inside of an `Object`:
+
+* `platform`: the target platform for the app
+* `arch`: the target architecture for the app
+* `outputPaths`: an array of paths where packaged apps are located (usually only one)
+* `spinner`: if defined, the `ora` spinner associated with the package step
+
+For example:
+
+{% code title="forge.config.js" %}
+```javascript
+module.exports = {
+  hooks: {
+    postPackage: async (forgeConfig, options) => {
+      if (options.spinner) {
+        options.spinner.info(`Completed packaging for ${options.platform} / ${options.arch} at ${options.outputPaths[0]}`);
+      }
+    }
+  }
+};
+```
+{% endcode %}
 
 #### `preMake`
 
