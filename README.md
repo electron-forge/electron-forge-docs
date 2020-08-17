@@ -42,6 +42,10 @@ npm start
 {% endtab %}
 {% endtabs %}
 
+### Restarting the app while Electron Forge is running
+
+When your app is running you can type `rs` and press Enter to restart your app. This is especially useful if you have edited your main Electron process behaviour.
+
 ## Building Distributables
 
 So you've got an **amazing** application there, and you want to package it all up and share it with the world.  If you run the `make` script Electron Forge will generate you platform specific distributables for you to share with everyone.  For more information on what kind of distributables you can make, check out the [Makers ](config/makers/)documentation.
