@@ -53,23 +53,23 @@ Maps to `electronForge.lint`, will run the `lint` command that your `package.jso
 
 ### Make
 
-Maps to `electronForge.make`, will make distributables for your application based on your forge config and the parameters you pass in.
+Maps to `electronForge.make`, will make distributables for your application based on your Forge config and the parameters you pass in.
 
 | Flag | Value | Required | Description |
 | :--- | :--- | :--- | :--- |
-| `--arch` | Architecture E.g. `x64` | No | Target architecture to make for |
-| `--platform` | Platform E.g. `mas` | No | Target platform to make for, please note you normally can only target platform X from platform X |
+| `--arch` | Architecture, e.g. `x64` | No | Target architecture to make for |
+| `--platform` | Platform, e.g. `mas` | No | Target platform to make for, please note you normally can only target platform X from platform X. This defaults to the platform you're running on \(the "host" platform\). |
 | `--targets` | Comma separated list of maker names | No | Override your make targets for this run |
 | `--skip-package` | N/A | No | Set if you want to skip the packaging step, useful if you are running sequential makes and want to save time |
 
 ### Package
 
-Maps to `electronForge.package`, will package your application into a platform specific format and put the result in a folder. Please note that this does not make a distributable format, to make proper distributables please use the [make](cli.md#make) command.
+Maps to `electronForge.package`, will package your application into a platform specific format and put the result in a folder. Please note that this does not make a distributable format. To make proper distributables, please use the [make](cli.md#make) command.
 
 | Flag | Value | Required | Description |
 | :--- | :--- | :--- | :--- |
-| `--arch` | Architecture E.g. `x64` | No | Target architecture to package for. Defaults to the host arch. |
-| `--platform` | Platform E.g. `mas` | No | Target platform to package for. Defaults to the host platform. |
+| `--arch` | Architecture, e.g. `x64` | No | Target architecture to package for. Defaults to the host arch. |
+| `--platform` | Platform, e.g. `mas` | No | Target platform to package for. Defaults to the host platform. |
 
 ### Publish
 
