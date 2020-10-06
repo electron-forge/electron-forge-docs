@@ -21,13 +21,6 @@ cd my-app
 npx @electron-forge/cli import
 ```
 {% endtab %}
-
-{% tab title="Yarn 2" %}
-```bash
-cd my-app
-yarn dlx @electron-forge/cli import
-```
-{% endtab %}
 {% endtabs %}
 
 {% hint style="info" %}
