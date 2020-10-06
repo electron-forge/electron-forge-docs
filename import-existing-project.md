@@ -7,10 +7,18 @@ description: Import an existing Electron project to use Electron Forge.
 Importing an existing Electron app into the Electron Forge workflow is very straightforward:
 
 {% tabs %}
-{% tab title="Yarn" %}
+{% tab title="Yarn 2" %}
 ```bash
 cd my-app
 yarn dlx @electron-forge/cli import
+```
+{% endtab %}
+
+{% tab title="Yarn 1" %}
+```
+cd my-app
+yarn add --dev @electron-forge/cli
+yarn electron-forge import
 ```
 {% endtab %}
 
