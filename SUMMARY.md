@@ -14,10 +14,11 @@
 ## Forge Configuration <a id="config"></a>
 
 * [Plugins](config/plugins/README.md)
+  * [Electronegativity](config/plugins/electronegativity.md)
   * [Webpack](config/plugins/webpack.md)
-  * [Electron Compile](config/plugins/electron-compile.md)
-  * [Local Electron](config/plugins/local-electron.md)
   * [Auto Unpack Native Modules](config/plugins/auto-unpack-natives.md)
+  * [Local Electron](config/plugins/local-electron.md)
+  * [Electron Compile](config/plugins/electron-compile.md)
 * [Makers](config/makers/README.md)
   * [AppX](config/makers/appx.md)
   * [deb](config/makers/deb.md)
