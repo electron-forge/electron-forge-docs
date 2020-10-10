@@ -130,15 +130,15 @@ This hook is called before the `package` step runs.
 
 #### `packageAfterCopy`
 
-This hook is called inside the [`afterCopy`](https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#aftercopy) hook of Electron Packager. The hook is passed all the arguments that Electron Packager provides its `afterCopy` hooks.
+This hook is called inside the [`afterCopy`](https://electron.github.io/electron-packager/master/interfaces/electronpackager.options.html#aftercopy) hook of Electron Packager. The hook is passed all the arguments that Electron Packager provides its `afterCopy` hooks.
 
 #### `packageAfterPrune`
 
-This hook is called inside the [`afterPrune`](https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#afterprune) hook of Electron Packager. The hook is passed all the arguments that Electron Packager provides its `afterPrune` hooks.
+This hook is called inside the [`afterPrune`](https://electron.github.io/electron-packager/master/interfaces/electronpackager.options.html#afterprune) hook of Electron Packager. The hook is passed all the arguments that Electron Packager provides its `afterPrune` hooks.
 
 #### `packageAfterExtract`
 
-This hook is called inside the [`afterExtract`](https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#afterextract) hook of Electron Packager. The hook is passed all of the arguments that Electron Packager provides its `afterExtract` hooks.
+This hook is called inside the [`afterExtract`](https://electron.github.io/electron-packager/master/interfaces/electronpackager.options.html#afterextract) hook of Electron Packager. The hook is passed all of the arguments that Electron Packager provides its `afterExtract` hooks.
 
 #### `postPackage`
 
