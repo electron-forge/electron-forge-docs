@@ -18,7 +18,7 @@ yarn electron-forge import
 {% tab title="NPM" %}
 ```bash
 cd my-app
-npx @electron-forge/cli import
+npx @electron-forge/cli@latest import
 ```
 {% endtab %}
 {% endtabs %}

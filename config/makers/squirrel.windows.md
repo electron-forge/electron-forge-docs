@@ -6,7 +6,7 @@ Squirrel.Windows is a no-prompt, no-hassle, no-admin method of installing Window
 
 Configuration options are documented in [`MakerSquirrelConfig`](https://js.electronforge.io/maker/squirrel/interfaces/makersquirrelconfig.html).
 
-### Usage
+## Usage
 
 ```javascript
 {
@@ -18,18 +18,17 @@ Configuration options are documented in [`MakerSquirrelConfig`](https://js.elect
 }
 ```
 
-### My app is launching multiple times during install????
+## My app is launching multiple times during install????
 
-When Squirrel installs your app it actually launches it a few times with some special arguments allowing you to do some work during installation or some clean up during uninstall.  You can read more about these arguments on the [Electron Windows Installer](https://github.com/electron/windows-installer#handling-squirrel-events) README.
+When Squirrel installs your app it actually launches it a few times with some special arguments allowing you to do some work during installation or some clean up during uninstall. You can read more about these arguments on the [Electron Windows Installer](https://github.com/electron/windows-installer#handling-squirrel-events) README.
 
-The easiest way to handle these arguments and stop your app launching multiple times during install is to use [`electron-squirrel-startup`](https://github.com/mongodb-js/electron-squirrel-startup) as one of the first things your app does.  E.g.
+The easiest way to handle these arguments and stop your app launching multiple times during install is to use [`electron-squirrel-startup`](https://github.com/mongodb-js/electron-squirrel-startup) as one of the first things your app does. E.g.
 
 {% code title="main.js" %}
 ```javascript
 const { app } = require('electron');
 
 if (require('electron-squirrel-startup')) return app.quit();
-
 ```
 {% endcode %}
 
