@@ -48,7 +48,7 @@ First, your `main` entry in your `package.json` file needs to point at `"./.webp
 ```
 {% endcode %}
 
-Second, all `loadUrl` and `preload` paths need to reference the entry points' magic global variables that this plugin will define for you. Each entry point has two globals defined: one suffixed with `_WEBPACK_ENTRY`, and the other suffixed with `_PRELOAD_WEBPACK_ENTRY`. These point to the paths for your renderer entry point and your preload script path, respectively. In the case of the `main_window` entry point in the earlier example, the global variables will be named `MAIN_WINDOW_WEBPACK_ENTRY` and `MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY`. An example of how to use them is given below:
+Second, all `loadURL` and `preload` paths need to reference the entry points' magic global variables that this plugin will define for you. Each entry point has two globals defined: one suffixed with `_WEBPACK_ENTRY`, and the other suffixed with `_PRELOAD_WEBPACK_ENTRY`. These point to the paths for your renderer entry point and your preload script path, respectively. In the case of the `main_window` entry point in the earlier example, the global variables will be named `MAIN_WINDOW_WEBPACK_ENTRY` and `MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY`. An example of how to use them is given below:
 
 {% code title="main.js" %}
 ```javascript
@@ -58,7 +58,7 @@ const mainWindow = new BrowserWindow({
   }
 });
 
-mainWindow.loadUrl(MAIN_WINDOW_WEBPACK_ENTRY);
+mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
 ```
 {% endcode %}
 
@@ -67,6 +67,8 @@ mainWindow.loadUrl(MAIN_WINDOW_WEBPACK_ENTRY);
 If you used the Webpack Template to create your application, native modules will work out of the box. If you are setting up the plugin manually, you can make native modules work by adding the following two loaders to your `module.rules` configuration in your Webpack config. Ensure you install both `node-loader` and `@marshallofsound/webpack-asset-relocator-loader` as development dependencies.
 
 {% code title="webpack.main.config.js" %}
+
+
 ```javascript
 module.exports = {
   module: {
