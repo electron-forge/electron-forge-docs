@@ -14,7 +14,7 @@ We recommend you set the `token` option using an environment variable, don't har
 {
   name: '@electron-forge/publisher-nucleus',
   config: {
-    host: 'https://my-nucleus.mysite.com'
+    host: 'https://my-nucleus.mysite.com',
     appId: 1,
     channelId: 'abcdefg',
     token: 'my-token'
