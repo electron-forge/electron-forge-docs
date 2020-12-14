@@ -48,7 +48,7 @@ First, your `main` entry in your `package.json` file needs to point at `"./.webp
 ```
 {% endcode %}
 
-Second, all `loadUrl` and `preload` paths need to reference the entry points' magic global variables that this plugin will define for you. Each entry point has two globals defined: one suffixed with `_WEBPACK_ENTRY`, and the other suffixed with `_PRELOAD_WEBPACK_ENTRY`. These point to the paths for your renderer entry point and your preload script path, respectively. In the case of the `main_window` entry point in the earlier example, the global variables will be named `MAIN_WINDOW_WEBPACK_ENTRY` and `MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY`. An example of how to use them is given below:
+Second, all `loadURL` and `preload` paths need to reference the entry points' magic global variables that this plugin will define for you. Each entry point has two globals defined: one suffixed with `_WEBPACK_ENTRY`, and the other suffixed with `_PRELOAD_WEBPACK_ENTRY`. These point to the paths for your renderer entry point and your preload script path, respectively. In the case of the `main_window` entry point in the earlier example, the global variables will be named `MAIN_WINDOW_WEBPACK_ENTRY` and `MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY`. An example of how to use them is given below:
 
 {% code title="main.js" %}
 ```javascript
@@ -58,7 +58,7 @@ const mainWindow = new BrowserWindow({
   }
 });
 
-mainWindow.loadUrl(MAIN_WINDOW_WEBPACK_ENTRY);
+mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
 ```
 {% endcode %}
 
@@ -102,4 +102,3 @@ In theory, you shouldn't need to care. In development we spin up `webpack-dev-se
 ## How do I do virtual routing?
 
 If you want to use something like [`react-router`](https://github.com/ReactTraining/react-router) to do virtual routing in your app you will need to ensure you use a history method that is not based on the browser history APIs. Browser history will work in development but not in production as your code will be loaded from the filesystem not a webserver. In the `react-router` case you should use the [`MemoryRouter`](https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/api/MemoryRouter.md) to make everything work.
-
