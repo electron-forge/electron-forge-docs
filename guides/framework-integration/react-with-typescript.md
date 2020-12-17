@@ -12,7 +12,7 @@ The following guide has been tested with React 17, TypeScript 4.1, and Webpack 4
 
 ### Create the app and setup the TypeScript config
 
-Create the app with the [TypeScript + Webpack template](../../templates/typescript-+-webpack-template.md), then edit the newly created `tsconfig.json` to add the key-value entry `"jsx": "react"` to the `"compilerOptions"` section.
+Create the app with the [TypeScript + Webpack template](../../templates/typescript-+-webpack-template.md), then edit the newly created `tsconfig.json` to add the key-value entry [`"jsx": "react"`](https://www.typescriptlang.org/tsconfig#jsx) to the `"compilerOptions"` section.
 
 ### Add the React dependencies
 
