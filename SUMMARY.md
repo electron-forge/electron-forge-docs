@@ -38,6 +38,12 @@
   * [S3](config/publishers/s3.md)
   * [Snapcraft](config/publishers/snapcraft.md)
 
+## Guides
+
+* [Electron Guides](guides/electron-guides.md)
+* [Framework Integration](guides/framework-integration/README.md)
+  * [React with TypeScript](guides/framework-integration/react-with-typescript.md)
+
 ## Advanced
 
 * [Auto Update](advanced/auto-update.md)

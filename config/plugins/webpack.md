@@ -102,3 +102,4 @@ In theory, you shouldn't need to care. In development we spin up `webpack-dev-se
 ## How do I do virtual routing?
 
 If you want to use something like [`react-router`](https://github.com/ReactTraining/react-router) to do virtual routing in your app you will need to ensure you use a history method that is not based on the browser history APIs. Browser history will work in development but not in production as your code will be loaded from the filesystem not a webserver. In the `react-router` case you should use the [`MemoryRouter`](https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/api/MemoryRouter.md) to make everything work.
+
