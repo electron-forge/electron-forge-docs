@@ -4,7 +4,7 @@ description: Create a new Electron app with TypeScript.
 
 # TypeScript
 
-To get you up and running as fast as possible with [TypeScript](https://www.typescriptlang.org/) and Electron, we have provided a basic template that utilizes `tsc` and `tslint`.
+To get you up and running as fast as possible with [TypeScript](https://www.typescriptlang.org/) and Electron, we have provided a basic template that utilizes `tsc` and `eslint`.
 
 {% tabs %}
 {% tab title="NPM" %}
