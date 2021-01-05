@@ -60,5 +60,25 @@ import './app';
 {% endtab %}
 {% endtabs %}
 
+### Fix ESLint rules
+
+Let ESLint know `.tsx` files can be imported as module by editing `.eslintrc.json` file. Add this option :
+
+```json
+"settings": {
+  "import/resolver": {
+    "node": {
+      "extensions": [
+        ".js",
+        ".json",
+        ".ts",
+        ".tsx"
+      ]
+    }
+  }
+}
+
+```
+
 For more about React, see [their documentation](https://reactjs.org/docs/hello-world.html).
 
