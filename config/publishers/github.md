@@ -1,6 +1,6 @@
 # GitHub
 
-The GitHub target publishes all your artifacts to GitHub releases, this allows you your users to download the files straight from your repository or if your repository is open source you can use [update.electronjs.org](https://github.com/electron/update.electronjs.org) and get a free hosted update service.
+The GitHub target publishes all your artifacts to GitHub releases, this allows your users to download the files straight from your repository or if your repository is open source you can use [update.electronjs.org](https://github.com/electron/update.electronjs.org) and get a free hosted update service.
 
 Configuration options are documented in [`PublisherGitHubConfig`](https://js.electronforge.io/publisher/github/interfaces/publishergithubconfig.html)
 
