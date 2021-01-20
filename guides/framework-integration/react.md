@@ -28,7 +28,7 @@ npm install --save-dev @babel/core @babel/preset-react babel-loader
 {% endtab %}
 {% endtabs %}
 
-Set up the `babel-loader`module in `webpack.rules.js`:
+Set up the [`babel-loader`](https://www.npmjs.com/package/babel-loader)module with the [React preset](https://babeljs.io/docs/en/babel-preset-react) in `webpack.rules.js`:
 
 {% code title="webpack.rules.js" %}
 ```javascript
