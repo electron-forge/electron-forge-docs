@@ -1,5 +1,5 @@
 ---
-description: Adding React to the Webpack Template
+description: How to create an Electron app with React and Electron Forge
 ---
 
 # React

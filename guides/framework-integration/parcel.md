@@ -1,5 +1,5 @@
 ---
-description: Parcel bundler integration with Electron Forge
+description: How to create an Electron app with the Parcel bundler and Electron Forge
 ---
 
 # Parcel

@@ -1,5 +1,5 @@
 ---
-description: Adding React to the TypeScript + Webpack Template
+description: 'How to create an Electron app with React, TypeScript, and Electron Forge'
 ---
 
 # React with TypeScript
