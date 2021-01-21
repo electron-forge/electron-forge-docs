@@ -8,7 +8,7 @@ Configuration options are documented in [`PublisherGitHubConfig`](https://js.ele
 You can use this target to publish to GitHub Enterprise using the host configuration options of `octokitOptions`. Check out the configuration options linked above.
 {% endhint %}
 
-### Usage
+## Usage
 
 ```javascript
 {
