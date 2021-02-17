@@ -1,6 +1,6 @@
 ---
 description: >-
-  The Bitbucket publish target allows you to publish your artefacts directly to
+  The Bitbucket publish target allows you to publish your artifacts directly to
   Bitbucket where users will be able to download them.
 ---
 
