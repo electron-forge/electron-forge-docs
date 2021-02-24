@@ -45,6 +45,7 @@
   * [Parcel](guides/framework-integration/parcel.md)
   * [React](guides/framework-integration/react.md)
   * [React with TypeScript](guides/framework-integration/react-with-typescript.md)
+* [Developing with WSL](guides/developing-with-wsl.md)
 
 ## Advanced
 
