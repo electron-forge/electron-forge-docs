@@ -10,7 +10,7 @@ Configuration options are documented in [`MakerSnapConfig`](https://js.electronf
 
 ```javascript
 {
-  name: '@electron-forge/maker-snap'
+  name: '@electron-forge/maker-snap',
   config: {
     features: {
       audio: true,
