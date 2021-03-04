@@ -12,7 +12,7 @@ This publish target is for [Bitbucket Cloud](https://bitbucket.org) only and wil
 
 Full configuration options are documented in [`PublisherBitbucketConfig`](https://js.electronforge.io/publisher/bitbucket/interfaces/publisherbitbucketconfig).
 
-### Usage
+## Usage
 
 ```javascript
 {
@@ -41,6 +41,4 @@ BITBUCKET_APP_PASSWORD="mysecretapppassword"
 ```bash
 $ source env.sh
 ```
-
-
 
