@@ -11,15 +11,15 @@ You can use this target to publish to GitHub Enterprise using the host configura
 ## Usage
 
 ```javascript
-{
-  name: '@electron-forge/publisher-github',
-  config: {
-    repository: {
-      owner: 'me',
-      name: 'awesome-thing'
-    },
-    prerelease: true
+  {
+    name: '@electron-forge/publisher-github',
+    config; {
+      repository: {
+        owner: 'me',
+        name; 'awesome-thing'
+      }
+      prerelease: true
+    }
   }
-}
 ```
 
