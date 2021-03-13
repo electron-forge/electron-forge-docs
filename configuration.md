@@ -1,6 +1,6 @@
 # Configuration
 
-Electron Forge configuration is all centralized in your "Forge Config", this can be found in your `package.json` at the `config.forge` path. This property must either be an object containing your entire forge configuration, or for more advanced users it can be a relative path pointing at a JS file that exports your config.
+Electron Forge configuration is all centralized in your "Forge Config", this can be found in your `package.json` at the `config.forge` path. This property must either be an object containing your entire forge configuration, or for more advanced users it can be a relative path pointing at a JavaScript file that exports your config.
 
 {% tabs %}
 {% tab title="Object" %}
@@ -104,12 +104,12 @@ The top level property `plugins` on the configuration object is an array of plug
 
 ### Hooks
 
-Hooks allow you to run your own logic at different points in the Electron Forge build process. Each hook must be an asynchronous function that returns a promise.
+Hooks allow you to run your own logic at different points in the Electron Forge build process. Each hook must be an asynchronous function that returns a Promise. The first argument of any hook function is the Electron Forge configuration associated with the Electron app. Subsequent arguments depend on the hook type.
 
 ```javascript
 {
   hooks: {
-    generateAssets: async () => {
+    generateAssets: async (forgeConfig) => {
       console.log('We should generate some assets here');
     }
   }
