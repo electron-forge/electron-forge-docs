@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Getting Started with Electron Forge](README.md)
+* [Getting Started](README.md)
 * [Import Existing Project](import-existing-project.md)
 * [Configuration](configuration.md)
 * [CLI](cli.md)

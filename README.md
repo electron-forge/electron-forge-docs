@@ -4,7 +4,7 @@ description: >-
   modern Electron applications.
 ---
 
-# Getting Started with Electron Forge
+# Getting Started
 
 ## The Basics
 
