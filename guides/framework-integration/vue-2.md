@@ -67,9 +67,3 @@ const app = new Vue({
 
 For advanced use cases such as single file components, it's recommended to use the [Webpack template](../../templates/webpack-template.md) so that the components get built correctly. You'll also need to add the `vue-loader` package to the app's `devDependencies`.
 
-This should also mean that in the renderer, the `import` statement can be replaced with something that looks a little more familiar:
-
-```javascript
-import Vue from 'vue';
-```
-
