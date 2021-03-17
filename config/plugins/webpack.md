@@ -32,6 +32,8 @@ You must provide two Webpack config files: one for the main process in `mainConf
 }
 ```
 
+The above configuration is the default for the [Webpack template](../../templates/webpack-template.md).
+
 ### Project Setup
 
 You need to do two things in your project files as well in order to make this plugin work.
