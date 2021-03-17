@@ -12,7 +12,7 @@ yarn add @electron-forge/plugin-webpack --dev
 
 ### Configuration
 
-You must provide two Webpack config files: one for the main process in `mainConfig`, and one for the renderer process in `renderer.config`. The complete config options are available at [`WebpackPluginConfig`](https://js.electronforge.io/plugin/webpack/interfaces/webpackpluginconfig.html). See an example below:
+You must provide two Webpack config files: one for the main process in `mainConfig`, and one for the renderer process in `renderer.config`. The complete config options are available at [`WebpackPluginConfig`](https://js.electronforge.io/plugin/webpack/interfaces/webpackpluginconfig.html). For example, in your [Forge configuration](../../configuration.md):
 
 ```javascript
 {
