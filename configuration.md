@@ -52,7 +52,7 @@ module.exports = {
 {% endtab %}
 {% endtabs %}
 
-Putting the config directly in the `package.json` is by far the more simpler approach but to things like provide hook functions to Electron Forge you will need to use the JS file.
+Putting the configuration directly in the `package.json` is by far the more simpler approach, but for advanced options, such as providing hook functions to Electron Forge, you will need to use the JS file.
 
 ## Possible Configuration
 
@@ -87,7 +87,7 @@ Please note that you can not override the `dir`, `arch`, `platform`,`out`or `ele
 The top level property `electronRebuildConfig` on the configuration object maps directly to the options sent to [`electron-rebuild`](https://github.com/electron/electron-rebuild) during both the package and start step of Electron Forge's build process. The options you can put in this object are documented in the [Electron Rebuild API docs](https://github.com/electron/electron-rebuild#how-can-i-integrate-this-into-grunt--gulp--whatever).
 
 {% hint style="info" %}
-Please note you can not override the `buildPath`, `arch`or `electronVersion` options as they are set by Electron Forge internally
+Please note you can not override the `buildPath`, `arch`, or `electronVersion` options as they are set by Electron Forge internally
 {% endhint %}
 
 ### Makers
