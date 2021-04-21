@@ -75,7 +75,7 @@ Maps to `electronForge.package`, will package your application into a platform s
 
 Maps to `electronForge.publish`, will attempt to make the forge application and then publish it to the publish targets defined in your forge config.
 
-If you want to publish previously created `make` artifacts you will have to use the `dry-run` options explained below.
+If you want to publish previously created `make` artifacts you will have to use the `--from-dry-run` options explained below.
 
 | Flag | Value | Required | Description |
 | :--- | :--- | :--- | :--- |
