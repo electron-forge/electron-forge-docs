@@ -9,8 +9,8 @@ Each publisher has to be configured in the `publishers` section of your Forge co
 module.exports = {
   publishers: [
     {
-      name: '@electron-forge/publisher-s3'
-      platforms: ['darwin', 'linux']
+      name: '@electron-forge/publisher-s3',
+      platforms: ['darwin', 'linux'],
       config: {
         bucket: 'my-bucket',
         folder: 'my/key/prefix'
