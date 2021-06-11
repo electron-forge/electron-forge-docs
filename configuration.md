@@ -1,3 +1,7 @@
+---
+description: How to configure Electron Forge
+---
+
 # Configuration
 
 Electron Forge configuration is all centralized in your "Forge Config", this can be found in your `package.json` at the `config.forge` path. This property must either be an object containing your entire forge configuration, or for more advanced users it can be a relative path pointing at a JavaScript file that exports your config.
