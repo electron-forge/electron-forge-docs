@@ -30,7 +30,7 @@ If implemented, this method will be called every time the user runs `electron-fo
 Please note that overriding the start logic here only works in **development** if you want to change how an app runs once packaged you will need to use a build hook to inject code into the packaged app.
 
 {% hint style="info" %}
-`StartOptions`is explained further [in the API docs](https://js.electronforge.io/api/core/interfaces/startoptions.html).
+`StartOptions`is explained further [in the API docs](https://js.electronforge.io/utils/types/interfaces/startoptions).
 {% endhint %}
 
 ```javascript
