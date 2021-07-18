@@ -34,6 +34,26 @@ You must provide two Webpack config files: one for the main process in `mainConf
 
 The above configuration is the default for the [Webpack template](../../templates/webpack-template.md).
 
+#### Node integration
+
+If you set `nodeIntegration` to `true` in a given renderer's `BrowserWindow` constructor, you'll need to set the same `nodeIntegration` value in the corresponding Webpack plugin renderer's entry point configuration.
+
+#### Content Security Policy
+
+In development mode, you can set a [content security policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) by setting `devContentSecurityPolicy` in your Forge Webpack plugin configuration:
+
+```javascript
+{
+  plugins: [
+    ['@electron-forge/plugin-webpack', {
+      // other Webpack plugin config...
+      devContentSecurityPolicy: `default-src 'self' 'unsafe-inline' data:; script-src 'self' 'unsafe-eval' 'unsafe-inline' data:`,
+      // other Webpack plugin config...
+}
+```
+
+Please note that if you wish to use source maps, you'll need to set `'unsafe-eval'` for the `script-src` directive.
+
 ### Project Setup
 
 You need to do two things in your project files as well in order to make this plugin work.
@@ -66,7 +86,11 @@ mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
 
 ## Native Modules
 
-If you used the Webpack Template to create your application, native modules will work out of the box. If you are setting up the plugin manually, you can make native modules work by adding the following two loaders to your `module.rules` configuration in your Webpack config. Ensure you install both `node-loader` and `@marshallofsound/webpack-asset-relocator-loader` as development dependencies.
+If you used the Webpack Template to create your application, native modules will mostly work out of the box. If you are setting up the plugin manually, you can make native modules work by adding the following two loaders to your `module.rules` configuration in your Webpack config. Ensure you install both `node-loader` and `@vercel/webpack-asset-relocator-loader` as development dependencies.
+
+{% hint style="warning" %}
+Warning: Electron Forge needs to monkeypatch the asset relocator loader in order for it to work with Electron properly, so the version has been pinned to ensure compatibility. If you upgrade that version, you do so at your own risk.
+{% endhint %}
 
 {% code title="webpack.main.config.js" %}
 ```javascript
@@ -81,7 +105,7 @@ module.exports = {
         test: /\.(m?js|node)$/,
         parser: { amd: false },
         use: {
-          loader: '@marshallofsound/webpack-asset-relocator-loader',
+          loader: '@vercel/webpack-asset-relocator-loader',
           options: {
             outputAssetBase: 'native_modules',
           },
@@ -93,6 +117,8 @@ module.exports = {
 ```
 {% endcode %}
 
+If the asset relocator loader does not work for your native module, you may want to consider using the [externals configuration](https://webpack.js.org/configuration/externals/).
+
 ## Hot Reloading
 
 All your renderer processes in development will have hot reloading enabled by default. It is unfortunately impossible to do hot module reloading inside a renderer preload script, WebWorkers, and the main process itself. However, Webpack is constantly watching and recompiling those files so to get updates for preload scripts simply reload the window. For the main process, just type `rs` in the console you launched `electron-forge` from and we will restart your app for you with the new main process code.
@@ -103,5 +129,5 @@ In theory, you shouldn't need to care. In development we spin up `webpack-dev-se
 
 ## How do I do virtual routing?
 
-If you want to use something like [`react-router`](https://github.com/ReactTraining/react-router) to do virtual routing in your app you will need to ensure you use a history method that is not based on the browser history APIs. Browser history will work in development but not in production as your code will be loaded from the filesystem not a webserver. In the `react-router` case you should use the [`MemoryRouter`](https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/api/MemoryRouter.md) to make everything work.
+If you want to use something like [`react-router`](https://github.com/ReactTraining/react-router) to do virtual routing in your app, you will need to ensure you use a history method that is not based on the browser history APIs. Browser history will work in development but not in production, as your code will be loaded from the filesystem, not a webserver. In the `react-router` case, you should use the [`MemoryRouter`](https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/api/MemoryRouter.md) to make everything work.
 
