@@ -15,11 +15,19 @@ yarn electron-forge import
 ```
 {% endtab %}
 
-{% tab title="NPM" %}
+{% tab title="NPM 6" %}
 ```bash
 cd my-app
 npm install --save-dev @electron-forge/cli
 npx electron-forge import
+```
+{% endtab %}
+
+{% tab title="NPM 7" %}
+```
+cd my-app
+npm install --save-dev @electron-forge/cli
+npm exec --package=@electron-forge/cli -c "electron-forge import"
 ```
 {% endtab %}
 {% endtabs %}
