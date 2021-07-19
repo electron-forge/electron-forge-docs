@@ -29,9 +29,9 @@ module.exports = {
       renderer: {
         config: './webpack.renderer.config.js',
         entryPoints: [{
+          name: 'main_window',
           html: './src/renderer/index.html',
-          js: './src/renderer/index.js',
-          name: 'main_window'
+          js: './src/renderer/index.js'
         }]
       }
     }]
@@ -45,10 +45,34 @@ The above configuration is the default for the [Webpack template](../../template
 #### Node integration
 
 {% hint style="info" %}
-The following configuration option is available in Electron Forge version 6.0.0 beta 58 and above.
+The following configuration option is available in Electron Forge version 6.0.0 beta 59 and above.
 {% endhint %}
 
-If you set `nodeIntegration` to `true` in a given renderer's `BrowserWindow` constructor, you'll need to set the same `nodeIntegration` value in the corresponding Webpack plugin renderer's entry point configuration.
+If you set `nodeIntegration` to `true` in a given renderer's `BrowserWindow` constructor, you'll need to set the same `nodeIntegration` value in the corresponding Webpack plugin renderer's configuration:
+
+{% code title="forge.config.js" %}
+```javascript
+// Only showing the relevant configuration for brevity
+// This can also be in config.forge in package.json per the configuration docs
+module.exports = {
+  plugins: [
+    ['@electron-forge/plugin-webpack', {
+      mainConfig: './webpack.main.config.js',
+      renderer: {
+        config: './webpack.renderer.config.js',
+        entryPoints: [{
+          name: 'main_window',
+          html: './src/renderer/index.html',
+          js: './src/renderer/index.js',
+          nodeIntegration: true // defaults to false
+        }]
+      },
+      // other Webpack plugin config...
+    }]
+  ]
+}
+```
+{% endcode %}
 
 #### Content Security Policy
 
