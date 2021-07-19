@@ -36,9 +36,17 @@ The above configuration is the default for the [Webpack template](../../template
 
 #### Node integration
 
+{% hint style="info" %}
+The following configuration option is available in Electron Forge version 6.0.0 beta 58 and above.
+{% endhint %}
+
 If you set `nodeIntegration` to `true` in a given renderer's `BrowserWindow` constructor, you'll need to set the same `nodeIntegration` value in the corresponding Webpack plugin renderer's entry point configuration.
 
 #### Content Security Policy
+
+{% hint style="info" %}
+The following configuration option is available in Electron Forge version 6.0.0 beta 58 and above.
+{% endhint %}
 
 In development mode, you can set a [content security policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) by setting `devContentSecurityPolicy` in your Forge Webpack plugin configuration:
 
@@ -85,6 +93,10 @@ mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
 {% endcode %}
 
 ## Native Modules
+
+{% hint style="info" %}
+The following instructions are for Electron Forge version 6.0.0 beta 58 and above.
+{% endhint %}
 
 If you used the Webpack Template to create your application, native modules will mostly work out of the box. If you are setting up the plugin manually, you can make native modules work by adding the following two loaders to your `module.rules` configuration in your Webpack config. Ensure you install both `node-loader` and `@vercel/webpack-asset-relocator-loader` as development dependencies.
 
