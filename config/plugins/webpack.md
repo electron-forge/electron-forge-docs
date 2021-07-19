@@ -54,8 +54,10 @@ The following configuration option is available in Electron Forge version 6.0.0 
 
 In development mode, you can set a [content security policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) by setting `devContentSecurityPolicy` in your Forge Webpack plugin configuration _\(note that it is separate from the main and renderer configuration\)_:
 
+{% code title="forge.config.js" %}
 ```javascript
-{
+// Only showing the relevant configuration for brevity
+module.exports = {
   plugins: [
     ['@electron-forge/plugin-webpack', {
       mainConfig: './webpack.main.config.js',
@@ -67,6 +69,7 @@ In development mode, you can set a [content security policy](https://developer.m
   ]
 }
 ```
+{% endcode %}
 
 Please note that if you wish to use source maps, you'll need to set `'unsafe-eval'` for the `script-src` directive.
 
