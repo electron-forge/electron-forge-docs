@@ -1,3 +1,7 @@
+---
+description: How to configure Webpack with Electron Forge using its first-party plugin.
+---
+
 # Webpack
 
 The Webpack plugin allows you to use standard Webpack tooling to compile both your main process code and your renderer process code, with built in support for Hot Module Reloading in the renderer process and support for multiple renderers.
@@ -48,12 +52,14 @@ If you set `nodeIntegration` to `true` in a given renderer's `BrowserWindow` con
 The following configuration option is available in Electron Forge version 6.0.0 beta 58 and above.
 {% endhint %}
 
-In development mode, you can set a [content security policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) by setting `devContentSecurityPolicy` in your Forge Webpack plugin configuration:
+In development mode, you can set a [content security policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) by setting `devContentSecurityPolicy` in your Forge Webpack plugin configuration _\(note that it is separate from the main and renderer configuration\)_:
 
 ```javascript
 {
   plugins: [
     ['@electron-forge/plugin-webpack', {
+      mainConfig: './webpack.main.config.js',
+      renderer: { /* renderer config here, see above section */ },
       // other Webpack plugin config...
       devContentSecurityPolicy: `default-src 'self' 'unsafe-inline' data:; script-src 'self' 'unsafe-eval' 'unsafe-inline' data:`,
       // other Webpack plugin config...
