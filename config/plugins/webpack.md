@@ -18,8 +18,11 @@ yarn add @electron-forge/plugin-webpack --dev
 
 You must provide two Webpack config files: one for the main process in `mainConfig`, and one for the renderer process in `renderer.config`. The complete config options are available at [`WebpackPluginConfig`](https://js.electronforge.io/plugin/webpack/interfaces/webpackpluginconfig.html). For example, in your [Forge configuration](../../configuration.md):
 
+{% code title="forge.config.js" %}
 ```javascript
-{
+// Only showing the relevant configuration for brevity
+// This can also be in config.forge in package.json per the configuration docs
+module.exports = {
   plugins: [
     ['@electron-forge/plugin-webpack', {
       mainConfig: './webpack.main.config.js',
@@ -35,6 +38,7 @@ You must provide two Webpack config files: one for the main process in `mainConf
   ]
 }
 ```
+{% endcode %}
 
 The above configuration is the default for the [Webpack template](../../templates/webpack-template.md).
 
@@ -57,6 +61,7 @@ In development mode, you can set a [content security policy](https://developer.m
 {% code title="forge.config.js" %}
 ```javascript
 // Only showing the relevant configuration for brevity
+// This can also be in config.forge in package.json per the configuration docs
 module.exports = {
   plugins: [
     ['@electron-forge/plugin-webpack', {
