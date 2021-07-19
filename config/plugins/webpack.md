@@ -63,6 +63,8 @@ In development mode, you can set a [content security policy](https://developer.m
       // other Webpack plugin config...
       devContentSecurityPolicy: `default-src 'self' 'unsafe-inline' data:; script-src 'self' 'unsafe-eval' 'unsafe-inline' data:`,
       // other Webpack plugin config...
+    }]
+  ]
 }
 ```
 
