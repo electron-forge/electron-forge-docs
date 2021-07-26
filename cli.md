@@ -37,6 +37,22 @@ Please note if you want to use a template, it must be installed globally before 
 | `--template` | Template Name | No | Name of the template to use to make this new app |
 | `--copy-ci-files` | N/A | No | Set if you want to copy templated CI files for Travis CI and Appveyor |
 
+Example:
+
+{% tabs %}
+{% tab title="Yarn" %}
+```bash
+yarn electron-forge init --template=webpack
+```
+{% endtab %}
+
+{% tab title="NPM" %}
+```bash
+npx electron-forge init --template=webpack
+```
+{% endtab %}
+{% endtabs %}
+
 ### Install
 
 Maps to `electronForge.install`, will attempt to install the Electron app that is published at the given GitHub repository. This command is just a helper for installing other applications quickly.  E.g.
@@ -62,6 +78,22 @@ Maps to `electronForge.make`, will make distributables for your application base
 | `--targets` | Comma separated list of maker names | No | Override your make targets for this run. The maker name is the full node module name, e.g. `@electron-forge/maker-deb`. |
 | `--skip-package` | N/A | No | Set if you want to skip the packaging step, useful if you are running sequential makes and want to save time |
 
+Example:
+
+{% tabs %}
+{% tab title="Yarn" %}
+```bash
+yarn make --arch=ia32
+```
+{% endtab %}
+
+{% tab title="NPM" %}
+```bash
+npm run make -- --arch=ia32
+```
+{% endtab %}
+{% endtabs %}
+
 ### Package
 
 Maps to `electronForge.package`, will package your application into a platform specific format and put the result in a folder. Please note that this does not make a distributable format. To make proper distributables, please use the [make](cli.md#make) command.
@@ -70,6 +102,22 @@ Maps to `electronForge.package`, will package your application into a platform s
 | :--- | :--- | :--- | :--- |
 | `--arch` | Architecture, e.g. `x64` | No | Target architecture to package for. Defaults to the host arch. |
 | `--platform` | Platform, e.g. `mas` | No | Target platform to package for. Defaults to the host platform. |
+
+Example:
+
+{% tabs %}
+{% tab title="Yarn" %}
+```bash
+yarn package --arch=ia32
+```
+{% endtab %}
+
+{% tab title="NPM" %}
+```
+npm run package -- --arch=ia32
+```
+{% endtab %}
+{% endtabs %}
 
 ### Publish
 
@@ -82,6 +130,22 @@ If you want to publish previously created `make` artifacts you will have to use 
 | `--target` | Comma separated list of publisher names | No | Override your publish targets for this run |
 | `--dry-run` | N/A | No | Triggers a publish dry run which saves state and doesn't upload anything |
 | `--from-dry-run` | N/A | No | Attempts to publish artifacts from any dry runs saved on disk |
+
+Example:
+
+{% tabs %}
+{% tab title="Yarn" %}
+```
+yarn run publish --from-dry-run
+```
+{% endtab %}
+
+{% tab title="NPM" %}
+```bash
+npm run publish -- --from-dry-run
+```
+{% endtab %}
+{% endtabs %}
 
 ### Start
 
@@ -96,4 +160,20 @@ If you type `rs` \(and hit enter\) in the same terminal where you ran the start 
 | `--run-as-node` | N/A | No | Run the Electron app as a Node.JS script |
 | `--inspect-electron` | N/A | No | Triggers inspect mode on Electron to allow debugging the main process |
 | `--` | extra arguments | No | Any additional arguments to pass to Electron or the app itself. For example: `-- --my-app-argument` |
+
+Example:
+
+{% tabs %}
+{% tab title="Yarn" %}
+```
+yarn start --enable-logging
+```
+{% endtab %}
+
+{% tab title="NPM" %}
+```bash
+npm start -- --enable-logging
+```
+{% endtab %}
+{% endtabs %}
 
