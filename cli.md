@@ -1,36 +1,48 @@
+---
+description: How to use the command line interface (CLI) for Electron Forge
+---
+
 # CLI
 
 ## Installation
 
-Electron forge's CLI is separate from the core module, to install it you will have to use the `@electron-forge/cli` module from NPM.
+Electron forge's command line interface \(CLI\) is separate from the core module. To use it you will have to install the `@electron-forge/cli` module from NPM into your project.
 
+{% tabs %}
+{% tab title="Yarn" %}
 ```bash
-# NPM
-npm i -g @electron-forge/cli
-
-# Yarn
-yarn global add @electron-forge/cli
+yarn add --dev @electron-forge/cli
 ```
+{% endtab %}
+
+{% tab title="NPM" %}
+```bash
+npm install --save-dev @electron-forge/cli
+```
+{% endtab %}
+{% endtabs %}
 
 ## Overview
 
-At a high level the CLI module is just a proxy to the raw [API](https://js.electronforge.io) commands.  Almost all the configuration is still done in your Forge Config, the CLI just provides a handy way to trigger all the core functionality of Electron Forge \(and you should definitely use it\).
+At a high level the CLI module is just a proxy to the raw [API](https://js.electronforge.io) commands.  Almost all the configuration is still done in your [Forge configuration](configuration.md), the CLI just provides a handy way to trigger all the core functionality of Electron Forge.
 
 ## Commands
 
-Please note these commands are sorted in alphabetical order, the ones you probably need to care about are [start](cli.md#start), [package](cli.md#package), [make](cli.md#make), and [publish](cli.md#publish). 
+{% hint style="info" %}
+These commands are sorted in alphabetical order. The most commonly used are [start](cli.md#start), [package](cli.md#package), [make](cli.md#make), and [publish](cli.md#publish). 
+{% endhint %}
 
 ### Import
 
-Maps to `electronForge.import`, will attempt to take an existing Electron app and make it Forge compatible. Normally this just creates a base Electron Forge config and adds the required dependencies.
+Maps to `electronForge.import`. It will attempt to take an existing Electron app and make it Forge compatible. Normally this just creates a base Electron Forge configuration and adds the required dependencies.
 
 > There are no flags for the Import command
 
 ### Init
 
-Maps to `electronForge.init`, will initialize a new Forge powered application in the given directory \(defaults to `.`\).
+Maps to `electronForge.init`, will initialize a new Forge powered application in the given directory \(defaults to `.`, the current directory\).
 
-Please note if you want to use a template, it must be installed globally before running the `init` command.
+Please note if you want to use a non-built-in template, it must be installed globally before running the `init` command.
 
 | Flag | Value | Required | Description |
 | :--- | :--- | :--- | :--- |
@@ -55,15 +67,15 @@ npx electron-forge init --template=webpack
 
 ### Install
 
-Maps to `electronForge.install`, will attempt to install the Electron app that is published at the given GitHub repository. This command is just a helper for installing other applications quickly.  E.g.
+Maps to `electronForge.install`, will attempt to install the Electron app that is published at the given GitHub repository. This command is just a helper for installing other applications quickly.  For example:
 
 ```bash
-electron-forge install atom/atom
+npx electron-forge install atom/atom
 ```
 
 ### Lint
 
-Maps to `electronForge.lint`, will run the `lint` command that your `package.json` exposes. If the exit code is 0 no output is shown, otherwise the error output will be displayed.
+Maps to `electronForge.lint`, will run the `lint` command that your `package.json` exposes. If the exit code is `0`, no output is shown, otherwise the error output will be displayed.
 
 > There are no flags for the Lint command
 
@@ -83,13 +95,19 @@ Example:
 {% tabs %}
 {% tab title="Yarn" %}
 ```bash
+# By default, the make command corresponds to a make npm script:
 yarn make --arch=ia32
+# If there is no make script:
+yarn electron-forge make --arch=ia32
 ```
 {% endtab %}
 
 {% tab title="NPM" %}
 ```bash
+# By default, the make command corresponds to a make npm script:
 npm run make -- --arch=ia32
+# If there is no make script:
+npx electron-forge make --arch=ia32
 ```
 {% endtab %}
 {% endtabs %}
@@ -108,13 +126,19 @@ Example:
 {% tabs %}
 {% tab title="Yarn" %}
 ```bash
+# By default, the package command corresponds to a package npm script:
 yarn package --arch=ia32
+# If there is no make script:
+yarn electron-forge package --arch=ia32
 ```
 {% endtab %}
 
 {% tab title="NPM" %}
-```
+```bash
+# By default, the package command corresponds to a package npm script:
 npm run package -- --arch=ia32
+# If there is no make script:
+npx electron-forge package --arch=ia32
 ```
 {% endtab %}
 {% endtabs %}
@@ -135,14 +159,20 @@ Example:
 
 {% tabs %}
 {% tab title="Yarn" %}
-```
+```bash
+# By default, the package command corresponds to a package npm script:
 yarn run publish --from-dry-run
+# If there is no make script:
+yarn electron-forge publish --from-dry-run
 ```
 {% endtab %}
 
 {% tab title="NPM" %}
 ```bash
+# By default, the package command corresponds to a package npm script:
 npm run publish -- --from-dry-run
+# If there is no make script:
+npx electron-forge package --arch=ia32
 ```
 {% endtab %}
 {% endtabs %}
