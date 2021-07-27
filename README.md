@@ -13,7 +13,7 @@ To get started with Electron Forge, we first need to initialize a new project.
 {% tabs %}
 {% tab title="Yarn" %}
 ```bash
-yarn create electron-app my-app
+yarn create-electron-app my-app
 ```
 {% endtab %}
 
