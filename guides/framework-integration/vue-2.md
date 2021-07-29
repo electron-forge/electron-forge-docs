@@ -65,7 +65,7 @@ const app = new Vue({
 
 ### Alternative: Using Single File Components <a id="using-single-file-components"></a>
 
-For advanced use cases such as single file components, it's recommended to use the [Webpack template](../../templates/webpack-template.md) so that the components get built correctly. You'll also need to add the appropriate Vue loader/compiler packages to the app's `devDependencies`.
+For advanced use cases such as single file components, it's recommended to use the [Webpack plugin](../../config/plugins/webpack.md) so that the components get built correctly. You'll also need to add the appropriate Vue loader/compiler packages to the app's `devDependencies`.
 
 Create the app with the [Webpack template](../../templates/webpack-template.md) or the [TypeScript + Webpack template](../../templates/typescript-+-webpack-template.md). Add the following packages to your `devDependencies` so that the single file components get compiled and loaded correctly:
 
@@ -83,7 +83,7 @@ yarn add --dev vue-loader vue-template-compiler
 {% endtab %}
 {% endtabs %}
 
-Setting up the [`vue-loader` Webpack module](https://vue-loader.vuejs.org/guide/#webpack-configuration) is left as an exercise for the reader _\(hint: `vue-loader` Webpack config should go in the renderer configuration only\)_.
+Setting up the [`vue-loader` Webpack module](https://vue-loader.vuejs.org/guide/#webpack-configuration) is left as an exercise for the reader _\(hint: `vue-loader` Webpack config should ideally go in the renderer configuration only\)_.
 
 Add the Vue 2 package to your `dependencies`:
 
