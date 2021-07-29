@@ -83,7 +83,7 @@ yarn add --dev vue-loader vue-template-compiler
 {% endtab %}
 {% endtabs %}
 
-Setting up the [`vue-loader` Webpack module](https://vue-loader.vuejs.org/guide/#webpack-configuration) is left as an exercise for the reader.
+Setting up the [`vue-loader` Webpack module](https://vue-loader.vuejs.org/guide/#webpack-configuration) is left as an exercise for the reader _\(hint: `vue-loader` Webpack config should go in the renderer configuration only\)_.
 
 Add the Vue 2 package to your `dependencies`:
 
