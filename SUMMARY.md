@@ -54,6 +54,7 @@
 * [Debugging](advanced/debugging.md)
 * [Extending Electron Forge](advanced/extending-electron-forge/README.md)
   * [Writing Plugins](advanced/extending-electron-forge/writing-plugins.md)
+  * [Writing Templates](advanced/extending-electron-forge/writing-templates.md)
   * [Writing Makers](advanced/extending-electron-forge/writing-makers.md)
   * [Writing Publishers](advanced/extending-electron-forge/writing-publishers.md)
 * [API Docs](https://js.electronforge.io/api/core)
