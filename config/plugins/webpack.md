@@ -98,6 +98,34 @@ module.exports = {
 
 Please note that if you wish to use source maps, you'll need to set `'unsafe-eval'` for the `script-src` directive.
 
+#### Dev server
+
+{% hint style="info" %}
+The following configuration option is available in Electron Forge version 6.0.0 beta 60 and above.
+{% endhint %}
+
+In development mode, you can change most [`webpack-dev-server` options](https://webpack.js.org/configuration/dev-server/) by setting `devServer`in your Forge Webpack plugin configuration _\(note that it is separate from the main and renderer configuration\)_:
+
+{% code title="forge.config.js" %}
+```javascript
+// Only showing the relevant configuration for brevity
+// This can also be in config.forge in package.json per the configuration docs
+module.exports = {
+  plugins: [
+    ['@electron-forge/plugin-webpack', {
+      mainConfig: './webpack.main.config.js',
+      renderer: { /* renderer config here, see above section */ },
+      // other Webpack plugin config...
+      devServer: {
+        stats: 'verbose'
+      }
+      // other Webpack plugin config...
+    }]
+  ]
+}
+```
+{% endcode %}
+
 ### Project Setup
 
 You need to do two things in your project files as well in order to make this plugin work.
