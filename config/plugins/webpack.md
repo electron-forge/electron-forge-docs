@@ -275,7 +275,7 @@ mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
 The following instructions are for Electron Forge version 6.0.0 beta 58 and above.
 {% endhint %}
 
-If you used the Webpack Template to create your application, native modules will mostly work out of the box. If you are setting up the plugin manually, you can make native modules work by adding the following two loaders to your `module.rules` configuration in your Webpack config. Ensure you install both `node-loader` and `@vercel/webpack-asset-relocator-loader` as development dependencies.
+If you used the [Webpack](../../templates/webpack-template.md) or [TypeScript + Webpack](../../templates/typescript-+-webpack-template.md) templates to create your application, native modules will mostly work out of the box. If you are setting up the plugin manually, you can make native modules work by adding the following two loaders to your `module.rules` configuration in your Webpack config. Ensure you install both `node-loader` and `@vercel/webpack-asset-relocator-loader` as development dependencies.
 
 {% hint style="warning" %}
 Warning: Electron Forge needs to monkeypatch the asset relocator loader in order for it to work with Electron properly, so the version has been pinned to ensure compatibility. If you upgrade that version, you do so at your own risk.
