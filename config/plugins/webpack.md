@@ -31,6 +31,7 @@ You must provide two Webpack config files: one for the main process in `mainConf
 {% tabs %}
 {% tab title="package.json" %}
 ```javascript
+// If your config is only in package.json:
 // Only showing the relevant configuration for brevity
 {
   "config": {
@@ -56,6 +57,7 @@ You must provide two Webpack config files: one for the main process in `mainConf
 
 {% tab title="forge.config.js" %}
 ```javascript
+// If you have set config.forge to a JavaScript file path in package.json:
 // Only showing the relevant configuration for brevity
 module.exports = {
   plugins: [
@@ -86,10 +88,34 @@ The following configuration option is available in Electron Forge version 6.0.0 
 
 If you set `nodeIntegration` to `true` in a given renderer's `BrowserWindow` constructor, you'll need to set the same `nodeIntegration` value in the corresponding Webpack plugin renderer's configuration:
 
-{% code title="forge.config.js" %}
+{% tabs %}
+{% tab title="package.json" %}
 ```javascript
+// If your config is only in package.json:
 // Only showing the relevant configuration for brevity
-// This can also be in config.forge in package.json per the configuration docs
+{
+  "config": {
+    "forge": {
+      "plugins": [
+        ["@electron-forge/plugin-webpack", {
+          "mainConfig": "./webpack.main.config.js",
+          "renderer": {
+            "config": "./webpack.renderer.config.js",
+            "entryPoints": [/* entry point config */],
+            "nodeIntegration": true // defaults to false
+          }
+        }]
+      ]
+    }
+  }
+}
+```
+{% endtab %}
+
+{% tab title="forge.config.js" %}
+```javascript
+// If you have set config.forge to a JavaScript file path in package.json:
+// Only showing the relevant configuration for brevity
 module.exports = {
   plugins: [
     ['@electron-forge/plugin-webpack', {
@@ -104,7 +130,8 @@ module.exports = {
   ]
 }
 ```
-{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 #### Content Security Policy
 
@@ -114,10 +141,33 @@ The following configuration option is available in Electron Forge version 6.0.0 
 
 In development mode, you can set a [content security policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) by setting `devContentSecurityPolicy` in your Forge Webpack plugin configuration _\(note that it is separate from the main and renderer configuration\)_:
 
-{% code title="forge.config.js" %}
+{% tabs %}
+{% tab title="package.json" %}
 ```javascript
+// If your config is only in package.json:
 // Only showing the relevant configuration for brevity
-// This can also be in config.forge in package.json per the configuration docs
+{
+  "config": {
+    "forge": {
+      "plugins": [
+        ["@electron-forge/plugin-webpack", {
+          "mainConfig": "./webpack.main.config.js",
+          "renderer": { /* renderer config here, see above section */ },
+          // other Webpack plugin config...
+          "devContentSecurityPolicy": "default-src 'self' 'unsafe-inline' data:; script-src 'self' 'unsafe-eval' 'unsafe-inline' data:",
+          // other Webpack plugin config...
+        }]
+      ]
+    }
+  }
+}
+```
+{% endtab %}
+
+{% tab title="forge.config.js" %}
+```javascript
+// If you have set config.forge to a JavaScript file path in package.json:
+// Only showing the relevant configuration for brevity
 module.exports = {
   plugins: [
     ['@electron-forge/plugin-webpack', {
@@ -130,7 +180,8 @@ module.exports = {
   ]
 }
 ```
-{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 Please note that if you wish to use source maps in development, you'll need to set `'unsafe-eval'` for the `script-src` directive. Using `'unsafe-eval'` will cause Electron itself to trigger a warning in the DevTools console about having that value enabled, which is usually fine so long as you **do not set that value in production**.
 
@@ -142,10 +193,35 @@ The following configuration option is available in Electron Forge version 6.0.0 
 
 In development mode, you can change most [`webpack-dev-server` options](https://webpack.js.org/configuration/dev-server/) by setting `devServer`in your Forge Webpack plugin configuration _\(note that it is separate from the main and renderer configuration\)_:
 
-{% code title="forge.config.js" %}
+{% tabs %}
+{% tab title="package.json" %}
 ```javascript
+// If your config is only in package.json:
 // Only showing the relevant configuration for brevity
-// This can also be in config.forge in package.json per the configuration docs
+{
+  "config": {
+    "forge": {
+      "plugins": [
+        ["@electron-forge/plugin-webpack", {
+          "mainConfig": "./webpack.main.config.js",
+          "renderer": { /* renderer config here, see above section */ },
+          // other Webpack plugin config...
+          "devServer": {
+            "stats": "verbose"
+          }
+          // other Webpack plugin config...
+        }]
+      ]
+    }
+  }
+}
+```
+{% endtab %}
+
+{% tab title="forge.config.js" %}
+```javascript
+// If you have set config.forge to a JavaScript file path in package.json:
+// Only showing the relevant configuration for brevity
 module.exports = {
   plugins: [
     ['@electron-forge/plugin-webpack', {
@@ -160,7 +236,8 @@ module.exports = {
   ]
 }
 ```
-{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 ### Project Setup
 
