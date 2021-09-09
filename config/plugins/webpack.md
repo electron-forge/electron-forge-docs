@@ -17,7 +17,7 @@ yarn add --dev @electron-forge/plugin-webpack
 
 {% tab title="NPM" %}
 ```
-yarn install --save-dev @electron-forge/plugin-webpack
+npm install --save-dev @electron-forge/plugin-webpack
 ```
 {% endtab %}
 {% endtabs %}
