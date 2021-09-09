@@ -8,9 +8,19 @@ The Webpack plugin allows you to use standard Webpack tooling to compile both yo
 
 ## Installation
 
+{% tabs %}
+{% tab title="Yarn 1" %}
 ```bash
-yarn add @electron-forge/plugin-webpack --dev
+yarn add --dev @electron-forge/plugin-webpack
 ```
+{% endtab %}
+
+{% tab title="NPM" %}
+```
+yarn install --save-dev @electron-forge/plugin-webpack
+```
+{% endtab %}
+{% endtabs %}
 
 ## Basic Usage
 
@@ -18,10 +28,35 @@ yarn add @electron-forge/plugin-webpack --dev
 
 You must provide two Webpack config files: one for the main process in `mainConfig`, and one for the renderer process in `renderer.config`. The complete config options are available at [`WebpackPluginConfig`](https://js.electronforge.io/plugin/webpack/interfaces/webpackpluginconfig.html). For example, in your [Forge configuration](../../configuration.md):
 
-{% code title="forge.config.js" %}
+{% tabs %}
+{% tab title="package.json" %}
 ```javascript
 // Only showing the relevant configuration for brevity
-// This can also be in config.forge in package.json per the configuration docs
+{
+  "config": {
+    "forge": {
+      "plugins": [
+        ["@electron-forge/plugin-webpack", {
+          "mainConfig": "./webpack.main.config.js",
+          "renderer": {
+            "config": "./webpack.renderer.config.js",
+            "entryPoints": [{
+              "name": "main_window",
+              "html": "./src/renderer/index.html",
+              "js": "./src/renderer/index.js"
+            }]
+          }
+        }]
+      ]
+    }
+  }
+}
+```
+{% endtab %}
+
+{% tab title="forge.config.js" %}
+```javascript
+// Only showing the relevant configuration for brevity
 module.exports = {
   plugins: [
     ['@electron-forge/plugin-webpack', {
@@ -38,7 +73,8 @@ module.exports = {
   ]
 }
 ```
-{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 The above configuration is the default for the [Webpack template](../../templates/webpack-template.md).
 
@@ -96,7 +132,7 @@ module.exports = {
 ```
 {% endcode %}
 
-Please note that if you wish to use source maps, you'll need to set `'unsafe-eval'` for the `script-src` directive.
+Please note that if you wish to use source maps in development, you'll need to set `'unsafe-eval'` for the `script-src` directive. Using `'unsafe-eval'` will cause Electron itself to trigger a warning in the DevTools console about having that value enabled, which is usually fine so long as you **do not set that value in production**.
 
 #### Dev server
 
