@@ -308,6 +308,10 @@ module.exports = {
 
 If the asset relocator loader does not work for your native module, you may want to consider using the [externals configuration](https://webpack.js.org/configuration/externals/).
 
+{% hint style="warning" %}
+In v6 beta versions before beta 58, the Webpack templates used a fork of the asset relocator, `@marshallofsound/webpack-asset-relocator-loader`. **It is recommended to remove the fork and migrate to `@vercel/webpack-asset-relocator-loader`**.
+{% endhint %}
+
 ## Hot Reloading
 
 All your renderer processes in development will have hot reloading enabled by default. It is unfortunately impossible to do hot module reloading inside a renderer preload script, WebWorkers, and the main process itself. However, Webpack is constantly watching and recompiling those files so to get updates for preload scripts simply reload the window. For the main process, just type `rs` in the console you launched `electron-forge` from and we will restart your app for you with the new main process code.
