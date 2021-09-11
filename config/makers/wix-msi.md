@@ -1,3 +1,7 @@
+---
+description: Create an MSI file for your Electron app on Windows using Electron Forge.
+---
+
 # WiX MSI
 
 The WiX MSI target builds `.msi` files, which are "traditional" Windows installer files. Please note we recommend using the [Squirrel.Windows](squirrel.windows.md) target over using this one. These MSI files are a worse user experience for installation but sometimes it is necessary to build MSI files to appease large scale enterprise companies with internal application distribution policies. For more info, check out "[Should I use WiX MSI?](https://github.com/felixrieseberg/electron-wix-msi#should-i-use-this)".

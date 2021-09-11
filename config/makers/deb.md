@@ -1,3 +1,9 @@
+---
+description: >-
+  Create a package for Debian-based Linux distributions for your Electron app,
+  using Electron Forge.
+---
+
 # deb
 
 The deb target builds [`.deb` packages](https://en.wikipedia.org/wiki/Deb_%28file_format%29), which are the standard package format for Debian-based Linux distributions such as Ubuntu.  You can only build the deb target on Linux or macOS machines with the `fakeroot` and `dpkg` packages installed.

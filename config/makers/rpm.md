@@ -1,3 +1,9 @@
+---
+description: >-
+  Create an RPM package for RedHat-based Linux distributions for your Electron
+  app, using Electron Forge.
+---
+
 # RPM
 
 The RPM target builds `.rpm` files, which is the standard package format for RedHat-based Linux distributions such as Fedora.

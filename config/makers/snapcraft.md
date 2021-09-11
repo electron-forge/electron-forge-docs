@@ -1,3 +1,7 @@
+---
+description: Create a Snap package for your Electron app using Electron Forge.
+---
+
 # Snapcraft
 
 The Snapcraft target builds `.snap` files, which is the packaging format created and sponsored by Canonical, the company behind Ubuntu. It is a sandboxed package format that lets users of various Linux distributions install your application in an isolated environment on their machine.

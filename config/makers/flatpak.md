@@ -1,3 +1,7 @@
+---
+description: Create a Flatpak app for your Electron app using Electron Forge.
+---
+
 # Flatpak
 
 The Flatpak target builds [`.flatpak` files](http://flatpak.org/), which is a packaging format for Linux distributions that allows for sandboxed installation of applications in isolation from the rest of their system. In contrast, typical deb or RPM installation methods are not sandboxed.
