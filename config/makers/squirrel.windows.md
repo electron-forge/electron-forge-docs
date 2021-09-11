@@ -1,3 +1,7 @@
+---
+description: Create a Windows installer for your Electron app using Electron Forge.
+---
+
 # Squirrel.Windows
 
 The Squirrel.Windows target builds a number of files required to distribute apps using the Squirrel.Windows framework. It generates a `{appName} Setup.exe` file which is the main installer for your application, `{appName}-full.nupkg` and a `RELEASES` file which you use to issue updates to your application.
@@ -8,12 +12,14 @@ Configuration options are documented in [`MakerSquirrelConfig`](https://js.elect
 
 ## Usage
 
+Add this to the [makers](./) section of your [Forge configuration](../../configuration.md):
+
 ```javascript
 {
-  name: '@electron-forge/maker-squirrel'
-  config: {
-    certificateFile: './cert.pfx',
-    certificatePassword: 'this-is-a-secret'
+  "name": "@electron-forge/maker-squirrel"
+  "config": {
+    "certificateFile": "./cert.pfx",
+    "certificatePassword": "this-is-a-secret"
   }
 }
 ```
