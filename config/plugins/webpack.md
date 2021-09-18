@@ -100,9 +100,9 @@ If you set `nodeIntegration` to `true` in a given renderer's `BrowserWindow` con
         ["@electron-forge/plugin-webpack", {
           "mainConfig": "./webpack.main.config.js",
           "renderer": {
+            "nodeIntegration": true, // defaults to false
             "config": "./webpack.renderer.config.js",
-            "entryPoints": [/* entry point config */],
-            "nodeIntegration": true // defaults to false
+            "entryPoints": [/* entry point config */]
           }
         }]
       ]
@@ -119,12 +119,12 @@ If you set `nodeIntegration` to `true` in a given renderer's `BrowserWindow` con
 module.exports = {
   plugins: [
     ['@electron-forge/plugin-webpack', {
-      mainConfig: './webpack.main.config.js',
       renderer: {
+        nodeIntegration: true, // defaults to false
         config: './webpack.renderer.config.js',
-        entryPoints: [/* entry point config */],
-        nodeIntegration: true // defaults to false
+        entryPoints: [/* entry point config */]
       },
+      mainConfig: './webpack.main.config.js',
       // other Webpack plugin config...
     }]
   ]
@@ -151,11 +151,11 @@ In development mode, you can set a [content security policy](https://developer.m
     "forge": {
       "plugins": [
         ["@electron-forge/plugin-webpack", {
-          "mainConfig": "./webpack.main.config.js",
-          "renderer": { /* renderer config here, see above section */ },
           // other Webpack plugin config...
           "devContentSecurityPolicy": "default-src 'self' 'unsafe-inline' data:; script-src 'self' 'unsafe-eval' 'unsafe-inline' data:",
           // other Webpack plugin config...
+          "mainConfig": "./webpack.main.config.js",
+          "renderer": { /* renderer config here, see above section */ }
         }]
       ]
     }
@@ -171,11 +171,11 @@ In development mode, you can set a [content security policy](https://developer.m
 module.exports = {
   plugins: [
     ['@electron-forge/plugin-webpack', {
-      mainConfig: './webpack.main.config.js',
-      renderer: { /* renderer config here, see above section */ },
       // other Webpack plugin config...
       devContentSecurityPolicy: `default-src 'self' 'unsafe-inline' data:; script-src 'self' 'unsafe-eval' 'unsafe-inline' data:`,
       // other Webpack plugin config...
+      mainConfig: './webpack.main.config.js',
+      renderer: { /* renderer config here, see above section */ },
     }]
   ]
 }
@@ -203,13 +203,13 @@ In development mode, you can change most [`webpack-dev-server` options](https://
     "forge": {
       "plugins": [
         ["@electron-forge/plugin-webpack", {
-          "mainConfig": "./webpack.main.config.js",
-          "renderer": { /* renderer config here, see above section */ },
           // other Webpack plugin config...
           "devServer": {
             "stats": "verbose"
-          }
+          },
           // other Webpack plugin config...
+          "mainConfig": "./webpack.main.config.js",
+          "renderer": { /* renderer config here, see above section */ }
         }]
       ]
     }
@@ -225,13 +225,13 @@ In development mode, you can change most [`webpack-dev-server` options](https://
 module.exports = {
   plugins: [
     ['@electron-forge/plugin-webpack', {
-      mainConfig: './webpack.main.config.js',
-      renderer: { /* renderer config here, see above section */ },
       // other Webpack plugin config...
       devServer: {
         stats: 'verbose'
-      }
+      },
       // other Webpack plugin config...
+      mainConfig: './webpack.main.config.js',
+      renderer: { /* renderer config here, see above section */ }
     }]
   ]
 }
