@@ -131,15 +131,18 @@ The top level property `plugins` on the configuration object is an array of plug
 
 Hooks allow you to run your own logic at different points in the Electron Forge build process. Each hook must be an asynchronous function that returns a Promise. **The first argument of any hook function is the Electron Forge configuration associated with the Electron app**. Subsequent arguments depend on the hook type.
 
+{% code title="forge.config.js" %}
 ```javascript
-{
+// Only showing the relevant config for hooks, for brevity
+module.exports = {
   hooks: {
-    generateAssets: async (forgeConfig) => {
+    generateAssets: async (forgeConfig, platform, arch) => {
       console.log('We should generate some assets here');
     }
   }
 }
 ```
+{% endcode %}
 
 #### `generateAssets`
 
