@@ -60,9 +60,29 @@ Putting the configuration directly in the `package.json` is by far the more simp
 
 ## Possible Configuration
 
-{% code title="example.forge.config.js" %}
-```text
+{% tabs %}
+{% tab title="package.json" %}
+```javascript
+// Only the relevant section of package.json is shown, for brevity.
 {
+  "config": {
+    "forge": {
+      "packagerConfig": { ... },
+      "electronRebuildConfig": { ... },
+      "makers": [ ... ],
+      "publishers": [ ... ],
+      "plugins": [ ... ],
+      "hooks": { ... },
+      "buildIdentifier": "my-build"
+    }
+  }
+}
+```
+{% endtab %}
+
+{% tab title="forge.config.js" %}
+```javascript
+module.exports = {
   packagerConfig: { ... },
   electronRebuildConfig: { ... },
   makers: [ ... ],
@@ -72,7 +92,8 @@ Putting the configuration directly in the `package.json` is by far the more simp
   buildIdentifier: 'my-build'
 }
 ```
-{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 {% hint style="success" %}
 All properties are optional
