@@ -32,7 +32,7 @@ You must add this plugin to your [`plugins`](../../configuration.md#plugins) arr
 ```javascript
 module.exports = {
   packagerConfig: {
-    asar: {}
+    asar: true // or an object containing your asar options
   },
   plugins: [
    {
