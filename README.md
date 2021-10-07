@@ -11,7 +11,7 @@ description: >-
 To get started with Electron Forge, we first need to initialize a new project.
 
 {% tabs %}
-{% tab title="Yarn 1" %}
+{% tab title="Yarn" %}
 ```bash
 yarn create electron-app my-app
 ```
