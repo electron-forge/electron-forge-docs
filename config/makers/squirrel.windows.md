@@ -16,7 +16,7 @@ Add this to the [makers](./) section of your [Forge configuration](../../configu
 
 ```javascript
 {
-  "name": "@electron-forge/maker-squirrel"
+  "name": "@electron-forge/maker-squirrel",
   "config": {
     "certificateFile": "./cert.pfx",
     "certificatePassword": "this-is-a-secret"
