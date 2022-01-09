@@ -139,7 +139,7 @@ module.exports = {
 The following configuration option is available in Electron Forge version 6.0.0 beta 58 and above.
 {% endhint %}
 
-In development mode, you can set a [content security policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) by setting `devContentSecurityPolicy` in your Forge Webpack plugin configuration _\(note that it is separate from the main and renderer configuration\)_:
+In development mode, you can set a [content security policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) by setting `devContentSecurityPolicy` in your Forge Webpack plugin configuration _(note that it is separate from the main and renderer configuration)_:
 
 {% tabs %}
 {% tab title="package.json" %}
@@ -191,7 +191,7 @@ Please note that if you wish to use source maps in development, you'll need to s
 The following configuration option is available in Electron Forge version 6.0.0 beta 60 and above.
 {% endhint %}
 
-In development mode, you can change most [`webpack-dev-server` options](https://webpack.js.org/configuration/dev-server/) by setting `devServer`in your Forge Webpack plugin configuration _\(note that it is separate from the main and renderer configuration\)_:
+In development mode, you can change most [`webpack-dev-server` options](https://webpack.js.org/configuration/dev-server/) by setting `devServer`in your Forge Webpack plugin configuration _(note that it is separate from the main and renderer configuration)_:
 
 {% tabs %}
 {% tab title="package.json" %}
@@ -287,7 +287,10 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.node$/,
+        // We're specifying native_modules in the test because the asset
+        // relocator loader generates a "fake" .node file which is really
+        // a cjs file.
+        test: /native_modules\/.+\.node$/,
         use: 'node-loader',
       },
       {
@@ -323,4 +326,3 @@ In theory, you shouldn't need to care. In development we spin up `webpack-dev-se
 ## How do I do virtual routing?
 
 If you want to use something like [`react-router`](https://github.com/ReactTraining/react-router) to do virtual routing in your app, you will need to ensure you use a history method that is not based on the browser history APIs. Browser history will work in development but not in production, as your code will be loaded from the filesystem, not a webserver. In the `react-router` case, you should use the [`MemoryRouter`](https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/api/MemoryRouter.md) to make everything work.
-
