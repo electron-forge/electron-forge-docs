@@ -12,7 +12,7 @@ The following guide has been tested with React 17, TypeScript 4.3, and Webpack 5
 
 ### Create the app and setup the TypeScript config
 
-Create the app with the [TypeScript + Webpack template](../../templates/typescript-+-webpack-template.md), then edit the newly created `tsconfig.json` to add the key-value entry [`"jsx": "react"`](https://www.typescriptlang.org/tsconfig#jsx) to the `"compilerOptions"` section.
+Create the app with the [TypeScript + Webpack template](../../templates/typescript-+-webpack-template.md), then edit the newly created `tsconfig.json` to add the key-value entry [`"jsx": "react-jsx"`](https://www.typescriptlang.org/tsconfig#jsx) to the `"compilerOptions"` section.
 
 ### Add the React dependencies
 
@@ -40,8 +40,7 @@ You should now be able to start writing and using React components in your Elect
 
 {% tabs %}
 {% tab title="src/app.tsx" %}
-```jsx
-import * as React from 'react';
+```tsx
 import * as ReactDOM from 'react-dom';
 
 function render() {
