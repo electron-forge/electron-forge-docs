@@ -85,7 +85,7 @@ Maps to `electronForge.make`, will make distributables for your application base
 
 | Flag | Value | Required | Description |
 | :--- | :--- | :--- | :--- |
-| `--arch` | Architecture, e.g. `x64` | No | Target architecture to make for. Defaults to the arch that you're running on \(the "host" arch\). |
+| `--arch` | Architecture, e.g. `x64` | No | Target architecture to make for. Defaults to the arch that you're running on \(the "host" arch\). Allowed values are: "ia32", "x64", "armv7l", "arm64", or "mips64el". Multiple values should be comma-separated. |
 | `--platform` | Platform, e.g. `mas` | No | Target platform to make for, please note you normally can only target platform X from platform X. This defaults to the platform you're running on \(the "host" platform\). |
 | `--targets` | Comma separated list of maker names | No | Override your make targets for this run. The maker name is the full node module name, e.g. `@electron-forge/maker-deb`. By default, the make targets used are the ones available and configured for the given platform. |
 | `--skip-package` | N/A | No | Set if you want to skip the packaging step, useful if you are running sequential makes and want to save time. By default, packaging is **not** skipped. |
