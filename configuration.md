@@ -56,7 +56,7 @@ module.exports = {
 {% endtab %}
 {% endtabs %}
 
-Putting the configuration directly in the `package.json` is by far the more simpler approach, but for advanced options, such as providing hook functions to Electron Forge, you will need to use the JS file.
+Putting the configuration directly in the `package.json` is by far the simpler approach, but for advanced options, such as providing hook functions to Electron Forge, you will need to use the JS file.
 
 ## Possible Configuration
 
