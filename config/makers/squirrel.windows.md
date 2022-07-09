@@ -34,7 +34,7 @@ The easiest way to handle these arguments and stop your app launching multiple t
 ```javascript
 const { app } = require('electron');
 
-if (require('electron-squirrel-startup')) return app.quit();
+if (require('electron-squirrel-startup')) app.quit();
 ```
 {% endcode %}
 
