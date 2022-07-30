@@ -45,6 +45,9 @@ You must provide two Webpack config files: one for the main process in `mainConf
               "name": "main_window",
               "html": "./src/renderer/index.html",
               "js": "./src/renderer/index.js"
+              "preload": {
+                "js": "./src/preload.ts"
+              }
             }]
           }
         }]
@@ -68,7 +71,10 @@ module.exports = {
         entryPoints: [{
           name: 'main_window',
           html: './src/renderer/index.html',
-          js: './src/renderer/index.js'
+          js: './src/renderer/index.js',
+          preload: {
+            js: './src/preload.ts'
+          }
         }]
       }
     }]
