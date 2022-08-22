@@ -6,10 +6,31 @@ description: The purpose of this guide is to walk through the process of generat
 
 ## Generating an Icon
 
-Generating your icon can be done using conversion tools found online. The required icon formats for each platform are as follows:
+Generating your icon can be done using conversion tools found online- it is recommended to start with a 1024px x 1024px image before converting it to various sizes. 
+
+On platforms that have high-DPI support such as Apple retina displays, you can append `@2x` after the image's base filename to mark it as a high resolution image. For example, if `icon.png` is a normal image with standard resolution, then `icon@2x.png` will be treated as a high resolution image that has double the DPI intensity. 
+
+If you want to support different displays with different DPI densities at the same time, you can put images with different sizes in the same folder, and use the filename without DPI suffixes. For example:
+
+```txt
+images/
+├── icon.png
+├── icon@2x.png
+└── icon@3x.png
+```
+
+The following suffixes for DPI are also supported:
+
+@1x, @1.25x, @1.33x, @1.4x, @1.5x, @1.8x, @2x, @2.5x, @3x, @4x, and @5x.
+
+The recommended file formats and icon sizes for each platform are as follows:
 - MacOS: `.icns`
+    - 512px x 512px
+    - for retina displays: 1024px x 1024px
 - Windows: `.ico`
+    - 256px x 256px
 - Linux: `.png`
+    - 512px x 512px
 
 ## Setting the App Icon
 
