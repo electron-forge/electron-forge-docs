@@ -86,6 +86,8 @@ The above configuration is the default for the [Webpack template](../../template
 The following configuration option is available in Electron Forge version 6.0.0 beta 58 and above.
 {% endhint %}
 
+`nodeIntegration` adjusts the Webpack config for all renderer entries based on whether `nodeIntegration` for the `BrowserWindow` is enabled.
+
 If you set `nodeIntegration` to `true` in a given renderer's `BrowserWindow` constructor, you'll need to set the same `nodeIntegration` value in the corresponding Webpack plugin renderer's configuration:
 
 {% tabs %}
@@ -132,6 +134,40 @@ module.exports = {
 ```
 {% endtab %}
 {% endtabs %}
+
+There is an additional `nodeIntegration` property within the entry point config. This overrides the Webpack config for this renderer based on whether the `nodeIntegration` for the `BrowserWindow` is enabled. Namely, for Webpack's `target` option:
+
+- when `nodeIntegration` is true, the `target` is `electron-renderer`.
+- when `nodeIntegration` is false, the `target` is `web`.
+
+This value defaults to false or the value set for all entries (in the renderer-level config).
+
+```javascript
+plugins: [
+    [
+      '@electron-forge/plugin-webpack',
+      {
+        mainConfig: './webpack.main.config.js',
+        renderer: {
+          config: './webpack.renderer.config.js',
+          nodeIntegration: true, // Implies `target: 'electron-renderer'` for all entrypoints
+          entryPoints: [
+            {
+              html: './src/app/app.html',
+              js: './src/app/app.tsx',
+              name: 'app'
+            },
+            {
+              html: './src/mediaPlayer/index.html',
+              js: './src/mediaPlayer/index.tsx',
+              name: 'media_player',
+              nodeIntegration: false // Overrides the default nodeIntegration set in the Renderer Config
+            }
+          ]
+        }
+      ]
+    ]
+```
 
 #### Content Security Policy
 
