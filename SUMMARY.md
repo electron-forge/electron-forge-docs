@@ -40,8 +40,6 @@
 
 ## Guides
 
-* [Packaging Your Application](guides/packaging-your-application.md)
-* [Publishing and Updating your Application](guides/publishing-and-updating.md)
 * [Code Signing](guides/code-signing/README.md)
   * [macOS](guides/code-signing/code-signing-macOS.md)
   * [Windows](guides/code-signing/code-signing-windows.md)
