@@ -35,10 +35,12 @@ it may be worth your time to shop around. Popular resellers include:
 - [Sectigo](https://sectigo.com/ssl-certificates-tls/code-signing)
 - Amongst others, please shop around to find one that suits your needs! 😄
 
-:::caution Keep your certificate password private
+{% hint style='danger' %}
+ Keep your certificate password private:
+
 Your certificate password should be a **secret**. Do not share it publicly or
 commit it to your source code.
-:::
+{% endhint %}
 
 ### Using Electron Forge
 

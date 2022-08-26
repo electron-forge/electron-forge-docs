@@ -91,7 +91,7 @@ configuration. A full list of options is documented in the Forge's
 ```
 
 {% hint style='tip' %}
-Drafting releases before publishing
+Drafting releases before publishing:
 
 Notice that you have configured Forge to publish your release as a draft.
 This will allow you to see the release with its generated artifacts
@@ -135,7 +135,7 @@ Forge commands.
 The name of this release will correspond to the `version` field in your project's package.json file.
 
 {% hint style='tip' %}
-Tagging releases
+Tagging releases:
 
 Optionally, you can also [tag your releases in Git][git-tag] so that your
 release is associated with a labeled point in your code history. npm comes

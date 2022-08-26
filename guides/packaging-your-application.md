@@ -41,7 +41,7 @@ to your `package.json` file.
 ```
 
 {% hint style='info' %}
-CLI documentation
+CLI documentation:
 
 For more information on `make` and other Forge APIs, check out
 the [Electron Forge CLI documentation].
