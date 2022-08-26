@@ -10,7 +10,7 @@ The DMG target builds `.dmg` files, which are the standard format for sharing ma
 You can only build the DMG target on macOS machines.
 {% endhint %}
 
-Configuration options are documented in [`MakerDMGConfig`](https://js.electronforge.io/maker/dmg/interfaces/makerdmgconfig.html).
+Configuration options are documented in [`MakerDMGConfig`](https://js.electronforge.io/interfaces/_electron_forge_maker_dmg.MakerDMGConfig.html).
 
 ### Usage
 

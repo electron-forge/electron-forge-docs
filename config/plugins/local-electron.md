@@ -22,5 +22,5 @@ This plugin allows you to both run and package/make your app using a **local** b
 
 ### Configuration
 
-All possible configuration options are documented in [`LocalElectronPluginConfig`](https://js.electronforge.io/plugin/local-electron/interfaces/localelectronpluginconfig.html).  Please note that all paths must be absolute, you should use `path.resolve()` to make things deterministic.
+All possible configuration options are documented in [`LocalElectronPluginConfig`](https://js.electronforge.io/interfaces/_electron_forge_plugin_local_electron.LocalElectronPluginConfig.html).  Please note that all paths must be absolute, you should use `path.resolve()` to make things deterministic.
 

@@ -8,7 +8,7 @@ The Snapcraft target builds `.snap` files, which is the packaging format created
 
 You can only build the Snapcraft target on Linux systems with the [`snapcraft`](https://snapcraft.io/) package installed.
 
-Configuration options are documented in [`MakerSnapConfig`](https://js.electronforge.io/maker/snap/interfaces/makersnapconfig.html).
+Configuration options are documented in [`MakerSnapConfig`](https://js.electronforge.io/modules/_electron_forge_maker_snap.html#MakerSnapConfig).
 
 ## Usage
 

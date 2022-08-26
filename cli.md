@@ -24,7 +24,7 @@ npm install --save-dev @electron-forge/cli
 
 ## Overview
 
-At a high level the CLI module is just a proxy to the raw [API](https://js.electronforge.io) commands.  Almost all the configuration is still done in your [Forge configuration](configuration.md), the CLI just provides a handy way to trigger all the core functionality of Electron Forge.
+At a high level the CLI module is just a proxy to the raw [API](https://js.electronforge.io/classes/_electron_forge_core.ForgeAPI.html) commands.  Almost all the configuration is still done in your [Forge configuration](configuration.md), the CLI just provides a handy way to trigger all the core functionality of Electron Forge.
 
 ## Commands
 

@@ -12,7 +12,7 @@ yarn add @electron-forge/plugin-auto-unpack-natives --dev
 
 You must add this plugin to your [`plugins`](../../configuration.md#plugins) array in your forge config
 
-The complete config options are available at [`AutoUnpackNativesConfig`](https://js.electronforge.io/plugin/auto-unpack-natives/interfaces/autounpacknativesconfig.html). 
+The complete config options are available at [`AutoUnpackNativesConfig`](https://js.electronforge.io/interfaces/_electron_forge_plugin_auto_unpack_natives.AutoUnpackNativesConfig.html). 
 
 {% code title="forge.config.js" %}
 ```javascript

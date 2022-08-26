@@ -8,7 +8,7 @@ The Squirrel.Windows target builds a number of files required to distribute apps
 
 Squirrel.Windows is a no-prompt, no-hassle, no-admin method of installing Windows applications and is therefore the most user friendly you can get. You can only build the Squirrel.Windows target on a Windows machine or on a macOS /Linux machine with `mono` and `wine` installed.
 
-Configuration options are documented in [`MakerSquirrelConfig`](https://js.electronforge.io/maker/squirrel/interfaces/makersquirrelconfig.html).
+Configuration options are documented in [`MakerSquirrelConfig`](https://js.electronforge.io/modules/_electron_forge_maker_squirrel.html#MakerSquirrelConfig).
 
 ## Usage
 
