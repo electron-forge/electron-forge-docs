@@ -5,20 +5,8 @@ description: Code signing is a security technology that you use to certify that 
 # Configure Code Signing in Forge (Windows)
 
 Code signing is a security technology that you use to certify that an app was
-created by you. You should sign your application so it does not trigger any
-operating system security checks.
-
-On Windows, the system assigns a trust level to your code signing certificate
-which if you don't have, or if your trust level is low, will cause security
-dialogs to appear when users start using your application. Trust level builds
-over time so it's better to start code signing as early as possible.
-
-While it is possible to distribute unsigned apps, it is not recommended.
-Windows will, by default, prevent either the download or the execution
-of unsigned applications.
-
-If you are building an Electron app that you intend to package and distribute,
-it should be code signed.
+created by you. If you are building an Electron app that you intend to package and distribute,
+it should be code signed so it does not trigger any operating system security checks.
 
 ## Signing Windows builds
 

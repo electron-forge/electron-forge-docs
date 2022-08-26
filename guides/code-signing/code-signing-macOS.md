@@ -6,30 +6,12 @@ description: Code signing is a security technology that you use to certify that 
 
 Code signing is a security technology that you use to certify that an app was
 created by you. You should sign your application so it does not trigger any
-operating system security checks.
-
-On macOS, the system can detect any change to the app, whether the change is
-introduced accidentally or by malicious code.
-
-While it is possible to distribute unsigned apps, it is not recommended.
-macOS will, by default, prevent either the download or the execution
-of unsigned applications. Starting with macOS Catalina (version 10.15), users
-have to go through multiple manual steps to open unsigned applications.
-
-![macOS Catalina Gatekeeper warning: The app cannot be opened because the developer cannot be verified](../images/gatekeeper.png)
-
-As you can see, users get two options: Move the app straight to the trash or
-cancel running it. You don't want your users to see that dialog.
-
-If you are building an Electron app that you intend to package and distribute,
+operating system security checks. If you intend to package and distribute your Electron app,
 it should be code signed.
 
 ## Signing & notarizing macOS builds
 
-If you're using Electron's favorite build tool, getting your application signed
-and notarized requires a few additions to your configuration. [Forge](https://electronforge.io) is a
-collection of the official Electron tools, using [`electron-packager`],
-[`electron-osx-sign`], and [`electron-notarize`] under the hood.
+Getting your application signed and notarized requires a few additions to your configuration.
 
 Let's take a look at an example `package.json` configuration with all required fields. Not all of them are
 required: the tools will be clever enough to automatically find a suitable `identity`, for instance,
