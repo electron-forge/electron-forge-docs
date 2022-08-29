@@ -199,7 +199,7 @@ This hook is called before the `make` step runs.
 
 #### `postMake`
 
-This hook is called after the `make` step has successfully completed. It is passed a single argument which is an array of [`MakeResult`](https://js.electronforge.io/utils/types/interfaces/forgemakeresult.html) objects, if your hooks wishes to modify those make results it must return a new array of [`MakeResult`](https://js.electronforge.io/utils/types/interfaces/forgemakeresult) objects that Electron Forge can use from then on.
+This hook is called after the `make` step has successfully completed. It is passed a single argument which is an array of [`MakeResult`](https://js.electronforge.io/interfaces/_electron_forge_shared_types.ForgeMakeResult.html) objects, if your hooks wishes to modify those make results it must return a new array of [`MakeResult`](https://js.electronforge.io/interfaces/_electron_forge_shared_types.ForgeMakeResult.html) objects that Electron Forge can use from then on.
 
 #### `readPackageJson`
 

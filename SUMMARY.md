@@ -57,5 +57,5 @@
   * [Writing Templates](advanced/extending-electron-forge/writing-templates.md)
   * [Writing Makers](advanced/extending-electron-forge/writing-makers.md)
   * [Writing Publishers](advanced/extending-electron-forge/writing-publishers.md)
-* [API Docs](https://js.electronforge.io/api/core)
+* [API Docs](https://js.electronforge.io/modules/_electron_forge_core.html)
 
