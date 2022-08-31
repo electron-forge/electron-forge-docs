@@ -40,7 +40,10 @@
 
 ## Guides
 
-* [Electron Guides](guides/electron-guides.md)
+* [Code Signing](guides/code-signing/README.md)
+  * [macOS](guides/code-signing/code-signing-macOS.md)
+  * [Windows](guides/code-signing/code-signing-windows.md)
+* [Creating and Setting App Icons](create-and-add-icons.md)
 * [Framework Integration](guides/framework-integration/README.md)
   * [Parcel](guides/framework-integration/parcel.md)
   * [React](guides/framework-integration/react.md)
