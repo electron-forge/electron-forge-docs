@@ -14,7 +14,8 @@ If you want to support different displays with different DPI densities at the sa
 
 ```txt
 images/
-├── icon.png
+├── 
+.png
 ├── icon@2x.png
 └── icon@3x.png
 ```
@@ -117,7 +118,7 @@ config: {
             {
                 name: "@electron-forge/maker-wix",
                 config: {
-                    appIconPath: "/path/to/icon.ico"
+                    icon: "/path/to/icon.ico"
                 }
             },
             {
