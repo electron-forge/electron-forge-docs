@@ -115,6 +115,12 @@ config: {
                 }
             },
             {
+                name: "@electron-forge/maker-wix",
+                config: {
+                    appIconPath: "/path/to/icon.ico"
+                }
+            },
+            {
                 // Path to a single image that will act as icon for the application
                 name: "@electron-forge/maker-deb",
                 config: {
