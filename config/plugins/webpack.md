@@ -80,6 +80,28 @@ module.exports = {
 
 The above configuration is the default for the [Webpack template](../../templates/webpack-template.md).
 
+### Caching
+When using Webpack 5 caching, asset permissions need to be maintained through their own cache, and the public path needs to be injected into the build. 
+
+To insure these cases work out, make sure to run `initAssetCache` in the build, with the `options.outputAssetBase` argument:
+```js
+const relocateLoader = require('@vercel/webpack-asset-relocator-loader');
+
+webpack({
+  // ...
+
+  plugins: [
+    {
+      apply(compiler) {
+        compiler.hooks.compilation.tap("webpack-asset-relocator-loader", compilation => {
+          relocateLoader.initAssetCache(compilation, outputAssetBase);
+        });
+      }
+    }
+  ]
+});
+```
+
 #### Node integration
 
 {% hint style="info" %}
