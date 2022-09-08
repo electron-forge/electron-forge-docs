@@ -355,6 +355,26 @@ In v6 beta versions before beta 58, the Webpack templates used a fork of the ass
 
 All your renderer processes in development will have hot reloading enabled by default. It is unfortunately impossible to do hot module reloading inside a renderer preload script, WebWorkers, and the main process itself. However, Webpack is constantly watching and recompiling those files so to get updates for preload scripts simply reload the window. For the main process, just type `rs` in the console you launched `electron-forge` from and we will restart your app for you with the new main process code.
 
+### Hot Reload Caching
+
+When using Webpack 5 caching, asset permissions need to be maintained through their own cache, and the public path needs to be injected into the build. 
+
+To insure these cases work out, make sure to run `initAssetCache` in the build, with the `options.outputAssetBase` argument:
+```js
+const relocateLoader = require('@vercel/webpack-asset-relocator-loader');
+webpack({
+  // ...
+  plugins: [
+    {
+      apply(compiler) {
+        compiler.hooks.compilation.tap("webpack-asset-relocator-loader", compilation => {
+          relocateLoader.initAssetCache(compilation, outputAssetBase);
+        });
+      }
+    }
+  ]
+});
+```
 ## What happens in production?
 
 In theory, you shouldn't need to care. In development we spin up `webpack-dev-server` instances to power your renderer processes, in prod we just build the static files. Assuming you use the globals we explained in [Project Setup](webpack.md#project-setup), everything should Just Work™ when your app is packaged.
