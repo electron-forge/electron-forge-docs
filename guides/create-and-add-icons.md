@@ -106,10 +106,12 @@ config: {
             {
                 name: "@electron-forge/maker-squirrel",
                 config: {
-                    // An URL to an ICO file to use as the application icon (displayed in Control Panel > Programs and Features).
-                    iconUrl: "https://url/to/icon.ico",
-                    // The ICO file to use as the icon for the generated Setup.exe
-                    setupIcon: "/path/to/icon.ico"
+                    options: {
+                        // An URL to an ICO file to use as the application icon (displayed in Control Panel > Programs and Features).
+                        iconUrl: "https://url/to/icon.ico",
+                        // The ICO file to use as the icon for the generated Setup.exe
+                        setupIcon: "/path/to/icon.ico"
+                    }
                 }
             },
             {
