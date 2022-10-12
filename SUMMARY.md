@@ -7,7 +7,6 @@
 
 ## Built-in Templates <a id="templates"></a>
 
-* [TypeScript](templates/typescript-template.md)
 * [TypeScript + Webpack](templates/typescript-+-webpack-template.md)
 * [Webpack](templates/webpack-template.md)
 
