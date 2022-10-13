@@ -65,12 +65,6 @@ npx electron-forge init --template=webpack
 {% endtab %}
 {% endtabs %}
 
-### Lint
-
-Maps to `electronForge.lint`, will run the `lint` command that your `package.json` exposes. If the exit code is `0`, no output is shown, otherwise the error output will be displayed.
-
-> There are no flags for the Lint command
-
 ### Make
 
 Maps to `electronForge.make`, will make distributables for your application based on your Forge config and the parameters you pass in.
