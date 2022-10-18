@@ -1,10 +1,13 @@
 # Table of contents
 
-* [Why Electron Forge](README.md)
-* [Getting Started](readme.md)
+* [Getting Started](README.md)
 * [Import an Existing Project](import-existing-project.md)
 * [Configuration](configuration.md)
 * [CLI](cli.md)
+
+## Core Concepts
+
+* [Why Electron Forge](core-concepts/why-electron-forge.md)
 
 ## Built-in Templates <a href="#templates" id="templates"></a>
 

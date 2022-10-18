@@ -1,46 +1,70 @@
 ---
-description: An overview of Forge and its role in shipping Electron apps.
+description: >-
+  Electron Forge is a complete tool for packaging and distributing modern
+  Electron applications.
 ---
 
-# Why Electron Forge
+# Getting Started
 
-## Motivation
+## Creating a new app
 
-Application packaging and distribution has always been handled outside of the core Electron framework. In Electron's early days as a part of the [Atom editor](https://atom.io/), it was common for app developers to prepare their application for distribution by manually editing the Electron binary.
+To get started with Electron Forge, we first need to initialize a new project.
 
-Since then, the Electron community has developed a rich ecosystem of tools to handle every task for Electron app distribution, including:
+{% tabs %}
+{% tab title="Yarn 1" %}
+```bash
+yarn create electron-app my-app
+```
+{% endtab %}
 
-* Application packaging (`electron-packager`)
-* Code signing (e.g. `@electron/osx-sign`)
-* Creating platform-specific installers (e.g. `electron-winstaller` or `electron-installer-dmg`).
-* Native Node.js module rebuilding (`electron-rebuild`)
-* Universal macOS builds (`@electron/universal`)
+{% tab title="npm" %}
+```bash
+npx create-electron-app@latest my-app
+```
+{% endtab %}
+{% endtabs %}
 
-Although these single-purpose packages are mature and production-ready, they application developers need to understand what each one does and write their own scripts to glue the packages together into a build pipeline. This process requires research and iteration, and can be confusing for folks who are new to Electron.
+You should now have a directory called `my-app` with an ultra-minimal Electron app boilerplate inside.  If you head into that directory and start up the app, you'll be all set to start developing.
 
-## Value proposition
+{% tabs %}
+{% tab title="Yarn" %}
+```bash
+cd my-app
+yarn start
+```
+{% endtab %}
 
-Electron Forge is an all-in-one solution that unifies this fractured ecosystem. With Forge, you can create a build pipeline that brings your app from development to distribution with minimal configuration.
+{% tab title="npm" %}
+```bash
+cd my-app
+npm start
+```
+{% endtab %}
+{% endtabs %}
 
-Forge is also built with advanced use cases in mind—you can add any build logic you need with custom plugins, makers or publishers. For more details, see the [extending-electron-forge](advanced/extending-electron-forge/ "mention") section of the docs.
+## Building Distributables
 
-## Forge vs. Builder
+So you've got an **amazing** application there, and you want to package it all up and share it with the world.  If you run the `make` script Electron Forge will generate you platform specific distributables for you to share with everyone.  For more information on what kind of distributables you can make, check out the [Makers ](../config/makers/)documentation.
 
-Electron Forge can be considered an alternative to [Electron Builder](https://electron.build/), which fulfills the same use-case for application building and publishing.
+{% tabs %}
+{% tab title="Yarn" %}
+```bash
+yarn make
+```
+{% endtab %}
 
-The key difference in philosophy between the two projects is that Electron Forge focuses on combining existing first-party tools into a single build pipeline, while Builder rewrites its own in-house logic for most build tasks.&#x20;
+{% tab title="npm" %}
+```bash
+npm run make
+```
+{% endtab %}
+{% endtabs %}
 
-We believe there are two main advantages to using Forge:
+## Advanced Usage
 
-1. **Forge receives new features for application building as soon as they are supported in Electron** (e.g. [ASAR integrity ](https://electronjs.org/docs/latest/tutorial/asar-integrity)or [universal macOS builds](https://github.com/electron/universal)). These features are built with first-party Electron tooling in mind, so Forge receives them as soon as they are released.
-2. **Forge's multi-package architecture makes it easier to understand and extend.** Since Forge is made up of many smaller packages with clear responsibilities, it is easier to follow the flow of the code. Also, its extensible API design means that you can write your own build logic separate from the provided configuration options for advanced use cases.
+Once you've got a basic app going and you can make distributables for it, you should check out the documentation on some of our more advanced features like:
 
-
-
-
-
-
-
-
-
-## &#x20;
+* [Publishers](../config/publishers/)
+* [Debugging your app](../advanced/debugging.md)
+* [Webpack support](../config/plugins/webpack.md)
+* [Writing your own makers, publishers and plugins](../advanced/extending-electron-forge/)
