@@ -4,30 +4,9 @@ description: How to configure Electron Forge
 
 # Configuration
 
-Electron Forge configuration is all centralized in your "Forge Config", this can be found in your `package.json` at the `config.forge` path. This property must either be an object containing your entire forge configuration, or for more advanced users it can be a relative path pointing at a JavaScript file that exports your config.
+Electron Forge configuration is all centralized in your Forge Config. This can be found in your `package.json` at the `config.forge` path. This property must either be an object containing your entire Forge configuration or a relative path pointing at a JavaScript file that exports your config.
 
 {% tabs %}
-{% tab title="Object" %}
-{% code title="package.json" %}
-```javascript
-{
-  "name": "my-app",
-  "version": "0.0.1",
-  "config": {
-    "forge": {
-      "packagerConfig": {},
-      "makers": [
-        {
-          "name": "@electron-forge/maker-zip"
-        }
-      ]
-    }
-  }
-}
-```
-{% endcode %}
-{% endtab %}
-
 {% tab title="Path" %}
 {% code title="package.json" %}
 ```javascript
@@ -54,13 +33,46 @@ module.exports = {
 ```
 {% endcode %}
 {% endtab %}
+
+{% tab title="Object" %}
+{% code title="package.json" %}
+```javascript
+{
+  "name": "my-app",
+  "version": "0.0.1",
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-zip"
+        }
+      ]
+    }
+  }
+}
+```
+{% endcode %}
+{% endtab %}
 {% endtabs %}
 
-Putting the configuration directly in the `package.json` is by far the simpler approach, but for advanced options, such as providing hook functions to Electron Forge, you will need to use the JS file.
-
-## Possible Configuration
+## Possible configuration
 
 {% tabs %}
+{% tab title="forge.config.js" %}
+```javascript
+module.exports = {
+  packagerConfig: { ... },
+  rebuildConfig: { ... },
+  makers: [ ... ],
+  publishers: [ ... ],
+  plugins: [ ... ],
+  hooks: { ... },
+  buildIdentifier: 'my-build'
+}
+```
+{% endtab %}
+
 {% tab title="package.json" %}
 ```javascript
 // Only the relevant section of package.json is shown, for brevity.
@@ -68,7 +80,7 @@ Putting the configuration directly in the `package.json` is by far the simpler a
   "config": {
     "forge": {
       "packagerConfig": { ... },
-      "electronRebuildConfig": { ... },
+      "rebuildConfig": { ... },
       "makers": [ ... ],
       "publishers": [ ... ],
       "plugins": [ ... ],
@@ -79,37 +91,27 @@ Putting the configuration directly in the `package.json` is by far the simpler a
 }
 ```
 {% endtab %}
-
-{% tab title="forge.config.js" %}
-```javascript
-module.exports = {
-  packagerConfig: { ... },
-  electronRebuildConfig: { ... },
-  makers: [ ... ],
-  publishers: [ ... ],
-  plugins: [ ... ],
-  hooks: { ... },
-  buildIdentifier: 'my-build'
-}
-```
-{% endtab %}
 {% endtabs %}
 
 {% hint style="success" %}
 All properties are optional
 {% endhint %}
 
-### Packager Config
+### Electron Packager config
 
-The top level property `packagerConfig` on the configuration object maps directly to the options sent to [`electron-packager`](https://github.com/electron/electron-packager) during the package step of Electron Forge's build process. The options you can put in this object are documented in the [Electron Packager API docs](https://electron.github.io/electron-packager/master/interfaces/electronpackager.options.html).
+The top level property `packagerConfig` on the configuration object maps directly to the options sent to [`electron-packager`](https://github.com/electron/electron-packager) during the package step of Electron Forge's build process.
+
+The options you can put in this object are documented in the [Electron Packager API docs](https://electron.github.io/electron-packager/master/interfaces/electronpackager.options.html).
 
 {% hint style="info" %}
-Please note that you can not override the `dir`, `arch`, `platform`,`out`or `electronVersion`options as they are set by Electron Forge internally
+Please note that you can not override the `dir`, `arch`, `platform`,`out`or `electronVersion`options as they are set by Electron Forge internally.
 {% endhint %}
 
-### Rebuild Config
+### Electron Rebuild config
 
-The top level property `electronRebuildConfig` on the configuration object maps directly to the options sent to [`electron-rebuild`](https://github.com/electron/electron-rebuild) during both the package and start step of Electron Forge's build process. The options you can put in this object are documented in the [Electron Rebuild API docs](https://github.com/electron/electron-rebuild#how-can-i-integrate-this-into-grunt--gulp--whatever).
+The top level property `rebuildConfig` on the configuration object maps directly to the options sent to [`electron-rebuild`](https://github.com/electron/electron-rebuild) during both the package and start step of Electron Forge's build process.
+
+The options you can put in this object are documented in the [Electron Rebuild API docs](https://github.com/electron/electron-rebuild#how-can-i-integrate-this-into-grunt--gulp--whatever).
 
 {% hint style="info" %}
 Please note you can not override the `buildPath`, `arch`, or `electronVersion` options as they are set by Electron Forge internally
@@ -174,7 +176,7 @@ This hook is called after the `package` step has successfully completed. The hoo
 
 * `platform`: the target platform for the app
 * `arch`: the target architecture for the app
-* `outputPaths`: an array of paths where packaged apps are located \(usually only one\)
+* `outputPaths`: an array of paths where packaged apps are located (usually only one)
 * `spinner`: if defined, the `ora` spinner associated with the package step
 
 For example:
@@ -199,17 +201,17 @@ This hook is called before the `make` step runs.
 
 #### `postMake`
 
-This hook is called after the `make` step has successfully completed. It is passed a single argument which is an array of [`MakeResult`](https://js.electronforge.io/interfaces/_electron_forge_shared_types.ForgeMakeResult.html) objects, if your hooks wishes to modify those make results it must return a new array of [`MakeResult`](https://js.electronforge.io/interfaces/_electron_forge_shared_types.ForgeMakeResult.html) objects that Electron Forge can use from then on.
+This hook is called after the `make` step has successfully completed. It is passed a single argument which is an array of [`MakeResult`](https://js.electronforge.io/interfaces/\_electron\_forge\_shared\_types.ForgeMakeResult.html) objects, if your hooks wishes to modify those make results it must return a new array of [`MakeResult`](https://js.electronforge.io/interfaces/\_electron\_forge\_shared\_types.ForgeMakeResult.html) objects that Electron Forge can use from then on.
 
 #### `readPackageJson`
 
 This hook is called every time forge attempts to read your `package.json` file, you will be passed in the `package.json` object we have loaded and if you want to modify that object in any way you must do so and return the new value for Forge to use. This is useful to set things like the `version` field at runtime.
 
 {% hint style="info" %}
-Note: this will not change the name or version used by Electron Packager to customize your app metadata, as that is read prior to this hook being called \(during Electron Packager's `afterCopy` hooks\).
+Note: this will not change the name or version used by Electron Packager to customize your app metadata, as that is read prior to this hook being called (during Electron Packager's `afterCopy` hooks).
 {% endhint %}
 
-### Build Identifier
+### Build identifiers
 
 This property can be used to identify different build configurations. Normally, this property is set to the channel the build will release to, or some other unique identifier. For example, common values are `prod` and `beta`. This identifier can be used in conjunction with the `fromBuildIdentifier` function to generate release channel or environment specific configuration. For example:
 
@@ -227,4 +229,3 @@ module.exports = {
 {% endcode %}
 
 In this example the `appBundleId` option passed to Electron Packager will be selected based on the `buildIdentifer` based on whether you are building for `prod` or `beta`. This allows you to make shared configs incredibly easily as only the values that change need to be wrapped with this function.
-
