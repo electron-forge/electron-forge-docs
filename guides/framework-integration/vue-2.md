@@ -8,7 +8,7 @@ Adding Vue 2 support to a basic Electron Forge template doesn't require a compli
 
 ### Create the app
 
-Create a standard Electron per the [Getting Started](../../start-here/#the-basics) guide.
+Create a standard Electron per the [Getting Started](../../#the-basics) guide.
 
 ### Add the Vue 2 dependency
 

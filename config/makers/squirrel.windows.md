@@ -12,7 +12,7 @@ Configuration options are documented in [`MakerSquirrelConfig`](https://js.elect
 
 ## Usage
 
-Add this to the [makers](./) section of your [Forge configuration](../../start-here/configuration.md):
+Add this to the [makers](./) section of your [Forge configuration](../../configuration.md):
 
 ```javascript
 {

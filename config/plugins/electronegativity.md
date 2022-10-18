@@ -22,7 +22,7 @@ The Electronegativity plugin integrates Doyensec's [Electronegativity tool](http
 
 ## Usage
 
-Add this plugin to the [`plugins`](../../start-here/configuration.md#plugins) array in your Forge configuration. All [programmatic options for Electronegativity](https://github.com/doyensec/electronegativity#programmatically), except for `input` and `electronVersion`.
+Add this plugin to the [`plugins`](../../configuration.md#plugins) array in your Forge configuration. All [programmatic options for Electronegativity](https://github.com/doyensec/electronegativity#programmatically), except for `input` and `electronVersion`.
 
 ### Example
 
