@@ -1,9 +1,12 @@
 # Table of contents
 
-* [Getting Started](README.md)
-* [Import Existing Project](import-existing-project.md)
-* [Configuration](configuration.md)
-* [CLI](cli.md)
+## Start Here
+
+* [Why Electron Forge](README.md)
+* [Getting Started](start-here/readme.md)
+* [Import an Existing Project](start-here/import-existing-project.md)
+* [Configuration](start-here/configuration.md)
+* [CLI](start-here/cli.md)
 
 ## Built-in Templates <a href="#templates" id="templates"></a>
 
@@ -17,7 +20,6 @@
   * [Electronegativity Plugin](config/plugins/electronegativity.md)
   * [Auto Unpack Native Modules Plugin](config/plugins/auto-unpack-natives.md)
   * [Local Electron Plugin](config/plugins/local-electron.md)
-  * [Electron Compile](config/plugins/electron-compile.md)
 * [Makers](config/makers/README.md)
   * [AppX](config/makers/appx.md)
   * [deb](config/makers/deb.md)

@@ -28,7 +28,7 @@ npm install --save-dev @electron-forge/plugin-webpack
 
 You must provide two webpack configuration files: one for the main process in `mainConfig`, and one for the renderer process in `renderer.config`. The complete config options are available in the API docs under [`WebpackPluginConfig`](https://js.electronforge.io/interfaces/\_electron\_forge\_plugin\_webpack.WebpackPluginConfig.html).
 
-For example, this is the [configuration](../../configuration.md) taken from Forge's [webpack template](../../templates/webpack-template.md):
+For example, this is the [configuration](../../start-here/configuration.md) taken from Forge's [webpack template](../../templates/webpack-template.md):
 
 {% tabs %}
 {% tab title="forge.config.js" %}

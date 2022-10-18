@@ -8,11 +8,11 @@ The Squirrel.Windows target builds a number of files required to distribute apps
 
 Squirrel.Windows is a no-prompt, no-hassle, no-admin method of installing Windows applications and is therefore the most user friendly you can get. You can only build the Squirrel.Windows target on a Windows machine or on a macOS /Linux machine with `mono` and `wine` installed.
 
-Configuration options are documented in [`MakerSquirrelConfig`](https://js.electronforge.io/modules/_electron_forge_maker_squirrel.html#MakerSquirrelConfig).
+Configuration options are documented in [`MakerSquirrelConfig`](https://js.electronforge.io/modules/\_electron\_forge\_maker\_squirrel.html#MakerSquirrelConfig).
 
 ## Usage
 
-Add this to the [makers](./) section of your [Forge configuration](../../configuration.md):
+Add this to the [makers](./) section of your [Forge configuration](../../start-here/configuration.md):
 
 ```javascript
 {
@@ -37,4 +37,3 @@ const { app } = require('electron');
 if (require('electron-squirrel-startup')) return app.quit();
 ```
 {% endcode %}
-
