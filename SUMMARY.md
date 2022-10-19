@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Getting Started](README.md)
-* [Import an Existing Project](import-existing-project.md)
+* [Importing an Existing Project](import-existing-project.md)
 * [Configuration](configuration.md)
 * [CLI](cli.md)
 
