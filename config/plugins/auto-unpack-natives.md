@@ -1,39 +1,26 @@
----
-description: >-
-  Reduce loading times and disk consumption by unpacking native Node modules
-  from your Forge app's ASAR archive.
----
+# Auto Unpack Native Modules
 
-# Auto Unpack Native Modules Plugin
-
-This plugin will automatically add all native Node modules in your `node_modules` folder to the [`asar.unpack`](https://electron.github.io/electron-packager/main/interfaces/electronpackager.options.html#asar) config option in your [`packagerConfig`](../../configuration.md#packager-config). If your app uses native Node modules, you should probably use this to reduce loading times and disk consumption on your users' machines.
+This plugin will automatically add all native modules in your `node_modules` folder to the [`asar.unpack`](https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#asar) config option in your [`packagerConfig`](../../configuration.md#packager-config).  If you have any native modules at all you should probably use this to reduce loading times and disk consumption on your users' machines.
 
 ## Installation
 
-{% tabs %}
-{% tab title="Yarn" %}
-```shell
-yarn add --dev @electron-forge/plugin-auto-unpack-natives
+```bash
+yarn add @electron-forge/plugin-auto-unpack-natives --dev
 ```
-{% endtab %}
-
-{% tab title="npm" %}
-<pre class="language-shell"><code class="lang-shell"><strong>npm install --save-dev @electron-forge/plugin-auto-unpack-natives</strong></code></pre>
-{% endtab %}
-{% endtabs %}
 
 ## Usage
 
-You must add this plugin to your [`plugins`](../../configuration.md#plugins) array in your Forge configuration. There are currently no configuration options available for this plugin.
+You must add this plugin to your [`plugins`](../../configuration.md#plugins) array in your forge config
+
+The complete config options are available at [`AutoUnpackNativesConfig`](https://js.electronforge.io/interfaces/_electron_forge_plugin_auto_unpack_natives.AutoUnpackNativesConfig.html). 
 
 {% code title="forge.config.js" %}
 ```javascript
 module.exports = {
   plugins: [
-   {
-     name: '@electron-forge/plugin-auto-unpack-natives'
-   }
+    ['@electron-forge/plugin-auto-unpack-natives']
   ]
 }
 ```
 {% endcode %}
+
