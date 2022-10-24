@@ -16,15 +16,15 @@ Full configuration options are documented in [`PublisherBitbucketConfig`](https:
 
 ```javascript
 {
-  "name": "@electron-forge/publisher-bitbucket",
-  "config": {
-    "repository": {
-      "owner": "myusername",
-      "name": "myreponame"
+  name: "@electron-forge/publisher-bitbucket",
+  config: {
+    repository: {
+      owner: "myusername",
+      name: "myreponame"
     },
     "auth": {
-      "username": "myusername",
-      "appPassword": "mysecretapppassword"
+      username: "myusername",
+      appPassword: "mysecretapppassword"
     }
 }
 ```
