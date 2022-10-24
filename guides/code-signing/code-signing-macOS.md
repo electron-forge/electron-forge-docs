@@ -1,85 +1,214 @@
 ---
-description: Code signing is a security technology that you use to certify that an app was created by you.
+description: >-
+  Code signing is a security technology that you use to certify that an app was
+  created by you.
 ---
 
-# Configure Code Signing in Forge (macOS)
+# Signing a macOS app
 
-Code signing is a security technology that you use to certify that an app was
-created by you. You should sign your application so it does not trigger any
-operating system security checks. If you intend to package and distribute your Electron app,
-it should be code signed.
+On macOS, there are two layers of security technology for application distribution: **code signing** and **notarization**.
 
-## Signing & notarizing macOS builds
+* **Code Signing** is the act of certifying the identity of the app's author and ensuring it was not tampered with before distribution.
+* **Notarization** is an extra verification step where the app is sent to Apple servers for an automated malware scan.
 
-Getting your application signed and notarized requires a few additions to your configuration.
+{% hint style="info" %}
+From macOS 10.15 (Catalina) onwards, your application needs to be **both code signed and notarized** to run on a user's machine without disabling additional operating system security checks.
 
-Let's take a look at an example `package.json` configuration with all required fields. Not all of them are
-required: the tools will be clever enough to automatically find a suitable `identity`, for instance,
-but we recommend that you are explicit.
+The exception is for Mac App Store (MAS) apps, where notarization is not required because the MAS submission process involves a similar automated check.
+{% endhint %}
 
-```json title="package.json" {7}
-{
-  "name": "my-app",
-  "version": "0.0.1",
-  "config": {
-    "forge": {
-      "packagerConfig": {
-        "osxSign": {
-          "identity": "Developer ID Application: Felix Rieseberg (LT94ZKYDCJ)",
-          "hardened-runtime": true,
-          "entitlements": "entitlements.plist",
-          "entitlements-inherit": "entitlements.plist",
-          "signature-flags": "library"
-        },
-        "osxNotarize": {
-          "appleId": "felix@felix.fun",
-          "appleIdPassword": "my-apple-id-password"
+## Prerequisites
+
+### Installing Xcode
+
+[Xcode](https://developer.apple.com/xcode/) is Apple's integrated development environment (IDE) for development on macOS, iOS, and other platforms.
+
+Although Electron does not integrate tightly with the IDE itself, Xcode is a helpful tool for installing code signing certificates (see next section) and is **required** for notarization.
+
+### Obtaining signing certificates
+
+Code signing certificates for macOS apps can only be obtained through Apple by purchasing a membership to the [Apple Developer Program](https://developer.apple.com/programs/).
+
+To sign Electron apps, you may require two separate certificates:
+
+* The **Developer ID Installer** certificate is for apps distributed to the Mac App Store.
+* The **Developer ID Application** certificate is for apps distributed outside the Mac App Store.
+
+Once you have an Apple Developer Program membership, you first need to install them onto your machine. We recommend[ loading them through Xcode](https://help.apple.com/xcode/mac/current/#/dev3a05256b8).
+
+{% hint style="success" %}
+**Verifying your certificate is installed**
+
+Once you have installed your certificate, you can check available code signing certificates in your terminal using the following shell command:
+
+```shell
+security find-identity -p codesigning -v
+```
+{% endhint %}
+
+## Configuring Forge
+
+In Electron Forge, macOS apps are signed and notarized at the **Package** step by the `electron-packager` library. There is a separate option within your Forge `packagerConfig` for each one of these settings.
+
+### osxSign options
+
+{% hint style="info" %}
+Under the hood, Electron Forge uses the [`@electron/osx-sign`](https://github.com/electron/osx-sign) tool to sign your macOS application.
+{% endhint %}
+
+The `osxSign` comes with default settings that should work out the box for most Electron apps, and its configuration object has no mandatory fields.
+
+For a full list of configuration options, see the [`OsxSignOptions`](https://js.electronforge.io/modules/\_electron\_forge\_shared\_types.InternalOptions.html#OsxSignOptions) type in the Forge API docs. For more detailed information on how to configure these options, see the [`@electron/osx-sign` documentation](https://github.com/electron/osx-sign).
+
+#### Customizing entitlements
+
+A common use case for modifying the default `osxSign` configuration is to customize its entitlements. In macOS, **entitlements** are privileges that grant apps certain capabilities (e.g. access to the camera, microphone, or USB devices). These are stored within the code signature in an app's executable file.
+
+By default, the `@electron/osx-sign` tool comes with a set of entitlements that should work on both MAS or direct distribution targets. See the complete set of default entitlement files [on GitHub](https://github.com/electron/osx-sign/tree/main/entitlements).
+
+{% code title="forge.config.js" %}
+```javascript
+module.exports = {
+  // ...
+  packagerConfig: {
+    osxSign: {
+      optionsForFile: (filePath) => {
+        // Here, we keep it simple and return a single entitlements.plist file.
+        // You can use this callback to map different sets of entitlements
+        // to specific files in your packaged app.
+        return {
+          entitlements: 'path/to/entitlements.plist'
         }
       }
     }
   }
+  // ...
+}
+```
+{% endcode %}
+
+For further reading on entitlements, see the following pages in Apple developer documentation:
+
+* [Entitlements](https://developer.apple.com/documentation/bundleresources/entitlements)
+* [Hardened Runtime](https://developer.apple.com/documentation/security/hardened\_runtime)
+
+### osxNotarize options
+
+{% hint style="info" %}
+Under the hood, Electron Forge uses the [`@electron/notarize`](https://github.com/electron/notarize) tool to sign your macOS application.
+{% endhint %}
+
+The `osxNotarize` configuration object can be set up to either use the `legacy` or `notarytool` strategies. If you are using Xcode 13 or higher, we strongly recommend using `notarytool`. The `legacy` tooling will be removed when Apple sunsets `altool` (projected for Fall 2023).
+
+The `notarytool` command has three authentication options, which are detailed below. Note that you will want to use a `forge.config.js` configuration so that you can load environment variables into your Forge config.
+
+{% hint style="danger" %}
+**Keep your authentication details private**
+
+You should never store authentication info in plaintext in your configuration. In the examples below, credentials are stored as environment variables and accessed via the Node.js [`process.env`](https://nodejs.org/dist/latest-v16.x/docs/api/process.html#processenv) object.
+{% endhint %}
+
+#### Option 1: Using an app-specific password
+
+You can generate an [app-specific password](https://support.apple.com/en-us/HT204397) from Apple to provide your credentials to `notarytool`. This password will need to be regenerated if you change your Apple ID password.
+
+There are two mandatory fields for `osxNotarize` if you are using this strategy:
+
+| Field             | Type   | Description                                           |
+| ----------------- | ------ | ----------------------------------------------------- |
+| `appleId`         | string | Apple ID associated with your Apple Developer account |
+| `appleIdPassword` | string | App-specific password                                 |
+
+{% code title="forge.config.js" %}
+```javascript
+module.exports = {
+  //...
+  osxNotarize: {
+    tool: 'notarytool',
+    appleId: process.env.APPLE_ID
+    appleIdPassword: process.APPLE_PASSWORD
+  }
+  //...
+}
+```
+{% endcode %}
+
+{% hint style="warning" %}
+Despite the name, `appleIdPassword` is **not** the password for your Apple ID account.
+{% endhint %}
+
+#### Option 2: Using an App Store Connect API key
+
+You can generate an App Store Connect API key to authenticate `notarytool` by going to the [App Store Connect access page](https://appstoreconnect.apple.com/access/api) and using the "Keys" tab. This API key will look something like `AuthKey_ABCD123456.p8` and can only be downloaded once.
+
+There are three mandatory fields for `osxNotarize` if you are using this strategy:
+
+| Field            | Type   | Description                                                                                                        |
+| ---------------- | ------ | ------------------------------------------------------------------------------------------------------------------ |
+| `appleIdKey`     | string | Filesystem path string to your API key file.                                                                       |
+| `appleKeyId`     | string | 10-character alphanumeric ID string. In the previous `AuthKey_ABCD123456.p8` example, this would be `ABCD123456`.  |
+| `appleApiIssuer` | string | UUID that identifies the API key issuer. You will find this ID in the "Keys" tab where you generated your API key. |
+
+{% code title="forge.config.js" %}
+```javascript
+module.exports = {
+  //...
+  osxNotarize: {
+    tool: 'notarytool',
+    appleApiKey: process.env.APPLE_API_KEY
+    appleApiKeyId: process.env.APPLE_API_KEY_ID
+    appleApiIssuer: process.env.APPLE_API_ISSUER
+  }
+  //...
+}
+```
+{% endcode %}
+
+#### Option 3: Using a keychain
+
+Instead of providing environment variables to the Forge config passed to `notarytool`, you can choose to use a macOS [keychain](https://support.apple.com/en-ca/guide/mac-help/mchlf375f392/mac) containing either set of credentials (either Option 1 or Option 2 above).
+
+You can do this directly in your terminal via the `notarytool store-credentials` command. For usage information, you can refer to the man page for `notarytool`:
+
+```bash
+man notarytool
+```
+
+There are two mandatory fields for `osxNotarize` if you are using this strategy:
+
+| Field             | Type   | Description                                                                     |
+| ----------------- | ------ | ------------------------------------------------------------------------------- |
+| `keychain`        | string | Name of (or path to) the keychain containing the profile with your credentials. |
+| `keychainProfile` | string | Name of the keychain profile containing your notarization credentials.          |
+
+```javascript
+module.exports = {
+  //...
+  osxNotarize: {
+    tool: 'notarytool',
+    keychain: 'my-keychain'
+    keychainProfile: 'my-keychain-profile'
+  }
+  //...
 }
 ```
 
-The `entitlements.plist` file referenced here needs the following macOS-specific entitlements
-to assure the Apple security mechanisms that your app is doing these things
-without meaning any harm:
+### Example configuration
 
-```xml title="entitlements.plist"
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-  <dict>
-    <key>com.apple.security.cs.allow-jit</key>
-    <true/>
-    <key>com.apple.security.cs.debugger</key>
-    <true/>
-  </dict>
-</plist>
+Below is a minimal Forge configuration for `osxSign` and `osxNotarize`.
+
+{% code title="forge.config.js" %}
+```javascript
+module.exports = {
+  packagerConfig: {
+    osxSign: {},
+    osxNotarize: {
+      tool: 'notarytool',
+      appleId: process.env.APPLE_ID
+      appleIdPassword: process.APPLE_PASSWORD
+    },
+  },
+};
 ```
+{% endcode %}
 
-Note that up until Electron 12, the `com.apple.security.cs.allow-unsigned-executable-memory` entitlement was required
-as well. However, it should not be used anymore if it can be avoided.
-
-To see all of this in action, check out Electron Fiddle's source code,
-[especially its `electron-forge` configuration
-file](https://github.com/electron/fiddle/blob/master/forge.config.js).
-
-If you plan to access the microphone or camera within your app using Electron's APIs, you'll also
-need to add the following entitlements:
-
-```xml title="entitlements.plist"
-<key>com.apple.security.device.audio-input</key>
-<true/>
-<key>com.apple.security.device.camera</key>
-<true/>
-```
-
-If these are not present in your app's entitlements when you invoke, for example:
-
-```js title="main.js"
-const { systemPreferences } = require('electron')
-const microphone = systemPreferences.askForMediaAccess('microphone')
-```
-
-Your app may crash. See the Resource Access section in [Hardened Runtime](https://developer.apple.com/documentation/security/hardened_runtime) for more information and entitlements you may need.
