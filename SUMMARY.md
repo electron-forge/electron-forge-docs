@@ -14,14 +14,13 @@
 * [TypeScript + Webpack](templates/typescript-+-webpack-template.md)
 * [Webpack](templates/webpack-template.md)
 
-## Forge Configuration <a id="config"></a>
+## Forge Configuration <a href="#config" id="config"></a>
 
 * [Plugins](config/plugins/README.md)
-  * [Electronegativity](config/plugins/electronegativity.md)
-  * [Webpack](config/plugins/webpack.md)
-  * [Auto Unpack Native Modules](config/plugins/auto-unpack-natives.md)
-  * [Local Electron](config/plugins/local-electron.md)
-  * [Electron Compile](config/plugins/electron-compile.md)
+  * [Webpack Plugin](config/plugins/webpack.md)
+  * [Electronegativity Plugin](config/plugins/electronegativity.md)
+  * [Auto Unpack Native Modules Plugin](config/plugins/auto-unpack-natives.md)
+  * [Local Electron Plugin](config/plugins/local-electron.md)
 * [Makers](config/makers/README.md)
   * [AppX](config/makers/appx.md)
   * [deb](config/makers/deb.md)
@@ -63,4 +62,4 @@
   * [Writing Templates](advanced/extending-electron-forge/writing-templates.md)
   * [Writing Makers](advanced/extending-electron-forge/writing-makers.md)
   * [Writing Publishers](advanced/extending-electron-forge/writing-publishers.md)
-* [API Docs](https://js.electronforge.io/modules/_electron_forge_core.html)
+* [API Docs](https://js.electronforge.io/modules/\_electron\_forge\_core.html)
