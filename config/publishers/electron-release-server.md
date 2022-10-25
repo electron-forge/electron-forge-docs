@@ -8,7 +8,8 @@ Configuration options are documented in [`PublisherERSConfig`](https://js.electr
 
 ### Usage
 
-```javascript title=forge.config.js
+{% code title="forge.config.js" %}
+```javascript
 module.exports = {
   // ...
   publishers: [
@@ -23,4 +24,4 @@ module.exports = {
   ]
 }
 ```
-
+{% endcode %}

@@ -10,7 +10,8 @@ We recommend you set the `token` option using an environment variable, don't har
 
 ## Usage
 
-```javascript title=forge.config.js
+{% code title="forge.config.js" %}
+```javascript
 module.exports = {
   // ...
   publishers: [
@@ -26,3 +27,4 @@ module.exports = {
   ]
 }
 ```
+{% endcode %}

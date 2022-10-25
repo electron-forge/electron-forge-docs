@@ -10,7 +10,8 @@ You can use this target to publish to GitHub Enterprise using the host configura
 
 ## Usage
 
-```javascript title=forge.config.js
+{% code title="forge.config.js" %}
+```javascript
 module.exports = {
   // ...
   publishers: [
@@ -27,4 +28,4 @@ module.exports = {
   ]
 }
 ```
-
+{% endcode %}

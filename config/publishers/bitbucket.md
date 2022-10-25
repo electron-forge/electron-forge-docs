@@ -14,7 +14,8 @@ Full configuration options are documented in [`PublisherBitbucketConfig`](https:
 
 ## Usage
 
-```javascript title=forge.config.js
+{% code title="forge.config.js" %}
+```javascript
 module.exports = {
   // ...
   publishers: [
@@ -33,6 +34,7 @@ module.exports = {
   ]
 }
 ```
+{% endcode %}
 
 Alternatively you can \(and should\) use environment variables for the authentication
 
