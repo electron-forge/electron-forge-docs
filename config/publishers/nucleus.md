@@ -10,15 +10,21 @@ We recommend you set the `token` option using an environment variable, don't har
 
 ## Usage
 
+{% code title="forge.config.js" %}
 ```javascript
-{
-  name: '@electron-forge/publisher-nucleus',
-  config: {
-    host: 'https://my-nucleus.mysite.com',
-    appId: 1,
-    channelId: 'abcdefg',
-    token: 'my-token'
-  }
+module.exports = {
+  // ...
+  publishers: [
+    {
+      name: '@electron-forge/publisher-nucleus',
+      config: {
+        host: 'https://my-nucleus.mysite.com',
+        appId: 1,
+        channelId: 'abcdefg',
+        token: process.env.TOKEN // string
+      }
+    }
+  ]
 }
 ```
-
+{% endcode %}

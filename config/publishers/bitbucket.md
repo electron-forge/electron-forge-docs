@@ -14,20 +14,27 @@ Full configuration options are documented in [`PublisherBitbucketConfig`](https:
 
 ## Usage
 
+{% code title="forge.config.js" %}
 ```javascript
-{
-  "name": "@electron-forge/publisher-bitbucket",
-  "config": {
-    "repository": {
-      "owner": "myusername",
-      "name": "myreponame"
-    },
-    "auth": {
-      "username": "myusername",
-      "appPassword": "mysecretapppassword"
+module.exports = {
+  // ...
+  publishers: [
+    {
+      name: '@electron-forge/publisher-bitbucket',
+      config: {
+        repository: {
+          owner: 'myusername',
+          name: 'myreponame'
+        },
+        auth: {
+          username: 'myusername',
+          appPassword: process.env.PASSWORD // string
+        }
     }
+  ]
 }
 ```
+{% endcode %}
 
 Alternatively you can \(and should\) use environment variables for the authentication
 

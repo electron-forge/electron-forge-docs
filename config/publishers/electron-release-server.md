@@ -8,14 +8,20 @@ Configuration options are documented in [`PublisherERSConfig`](https://js.electr
 
 ### Usage
 
+{% code title="forge.config.js" %}
 ```javascript
-{
-  name: '@electron-forge/publisher-electron-release-server',
-  config: {
-    baseUrl: 'https://update.server.com',
-    username: 'admin',
-    password: 'admin'
-  }
+module.exports = {
+  // ...
+  publishers: [
+    {
+      name: '@electron-forge/publisher-electron-release-server',
+      config: {
+        baseUrl: 'https://update.server.com',
+        username: 'admin',
+        password: process.env.PASSWORD // string
+      }
+    }
+  ]
 }
 ```
-
+{% endcode %}

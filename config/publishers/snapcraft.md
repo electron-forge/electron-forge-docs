@@ -8,10 +8,18 @@ Configuration options are documented in [`PublisherSnapConfig`](https://js.elect
 
 ### Usage
 
+{% code title="forge.config.js" %}
 ```javascript
-{
-  name: '@electron-forge/publisher-snapcraft',
-  config: {}
+module.exports = {
+  // ...
+  publishers: [
+    {
+      name: '@electron-forge/publisher-snapcraft',
+      config: {
+        release: "latest/edge, insider/stable"
+      }
+    }
+  ]
 }
 ```
-
+{% endcode %}
