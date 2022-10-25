@@ -14,18 +14,23 @@ Full configuration options are documented in [`PublisherBitbucketConfig`](https:
 
 ## Usage
 
-```javascript
-{
-  name: "@electron-forge/publisher-bitbucket",
-  config: {
-    repository: {
-      owner: "myusername",
-      name: "myreponame"
-    },
-    "auth": {
-      username: "myusername",
-      appPassword: "mysecretapppassword"
+```javascript title=forge.config.js
+module.exports = {
+  // ...
+  publishers: [
+    {
+      name: '@electron-forge/publisher-bitbucket',
+      config: {
+        repository: {
+          owner: 'myusername',
+          name: 'myreponame'
+        },
+        auth: {
+          username: 'myusername',
+          appPassword: 'mysecretapppassword'
+        }
     }
+  ]
 }
 ```
 
