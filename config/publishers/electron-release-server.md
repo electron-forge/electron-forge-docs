@@ -18,7 +18,7 @@ module.exports = {
       config: {
         baseUrl: 'https://update.server.com',
         username: 'admin',
-        password: 'admin'
+        password: process.env.PASSWORD // string
       }
     }
   ]

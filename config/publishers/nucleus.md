@@ -21,7 +21,7 @@ module.exports = {
         host: 'https://my-nucleus.mysite.com',
         appId: 1,
         channelId: 'abcdefg',
-        token: 'my-token'
+        token: process.env.TOKEN // string
       }
     }
   ]

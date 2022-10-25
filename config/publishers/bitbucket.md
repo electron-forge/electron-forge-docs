@@ -28,7 +28,7 @@ module.exports = {
         },
         auth: {
           username: 'myusername',
-          appPassword: 'mysecretapppassword'
+          appPassword: process.env.PASSWORD // string
         }
     }
   ]
