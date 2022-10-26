@@ -10,7 +10,7 @@ description: >-
 This publish target is for [Bitbucket Cloud](https://bitbucket.org) only and will not work with self hosted Bitbucket Server instances.
 {% endhint %}
 
-Full configuration options are documented in [`PublisherBitbucketConfig`](https://js.electronforge.io/interfaces/_electron_forge_publisher_bitbucket.PublisherBitbucketConfig.html).
+Full configuration options are documented in [`PublisherBitbucketConfig`](https://js.electronforge.io/interfaces/\_electron\_forge\_publisher\_bitbucket.PublisherBitbucketConfig.html).
 
 ## Usage
 
@@ -27,8 +27,8 @@ module.exports = {
           name: 'myreponame'
         },
         auth: {
-          username: 'myusername',
-          appPassword: process.env.PASSWORD // string
+          username: process.env.BITBUCKET_USERNAME // string
+          appPassword: process.env.BITBUCKET_APP_PASSWORD // string
         }
     }
   ]
@@ -36,7 +36,7 @@ module.exports = {
 ```
 {% endcode %}
 
-Alternatively you can \(and should\) use environment variables for the authentication
+you can (and should) use environment variables for the authentication
 
 {% code title="env.sh" %}
 ```bash
@@ -48,4 +48,3 @@ BITBUCKET_APP_PASSWORD="mysecretapppassword"
 ```bash
 $ source env.sh
 ```
-

@@ -114,10 +114,11 @@ You can generate an [app-specific password](https://support.apple.com/en-us/HT20
 
 There are two mandatory fields for `osxNotarize` if you are using this strategy:
 
-| Field             | Type   | Description                                           |
-| ----------------- | ------ | ----------------------------------------------------- |
-| `appleId`         | string | Apple ID associated with your Apple Developer account |
-| `appleIdPassword` | string | App-specific password                                 |
+| Field             | Type   | Description                                                                                                                                                                                                   |
+| ----------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `appleId`         | string | Apple ID associated with your Apple Developer account                                                                                                                                                         |
+| `appleIdPassword` | string | App-specific password                                                                                                                                                                                         |
+| `teamId`          | string | The Apple Team ID you want to notarize under. You can find Team IDs for team you belong to by going to [`https://developer.apple.com/account/#/membership`](https://developer.apple.com/account/#/membership) |
 
 {% code title="forge.config.js" %}
 ```javascript
@@ -126,7 +127,8 @@ module.exports = {
   osxNotarize: {
     tool: 'notarytool',
     appleId: process.env.APPLE_ID
-    appleIdPassword: process.APPLE_PASSWORD
+    appleIdPassword: process.env.APPLE_PASSWORD,
+    teamId: "process.env.APPLE_TEAM_ID,
   }
   //...
 }
@@ -205,7 +207,8 @@ module.exports = {
     osxNotarize: {
       tool: 'notarytool',
       appleId: process.env.APPLE_ID
-      appleIdPassword: process.APPLE_PASSWORD
+      appleIdPassword: process.env.APPLE_PASSWORD,
+      teamId: process.env.APPLE_TEAM_ID
     },
   },
 };

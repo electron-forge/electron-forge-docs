@@ -4,22 +4,15 @@ description: How to configure Electron Forge
 
 # Configuration
 
-Electron Forge configuration is all centralized in your Forge Config. This can be found in your `package.json` at the `config.forge` path. This property must either be an object containing your entire Forge configuration or a relative path pointing at a JavaScript file that exports your config.
+Electron Forge configuration is centralized in a single configuration object. You can specify this config in your package.json on the `config.forge` property. This property can have be in one of two forms:
+
+* An object containing your entire Forge configuration.
+* A relative path pointing at a JavaScript file that exports your config.
+
+If you do not have `config.forge` set in your package.json file, Forge will attempt to find a `forge.config.js` file in your project root.
 
 {% tabs %}
-{% tab title="Path" %}
-{% code title="package.json" %}
-```javascript
-{
-  "name": "my-app",
-  "version": "0.0.1",
-  "config": {
-    "forge": "./forge.config.js"
-  }
-}
-```
-{% endcode %}
-
+{% tab title="forge.config.js" %}
 {% code title="forge.config.js" %}
 ```javascript
 module.exports = {
@@ -34,7 +27,7 @@ module.exports = {
 {% endcode %}
 {% endtab %}
 
-{% tab title="Object" %}
+{% tab title="package.json" %}
 {% code title="package.json" %}
 ```javascript
 {
@@ -56,7 +49,11 @@ module.exports = {
 {% endtab %}
 {% endtabs %}
 
-## Possible configuration
+{% hint style="info" %}
+We recommend using using JavaScript for your config file since it enables conditional logic within your configuration.
+{% endhint %}
+
+## Configuration options
 
 {% tabs %}
 {% tab title="forge.config.js" %}
@@ -103,8 +100,8 @@ The top level property `packagerConfig` on the configuration object maps directl
 
 The options you can put in this object are documented in the [Electron Packager API docs](https://electron.github.io/electron-packager/master/interfaces/electronpackager.options.html).
 
-{% hint style="info" %}
-Please note that you can not override the `dir`, `arch`, `platform`,`out`or `electronVersion`options as they are set by Electron Forge internally.
+{% hint style="warning" %}
+You can not override the `dir`, `arch`, `platform, out` or `electronVersion` options as they are set by Electron Forge internally.
 {% endhint %}
 
 ### Electron Rebuild config
@@ -113,21 +110,21 @@ The top level property `rebuildConfig` on the configuration object maps directly
 
 The options you can put in this object are documented in the [Electron Rebuild API docs](https://github.com/electron/electron-rebuild#how-can-i-integrate-this-into-grunt--gulp--whatever).
 
-{% hint style="info" %}
-Please note you can not override the `buildPath`, `arch`, or `electronVersion` options as they are set by Electron Forge internally
+{% hint style="warning" %}
+You can not override the `buildPath`, `arch`, or `electronVersion` options as they are set by Electron Forge internally
 {% endhint %}
 
 ### Makers
 
-The top level property `makers` on the configuration object is an array of maker configurations. Check out the [Makers ](../config/makers/)documentation for all possible makers and their config options.
+The top level property `makers` on the configuration object is an array of maker configurations. Check out the [Makers ](config/makers/)documentation for all possible makers and their config options.
 
 ### Publishers
 
-The top level property `publishers` on the configuration object is an array of publisher configurations. Check out the [Publishers ](../config/publishers/)documentation for all possible publishers and their config options.
+The top level property `publishers` on the configuration object is an array of publisher configurations. Check out the [Publishers ](config/publishers/)documentation for all possible publishers and their config options.
 
 ### Plugins
 
-The top level property `plugins` on the configuration object is an array of plugin configurations. Check out the [Plugins ](../config/plugins/)documentation for all possible plugins and their config options.
+The top level property `plugins` on the configuration object is an array of plugin configurations. Check out the [Plugins ](config/plugins/)documentation for all possible plugins and their config options.
 
 ### Hooks
 
