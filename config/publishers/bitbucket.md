@@ -48,3 +48,7 @@ BITBUCKET_APP_PASSWORD="mysecretapppassword"
 ```bash
 $ source env.sh
 ```
+
+{% hint style="info" %}
+Your artifacts can be found under the `Downloads` tab of your Bitbucket repository.
+{% endhint %}
