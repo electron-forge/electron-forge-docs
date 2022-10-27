@@ -8,8 +8,8 @@ Code signing is a security technology that you use to certify that an app was cr
 
 This guide is split into two separate pages because there is a separate process for each platform:
 
-{% content-ref url="code-signing-macOS.md" %}
-[code-signing-macOS.md](code-signing-macOS.md)
+{% content-ref url="code-signing-macos.md" %}
+[code-signing-macos.md](code-signing-macos.md)
 {% endcontent-ref %}
 
 {% content-ref url="code-signing-windows.md" %}

@@ -18,7 +18,9 @@ yarn add --dev @electron-forge/plugin-auto-unpack-natives
 {% endtab %}
 
 {% tab title="npm" %}
-<pre class="language-shell"><code class="lang-shell"><strong>npm install --save-dev @electron-forge/plugin-auto-unpack-natives</strong></code></pre>
+```shell
+npm install --save-dev @electron-forge/plugin-auto-unpack-natives
+```
 {% endtab %}
 {% endtabs %}
 
@@ -31,7 +33,8 @@ You must add this plugin to your [`plugins`](../../configuration.md#plugins) arr
 module.exports = {
   plugins: [
    {
-     name: '@electron-forge/plugin-auto-unpack-natives'
+     name: '@electron-forge/plugin-auto-unpack-natives',
+     config: {}
    }
   ]
 }

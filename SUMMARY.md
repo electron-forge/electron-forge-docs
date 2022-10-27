@@ -44,7 +44,7 @@
 
 * [Code Signing](guides/code-signing/README.md)
   * [Signing a Windows app](guides/code-signing/code-signing-windows.md)
-  * [Signing a macOS app](guides/code-signing/code-signing-macOS.md)
+  * [Signing a macOS app](guides/code-signing/code-signing-macos.md)
 * [Creating and Setting App Icons](guides/create-and-add-icons.md)
 * [Framework Integration](guides/framework-integration/README.md)
   * [Parcel](guides/framework-integration/parcel.md)

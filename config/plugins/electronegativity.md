@@ -12,11 +12,15 @@ The Electronegativity plugin integrates Doyensec's [Electronegativity tool](http
 
 {% tabs %}
 {% tab title="Yarn" %}
-<pre class="language-shell"><code class="lang-shell"><strong>yarn add --dev @electron-forge/plugin-electronegativity</strong></code></pre>
+```shell
+yarn add --dev @electron-forge/plugin-electronegativity
+```
 {% endtab %}
 
 {% tab title="npm" %}
-<pre class="language-shell"><code class="lang-shell"><strong>npm install --save-dev @electron-forge/plugin-electronegativity</strong></code></pre>
+```shell
+npm install --save-dev @electron-forge/plugin-electronegativity
+```
 {% endtab %}
 {% endtabs %}
 
@@ -28,15 +32,19 @@ Add this plugin to the [`plugins`](../../configuration.md#plugins) array in your
 
 {% code title="forge.config.js" %}
 ```javascript
-{
-  plugins: [
-    [
-      '@electron-forge/plugin-electronegativity',
+module.exports = {
+  //...
+  {
+    plugins: [
       {
-        isSarif: true
+        name: '@electron-forge/plugin-electronegativity',
+        config: {
+          isSarif: true
+        }
       }
     ]
-  ]
+  }
+  //...
 }
 ```
 {% endcode %}
