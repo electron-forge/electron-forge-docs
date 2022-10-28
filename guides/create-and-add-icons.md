@@ -138,7 +138,7 @@ module.export = {
                 {
                     name: '@electron-forge/maker-wix',
                     config: {
-                        icon: '/path/to/icon/ico'
+                        icon: '/path/to/icon.ico'
                     }
                 }
             ]
