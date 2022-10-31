@@ -11,7 +11,7 @@
 
 ## Built-in Templates <a href="#templates" id="templates"></a>
 
-* [TypeScript + Webpack](templates/typescript-+-webpack-template.md)
+* [Webpack + Typescript](templates/typescript-+-webpack-template.md)
 * [Webpack](templates/webpack-template.md)
 
 ## Forge Configuration <a href="#config" id="config"></a>
