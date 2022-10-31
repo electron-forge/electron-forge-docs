@@ -31,12 +31,13 @@ You must add this plugin to your [`plugins`](../../configuration.md#plugins) arr
 {% code title="forge.config.js" %}
 ```javascript
 module.exports = {
+  packagerConfig: {
+    asar: {}
+  },
   plugins: [
    {
      name: '@electron-forge/plugin-auto-unpack-natives',
-     config: {
-       asar: {}
-     }
+     config: {}
    }
   ]
 }
