@@ -8,6 +8,7 @@
 ## Core Concepts
 
 * [Why Electron Forge](core-concepts/why-electron-forge.md)
+* [Build Lifecycle](core-concepts/build-lifecycle.md)
 
 ## Built-in Templates <a href="#templates" id="templates"></a>
 
