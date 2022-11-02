@@ -346,7 +346,7 @@ webpack({
 
 In theory, you shouldn't need to care. In development, we spin up `webpack-dev-server` instances to power your renderer processes. In production, we just build the static files.
 
-Assuming you use the defined globals we explained in the [#project-setup](webpack.md#project-setup "mention") section, everything should work when your app is packaged.
+Assuming you use the defined globals we explained in the above section, everything should work when your app is packaged.
 
 ## How do I do virtual routing?
 
