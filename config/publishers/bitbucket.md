@@ -10,26 +10,33 @@ description: >-
 This publish target is for [Bitbucket Cloud](https://bitbucket.org) only and will not work with self hosted Bitbucket Server instances.
 {% endhint %}
 
-Full configuration options are documented in [`PublisherBitbucketConfig`](https://js.electronforge.io/publisher/bitbucket/interfaces/publisherbitbucketconfig).
+Full configuration options are documented in [`PublisherBitbucketConfig`](https://js.electronforge.io/interfaces/\_electron\_forge\_publisher\_bitbucket.PublisherBitbucketConfig.html).
 
 ## Usage
 
+{% code title="forge.config.js" %}
 ```javascript
-{
-  "name": "@electron-forge/publisher-bitbucket",
-  "config": {
-    "repository": {
-      "owner": "myusername",
-      "name": "myreponame"
-    },
-    "auth": {
-      "username": "myusername",
-      "appPassword": "mysecretapppassword"
+module.exports = {
+  // ...
+  publishers: [
+    {
+      name: '@electron-forge/publisher-bitbucket',
+      config: {
+        repository: {
+          owner: 'myusername',
+          name: 'myreponame'
+        },
+        auth: {
+          username: process.env.BITBUCKET_USERNAME // string
+          appPassword: process.env.BITBUCKET_APP_PASSWORD // string
+        }
     }
+  ]
 }
 ```
+{% endcode %}
 
-Alternatively you can \(and should\) use environment variables for the authentication
+you can (and should) use environment variables for the authentication
 
 {% code title="env.sh" %}
 ```bash
@@ -42,3 +49,6 @@ BITBUCKET_APP_PASSWORD="mysecretapppassword"
 $ source env.sh
 ```
 
+{% hint style="info" %}
+Your artifacts can be found under the `Downloads` tab of your Bitbucket repository.
+{% endhint %}

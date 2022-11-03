@@ -63,7 +63,7 @@ const app = new Vue({
 {% endtab %}
 {% endtabs %}
 
-### Alternative: Using Single File Components <a id="using-single-file-components"></a>
+### Alternative: Using Single File Components <a href="#using-single-file-components" id="using-single-file-components"></a>
 
 For advanced use cases such as single file components, it's recommended to use the [Webpack plugin](../../config/plugins/webpack.md) so that the components get built correctly. You'll also need to add the appropriate Vue loader/compiler packages to the app's `devDependencies`.
 
@@ -71,7 +71,7 @@ Create the app with the [Webpack template](../../templates/webpack-template.md) 
 
 {% tabs %}
 {% tab title="NPM" %}
-```text
+```
 npm install --save-dev vue-loader vue-template-compiler
 ```
 {% endtab %}
@@ -83,7 +83,7 @@ yarn add --dev vue-loader vue-template-compiler
 {% endtab %}
 {% endtabs %}
 
-Setting up the [`vue-loader` Webpack module](https://vue-loader.vuejs.org/guide/#webpack-configuration) is left as an exercise for the reader _\(hint: `vue-loader` Webpack config should ideally go in the renderer configuration only\)_.
+Setting up the [`vue-loader` Webpack module](https://vue-loader.vuejs.org/guide/#webpack-configuration) is left as an exercise for the reader _(hint: `vue-loader` Webpack config should ideally go in the renderer configuration only)_.
 
 Add the Vue 2 package to your `dependencies`:
 
@@ -102,4 +102,3 @@ yarn add vue
 {% endtabs %}
 
 You should now be able to add single file components to your app, the same as you would for a "regular" web app.
-

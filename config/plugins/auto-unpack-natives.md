@@ -1,26 +1,45 @@
-# Auto Unpack Native Modules
+---
+description: >-
+  Reduce loading times and disk consumption by unpacking native Node modules
+  from your Forge app's ASAR archive.
+---
 
-This plugin will automatically add all native modules in your `node_modules` folder to the [`asar.unpack`](https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#asar) config option in your [`packagerConfig`](../../configuration.md#packager-config).  If you have any native modules as all you should probably use this to reduce loading times and disk consumption on your users' machines.
+# Auto Unpack Native Modules Plugin
+
+This plugin will automatically add all native Node modules in your `node_modules` folder to the [`asar.unpack`](https://electron.github.io/electron-packager/main/interfaces/electronpackager.options.html#asar) config option in your [`packagerConfig`](../../configuration.md#electron-packager-config). If your app uses native Node modules, you should probably use this to reduce loading times and disk consumption on your users' machines.
 
 ## Installation
 
-```bash
-yarn add @electron-forge/plugin-auto-unpack-natives --dev
+{% tabs %}
+{% tab title="Yarn" %}
+```shell
+yarn add --dev @electron-forge/plugin-auto-unpack-natives
 ```
+{% endtab %}
+
+{% tab title="npm" %}
+```shell
+npm install --save-dev @electron-forge/plugin-auto-unpack-natives
+```
+{% endtab %}
+{% endtabs %}
 
 ## Usage
 
-You must add this plugin to your [`plugins`](../../configuration.md#plugins) array in your forge config
-
-The complete config options are available at [`AutoUnpackNativesConfig`](https://js.electronforge.io/plugin/auto-unpack-natives/interfaces/autounpacknativesconfig.html). 
+You must add this plugin to your [`plugins`](../../configuration.md#plugins) array in your Forge configuration. There are currently no configuration options available for this plugin.
 
 {% code title="forge.config.js" %}
 ```javascript
 module.exports = {
+  packagerConfig: {
+    asar: {}
+  },
   plugins: [
-    ['@electron-forge/plugin-auto-unpack-natives']
+   {
+     name: '@electron-forge/plugin-auto-unpack-natives',
+     config: {}
+   }
   ]
 }
 ```
 {% endcode %}
-

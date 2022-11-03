@@ -4,14 +4,22 @@ The Snapcraft target publishes your `.snap` artifacts to the [Snap Store](https:
 
 This target requires that the system has the `snapcraft` utility installed.
 
-Configuration options are documented in [`PublisherSnapConfig`](https://js.electronforge.io/publisher/snapcraft/interfaces/publishersnapcraftconfig.html)
+Configuration options are documented in [`PublisherSnapConfig`](https://js.electronforge.io/interfaces/\_electron\_forge\_publisher\_snapcraft.PublisherSnapcraftConfig.html)
 
 ### Usage
 
+{% code title="forge.config.js" %}
 ```javascript
-{
-  name: '@electron-forge/publisher-snapcraft',
-  config: {}
+module.exports = {
+  // ...
+  publishers: [
+    {
+      name: '@electron-forge/publisher-snapcraft',
+      config: {
+        release: "[latest/edge, insider/stable]"
+      }
+    }
+  ]
 }
 ```
-
+{% endcode %}

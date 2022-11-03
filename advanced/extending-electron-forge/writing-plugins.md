@@ -4,7 +4,7 @@ An Electron Forge Plugin has to export a single class that extends our base plug
 
 ### `getHook(hookName: string): Function`
 
-If implemented this method will be called every time a hook fires inside Forge and you must look at the `hookName` and either return a function to run for that hook or return a falsey value to indicate you have no hook to run.  If you wish to run multiple hooks you should compose them into a single function yourself and return that composition.
+If implemented this method will be called every time a hook fires inside Forge and you must look at the `hookName` and either return a function to run for that hook or return a falsey value to indicate you have no hook to run. If you wish to run multiple hooks you should compose them into a single function yourself and return that composition.
 
 The possible `hookName` values and the parameters passed to the hook function you return are documented over in the [Configuration](../../configuration.md) section of the docs.
 
@@ -30,7 +30,7 @@ If implemented, this method will be called every time the user runs `electron-fo
 Please note that overriding the start logic here only works in **development** if you want to change how an app runs once packaged you will need to use a build hook to inject code into the packaged app.
 
 {% hint style="info" %}
-`StartOptions`is explained further [in the API docs](https://js.electronforge.io/utils/types/interfaces/startoptions).
+`StartOptions`is explained further [in the API docs](https://js.electronforge.io/interfaces/\_electron\_forge\_shared\_types.StartOptions.html).
 {% endhint %}
 
 ```javascript
@@ -43,4 +43,3 @@ export default class MyPlugin extends Pluginbase {
   compileMainProcess() { ... }
 }
 ```
-

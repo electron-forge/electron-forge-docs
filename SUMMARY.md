@@ -1,24 +1,27 @@
 # Table of contents
 
 * [Getting Started](README.md)
-* [Import Existing Project](import-existing-project.md)
+* [Importing an Existing Project](import-existing-project.md)
 * [Configuration](configuration.md)
 * [CLI](cli.md)
 
-## Built-in Templates <a id="templates"></a>
+## Core Concepts
 
-* [TypeScript](templates/typescript-template.md)
-* [TypeScript + Webpack](templates/typescript-+-webpack-template.md)
+* [Why Electron Forge](core-concepts/why-electron-forge.md)
+* [Build Lifecycle](core-concepts/build-lifecycle.md)
+
+## Built-in Templates <a href="#templates" id="templates"></a>
+
+* [Webpack + Typescript](templates/typescript-+-webpack-template.md)
 * [Webpack](templates/webpack-template.md)
 
-## Forge Configuration <a id="config"></a>
+## Forge Configuration <a href="#config" id="config"></a>
 
 * [Plugins](config/plugins/README.md)
-  * [Electronegativity](config/plugins/electronegativity.md)
-  * [Webpack](config/plugins/webpack.md)
-  * [Auto Unpack Native Modules](config/plugins/auto-unpack-natives.md)
-  * [Local Electron](config/plugins/local-electron.md)
-  * [Electron Compile](config/plugins/electron-compile.md)
+  * [Webpack Plugin](config/plugins/webpack.md)
+  * [Electronegativity Plugin](config/plugins/electronegativity.md)
+  * [Auto Unpack Native Modules Plugin](config/plugins/auto-unpack-natives.md)
+  * [Local Electron Plugin](config/plugins/local-electron.md)
 * [Makers](config/makers/README.md)
   * [AppX](config/makers/appx.md)
   * [deb](config/makers/deb.md)
@@ -40,7 +43,10 @@
 
 ## Guides
 
-* [Electron Guides](guides/electron-guides.md)
+* [Code Signing](guides/code-signing/README.md)
+  * [Signing a Windows app](guides/code-signing/code-signing-windows.md)
+  * [Signing a macOS app](guides/code-signing/code-signing-macos.md)
+* [Creating and Setting App Icons](guides/create-and-add-icons.md)
 * [Framework Integration](guides/framework-integration/README.md)
   * [Parcel](guides/framework-integration/parcel.md)
   * [React](guides/framework-integration/react.md)
@@ -57,5 +63,4 @@
   * [Writing Templates](advanced/extending-electron-forge/writing-templates.md)
   * [Writing Makers](advanced/extending-electron-forge/writing-makers.md)
   * [Writing Publishers](advanced/extending-electron-forge/writing-publishers.md)
-* [API Docs](https://js.electronforge.io/api/core)
-
+* [API Docs](https://js.electronforge.io/modules/\_electron\_forge\_core.html)
