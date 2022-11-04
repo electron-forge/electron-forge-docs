@@ -26,6 +26,16 @@ npm init electron-app@latest my-app
 {% endtab %}
 {% endtabs %}
 
+{% hint style="warning" %}
+If you used the `create-electron-app` script before during Forge `6.0.0-beta`, we recommend you uninstall the package globally before running the command again.
+
+```bash
+yarn global remove create-electron-app
+# or
+npm uninstall -g create-electron-app
+```
+{% endhint %}
+
 ### Using templates
 
 Forge's initialization scripts can add additional template code with the `--template=[template-name]` flag.
