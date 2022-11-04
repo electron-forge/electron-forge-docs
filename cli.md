@@ -32,30 +32,6 @@ npm install --save-dev @electron-forge/cli
 
 These commands help you get started with Forge. If you're just getting started with Electron Forge, we recommend you follow the [.](./ "mention") or [import-existing-project.md](import-existing-project.md "mention") guides.
 
-### Import
-
-This command will attempt to take an existing Electron app and make it compatible with Forge. Normally, this just creates a base Electron Forge configuration and adds the required dependencies.
-
-#### Options
-
-There are no options for the Import command.
-
-#### Usage
-
-{% tabs %}
-{% tab title="Yarn" %}
-```bash
-yarn electron-forge import
-```
-{% endtab %}
-
-{% tab title="npm" %}
-```bash
-npm electron-forge import
-```
-{% endtab %}
-{% endtabs %}
-
 ### Init
 
 {% hint style="info" %}
@@ -87,6 +63,30 @@ yarn electron-forge init --template=webpack
 {% tab title="npm" %}
 ```bash
 npx electron-forge init --template=webpack
+```
+{% endtab %}
+{% endtabs %}
+
+### Import
+
+This command will attempt to take an existing Electron app and make it compatible with Forge. Normally, this just creates a base Electron Forge configuration and adds the required dependencies.
+
+#### Options
+
+There are no options for the Import command.
+
+#### Usage
+
+{% tabs %}
+{% tab title="Yarn" %}
+```bash
+yarn electron-forge import
+```
+{% endtab %}
+
+{% tab title="npm" %}
+```bash
+npx electron-forge import
 ```
 {% endtab %}
 {% endtabs %}
