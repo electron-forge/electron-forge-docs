@@ -15,7 +15,7 @@ npx create-electron-app my-new-app --template=webpack-typescript
 
 {% tab title="Yarn" %}
 ```
-yarn create electron-app my-new-app --template=typescript-webpack
+yarn create electron-app my-new-app --template=webpack-typescript
 ```
 {% endtab %}
 {% endtabs %}
