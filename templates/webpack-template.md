@@ -7,15 +7,15 @@ description: Create a new Electron app with Webpack
 To get you up and running as fast as possible with the [webpack](https://webpack.js.org) bundler, we provide a template that makes use of the [`@electron-forge/plugin-webpack` module](../config/plugins/webpack.md), plus some preset webpack configuration options.  This is by far the quickest way to getting a working webpack setup with Electron.
 
 {% tabs %}
-{% tab title="NPM" %}
-```
-npx create-electron-app my-new-app --template=webpack
+{% tab title="Yarn" %}
+```bash
+yarn create electron-app my-new-app --template=webpack
 ```
 {% endtab %}
 
-{% tab title="Yarn" %}
-```
-yarn create electron-app my-new-app --template=webpack
+{% tab title="npm" %}
+```bash
+npm init electron-app@latest my-new-app --template=webpack
 ```
 {% endtab %}
 {% endtabs %}
