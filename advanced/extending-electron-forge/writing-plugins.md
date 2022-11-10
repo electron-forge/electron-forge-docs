@@ -2,7 +2,7 @@
 
 An Electron Forge Plugin has to export a single class that extends our base plugin. The base plugin can be depended on by installing`@electron-forge/plugin-base`. It can implement two methods, neither are required.
 
-### `getHooks():` ForgeMultiHookMap
+### `getHooks(): ForgeMultiHookMap`
 
 If implemented this method will be once during plugin initialization inside Forge, this method is called only once and shouldn't result in any side effects being executed.  You must return an object in a similar format to `forgeConfig.hooks`.  i.e. an object map between hook names and an array of hook functions.
 
