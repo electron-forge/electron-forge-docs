@@ -145,36 +145,42 @@ module.exports = {
 
 #### `generateAssets`
 
-This hook is called before `start` launches the application and before `package` is run, you should use this hook to generate any static files or resources your app requires but aren't in source code. For instance you could use this hook to generate a license file containing the license of all your dependencies.
+<mark style="color:purple;">`Arguments: (platform: string, arch: string)`</mark>\
+``This hook is called before `start` launches the application and before `package` is run, you should use this hook to generate any static files or resources your app requires but aren't in source code. For instance you could use this hook to generate a license file containing the license of all your dependencies.
 
 #### `postStart`
 
+<mark style="color:purple;">`Arguments: (appProcess: ChildProcess)`</mark>\
 This hook is called after `start` launches the application, you should use this hook to attach listeners to the spawned child process. The spawned process is passed through as the second hook argument.
 
 #### `prePackage`
 
+<mark style="color:purple;">`Arguments: (platform: string, arch: string)`</mark>\
 This hook is called before the `package` step runs.
 
 #### `packageAfterCopy`
 
+<mark style="color:purple;">`Arguments: (buildPath: string, electronVersion: string, platform: string, arch: string)`</mark>\
 This hook is called inside the [`afterCopy`](https://electron.github.io/electron-packager/master/interfaces/electronpackager.options.html#aftercopy) hook of Electron Packager. The hook is passed all the arguments that Electron Packager provides its `afterCopy` hooks.
 
 #### `packageAfterPrune`
 
+<mark style="color:purple;">`Arguments: (buildPath: string, electronVersion: string, platform: string, arch: string)`</mark>\
 This hook is called inside the [`afterPrune`](https://electron.github.io/electron-packager/master/interfaces/electronpackager.options.html#afterprune) hook of Electron Packager. The hook is passed all the arguments that Electron Packager provides its `afterPrune` hooks.
 
 #### `packageAfterExtract`
 
+<mark style="color:purple;">`Arguments: (buildPath: string, electronVersion: string, platform: string, arch: string)`</mark>\
 This hook is called inside the [`afterExtract`](https://electron.github.io/electron-packager/master/interfaces/electronpackager.options.html#afterextract) hook of Electron Packager. The hook is passed all of the arguments that Electron Packager provides its `afterExtract` hooks.
 
 #### `postPackage`
 
+<mark style="color:purple;">`Arguments: (packageResult: { platform: string; arch: string; outputPaths: string[] })`</mark>\
 This hook is called after the `package` step has successfully completed. The hook is passed the following parameters inside of an `Object`:
 
 * `platform`: the target platform for the app
 * `arch`: the target architecture for the app
 * `outputPaths`: an array of paths where packaged apps are located (usually only one)
-* `spinner`: if defined, the `ora` spinner associated with the package step
 
 For example:
 
@@ -183,9 +189,7 @@ For example:
 module.exports = {
   hooks: {
     postPackage: async (forgeConfig, options) => {
-      if (options.spinner) {
-        options.spinner.info(`Completed packaging for ${options.platform} / ${options.arch} at ${options.outputPaths[0]}`);
-      }
+      console.info('Packages built at:', options.outputPaths);
     }
   }
 };
@@ -194,14 +198,16 @@ module.exports = {
 
 #### `preMake`
 
-This hook is called before the `make` step runs.
+This hook is called before the `make` step runs.  This hook has no arguments
 
 #### `postMake`
 
+<mark style="color:purple;">`Arguments: (makeResults:`</mark> [<mark style="color:purple;">`MakeResult`</mark>](https://js.electronforge.io/interfaces/\_electron\_forge\_shared\_types.ForgeMakeResult.html)<mark style="color:purple;">`[])`</mark>\
 This hook is called after the `make` step has successfully completed. It is passed a single argument which is an array of [`MakeResult`](https://js.electronforge.io/interfaces/\_electron\_forge\_shared\_types.ForgeMakeResult.html) objects, if your hooks wishes to modify those make results it must return a new array of [`MakeResult`](https://js.electronforge.io/interfaces/\_electron\_forge\_shared\_types.ForgeMakeResult.html) objects that Electron Forge can use from then on.
 
 #### `readPackageJson`
 
+<mark style="color:purple;">`Arguments: (packageJson: Record<string, unknown>)`</mark>\
 This hook is called every time forge attempts to read your `package.json` file, you will be passed in the `package.json` object we have loaded and if you want to modify that object in any way you must do so and return the new value for Forge to use. This is useful to set things like the `version` field at runtime.
 
 {% hint style="info" %}
