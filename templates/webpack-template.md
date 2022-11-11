@@ -15,7 +15,7 @@ yarn create electron-app my-new-app --template=webpack
 
 {% tab title="npm" %}
 ```bash
-npm init electron-app@latest my-new-app --template=webpack
+npm init electron-app@latest my-new-app -- --template=webpack
 ```
 {% endtab %}
 {% endtabs %}
