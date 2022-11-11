@@ -49,7 +49,7 @@ yarn create electron-app --template=webpack
 
 {% tab title="npm" %}
 ```bash
-npm init electron-app@latest my-app --template=webpack
+npm init electron-app@latest my-app -- --template=webpack
 ```
 {% endtab %}
 {% endtabs %}
@@ -112,7 +112,7 @@ Now you have distributables that you can share with your users. If you run the `
 {% tabs %}
 {% tab title="yarn" %}
 ```bash
-yarn publish
+yarn run publish
 ```
 {% endtab %}
 
