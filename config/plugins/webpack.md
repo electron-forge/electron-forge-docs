@@ -276,7 +276,7 @@ Webpack [targets](https://webpack.js.org/configuration/target/) have first-class
 * When `nodeIntegration` is **true**, the `target` is `electron-renderer`.
 * When `nodeIntegration` is **false**, the `target` is `web`.
 
-This option is **false** by default**.** You can set this option for all renderers via the `renderer.nodeIntegration` option, and you can override its value in each renderer you create in the `entryPoints` array.
+This option is **false** by default\*\*.\*\* You can set this option for all renderers via the `renderer.nodeIntegration` option, and you can override its value in each renderer you create in the `entryPoints` array.
 
 In the below configuration example, webpack will compile to the `electron-renderer` target for all entry points except for `media_player`, which will compile to the `web` target.
 
@@ -350,4 +350,4 @@ Assuming you use the defined globals we explained in the above section, everythi
 
 ## How do I do virtual routing?
 
-If you want to use something like [`react-router`](https://github.com/ReactTraining/react-router) to do virtual routing in your app, you will need to ensure you use a history method that is not based on the browser history APIs. Browser history will work in development but not in production, as your code will be loaded from the filesystem, not a web server. In the `react-router` case, you should use the [`MemoryRouter`](https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/api/MemoryRouter.md) to make everything work.
+If you want to use something like [`react-router`](https://github.com/ReactTraining/react-router) to do virtual routing in your app, you will need to ensure you use a history method that is not based on the browser history APIs. Browser history will work in development but not in production, as your code will be loaded from the filesystem, not a web server. In the `react-router` case, you should use the [`MemoryRouter`](https://reactrouter.com/en/main/router-components/memory-router) to make everything work.
