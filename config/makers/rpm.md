@@ -6,13 +6,27 @@ description: >-
 
 # RPM
 
-The RPM target builds `.rpm` files, which is the standard package format for RedHat-based Linux distributions such as Fedora.
+The RPM target builds `.rpm` files, which is the standard package format for Red Hat-based Linux distributions such as Fedora and Red Hat Enterprise Linux (RHEL).
+
+## Requirements
 
 You can only build the RPM target on Linux machines with the `rpm` or `rpm-build` packages installed.
 
-Configuration options are documented in [`MakerRpmConfig`](https://js.electronforge.io/interfaces/_electron_forge_maker_rpm.MakerRpmConfig.html).
+On Fedora you can do something like this:
 
-### Usage
+```shell
+sudo dnf install rpm-build
+```
+
+While on Debian or Ubuntu you'll need to do this:
+
+```shell
+sudo apt-get install rpm
+```
+
+## Usage
+
+Configuration options are documented in [`MakerRpmConfig`](https://js.electronforge.io/interfaces/\_electron\_forge\_maker\_rpm.MakerRpmConfig.html).
 
 ```javascript
 {
@@ -25,4 +39,3 @@ Configuration options are documented in [`MakerRpmConfig`](https://js.electronfo
   }
 }
 ```
-
