@@ -71,6 +71,7 @@ By default, the `@electron/osx-sign` tool comes with a set of entitlements that 
 module.exports = {
   // ...
   packagerConfig: {
+    // ...
     osxSign: {
       optionsForFile: (filePath) => {
         // Here, we keep it simple and return a single entitlements.plist file.
@@ -124,11 +125,14 @@ There are two mandatory fields for `osxNotarize` if you are using this strategy:
 ```javascript
 module.exports = {
   //...
-  osxNotarize: {
-    tool: 'notarytool',
-    appleId: process.env.APPLE_ID,
-    appleIdPassword: process.env.APPLE_PASSWORD,
-    teamId: process.env.APPLE_TEAM_ID,
+  packagerConfig: {
+    // ...
+    osxNotarize: {
+      tool: 'notarytool',
+      appleId: process.env.APPLE_ID,
+      appleIdPassword: process.env.APPLE_PASSWORD,
+      teamId: process.env.APPLE_TEAM_ID,
+    }
   }
   //...
 }
@@ -155,11 +159,14 @@ There are three mandatory fields for `osxNotarize` if you are using this strateg
 ```javascript
 module.exports = {
   //...
-  osxNotarize: {
-    tool: 'notarytool',
-    appleApiKey: process.env.APPLE_API_KEY
-    appleApiKeyId: process.env.APPLE_API_KEY_ID
-    appleApiIssuer: process.env.APPLE_API_ISSUER
+  packagerConfig: {
+    // ...
+    osxNotarize: {
+      tool: 'notarytool',
+      appleApiKey: process.env.APPLE_API_KEY
+      appleApiKeyId: process.env.APPLE_API_KEY_ID
+      appleApiIssuer: process.env.APPLE_API_ISSUER
+    }
   }
   //...
 }
@@ -183,17 +190,22 @@ There are two mandatory fields for `osxNotarize` if you are using this strategy:
 | `keychain`        | string | Name of (or path to) the keychain containing the profile with your credentials. |
 | `keychainProfile` | string | Name of the keychain profile containing your notarization credentials.          |
 
+{% code title="forge.config.js" %}
 ```javascript
 module.exports = {
   //...
-  osxNotarize: {
-    tool: 'notarytool',
-    keychain: 'my-keychain'
-    keychainProfile: 'my-keychain-profile'
+  packagerConfig: {
+    // ...
+    osxNotarize: {
+      tool: 'notarytool',
+      keychain: 'my-keychain'
+      keychainProfile: 'my-keychain-profile'
+    }
   }
   //...
 }
 ```
+{% endcode %}
 
 ### Example configuration
 
@@ -214,4 +226,3 @@ module.exports = {
 };
 ```
 {% endcode %}
-

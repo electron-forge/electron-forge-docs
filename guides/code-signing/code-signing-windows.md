@@ -34,23 +34,19 @@ Once you have a Personal Information Exchange (`.pfx`) file for your certificate
 
 For example, if you are creating a Squirrel.Windows installer:
 
-<pre class="language-json" data-title="forge.config.js"><code class="lang-json"><strong>module.exports = {
-</strong>  "name": "my-app",
-  "version": "0.0.1",
-  //...
-  "config": {
-    "forge": {
-      "packagerConfig": {},
-      "makers": [
-        {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "certificateFile": "./cert.pfx",
-            "certificatePassword": process.env.CERTIFICATE_PASSWORD
-          }
-        }
-      ]
+{% code title="forge.config.js" %}
+```javascript
+module.exports = {
+  packagerConfig: {},
+  makers: [
+    {
+      name: '@electron-forge/maker-squirrel',
+      config: {
+        certificateFile: './cert.pfx',
+        certificatePassword: process.env.CERTIFICATE_PASSWORD
+      }
     }
-  }
-  //...
-}</code></pre>
+  ]
+}
+```
+{% endcode %}
