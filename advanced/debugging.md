@@ -40,3 +40,13 @@ If you are using &lt; 1.8 you should really be updating Electron anyway.
 ```
 {% endcode %}
 
+## Debugging with WebStorm / Other Jetbrains IDEs
+
+{% hint style="info" %}
+This assumes your `package.json` has a `"start": "electron-forge start"` script.
+{% endhint %}
+
+1. Access the `Run > Debug...` menu and select the `Edit Configurations...` option to open the `Run/Debug Configurations` window.
+2. Click on the `Add new configuration` button (the `+` icon) in the upper-left corner and select the `npm` template.
+3. In the `Scripts` dropdown menu, select `start`.
+4. Click on `Debug` to start debugging your app.
