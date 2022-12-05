@@ -40,7 +40,7 @@ If you are using &lt; 1.8 you should really be updating Electron anyway.
 ```
 {% endcode %}
 
-## Debugging with WebStorm / Other Jetbrains IDEs
+## Debugging with WebStorm or Other Jetbrains IDEs
 
 {% hint style="info" %}
 This assumes your `package.json` has a `"start": "electron-forge start"` script.
