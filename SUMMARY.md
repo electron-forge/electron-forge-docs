@@ -52,6 +52,7 @@
   * [React](guides/framework-integration/react.md)
   * [React with TypeScript](guides/framework-integration/react-with-typescript.md)
   * [Vue 2](guides/framework-integration/vue-2.md)
+  * [Tailwind CSS](guides/framework-integration/tailwind.md)
 * [Developing with WSL](guides/developing-with-wsl.md)
 
 ## Advanced
