@@ -44,6 +44,8 @@ rules.push({
   use: [{ loader: 'style-loader' }, { loader: 'css-loader' }, { loader: 'postcss-loader'}],
 });
 ```
+{% endcode %}
+
 ### Integrate Tailwind CSS styling
 
 You should now be able to start writing and using Tailwind CSS styling in your Electron app. To confirm, add the Tailwind CSS classes to the default `src/index.html`:
@@ -55,6 +57,7 @@ You should now be able to start writing and using Tailwind CSS styling in your E
     <p>Welcome to your Electron application.</p>
   </body>
 ```
+{% endcode %}
 
 For more about Tailwind CSS, see [their documentation](https://tailwindcss.com/docs).
 
