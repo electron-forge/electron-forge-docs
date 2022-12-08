@@ -59,13 +59,13 @@ There are currently two first-party templates:
 * `webpack`
 * `webpack-typescript`
 
-Both of these templates are built around the [Webpack Plugin](\(../config/plugins/webpack.md\)), which bundles your JavaScript code for production and includes a dev server to provide a better development experience. The `webpack-typescript` template also wires up your project for TypeScript support.
+Both of these templates are built around the [Webpack Plugin](/config/plugins/webpack.md), which bundles your JavaScript code for production and includes a dev server to provide a better development experience. The `webpack-typescript` template also wires up your project for TypeScript support.
 
 {% hint style="info" %}
 We highly recommend using these templates when initializing your app to take advantage of modern front-end JavaScript tooling.
 {% endhint %}
 
-To learn more about authoring your own templates for Electron Forge, check out the [Writing Templates](advanced/extending-electron-forge/writing-templates/) guide!
+To learn more about authoring your own templates for Electron Forge, check out the [Writing Templates](advanced/extending-electron-forge/writing-templates.md) guide!
 
 ## Starting your app
 
