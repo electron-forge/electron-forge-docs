@@ -7,7 +7,7 @@ description: How to create an Electron app with React and Electron Forge
 Adding React support to the Webpack template doesn't require a complicated boilerplate to get started.
 
 {% hint style="info" %}
-The following guide has been tested with React 17, Babel 7, and Webpack 5.
+The following guide has been tested with React 17 & 18, Babel 7, and Webpack 5.
 {% endhint %}
 
 ### Create the app and setup the Webpack config
@@ -92,6 +92,18 @@ import './app.jsx';
 ```
 {% endtab %}
 {% endtabs %}
+
+{% hint style="info" %} Note with React 18, the file `src/app.jsx` must be updated as follows:
+{% code title="src/app.jsx" %}
+```jsx
+import * as React from 'react';
+import * as ReactDOM from 'react-dom/client';
+
+const root = ReactDOM.createRoot(document.body)
+root.render(<h2>Hello from React!</h2>);
+```
+{% endcode %}
+{% endhint %}
 
 For more about React, see [their documentation](https://reactjs.org/docs/hello-world.html).
 
