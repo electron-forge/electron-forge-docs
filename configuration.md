@@ -4,7 +4,7 @@ description: How to configure Electron Forge
 
 # Configuration
 
-Electron Forge configuration is centralized in a single configuration object. You can specify this config in your package.json on the `config.forge` property. This property can have be in one of two forms:
+Electron Forge configuration is centralized in a single configuration object. You can specify this config in your package.json on the `config.forge` property. This property can be in one of two forms:
 
 * An object containing your entire Forge configuration.
 * A relative path pointing at a JavaScript file that exports your config.
@@ -101,7 +101,7 @@ The top level property `packagerConfig` on the configuration object maps directl
 The options you can put in this object are documented in the [Electron Packager API docs](https://electron.github.io/electron-packager/master/interfaces/electronpackager.options.html).
 
 {% hint style="warning" %}
-You can not override the `dir`, `arch`, `platform, out` or `electronVersion` options as they are set by Electron Forge internally.
+You can not override the `dir`, `arch`, `platform`, `out` or `electronVersion` options as they are set by Electron Forge internally.
 {% endhint %}
 
 ### Electron Rebuild config
@@ -198,7 +198,7 @@ module.exports = {
 
 #### `preMake`
 
-This hook is called before the `make` step runs.  This hook has no arguments
+This hook is called before the `make` step runs. This hook has no arguments
 
 #### `postMake`
 
