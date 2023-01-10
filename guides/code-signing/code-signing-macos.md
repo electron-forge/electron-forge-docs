@@ -56,7 +56,19 @@ In Electron Forge, macOS apps are signed and notarized at the **Package** step b
 Under the hood, Electron Forge uses the [`@electron/osx-sign`](https://github.com/electron/osx-sign) tool to sign your macOS application.
 {% endhint %}
 
-The `osxSign` comes with default settings that should work out the box for most Electron apps, and its configuration object has no mandatory fields.
+To enable code signing on macOS, ensure that `packagerConfig.osxSign` exists in your Forge configuration.
+
+{% code title="forge.config.js" %}
+```javascript
+module.exports = {
+  packagerConfig: {
+    osxSign: {} // object must exist even if empty
+  }
+}
+```
+{% endcode %}
+
+The `osxSign` config comes with defaults that work out of the box in most cases, so we recommend you start with an empty configuration object.
 
 For a full list of configuration options, see the [`OsxSignOptions`](https://js.electronforge.io/modules/\_electron\_forge\_shared\_types.InternalOptions.html#OsxSignOptions) type in the Forge API docs. For more detailed information on how to configure these options, see the [`@electron/osx-sign` documentation](https://github.com/electron/osx-sign).
 
