@@ -98,7 +98,7 @@ This plugin generates a separate entry for the main process, as well as each ren
 
 You need to do two things in your project files in order to make this plugin work.
 
-#### Main process
+#### package.json
 
 First, your `main` entry in your `package.json` file needs to point at `"./.webpack/main"` like so:
 
@@ -112,7 +112,7 @@ First, your `main` entry in your `package.json` file needs to point at `"./.webp
 ```
 {% endcode %}
 
-#### Renderer processes
+#### Main process code
 
 Second, all `loadURL` and `preload` paths need to reference the magic global variables that this plugin will define for you.
 
@@ -135,12 +135,47 @@ mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
 ```
 {% endcode %}
 
+These variables are only defined in the main process. If you need to use one of these paths in a renderer (e.g. to pass a preload script to a `<webview>` tag), you can pass the magic variable value with a synchronous IPC round trip.
+
+{% tabs %}
+{% tab title="Main Process" %}
+{% code title="main.js" %}
+```javascript
+// make sure this listener is set before your renderer.js code is called
+ipcMain.on('get-preload-path', (e) => {
+  e.returnValue = WINDOW_PRELOAD_WEBPACK_ENTRY;
+});
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Preload Script" %}
+{% code title="preload.js" %}
+```javascript
+const { contextBridge, ipcRenderer } = require('electron');
+
+contextBridge.exposeInMainWorld('electron', {
+  getPreloadPath: () => ipcRenderer.sendSync('get-preload-path');
+});
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Renderer Process" %}
+{% code title="renderer.js" %}
+```javascript
+const preloadPath = window.electron.getPreloadPath();
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
 {% hint style="info" %}
 **Usage with TypeScript**
 
 If you're using the webpack plugin with TypeScript, you will need to manually declare these magic variables to avoid compiler errors.
 
-{% code title="main.js" %}
+{% code title="main.js (Main Process)" %}
 ```typescript
 declare const MAIN_WINDOW_WEBPACK_ENTRY: string;
 declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
