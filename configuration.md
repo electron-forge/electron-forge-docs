@@ -218,7 +218,7 @@ Note: this will not change the name or version used by Electron Packager to cust
 
 This property can be used to identify different build configurations. Normally, this property is set to the channel the build will release to, or some other unique identifier. For example, common values are `prod` and `beta`. This identifier can be used in conjunction with the `fromBuildIdentifier` function to generate release channel or environment specific configuration. For example:
 
-{% code title="config.forge.js" %}
+{% code title="forge.config.js" %}
 ```javascript
 const { utils: { fromBuildIdentifier } } = require('@electron-forge/core');
 
