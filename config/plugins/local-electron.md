@@ -5,7 +5,7 @@ description: Integrate a local build of Electron into your Forge app.
 # Local Electron Plugin
 
 {% hint style="info" %}
-This plugin should only be used by people who are building Electron locally themselves. If you want to use a fork of Electron, check out the [environment variables](https://github.com/electron-userland/electron-download#usage) you can use to configure `@electron/get`.
+This plugin should only be used by people who are building Electron locally themselves. If you want to use a fork of Electron, check out the [environment variables](https://github.com/electron/get#usage) you can use to configure `@electron/get`.
 {% endhint %}
 
 This plugin allows you to both run and build your app using a **local** build of Electron. This can be incredibly useful if you want to test a feature or a bug fix in your app before making a PR up to the Electron repository.
