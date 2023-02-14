@@ -76,7 +76,7 @@ Create the app with the [Webpack template](../../templates/webpack-template.md) 
 {% tab title="NPM" %}
 
 ```
-npm install --save-dev vue-loader
+npm install --save-dev vue-loader @vue/compiler-sfc
 ```
 
 {% endtab %}
@@ -84,7 +84,7 @@ npm install --save-dev vue-loader
 {% tab title="Yarn" %}
 
 ```bash
-yarn add --dev vue-loader
+yarn add --dev vue-loader @vue/compiler-sfc
 ```
 
 {% endtab %}
