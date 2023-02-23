@@ -41,13 +41,10 @@ You should now be able to start writing and using React components in your Elect
 {% tabs %}
 {% tab title="src/app.tsx" %}
 ```tsx
-import * as ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
-function render() {
-  ReactDOM.render(<h2>Hello from React!</h2>, document.body);
-}
-
-render();
+const root = createRoot(document.body);
+root.render(<h2>Hello from React!</h2>);
 ```
 {% endtab %}
 
