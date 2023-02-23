@@ -210,7 +210,7 @@ In development mode, you can change most `webpack-dev-server` options by setting
 
 #### devContentSecurityPolicy
 
-In development mode, you can set a[ Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) by setting `devContentSecurityPolicy` in your Forge Webpack plugin configuration.
+In development mode, you can set a [Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) by setting `devContentSecurityPolicy` in your Forge Webpack plugin configuration.
 
 ```javascript
 {

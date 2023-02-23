@@ -8,7 +8,7 @@ description: How to use the command line interface (CLI) commands for Electron F
 
 Forge's CLI is the main way to run Electron Forge commands. It consists of a thin wrapper for its core API. Configuration for these commands is done through your [Forge configuration](configuration.md) object.
 
-If you want to use the core API programmatically, see the [#undefined](cli.md#undefined "mention") section below.
+If you want to use the core API programmatically, see the [#programmatic-usage](#programmatic-usage "mention") section below.
 
 ## Installation
 
