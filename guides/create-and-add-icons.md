@@ -16,7 +16,7 @@ On platforms that have high-DPI support (such as Apple Retina displays), you can
 
 If you want to support different displays with different DPI densities at the same time, you can put images with different sizes in the same folder and use the filename without DPI suffixes. For example:
 
-```
+```text
 images/
 ├── icon.png
 ├── icon@2x.png
@@ -69,7 +69,7 @@ Configuring the path to your icon must be done in both package.json as well as i
 
 <pre class="language-javascript" data-title="forge.config.js"><code class="lang-javascript">module.exports = {
   // ...
-  makers: [
+  makers: \[
     {
       name: '@electron-forge/maker-deb',
         config: {

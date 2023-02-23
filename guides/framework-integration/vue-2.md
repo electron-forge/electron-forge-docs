@@ -71,7 +71,7 @@ Create the app with the [Webpack template](../../templates/webpack-template.md) 
 
 {% tabs %}
 {% tab title="NPM" %}
-```
+```bash
 npm install --save-dev vue-loader vue-template-compiler
 ```
 {% endtab %}

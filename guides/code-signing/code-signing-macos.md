@@ -34,7 +34,7 @@ To sign Electron apps, you may require two separate certificates:
 * The **Developer ID Installer** certificate is for apps distributed to the Mac App Store.
 * The **Developer ID Application** certificate is for apps distributed outside the Mac App Store.
 
-Once you have an Apple Developer Program membership, you first need to install them onto your machine. We recommend[ loading them through Xcode](https://help.apple.com/xcode/mac/current/#/dev3a05256b8).
+Once you have an Apple Developer Program membership, you first need to install them onto your machine. We recommend [loading them through Xcode](https://help.apple.com/xcode/mac/current/#/dev3a05256b8).
 
 {% hint style="success" %}
 **Verifying your certificate is installed**
