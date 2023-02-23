@@ -1,3 +1,4 @@
 {
-  "extends": "@dsanders11/markdown-linting/configs/markdownlint.json"
+  "extends": "@dsanders11/markdown-linting/configs/markdownlint.json",
+  "blanks-around-fences": false
 }
