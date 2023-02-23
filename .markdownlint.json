@@ -1,0 +1,3 @@
+{
+  "extends": "@dsanders11/markdown-linting/configs/markdownlint.json"
+}
