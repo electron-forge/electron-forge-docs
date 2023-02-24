@@ -27,9 +27,10 @@ module.exports = {
           name: 'myreponame'
         },
         auth: {
-          username: process.env.BITBUCKET_USERNAME // string
+          username: process.env.BITBUCKET_USERNAME, // string
           appPassword: process.env.BITBUCKET_APP_PASSWORD // string
         }
+      }
     }
   ]
 }
