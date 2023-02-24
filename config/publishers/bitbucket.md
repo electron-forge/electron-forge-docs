@@ -17,22 +17,24 @@ Full configuration options are documented in [`PublisherBitbucketConfig`](https:
 {% code title="forge.config.js" %}
 ```javascript
 module.exports = {
-  // ...
-  publishers: [
-    {
-      name: '@electron-forge/publisher-bitbucket',
-      config: {
-        repository: {
-          owner: 'myusername',
-          name: 'myreponame'
-        },
-        auth: {
-          username: process.env.BITBUCKET_USERNAME // string
-          appPassword: process.env.BITBUCKET_APP_PASSWORD // string
+    // ...
+    publishers: [
+        {
+            name: '@electron-forge/publisher-bitbucket',
+            config: {
+                repository: {
+                    owner: 'myusername',
+                    name: 'myreponame'
+                },
+                auth: {
+                    username: process.env.BITBUCKET_USERNAME, // string
+                    appPassword: process.env.BITBUCKET_APP_PASSWORD // string
+                }
+            }
         }
-    }
-  ]
-}
+    ]
+};
+
 ```
 {% endcode %}
 
