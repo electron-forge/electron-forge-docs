@@ -43,7 +43,7 @@ Forge's initialization scripts can add additional template code with the `--temp
 {% tabs %}
 {% tab title="yarn" %}
 ```bash
-yarn create electron-app --template=webpack
+yarn create electron-app my-app --template=webpack
 ```
 {% endtab %}
 
