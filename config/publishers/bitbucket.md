@@ -23,8 +23,8 @@ module.exports = {
       name: '@electron-forge/publisher-bitbucket',
       config: {
         repository: {
-            owner: 'myusername',
-            name: 'myreponame'
+          owner: 'myusername',
+          name: 'myreponame'
         },
         auth: {
           username: process.env.BITBUCKET_USERNAME, // string
