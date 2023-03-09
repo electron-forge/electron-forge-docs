@@ -16,7 +16,7 @@ Since then, the Electron community has developed a rich ecosystem of tools to ha
 * Native Node.js module rebuilding (`electron-rebuild`)
 * Universal macOS builds (`@electron/universal`)
 
-Although these single-purpose packages are mature and production-ready, they application developers need to understand what each one does and write their own scripts to glue the packages together into a build pipeline. This process requires research and iteration, and can be confusing for folks who are new to Electron.
+Although these single-purpose packages are mature and production-ready, application developers need to understand what each one does and write their own scripts to glue the packages together into a build pipeline. This process requires research and iteration, and can be confusing for folks who are new to Electron.
 
 ## Value proposition
 
