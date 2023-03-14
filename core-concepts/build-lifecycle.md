@@ -90,4 +90,4 @@ If you want to share a specific sequence of build hook logic, you can modularize
 
 By default, Electron Forge will only build your app for the operating system it's running on. Targeting a different operating system (e.g. building a Windows app from macOS) has many caveats.
 
-If you don't have access to Windows, macOS, and Linux machines, we highly recommend creating a build pipeline on a Continuous Integration platform that supports all these platforms (e.g. CircleCI or GitHub Actions). For an example of CI builds in action, see [Electron Fiddle's GitHub Actions pipeline](https://github.com/electron/fiddle/blob/main/.github/workflows/build.yaml).
+If you don't have access to Windows, macOS, and Linux machines, we highly recommend creating a build pipeline on a Continuous Integration platform that supports all these platforms (e.g. CircleCI or GitHub Actions). For an example of CI builds in action, see [Electron Fiddle's GitHub Actions pipeline](https://github.com/electron/fiddle/blob/main/.github/workflows/build.yml).
