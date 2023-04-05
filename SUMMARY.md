@@ -14,6 +14,7 @@
 
 * [Webpack + Typescript](templates/typescript-+-webpack-template.md)
 * [Webpack](templates/webpack-template.md)
+* [Vite](templates/vite.md)
 
 ## Forge Configuration <a href="#config" id="config"></a>
 
@@ -22,6 +23,7 @@
   * [Electronegativity Plugin](config/plugins/electronegativity.md)
   * [Auto Unpack Native Modules Plugin](config/plugins/auto-unpack-natives.md)
   * [Local Electron Plugin](config/plugins/local-electron.md)
+  * [Vite Plugin](config/plugins/vite.md)
 * [Makers](config/makers/README.md)
   * [AppX](config/makers/appx.md)
   * [deb](config/makers/deb.md)
