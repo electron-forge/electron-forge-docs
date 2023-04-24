@@ -16,7 +16,7 @@ On Windows, apps are signed using [Sign Tool](https://learn.microsoft.com/en-us/
 
 You can get a [Windows Authenticode ](https://learn.microsoft.com/en-us/windows-hardware/drivers/install/authenticode)code signing certificate from many vendors. Prices vary, so it may be worth your time to shop around. Popular vendors include:
 
-* [digicert](https://www.digicert.com/code-signing/microsoft-authenticode.htm)
+* [digicert](https://www.digicert.com/dc/code-signing/microsoft-authenticode.htm)
 * [Sectigo](https://sectigo.com/ssl-certificates-tls/code-signing)
 * Amongst others, please shop around to find one that suits your needs! 😄
 
