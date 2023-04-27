@@ -16,37 +16,43 @@ Create the app with the [Webpack template](../../templates/webpack-template.md).
 
 {% tabs %}
 {% tab title="Yarn" %}
+
 ```bash
 yarn add --dev @babel/core @babel/preset-react babel-loader
 ```
+
 {% endtab %}
 
 {% tab title="NPM" %}
+
 ```text
 npm install --save-dev @babel/core @babel/preset-react babel-loader
 ```
+
 {% endtab %}
 {% endtabs %}
 
 Set up the [`babel-loader`](https://www.npmjs.com/package/babel-loader)module with the [React preset](https://babeljs.io/docs/en/babel-preset-react) in `webpack.rules.js`:
 
 {% code title="webpack.rules.js" %}
+
 ```javascript
 module.exports = [
   // ... existing loader config ...
   {
     test: /\.jsx?$/,
     use: {
-      loader: 'babel-loader',
+      loader: "babel-loader",
       options: {
         exclude: /node_modules/,
-        presets: ['@babel/preset-react']
-      }
-    }
+        presets: ["@babel/preset-react"],
+      },
+    },
   },
   // ... existing loader config ...
-]
+];
 ```
+
 {% endcode %}
 
 ### Add the React dependencies
@@ -55,15 +61,19 @@ Add the basic React packages to your `dependencies`:
 
 {% tabs %}
 {% tab title="Yarn" %}
+
 ```bash
 yarn add react react-dom
 ```
+
 {% endtab %}
 
 {% tab title="NPM" %}
+
 ```bash
 npm install --save react react-dom
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -73,9 +83,10 @@ You should now be able to start writing and using React components in your Elect
 
 {% tabs %}
 {% tab title="src/app.jsx" %}
+
 ```jsx
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import * as React from "react";
+import * as ReactDOM from "react-dom";
 
 function render() {
   ReactDOM.render(<h2>Hello from React!</h2>, document.body);
@@ -83,15 +94,17 @@ function render() {
 
 render();
 ```
+
 {% endtab %}
 
 {% tab title="src/renderer.js" %}
+
 ```javascript
 // Add this to the end of the existing file
-import './app.jsx';
+import "./app.jsx";
 ```
+
 {% endtab %}
 {% endtabs %}
 
 For more about React, see [their documentation](https://reactjs.org/docs/hello-world.html).
-

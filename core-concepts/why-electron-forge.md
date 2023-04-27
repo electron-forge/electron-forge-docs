@@ -10,11 +10,11 @@ Application packaging and distribution has always been handled outside of the co
 
 Since then, the Electron community has developed a rich ecosystem of tools to handle every task for Electron app distribution, including:
 
-* Application packaging (`electron-packager`)
-* Code signing (e.g. `@electron/osx-sign`)
-* Creating platform-specific installers (e.g. `electron-winstaller` or `electron-installer-dmg`).
-* Native Node.js module rebuilding (`electron-rebuild`)
-* Universal macOS builds (`@electron/universal`)
+- Application packaging (`electron-packager`)
+- Code signing (e.g. `@electron/osx-sign`)
+- Creating platform-specific installers (e.g. `electron-winstaller` or `electron-installer-dmg`).
+- Native Node.js module rebuilding (`electron-rebuild`)
+- Universal macOS builds (`@electron/universal`)
 
 Although these single-purpose packages are mature and production-ready, application developers need to understand what each one does and write their own scripts to glue the packages together into a build pipeline. This process requires research and iteration, and can be confusing for folks who are new to Electron.
 
@@ -34,13 +34,5 @@ We believe there are two main advantages to using Forge:
 
 1. **Forge receives new features for application building as soon as they are supported in Electron** (e.g. [ASAR integrity ](https://electronjs.org/docs/latest/tutorial/asar-integrity)or [universal macOS builds](https://github.com/electron/universal)). These features are built with first-party Electron tooling in mind, so Forge receives them as soon as they are released.
 2. **Forge's multi-package architecture makes it easier to understand and extend.** Since Forge is made up of many smaller packages with clear responsibilities, it is easier to follow the flow of the code. Also, its extensible API design means that you can write your own build logic separate from the provided configuration options for advanced use cases.
-
-
-
-
-
-
-
-
 
 ## &#x20;

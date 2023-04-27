@@ -4,7 +4,6 @@ Electron Forge is designed to be easily extendable by third parties with whateve
 
 To briefly explain some terms:
 
-* `maker`: A tool that takes a packaged Electron application and outputs a certain kind of distributable
-* `publisher`: A tool that takes distributables and "publishes" \(normally just uploads\) them somewhere \(for example, GitHub releases\)
-* `plugin`: A tool that hooks into Forge's internals and can inject logic into your build process
-
+- `maker`: A tool that takes a packaged Electron application and outputs a certain kind of distributable
+- `publisher`: A tool that takes distributables and "publishes" \(normally just uploads\) them somewhere \(for example, GitHub releases\)
+- `plugin`: A tool that hooks into Forge's internals and can inject logic into your build process

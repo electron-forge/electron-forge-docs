@@ -8,15 +8,19 @@ To get you up and running as fast as possible with Vite, we provide a template t
 
 {% tabs %}
 {% tab title="Yarn" %}
+
 ```bash
 yarn create electron-app my-new-app --template=vite
 ```
+
 {% endtab %}
 
 {% tab title="npm" %}
+
 ```bash
 npm init electron-app@latest my-new-app -- --template=vite
 ```
+
 {% endtab %}
 {% endtabs %}
 

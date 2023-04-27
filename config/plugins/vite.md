@@ -10,15 +10,19 @@ This plugin makes it easy to set up standard Vite tooling to compile both your m
 
 {% tabs %}
 {% tab title="yarn" %}
+
 ```shell
 yarn add --dev @electron-forge/plugin-vite
 ```
+
 {% endtab %}
 
 {% tab title="npm" %}
+
 ```shell
 npm install --save-dev @electron-forge/plugin-vite
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -32,11 +36,12 @@ For example, this is the [configuration](../../configuration.md) taken from Forg
 
 {% tabs %}
 {% tab title="forge.config.js" %}
+
 ```javascript
 module.exports = {
   plugins: [
     {
-      name: '@electron-forge/plugin-vite',
+      name: "@electron-forge/plugin-vite",
       config: {
         // `build` can specify multiple entry builds, which can be
         // Main process, Preload scripts, Worker process, etc.
@@ -44,18 +49,18 @@ module.exports = {
           {
             // `entry` is an alias for `build.lib.entry`
             // in the corresponding file of `config`.
-            entry: 'src/main.js',
-            config: 'vite.main.config.mjs',
+            entry: "src/main.js",
+            config: "vite.main.config.mjs",
           },
           {
-            entry: 'src/preload.js',
-            config: 'vite.preload.config.mjs',
+            entry: "src/preload.js",
+            config: "vite.preload.config.mjs",
           },
         ],
         renderer: [
           {
-            name: 'main_window',
-            config: 'vite.renderer.config.mjs',
+            name: "main_window",
+            config: "vite.renderer.config.mjs",
           },
         ],
       },
@@ -63,9 +68,11 @@ module.exports = {
   ],
 };
 ```
+
 {% endtab %}
 
 {% tab title="package.json" %}
+
 ```json
 {
   //...
@@ -99,6 +106,7 @@ module.exports = {
   //...
 }
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -111,6 +119,7 @@ Vite's build config generates a separate entry for the main process and preload 
 Your `main` entry in your `package.json` file needs to point at `".vite/build/main"`, like so:
 
 {% code title="package.json" %}
+
 ```javascript
 {
   "name": "my-vite-app",
@@ -118,6 +127,7 @@ Your `main` entry in your `package.json` file needs to point at `".vite/build/ma
   ...
 }
 ```
+
 {% endcode %}
 
 If using the Vite template, this should be automatically set up for you.
@@ -129,32 +139,32 @@ If using the Vite template, this should be automatically set up for you.
 If you used the [Vite](../../templates/vite.md) template to create your application, native modules will mostly work out of the box. However, to avoid possible build issues, we recommend instructing Vite to load them as external packages:
 
 {% code title="vite.main.config.js" %}
+
 ```javascript
-import { defineConfig } from 'vite';
+import { defineConfig } from "vite";
 
 export default defineConfig({
   build: {
     rollupOptions: {
-      external: [
-        'serialport',
-        'sqlite3',
-      ],
+      external: ["serialport", "sqlite3"],
     },
   },
 });
 ```
+
 {% endcode %}
 
 ### Hot Module Replacement (HMR)
 
 In order to use Vite's [Hot Module Replacement (HMR)](https://vitejs.dev/guide/features.html#hot-module-replacement), all `loadURL` paths need to reference the global variables that the Vite plugin will define for you:
 
-* The dev server will be suffixed with `_DEV_SERVER_URL`
-* The static file path will be suffixed with `_VITE_NAME`
+- The dev server will be suffixed with `_DEV_SERVER_URL`
+- The static file path will be suffixed with `_VITE_NAME`
 
 In the case of the `main_window`, the global variables will be named `MAIN_WINDOW_VITE_DEV_SERVER_URL` and `MAIN_WINDOW_VITE_NAME`. An example of how to use them is given below:
 
 {% code title="main.js" %}
+
 ```javascript
 const mainWindow = new BrowserWindow({...});
 
@@ -164,6 +174,7 @@ if (MAIN_WINDOW_VITE_DEV_SERVER_URL) {
   mainWindow.loadFile(path.join(__dirname, `../renderer/${MAIN_WINDOW_VITE_NAME}/index.html`));
 };
 ```
+
 {% endcode %}
 
 {% hint style="info" %}
@@ -172,4 +183,5 @@ If using TypeScript, the variables can be defined as such:
 <pre class="language-typescript" data-title="main.js (Main Process)"><code class="lang-typescript"><strong>declare const MAIN_WINDOW_VITE_DEV_SERVER_URL: string;
 </strong>declare const MAIN_WINDOW_VITE_NAME: string;
 </code></pre>
+
 {% endhint %}

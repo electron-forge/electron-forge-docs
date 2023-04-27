@@ -12,6 +12,7 @@ Each maker has to be configured in the `makers` section of your forge configurat
 
 {% tabs %}
 {% tab title="package.json" %}
+
 ```javascript
 // If your config is only in package.json:
 // Only showing the relevant configuration for brevity
@@ -30,26 +31,28 @@ Each maker has to be configured in the `makers` section of your forge configurat
   }
 }
 ```
+
 {% endtab %}
 
 {% tab title="forge.config.js" %}
+
 ```javascript
 // If you have set config.forge to a JavaScript file path in package.json:
 // Only showing the relevant configuration for brevity
 module.exports = {
-    makers: [
-        {
-            name: '@electron-forge/maker-zip',
-            platforms: ['darwin', 'linux'],
-            config: {
-                // Config here
-            }
-        }
-    ]
-}
+  makers: [
+    {
+      name: "@electron-forge/maker-zip",
+      platforms: ["darwin", "linux"],
+      config: {
+        // Config here
+      },
+    },
+  ],
+};
 ```
+
 {% endtab %}
 {% endtabs %}
 
 Please note that all makers have logical defaults for the `platforms` value so you normally don't need to specify that property.
-

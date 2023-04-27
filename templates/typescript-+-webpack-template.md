@@ -8,15 +8,19 @@ To get you up and running as fast as possible with [TypeScript](https://www.type
 
 {% tabs %}
 {% tab title="Yarn" %}
+
 ```bash
 yarn create electron-app my-new-app --template=webpack-typescript
 ```
+
 {% endtab %}
 
 {% tab title="npm" %}
+
 ```bash
 npm init electron-app@latest my-new-app -- --template=webpack-typescript
 ```
+
 {% endtab %}
 {% endtabs %}
 

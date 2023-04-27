@@ -6,29 +6,32 @@ description: How to configure Electron Forge
 
 Electron Forge configuration is centralized in a single configuration object. You can specify this config in your package.json on the `config.forge` property. This property can have be in one of two forms:
 
-* An object containing your entire Forge configuration.
-* A relative path pointing at a JavaScript file that exports your config.
+- An object containing your entire Forge configuration.
+- A relative path pointing at a JavaScript file that exports your config.
 
 If you do not have `config.forge` set in your package.json file, Forge will attempt to find a `forge.config.js` file in your project root.
 
 {% tabs %}
 {% tab title="forge.config.js" %}
 {% code title="forge.config.js" %}
+
 ```javascript
 module.exports = {
   packagerConfig: {},
   makers: [
     {
-      name: '@electron-forge/maker-zip'
-    }
-  ]
-}
+      name: "@electron-forge/maker-zip",
+    },
+  ],
+};
 ```
+
 {% endcode %}
 {% endtab %}
 
 {% tab title="package.json" %}
 {% code title="package.json" %}
+
 ```javascript
 {
   "name": "my-app",
@@ -45,6 +48,7 @@ module.exports = {
   }
 }
 ```
+
 {% endcode %}
 {% endtab %}
 {% endtabs %}
@@ -57,6 +61,7 @@ We recommend using using JavaScript for your config file since it enables condit
 
 {% tabs %}
 {% tab title="forge.config.js" %}
+
 ```javascript
 module.exports = {
   packagerConfig: { ... },
@@ -68,9 +73,11 @@ module.exports = {
   buildIdentifier: 'my-build'
 }
 ```
+
 {% endtab %}
 
 {% tab title="package.json" %}
+
 ```javascript
 // Only the relevant section of package.json is shown, for brevity.
 {
@@ -87,6 +94,7 @@ module.exports = {
   }
 }
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -131,22 +139,24 @@ The top level property `plugins` on the configuration object is an array of plug
 Hooks allow you to run your own logic at different points in the Electron Forge build process. Each hook must be an asynchronous function that returns a Promise. **The first argument of any hook function is the Electron Forge configuration associated with the Electron app**. Subsequent arguments depend on the hook type.
 
 {% code title="forge.config.js" %}
+
 ```javascript
 // Only showing the relevant config for hooks, for brevity
 module.exports = {
   hooks: {
     generateAssets: async (forgeConfig, platform, arch) => {
-      console.log('We should generate some assets here');
-    }
-  }
-}
+      console.log("We should generate some assets here");
+    },
+  },
+};
 ```
+
 {% endcode %}
 
 #### `generateAssets`
 
 <mark style="color:purple;">`Arguments: (platform: string, arch: string)`</mark>\
-``This hook is called before `start` launches the application and before `package` is run, you should use this hook to generate any static files or resources your app requires but aren't in source code. For instance you could use this hook to generate a license file containing the license of all your dependencies.
+``This hook is called before `start`launches the application and before`package` is run, you should use this hook to generate any static files or resources your app requires but aren't in source code. For instance you could use this hook to generate a license file containing the license of all your dependencies.
 
 #### `postStart`
 
@@ -178,32 +188,34 @@ This hook is called inside the [`afterExtract`](https://electron.github.io/elect
 <mark style="color:purple;">`Arguments: (packageResult: { platform: string; arch: string; outputPaths: string[] })`</mark>\
 This hook is called after the `package` step has successfully completed. The hook is passed the following parameters inside of an `Object`:
 
-* `platform`: the target platform for the app
-* `arch`: the target architecture for the app
-* `outputPaths`: an array of paths where packaged apps are located (usually only one)
+- `platform`: the target platform for the app
+- `arch`: the target architecture for the app
+- `outputPaths`: an array of paths where packaged apps are located (usually only one)
 
 For example:
 
 {% code title="forge.config.js" %}
+
 ```javascript
 module.exports = {
   hooks: {
     postPackage: async (forgeConfig, options) => {
-      console.info('Packages built at:', options.outputPaths);
-    }
-  }
+      console.info("Packages built at:", options.outputPaths);
+    },
+  },
 };
 ```
+
 {% endcode %}
 
 #### `preMake`
 
-This hook is called before the `make` step runs.  This hook has no arguments
+This hook is called before the `make` step runs. This hook has no arguments
 
 #### `postMake`
 
-<mark style="color:purple;">`Arguments: (makeResults:`</mark> [<mark style="color:purple;">`MakeResult`</mark>](https://js.electronforge.io/interfaces/\_electron\_forge\_shared\_types.ForgeMakeResult.html)<mark style="color:purple;">`[])`</mark>\
-This hook is called after the `make` step has successfully completed. It is passed a single argument which is an array of [`MakeResult`](https://js.electronforge.io/interfaces/\_electron\_forge\_shared\_types.ForgeMakeResult.html) objects, if your hooks wishes to modify those make results it must return a new array of [`MakeResult`](https://js.electronforge.io/interfaces/\_electron\_forge\_shared\_types.ForgeMakeResult.html) objects that Electron Forge can use from then on.
+<mark style="color:purple;">`Arguments: (makeResults:`</mark> [<mark style="color:purple;">`MakeResult`</mark>](https://js.electronforge.io/interfaces/_electron_forge_shared_types.ForgeMakeResult.html)<mark style="color:purple;">`[])`</mark>\
+This hook is called after the `make` step has successfully completed. It is passed a single argument which is an array of [`MakeResult`](https://js.electronforge.io/interfaces/_electron_forge_shared_types.ForgeMakeResult.html) objects, if your hooks wishes to modify those make results it must return a new array of [`MakeResult`](https://js.electronforge.io/interfaces/_electron_forge_shared_types.ForgeMakeResult.html) objects that Electron Forge can use from then on.
 
 #### `readPackageJson`
 
@@ -219,16 +231,20 @@ Note: this will not change the name or version used by Electron Packager to cust
 This property can be used to identify different build configurations. Normally, this property is set to the channel the build will release to, or some other unique identifier. For example, common values are `prod` and `beta`. This identifier can be used in conjunction with the `fromBuildIdentifier` function to generate release channel or environment specific configuration. For example:
 
 {% code title="forge.config.js" %}
+
 ```javascript
-const { utils: { fromBuildIdentifier } } = require('@electron-forge/core');
+const {
+  utils: { fromBuildIdentifier },
+} = require("@electron-forge/core");
 
 module.exports = {
-  buildIdentifier: process.env.IS_BETA ? 'beta' : 'prod',
+  buildIdentifier: process.env.IS_BETA ? "beta" : "prod",
   packagerConfig: {
-    appBundleId: fromBuildIdentifier({ beta: 'com.beta.app', prod: 'com.app' })
-  }
-}
+    appBundleId: fromBuildIdentifier({ beta: "com.beta.app", prod: "com.app" }),
+  },
+};
 ```
+
 {% endcode %}
 
 In this example the `appBundleId` option passed to Electron Packager will be selected based on the `buildIdentifer` based on whether you are building for `prod` or `beta`. This allows you to make shared configs incredibly easily as only the values that change need to be wrapped with this function.

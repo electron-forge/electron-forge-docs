@@ -16,15 +16,19 @@ To use the Forge CLI, install the `@electron-forge/cli` module into your project
 
 {% tabs %}
 {% tab title="Yarn" %}
+
 ```bash
 yarn add --dev @electron-forge/cli
 ```
+
 {% endtab %}
 
 {% tab title="npm" %}
+
 ```bash
 npm install --save-dev @electron-forge/cli
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -55,15 +59,19 @@ All flags are optional.
 
 {% tabs %}
 {% tab title="Yarn" %}
+
 ```bash
 yarn electron-forge init --template=webpack
 ```
+
 {% endtab %}
 
 {% tab title="npm" %}
+
 ```bash
 npx electron-forge init --template=webpack
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -79,15 +87,19 @@ There are no options for the Import command.
 
 {% tabs %}
 {% tab title="Yarn" %}
+
 ```bash
 yarn electron-forge import
 ```
+
 {% endtab %}
 
 {% tab title="npm" %}
+
 ```bash
 npx electron-forge import
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -116,21 +128,25 @@ All flags are optional.
 
 {% tabs %}
 {% tab title="Yarn" %}
+
 ```bash
 # By default, the package command corresponds to a package npm script:
 yarn package --arch=ia32
 # If there is no package script:
 yarn electron-forge package --arch=ia32
 ```
+
 {% endtab %}
 
 {% tab title="npm" %}
+
 ```bash
 # By default, the package command corresponds to a package npm script:
 npm run package -- --arch=ia32
 # If there is no package script:
 npx electron-forge package --arch=ia32
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -155,21 +171,25 @@ All flags are optional.
 
 {% tabs %}
 {% tab title="Yarn" %}
+
 ```bash
 # By default, the make command corresponds to a make npm script:
 yarn make --arch=ia32
 # If there is no make script:
 yarn electron-forge make --arch=ia32
 ```
+
 {% endtab %}
 
 {% tab title="npm" %}
+
 ```bash
 # By default, the make command corresponds to a make npm script:
 npm run make -- --arch=ia32
 # If there is no make script:
 npx electron-forge make --arch=ia32
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -193,17 +213,21 @@ All flags are optional.
 
 {% tabs %}
 {% tab title="Yarn" %}
+
 <pre class="language-bash"><code class="lang-bash"><strong># By default, the publish command corresponds to a publish npm script:
 </strong>yarn run publish --from-dry-run
 # If there is no publish script:
 yarn electron-forge publish --from-dry-run</code></pre>
+
 {% endtab %}
 
 {% tab title="npm" %}
+
 <pre class="language-bash"><code class="lang-bash"><strong># By default, the publish command corresponds to a publish npm script:
 </strong>npm run publish -- --from-dry-run
 # If there is no publish script:
 npx electron-forge publish -- --from-dry-run</code></pre>
+
 {% endtab %}
 {% endtabs %}
 
@@ -233,21 +257,25 @@ All flags are optional.
 
 {% tabs %}
 {% tab title="Yarn" %}
+
 ```bash
 # By default, the start command corresponds to a start npm script:
 yarn start --enable-logging
 # if there is no start script
 yarn electron-forge start --enable-logging
 ```
+
 {% endtab %}
 
 {% tab title="npm" %}
+
 ```bash
 # By default, the start command corresponds to a start npm script:
 npm start --enable-logging
 # if there is no start script
 npx electron-forge start --enable-logging
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -256,15 +284,15 @@ npx electron-forge start --enable-logging
 The Forge CLI should suit most use cases, but we do expose the `@electron-forge/core` package for programmatic command usage.
 
 ```javascript
-const { api } = require('@electron-forge/core');
+const { api } = require("@electron-forge/core");
 
 const main = async () => {
   await api.package({
     // add package command options here
-  })
-}
+  });
+};
 
 main();
 ```
 
-For more information, see the [API documentation](https://js.electronforge.io/classes/\_electron\_forge\_core.ForgeAPI.html).
+For more information, see the [API documentation](https://js.electronforge.io/classes/_electron_forge_core.ForgeAPI.html).

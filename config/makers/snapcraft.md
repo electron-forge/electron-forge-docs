@@ -25,4 +25,3 @@ Configuration options are documented in [`MakerSnapConfig`](https://js.electronf
   }
 }
 ```
-

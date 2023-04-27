@@ -14,15 +14,19 @@ To get started with Electron Forge, we first need to initialize a new project wi
 
 {% tabs %}
 {% tab title="Yarn" %}
+
 ```bash
 yarn create electron-app my-app
 ```
+
 {% endtab %}
 
 {% tab title="npm" %}
+
 ```bash
 npm init electron-app@latest my-app
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -34,6 +38,7 @@ yarn global remove create-electron-app
 # or
 npm uninstall -g create-electron-app
 ```
+
 {% endhint %}
 
 ### Using templates
@@ -42,22 +47,26 @@ Forge's initialization scripts can add additional template code with the `--temp
 
 {% tabs %}
 {% tab title="yarn" %}
+
 ```bash
 yarn create electron-app my-app --template=webpack
 ```
+
 {% endtab %}
 
 {% tab title="npm" %}
+
 ```bash
 npm init electron-app@latest my-app -- --template=webpack
 ```
+
 {% endtab %}
 {% endtabs %}
 
 There are currently two first-party templates:
 
-* `webpack`
-* `webpack-typescript`
+- `webpack`
+- `webpack-typescript`
 
 Both of these templates are built around the [Webpack Plugin](/config/plugins/webpack.md), which bundles your JavaScript code for production and includes a dev server to provide a better development experience. The `webpack-typescript` template also wires up your project for TypeScript support.
 
@@ -73,17 +82,21 @@ You should now have a directory called `my-app` with all the files you need for 
 
 {% tabs %}
 {% tab title="Yarn" %}
+
 ```bash
 cd my-app
 yarn start
 ```
+
 {% endtab %}
 
 {% tab title="npm" %}
+
 ```bash
 cd my-app
 npm start
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -93,15 +106,19 @@ So you've got an **amazing** application there, and you want to package it all u
 
 {% tabs %}
 {% tab title="yarn" %}
+
 ```bash
 yarn make
 ```
+
 {% endtab %}
 
 {% tab title="npm" %}
+
 ```bash
 npm run make
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -111,15 +128,19 @@ Now you have distributables that you can share with your users. If you run the `
 
 {% tabs %}
 {% tab title="yarn" %}
+
 ```bash
 yarn run publish
 ```
+
 {% endtab %}
 
 {% tab title="npm" %}
+
 ```bash
 npm run publish
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -129,6 +150,6 @@ Once you've got a basic app starting, building and publishing, it's time to add 
 
 You can also check out the documentation on some of our more advanced features like:
 
-* [Adding plugins](config/plugins/)
-* [Debugging your app](advanced/debugging.md)
-* [Writing your own makers, publishers and plugins](advanced/extending-electron-forge/)
+- [Adding plugins](config/plugins/)
+- [Debugging your app](advanced/debugging.md)
+- [Writing your own makers, publishers and plugins](advanced/extending-electron-forge/)

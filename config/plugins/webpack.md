@@ -10,15 +10,19 @@ This plugin makes it easy to set up standard [webpack](https://webpack.js.org/) 
 
 {% tabs %}
 {% tab title="yarn" %}
+
 ```shell
 yarn add --dev @electron-forge/plugin-webpack
 ```
+
 {% endtab %}
 
 {% tab title="npm" %}
+
 ```shell
 npm install --save-dev @electron-forge/plugin-webpack
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -26,40 +30,45 @@ npm install --save-dev @electron-forge/plugin-webpack
 
 ### Plugin configuration
 
-You must provide two webpack configuration files: one for the main process in `mainConfig`, and one for the renderer process in `renderer.config`. The complete config options are available in the API docs under [`WebpackPluginConfig`](https://js.electronforge.io/interfaces/\_electron\_forge\_plugin\_webpack.WebpackPluginConfig.html).
+You must provide two webpack configuration files: one for the main process in `mainConfig`, and one for the renderer process in `renderer.config`. The complete config options are available in the API docs under [`WebpackPluginConfig`](https://js.electronforge.io/interfaces/_electron_forge_plugin_webpack.WebpackPluginConfig.html).
 
 For example, this is the [configuration](../../configuration.md) taken from Forge's [webpack template](../../templates/webpack-template.md):
 
 {% tabs %}
 {% tab title="forge.config.js" %}
+
 ```javascript
 module.exports = {
   //...
   plugins: [
     {
-      name: '@electron-forge/plugin-webpack',
+      name: "@electron-forge/plugin-webpack",
       config: {
-        mainConfig: './webpack.main.config.js',
+        mainConfig: "./webpack.main.config.js",
         renderer: {
-          config: './webpack.renderer.config.js',
-          entryPoints: [{
-            name: 'main_window',
-            html: './src/renderer/index.html',
-            js: './src/renderer/index.js',
-            preload: {
-              js: './src/preload.js'
-            }
-          }],
-        }
-      }
-    }
-  ]
+          config: "./webpack.renderer.config.js",
+          entryPoints: [
+            {
+              name: "main_window",
+              html: "./src/renderer/index.html",
+              js: "./src/renderer/index.js",
+              preload: {
+                js: "./src/preload.js",
+              },
+            },
+          ],
+        },
+      },
+    },
+  ],
   //...
-}
+};
 ```
+
 {% endtab %}
 
 {% tab title="package.json" %}
+
 ```json
 {
   //...
@@ -72,14 +81,16 @@ module.exports = {
             "mainConfig": "./webpack.main.config.js",
             "renderer": {
               "config": "./webpack.renderer.config.js",
-              "entryPoints": [{
-                "name": "main_window",
-                "html": "./src/renderer/index.html",
-                "js": "./src/renderer/index.js",
-                "preload": {
-                  "js": "./src/preload.js"
+              "entryPoints": [
+                {
+                  "name": "main_window",
+                  "html": "./src/renderer/index.html",
+                  "js": "./src/renderer/index.js",
+                  "preload": {
+                    "js": "./src/preload.js"
+                  }
                 }
-              }]
+              ]
             }
           }
         }
@@ -89,6 +100,7 @@ module.exports = {
   //...
 }
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -103,6 +115,7 @@ You need to do two things in your project files in order to make this plugin wor
 First, your `main` entry in your `package.json` file needs to point at `"./.webpack/main"` like so:
 
 {% code title="package.json" %}
+
 ```javascript
 {
   "name": "my-app",
@@ -110,6 +123,7 @@ First, your `main` entry in your `package.json` file needs to point at `"./.webp
   ...
 }
 ```
+
 {% endcode %}
 
 #### Main process code
@@ -118,21 +132,23 @@ Second, all `loadURL` and `preload` paths need to reference the magic global var
 
 Each entry point has two globals defined based on the name assigned to your entry point:
 
-* The renderer's entry point will be suffixed with `_WEBPACK_ENTRY`
-* The renderer's preload script will be suffixed with `_PRELOAD_WEBPACK_ENTRY`
+- The renderer's entry point will be suffixed with `_WEBPACK_ENTRY`
+- The renderer's preload script will be suffixed with `_PRELOAD_WEBPACK_ENTRY`
 
 In the case of the `main_window` entry point in the earlier example, the global variables will be named `MAIN_WINDOW_WEBPACK_ENTRY` and `MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY`. An example of how to use them is given below:
 
 {% code title="main.js" %}
+
 ```javascript
 const mainWindow = new BrowserWindow({
   webPreferences: {
     preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
-  }
+  },
 });
 
 mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
 ```
+
 {% endcode %}
 
 These variables are only defined in the main process. If you need to use one of these paths in a renderer (e.g. to pass a preload script to a `<webview>` tag), you can pass the magic variable value with a synchronous IPC round trip.
@@ -140,17 +156,20 @@ These variables are only defined in the main process. If you need to use one of 
 {% tabs %}
 {% tab title="Main Process" %}
 {% code title="main.js" %}
+
 ```javascript
 // make sure this listener is set before your renderer.js code is called
-ipcMain.on('get-preload-path', (e) => {
+ipcMain.on("get-preload-path", (e) => {
   e.returnValue = WINDOW_PRELOAD_WEBPACK_ENTRY;
 });
 ```
+
 {% endcode %}
 {% endtab %}
 
 {% tab title="Preload Script" %}
 {% code title="preload.js" %}
+
 ```javascript
 const { contextBridge, ipcRenderer } = require('electron');
 
@@ -158,14 +177,17 @@ contextBridge.exposeInMainWorld('electron', {
   getPreloadPath: () => ipcRenderer.sendSync('get-preload-path');
 });
 ```
+
 {% endcode %}
 {% endtab %}
 
 {% tab title="Renderer Process" %}
 {% code title="renderer.js" %}
+
 ```javascript
 const preloadPath = window.electron.getPreloadPath();
 ```
+
 {% endcode %}
 {% endtab %}
 {% endtabs %}
@@ -176,10 +198,12 @@ const preloadPath = window.electron.getPreloadPath();
 If you're using the webpack plugin with TypeScript, you will need to manually declare these magic variables to avoid compiler errors.
 
 {% code title="main.js (Main Process)" %}
+
 ```typescript
 declare const MAIN_WINDOW_WEBPACK_ENTRY: string;
 declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
 ```
+
 {% endcode %}
 {% endhint %}
 
@@ -194,6 +218,7 @@ Forge's webpack plugin uses [`webpack-dev-server`](https://webpack.js.org/config
 In development mode, you can change most `webpack-dev-server` options by setting `devServer` in your Forge Webpack plugin configuration.
 
 {% code title="Plugin configuration" %}
+
 ```javascript
 {
   name: '@electron-forge/plugin-webpack',
@@ -206,6 +231,7 @@ In development mode, you can change most `webpack-dev-server` options by setting
   },
 }
 ```
+
 {% endcode %}
 
 #### devContentSecurityPolicy
@@ -239,15 +265,19 @@ If you are setting up the plugin manually, you can make native modules work by a
 
 {% tabs %}
 {% tab title="Yarn" %}
+
 ```shell
 yarn add --dev node-loader @vercel/webpack-asset-relocator-loader@1.7.3
 ```
+
 {% endtab %}
 
 {% tab title="npm" %}
+
 ```shell
 npm install --save-dev node-loader @vercel/webpack-asset-relocator-loader@1.7.3
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -256,6 +286,7 @@ Electron Forge monkeypatches the asset relocator loader in order for it to work 
 {% endhint %}
 
 {% code title="webpack.main.config.js" %}
+
 ```javascript
 module.exports = {
   module: {
@@ -265,22 +296,23 @@ module.exports = {
         // relocator loader generates a "fake" .node file which is really
         // a cjs file.
         test: /native_modules\/.+\.node$/,
-        use: 'node-loader',
+        use: "node-loader",
       },
       {
         test: /\.(m?js|node)$/,
         parser: { amd: false },
         use: {
-          loader: '@vercel/webpack-asset-relocator-loader',
+          loader: "@vercel/webpack-asset-relocator-loader",
           options: {
-            outputAssetBase: 'native_modules',
+            outputAssetBase: "native_modules",
           },
         },
       },
-    ]
-  }
-}
+    ],
+  },
+};
 ```
+
 {% endcode %}
 
 If the asset relocator loader does not work for your native module, you may want to consider using webpack's [externals configuration](https://webpack.js.org/configuration/externals/).
@@ -292,14 +324,16 @@ If the asset relocator loader does not work for your native module, you may want
 In Electron, you can enable Node.js in the renderer process with [`BrowserWindow` constructor options](https://www.electronjs.org/docs/latest/api/browser-window). Renderers with the following options enabled will have a browser-like web environment with access to Node.js [`require`](https://nodejs.org/en/knowledge/getting-started/what-is-require/) and all of its core APIs:
 
 {% code title="main.js (Main Process)" %}
+
 ```javascript
 const win = new BrowserWindow({
-    webPreferences: {
-        contextIsolation: false,
-        nodeIntegration: true,
-    }
+  webPreferences: {
+    contextIsolation: false,
+    nodeIntegration: true,
+  },
 });
 ```
+
 {% endcode %}
 
 This creates a unique environment that requires additional webpack configuration.
@@ -308,14 +342,15 @@ This creates a unique environment that requires additional webpack configuration
 
 Webpack [targets](https://webpack.js.org/configuration/target/) have first-class support for various Electron environments. Forge's webpack plugin will set the compilation target for renderers based on the `nodeIntegration` option in the config:
 
-* When `nodeIntegration` is **true**, the `target` is `electron-renderer`.
-* When `nodeIntegration` is **false**, the `target` is `web`.
+- When `nodeIntegration` is **true**, the `target` is `electron-renderer`.
+- When `nodeIntegration` is **false**, the `target` is `web`.
 
 This option is **false** by default\*\*.\*\* You can set this option for all renderers via the `renderer.nodeIntegration` option, and you can override its value in each renderer you create in the `entryPoints` array.
 
 In the below configuration example, webpack will compile to the `electron-renderer` target for all entry points except for `media_player`, which will compile to the `web` target.
 
 {% code title="Plugin configuration" %}
+
 ```javascript
 {
   name: '@electron-forge/plugin-webpack',
@@ -341,6 +376,7 @@ In the below configuration example, webpack will compile to the `electron-render
   }
 }
 ```
+
 {% endcode %}
 
 {% hint style="warning" %}
@@ -362,18 +398,21 @@ When using Webpack 5 caching, asset permissions need to be maintained through th
 To insure these cases work out, make sure to run `initAssetCache` in the build, with the `options.outputAssetBase` argument:
 
 ```javascript
-const relocateLoader = require('@vercel/webpack-asset-relocator-loader');
+const relocateLoader = require("@vercel/webpack-asset-relocator-loader");
 webpack({
   // ...
   plugins: [
     {
       apply(compiler) {
-        compiler.hooks.compilation.tap('webpack-asset-relocator-loader', compilation => {
-          relocateLoader.initAssetCache(compilation, outputAssetBase);
-        });
-      }
-    }
-  ]
+        compiler.hooks.compilation.tap(
+          "webpack-asset-relocator-loader",
+          (compilation) => {
+            relocateLoader.initAssetCache(compilation, outputAssetBase);
+          }
+        );
+      },
+    },
+  ],
 });
 ```
 

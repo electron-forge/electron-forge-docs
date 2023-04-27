@@ -1,5 +1,5 @@
 ---
-description: 'How to create an Electron app with React, TypeScript, and Electron Forge'
+description: "How to create an Electron app with React, TypeScript, and Electron Forge"
 ---
 
 # React with TypeScript
@@ -20,17 +20,21 @@ Add the basic React packages to your `dependencies` and the corresponding types 
 
 {% tabs %}
 {% tab title="Yarn" %}
+
 ```bash
 yarn add react react-dom
 yarn add --dev @types/react @types/react-dom
 ```
+
 {% endtab %}
 
 {% tab title="NPM" %}
+
 ```bash
 npm install --save react react-dom
 npm install --save-dev @types/react @types/react-dom
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -40,8 +44,9 @@ You should now be able to start writing and using React components in your Elect
 
 {% tabs %}
 {% tab title="src/app.tsx" %}
+
 ```tsx
-import * as ReactDOM from 'react-dom';
+import * as ReactDOM from "react-dom";
 
 function render() {
   ReactDOM.render(<h2>Hello from React!</h2>, document.body);
@@ -49,15 +54,17 @@ function render() {
 
 render();
 ```
+
 {% endtab %}
 
 {% tab title="src/renderer.ts" %}
+
 ```typescript
 // Add this to the end of the existing file
-import './app';
+import "./app";
 ```
+
 {% endtab %}
 {% endtabs %}
 
 For more about React, see [their documentation](https://reactjs.org/docs/hello-world.html).
-

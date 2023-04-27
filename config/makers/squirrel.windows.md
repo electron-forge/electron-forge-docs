@@ -21,26 +21,28 @@ You can only build the Squirrel.Windows target on a Windows machine or on a macO
 Add this module to the [makers](./) section of your [Forge configuration](../../configuration.md):
 
 {% code title="forge.config.js" %}
+
 ```javascript
 module.exports = {
   makers: [
     {
-      name: '@electron-forge/maker-squirrel',
+      name: "@electron-forge/maker-squirrel",
       config: {
-        certificateFile: './cert.pfx',
+        certificateFile: "./cert.pfx",
         certificatePassword: process.env.CERTIFICATE_PASSWORD,
       },
     },
   ],
 };
 ```
+
 {% endcode %}
 
 ## Configuration
 
 The Squirrel.Windows maker inherits all of its config options from the [`electron-winstaller`](https://github.com/electron/windows-installer) module, _except_ for `appDirectory` and `outputDirectory`, which are set by the maker.
 
-Complete configuration options are documented in the [`MakerSquirrelConfig`](https://js.electronforge.io/modules/\_electron\_forge\_maker\_squirrel.html#MakerSquirrelConfig) types.
+Complete configuration options are documented in the [`MakerSquirrelConfig`](https://js.electronforge.io/modules/_electron_forge_maker_squirrel.html#MakerSquirrelConfig) types.
 
 ### Mandatory metadata
 
@@ -48,9 +50,10 @@ Squirrel.Windows requires mandatory package metadata to satisfy the [`.nuspec`](
 
 #### In package.json
 
-By default, the Squirrel.Windows maker fetches the `author` and `description` fields in the  project's package.json file.
+By default, the Squirrel.Windows maker fetches the `author` and `description` fields in the project's package.json file.
 
 {% code title="package.json" %}
+
 ```json
 {
   // ...
@@ -59,6 +62,7 @@ By default, the Squirrel.Windows maker fetches the `author` and `description` fi
   // ...
 }
 ```
+
 {% endcode %}
 
 #### In your Forge config
@@ -66,19 +70,21 @@ By default, the Squirrel.Windows maker fetches the `author` and `description` fi
 Alternatively, you can also override these values directly in your Squirrel.Windows maker config.
 
 {% code title="forge.config.js" %}
+
 ```javascript
 module.exports = {
   makers: [
     {
-      name: '@electron-forge/maker-squirrel',
+      name: "@electron-forge/maker-squirrel",
       config: {
-        authors: 'Alice and Bob',
-        description: 'An example Electron app'
+        authors: "Alice and Bob",
+        description: "An example Electron app",
       },
     },
-  ]
-}
+  ],
+};
 ```
+
 {% endcode %}
 
 {% hint style="warning" %}
@@ -87,15 +93,17 @@ Note that the Forge config field is **"authors"** while the package.json field i
 
 ## Handling startup events
 
-When first running your app, updating it, and uninstalling it, Squirrel.Windows will spawn your app an additional time with some special arguments. You can read more about these arguments on the [`electron-winstaller`](https://github.com/electron/windows-installer)  README.
+When first running your app, updating it, and uninstalling it, Squirrel.Windows will spawn your app an additional time with some special arguments. You can read more about these arguments on the [`electron-winstaller`](https://github.com/electron/windows-installer) README.
 
 The easiest way to handle these arguments and stop your app launching multiple times during these events is to use the [`electron-squirrel-startup`](https://github.com/mongodb-js/electron-squirrel-startup) module as one of the first things your app does.
 
 {% code title="main.js" %}
+
 ```javascript
-const { app } = require('electron');
+const { app } = require("electron");
 
 // run this as early in the main process as possible
-if (require('electron-squirrel-startup')) app.quit();
+if (require("electron-squirrel-startup")) app.quit();
 ```
+
 {% endcode %}

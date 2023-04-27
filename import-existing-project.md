@@ -14,27 +14,33 @@ Importing an existing Electron app into the Electron Forge workflow can be done 
 
 {% tabs %}
 {% tab title="Yarn 1" %}
+
 ```shell
 cd my-app
 yarn add --dev @electron-forge/cli
 yarn electron-forge import
 ```
+
 {% endtab %}
 
 {% tab title="npm 6" %}
+
 ```bash
 cd my-app
 npm install --save-dev @electron-forge/cli
 npx electron-forge import
 ```
+
 {% endtab %}
 
 {% tab title="npm 7" %}
+
 ```shell
 cd my-app
 npm install --save-dev @electron-forge/cli
 npm exec --package=@electron-forge/cli -c "electron-forge import"
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -54,17 +60,21 @@ First, install Forge's CLI and the target Makers as devDependencies in your proj
 
 {% tabs %}
 {% tab title="Yarn 1" %}
+
 ```shell
 cd my-app
 yarn add --dev @electron-forge/cli @electron-forge/maker-squirrel @electron-forge/maker-deb @electron-forge/maker-zip
 ```
+
 {% endtab %}
 
 {% tab title="npm" %}
+
 ```bash
 cd my-app
 npm install --save-dev @electron-forge/cli @electron-forge/maker-squirrel @electron-forge/maker-deb @electron-forge/maker-zip
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -73,6 +83,7 @@ npm install --save-dev @electron-forge/cli @electron-forge/maker-squirrel @elect
 To start using Forge, add a few command scripts to your package.json file:
 
 {% code title="package.json" %}
+
 ```json
 {
   // ...
@@ -81,14 +92,16 @@ To start using Forge, add a few command scripts to your package.json file:
     "package": "electron-forge package",
     "make": "electron-forge make"
   }
-  // ... 
+  // ...
 }
 ```
+
 {% endcode %}
 
 Then, set up your Forge [configuration.md](configuration.md "mention") in the `config.forge` field in package.json.
 
 {% code title="package.json" %}
+
 ```json
 {
   // ...
@@ -104,9 +117,7 @@ Then, set up your Forge [configuration.md](configuration.md "mention") in the `c
         },
         {
           "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "darwin"
-          ]
+          "platforms": ["darwin"]
         },
         {
           "name": "@electron-forge/maker-deb",
@@ -122,6 +133,7 @@ Then, set up your Forge [configuration.md](configuration.md "mention") in the `c
   // ...
 }
 ```
+
 {% endcode %}
 
 In the above object, we configure each Maker that we installed into the `makers` array. We also create an empty `packagerConfig` object that you should edit to your app's needs.
@@ -132,24 +144,30 @@ When distributing a Squirrel.Windows app, we recommend installing [`electron-squ
 
 {% tabs %}
 {% tab title="Yarn" %}
+
 ```shell
 cd my-app
 yarn add electron-squirrel-startup
 ```
+
 {% endtab %}
 
 {% tab title="npm" %}
+
 ```bash
 cd my-app
 npm install electron-squirrel-startup
 ```
+
 {% endtab %}
 {% endtabs %}
 
 Then, add the following snippet as early as possible in the main process execution (before the `app.ready` event).
 
 {% code title="main.js" %}
+
 ```javascript
-if (require('electron-squirrel-startup')) app.quit();
+if (require("electron-squirrel-startup")) app.quit();
 ```
+
 {% endcode %}

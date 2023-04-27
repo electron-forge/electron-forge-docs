@@ -26,7 +26,7 @@ sudo apt-get install rpm
 
 ## Usage
 
-Configuration options are documented in [`MakerRpmConfig`](https://js.electronforge.io/interfaces/\_electron\_forge\_maker\_rpm.MakerRpmConfig.html).
+Configuration options are documented in [`MakerRpmConfig`](https://js.electronforge.io/interfaces/_electron_forge_maker_rpm.MakerRpmConfig.html).
 
 ```javascript
 {

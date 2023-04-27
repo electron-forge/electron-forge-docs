@@ -12,15 +12,19 @@ This plugin will automatically add all native Node modules in your `node_modules
 
 {% tabs %}
 {% tab title="Yarn" %}
+
 ```shell
 yarn add --dev @electron-forge/plugin-auto-unpack-natives
 ```
+
 {% endtab %}
 
 {% tab title="npm" %}
+
 ```shell
 npm install --save-dev @electron-forge/plugin-auto-unpack-natives
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -35,17 +39,19 @@ Asar archives are disabled by default with Electron Packager. Make sure you set 
 {% endhint %}
 
 {% code title="forge.config.js" %}
+
 ```javascript
 module.exports = {
   packagerConfig: {
-    asar: true // or an object containing your asar options
+    asar: true, // or an object containing your asar options
   },
   plugins: [
-   {
-     name: '@electron-forge/plugin-auto-unpack-natives',
-     config: {}
-   }
-  ]
-}
+    {
+      name: "@electron-forge/plugin-auto-unpack-natives",
+      config: {},
+    },
+  ],
+};
 ```
+
 {% endcode %}

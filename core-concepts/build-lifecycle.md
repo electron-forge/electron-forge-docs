@@ -26,9 +26,9 @@ In the Package step, Forge uses [Electron Packager](https://github.com/electron/
 
 This step also performs a few supporting tasks:
 
-* Handles [code signing and notarization](../guides/code-signing/code-signing-macos.md) on macOS.
-* Rebuilds native node add-ons for your app's Electron version.
-* Handles [create-and-add-icons.md](../guides/create-and-add-icons.md "mention") on Windows and macOS.
+- Handles [code signing and notarization](../guides/code-signing/code-signing-macos.md) on macOS.
+- Rebuilds native node add-ons for your app's Electron version.
+- Handles [create-and-add-icons.md](../guides/create-and-add-icons.md "mention") on Windows and macOS.
 
 By default, running the Package step will only create a packaged application for your machine's platform and architecture.
 

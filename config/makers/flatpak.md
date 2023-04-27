@@ -23,4 +23,3 @@ Configuration options are documented in [`MakerFlatpakConfig`](https://js.electr
   }
 }
 ```
-

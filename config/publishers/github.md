@@ -11,21 +11,23 @@ You can use this target to publish to GitHub Enterprise using the host configura
 ## Usage
 
 {% code title="forge.config.js" %}
+
 ```javascript
 module.exports = {
   // ...
   publishers: [
     {
-      name: '@electron-forge/publisher-github',
+      name: "@electron-forge/publisher-github",
       config: {
         repository: {
-          owner: 'me',
-          name: 'awesome-thing'
+          owner: "me",
+          name: "awesome-thing",
         },
-        prerelease: true
-      }
-    }
-  ]
-}
+        prerelease: true,
+      },
+    },
+  ],
+};
 ```
+
 {% endcode %}

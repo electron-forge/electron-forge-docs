@@ -4,7 +4,7 @@ An Electron Forge Plugin has to export a single class that extends our base plug
 
 ### `getHooks(): ForgeMultiHookMap`
 
-If implemented this method will be once during plugin initialization inside Forge, this method is called only once and shouldn't result in any side effects being executed.  You must return an object in a similar format to `forgeConfig.hooks`.  i.e. an object map between hook names and an array of hook functions.
+If implemented this method will be once during plugin initialization inside Forge, this method is called only once and shouldn't result in any side effects being executed. You must return an object in a similar format to `forgeConfig.hooks`. i.e. an object map between hook names and an array of hook functions.
 
 The possible hook names and the parameters passed to the hook function you return are documented over in the [Configuration](../../configuration.md) section of the docs.
 
@@ -15,9 +15,9 @@ export default class MyPlugin extends PluginBase {
       prePackage: [this.prePackage],
     };
   }
-  
+
   prePackage() {
-    console.log('running prePackage hook');
+    console.log("running prePackage hook");
   }
 }
 ```
@@ -29,7 +29,7 @@ If implemented, this method will be called every time the user runs `electron-fo
 Please note that overriding the start logic here only works in **development** if you want to change how an app runs once packaged you will need to use a build hook to inject code into the packaged app.
 
 {% hint style="info" %}
-`StartOptions`is explained further [in the API docs](https://js.electronforge.io/interfaces/\_electron\_forge\_shared\_types.StartOptions.html).
+`StartOptions`is explained further [in the API docs](https://js.electronforge.io/interfaces/_electron_forge_shared_types.StartOptions.html).
 {% endhint %}
 
 ```javascript
@@ -38,7 +38,7 @@ export default class MyPlugin extends Pluginbase {
     await this.compileMainProcess();
     return null;
   }
-  
+
   compileMainProcess() { ... }
 }
 ```

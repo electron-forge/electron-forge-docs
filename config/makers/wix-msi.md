@@ -21,4 +21,3 @@ Configuration options are documented in [`MakerWixConfig`](https://js.electronfo
   }
 }
 ```
-

@@ -8,8 +8,8 @@ description: >-
 
 On macOS, there are two layers of security technology for application distribution: **code signing** and **notarization**.
 
-* **Code Signing** is the act of certifying the identity of the app's author and ensuring it was not tampered with before distribution.
-* **Notarization** is an extra verification step where the app is sent to Apple servers for an automated malware scan.
+- **Code Signing** is the act of certifying the identity of the app's author and ensuring it was not tampered with before distribution.
+- **Notarization** is an extra verification step where the app is sent to Apple servers for an automated malware scan.
 
 {% hint style="info" %}
 From macOS 10.15 (Catalina) onwards, your application needs to be **both code signed and notarized** to run on a user's machine without disabling additional operating system security checks.
@@ -31,8 +31,8 @@ Code signing certificates for macOS apps can only be obtained through Apple by p
 
 To sign Electron apps, you may require two separate certificates:
 
-* The **Developer ID Installer** certificate is for apps distributed to the Mac App Store.
-* The **Developer ID Application** certificate is for apps distributed outside the Mac App Store.
+- The **Developer ID Installer** certificate is for apps distributed to the Mac App Store.
+- The **Developer ID Application** certificate is for apps distributed outside the Mac App Store.
 
 Once you have an Apple Developer Program membership, you first need to install them onto your machine. We recommend[ loading them through Xcode](https://help.apple.com/xcode/mac/current/#/dev3a05256b8).
 
@@ -44,6 +44,7 @@ Once you have installed your certificate, you can check available code signing c
 ```shell
 security find-identity -p codesigning -v
 ```
+
 {% endhint %}
 
 ## Configuring Forge
@@ -59,18 +60,20 @@ Under the hood, Electron Forge uses the [`@electron/osx-sign`](https://github.co
 To enable code signing on macOS, ensure that `packagerConfig.osxSign` exists in your Forge configuration.
 
 {% code title="forge.config.js" %}
+
 ```javascript
 module.exports = {
   packagerConfig: {
-    osxSign: {} // object must exist even if empty
-  }
-}
+    osxSign: {}, // object must exist even if empty
+  },
+};
 ```
+
 {% endcode %}
 
 The `osxSign` config comes with defaults that work out of the box in most cases, so we recommend you start with an empty configuration object.
 
-For a full list of configuration options, see the [`OsxSignOptions`](https://js.electronforge.io/modules/\_electron\_forge\_shared\_types.InternalOptions.html#OsxSignOptions) type in the Forge API docs. For more detailed information on how to configure these options, see the [`@electron/osx-sign` documentation](https://github.com/electron/osx-sign).
+For a full list of configuration options, see the [`OsxSignOptions`](https://js.electronforge.io/modules/_electron_forge_shared_types.InternalOptions.html#OsxSignOptions) type in the Forge API docs. For more detailed information on how to configure these options, see the [`@electron/osx-sign` documentation](https://github.com/electron/osx-sign).
 
 #### Customizing entitlements
 
@@ -79,6 +82,7 @@ A common use case for modifying the default `osxSign` configuration is to custom
 By default, the `@electron/osx-sign` tool comes with a set of entitlements that should work on both MAS or direct distribution targets. See the complete set of default entitlement files [on GitHub](https://github.com/electron/osx-sign/tree/main/entitlements).
 
 {% code title="forge.config.js" %}
+
 ```javascript
 module.exports = {
   // ...
@@ -90,20 +94,21 @@ module.exports = {
         // You can use this callback to map different sets of entitlements
         // to specific files in your packaged app.
         return {
-          entitlements: 'path/to/entitlements.plist'
-        }
-      }
-    }
-  }
+          entitlements: "path/to/entitlements.plist",
+        };
+      },
+    },
+  },
   // ...
-}
+};
 ```
+
 {% endcode %}
 
 For further reading on entitlements, see the following pages in Apple developer documentation:
 
-* [Entitlements](https://developer.apple.com/documentation/bundleresources/entitlements)
-* [Hardened Runtime](https://developer.apple.com/documentation/security/hardened\_runtime)
+- [Entitlements](https://developer.apple.com/documentation/bundleresources/entitlements)
+- [Hardened Runtime](https://developer.apple.com/documentation/security/hardened_runtime)
 
 ### osxNotarize options
 
@@ -134,21 +139,23 @@ There are two mandatory fields for `osxNotarize` if you are using this strategy:
 | `teamId`          | string | The Apple Team ID you want to notarize under. You can find Team IDs for team you belong to by going to [`https://developer.apple.com/account/#/membership`](https://developer.apple.com/account/#/membership) |
 
 {% code title="forge.config.js" %}
+
 ```javascript
 module.exports = {
   //...
   packagerConfig: {
     // ...
     osxNotarize: {
-      tool: 'notarytool',
+      tool: "notarytool",
       appleId: process.env.APPLE_ID,
       appleIdPassword: process.env.APPLE_PASSWORD,
       teamId: process.env.APPLE_TEAM_ID,
-    }
-  }
+    },
+  },
   //...
-}
+};
 ```
+
 {% endcode %}
 
 {% hint style="warning" %}
@@ -168,21 +175,23 @@ There are three mandatory fields for `osxNotarize` if you are using this strateg
 | `appleApiIssuer` | string | UUID that identifies the API key issuer. You will find this ID in the "Keys" tab where you generated your API key. |
 
 {% code title="forge.config.js" %}
+
 ```javascript
 module.exports = {
   //...
   packagerConfig: {
     // ...
     osxNotarize: {
-      tool: 'notarytool',
+      tool: "notarytool",
       appleApiKey: process.env.APPLE_API_KEY,
       appleApiKeyId: process.env.APPLE_API_KEY_ID,
       appleApiIssuer: process.env.APPLE_API_ISSUER,
-    }
-  }
+    },
+  },
   //...
-}
+};
 ```
+
 {% endcode %}
 
 #### Option 3: Using a keychain
@@ -203,20 +212,22 @@ There are two mandatory fields for `osxNotarize` if you are using this strategy:
 | `keychainProfile` | string | Name of the keychain profile containing your notarization credentials.          |
 
 {% code title="forge.config.js" %}
+
 ```javascript
 module.exports = {
   //...
   packagerConfig: {
     // ...
     osxNotarize: {
-      tool: 'notarytool',
-      keychain: 'my-keychain',
-      keychainProfile: 'my-keychain-profile',
-    }
-  }
+      tool: "notarytool",
+      keychain: "my-keychain",
+      keychainProfile: "my-keychain-profile",
+    },
+  },
   //...
-}
+};
 ```
+
 {% endcode %}
 
 ### Example configuration
@@ -224,12 +235,13 @@ module.exports = {
 Below is a minimal Forge configuration for `osxSign` and `osxNotarize`.
 
 {% code title="forge.config.js" %}
+
 ```javascript
 module.exports = {
   packagerConfig: {
     osxSign: {},
     osxNotarize: {
-      tool: 'notarytool',
+      tool: "notarytool",
       appleId: process.env.APPLE_ID,
       appleIdPassword: process.env.APPLE_PASSWORD,
       teamId: process.env.APPLE_TEAM_ID,
@@ -237,4 +249,5 @@ module.exports = {
   },
 };
 ```
+
 {% endcode %}

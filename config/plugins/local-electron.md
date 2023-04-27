@@ -16,15 +16,19 @@ If you want to set up a local build of Electron, you should check out [Electron 
 
 {% tabs %}
 {% tab title="Yarn" %}
+
 ```bash
 yarn add --dev @electron-forge/plugin-local-electron
 ```
+
 {% endtab %}
 
 {% tab title="npm" %}
+
 ```bash
 npm install --save-dev @electron-forge/plugin-local-electron
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -32,9 +36,10 @@ npm install --save-dev @electron-forge/plugin-local-electron
 
 Once you have a working build of Electron, point the plugin's `electronPath` config option to the folder containing the built Electron binary.
 
-All possible configuration options are documented in [`LocalElectronPluginConfig`](https://js.electronforge.io/interfaces/\_electron\_forge\_plugin\_local\_electron.LocalElectronPluginConfig.html).
+All possible configuration options are documented in [`LocalElectronPluginConfig`](https://js.electronforge.io/interfaces/_electron_forge_plugin_local_electron.LocalElectronPluginConfig.html).
 
 {% code title="forge.config.js" %}
+
 ```javascript
 {
   plugins: [
@@ -47,6 +52,7 @@ All possible configuration options are documented in [`LocalElectronPluginConfig
   ],
 }
 ```
+
 {% endcode %}
 
 {% hint style="info" %}

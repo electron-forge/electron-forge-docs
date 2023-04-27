@@ -21,6 +21,7 @@ If you are using &lt; 1.8 you should really be updating Electron anyway.
 {% endhint %}
 
 {% code title="launch.config" %}
+
 ```javascript
 {
   "type": "node",
@@ -38,6 +39,7 @@ If you are using &lt; 1.8 you should really be updating Electron anyway.
   "cwd": "${workspaceFolder}"
 }
 ```
+
 {% endcode %}
 
 ## Debugging with WebStorm or Other Jetbrains IDEs

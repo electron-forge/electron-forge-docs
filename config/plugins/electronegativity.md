@@ -12,15 +12,19 @@ The Electronegativity plugin integrates Doyensec's [Electronegativity tool](http
 
 {% tabs %}
 {% tab title="Yarn" %}
+
 ```shell
 yarn add --dev @electron-forge/plugin-electronegativity
 ```
+
 {% endtab %}
 
 {% tab title="npm" %}
+
 ```shell
 npm install --save-dev @electron-forge/plugin-electronegativity
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -31,6 +35,7 @@ Add this plugin to the [`plugins`](../../configuration.md#plugins) array in your
 ### Example
 
 {% code title="forge.config.js" %}
+
 ```javascript
 module.exports = {
   //...
@@ -47,4 +52,5 @@ module.exports = {
   //...
 }
 ```
+
 {% endcode %}

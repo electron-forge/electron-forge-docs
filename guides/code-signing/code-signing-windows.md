@@ -16,9 +16,9 @@ On Windows, apps are signed using [Sign Tool](https://learn.microsoft.com/en-us/
 
 You can get a [Windows Authenticode ](https://learn.microsoft.com/en-us/windows-hardware/drivers/install/authenticode)code signing certificate from many vendors. Prices vary, so it may be worth your time to shop around. Popular vendors include:
 
-* [digicert](https://www.digicert.com/dc/code-signing/microsoft-authenticode.htm)
-* [Sectigo](https://sectigo.com/ssl-certificates-tls/code-signing)
-* Amongst others, please shop around to find one that suits your needs! 😄
+- [digicert](https://www.digicert.com/dc/code-signing/microsoft-authenticode.htm)
+- [Sectigo](https://sectigo.com/ssl-certificates-tls/code-signing)
+- Amongst others, please shop around to find one that suits your needs! 😄
 
 {% hint style="danger" %}
 **Keep your certificate password private**
@@ -35,18 +35,20 @@ Once you have a Personal Information Exchange (`.pfx`) file for your certificate
 For example, if you are creating a Squirrel.Windows installer:
 
 {% code title="forge.config.js" %}
+
 ```javascript
 module.exports = {
   packagerConfig: {},
   makers: [
     {
-      name: '@electron-forge/maker-squirrel',
+      name: "@electron-forge/maker-squirrel",
       config: {
-        certificateFile: './cert.pfx',
-        certificatePassword: process.env.CERTIFICATE_PASSWORD
-      }
-    }
-  ]
-}
+        certificateFile: "./cert.pfx",
+        certificatePassword: process.env.CERTIFICATE_PASSWORD,
+      },
+    },
+  ],
+};
 ```
+
 {% endcode %}
