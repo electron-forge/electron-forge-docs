@@ -1,5 +1,5 @@
 {
-  "extends": "@dsanders11/markdown-linting/configs/markdownlint.json",
+  "extends": "@electron/lint-roller/configs/markdownlint.json",
   "blanks-around-fences": false,
   "no-multiple-blanks": false
 }
