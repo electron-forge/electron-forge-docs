@@ -28,7 +28,7 @@ npm install --save-dev @electron-forge/plugin-vite
 
 You must provide two Vite configuration files: one for the main process in `vite.main.config.js`, and one for the renderer process in `vite.renderer.config.js`.
 
-For example, this is the [configuration](../../configuration.md) taken from Forge's [Vite template](../../templates/webpack-template.md):
+For example, this is the [configuration](../../configuration.md) taken from Forge's [Vite template](../../templates/vite.md):
 
 {% tabs %}
 {% tab title="forge.config.js" %}
