@@ -2,22 +2,11 @@
 
 * [Getting Started](README.md)
 * [Importing an Existing Project](import-existing-project.md)
-* [Configuration](configuration.md)
 * [CLI](cli.md)
 
-## Core Concepts
+## Configuration <a href="#config" id="config"></a>
 
-* [Why Electron Forge](core-concepts/why-electron-forge.md)
-* [Build Lifecycle](core-concepts/build-lifecycle.md)
-
-## Built-in Templates <a href="#templates" id="templates"></a>
-
-* [Webpack + Typescript](templates/typescript-+-webpack-template.md)
-* [Webpack](templates/webpack-template.md)
-* [Vite](templates/vite.md)
-
-## Forge Configuration <a href="#config" id="config"></a>
-
+* [Overview](config/configuration.md)
 * [Plugins](config/plugins/README.md)
   * [Webpack Plugin](config/plugins/webpack.md)
   * [Vite Plugin](config/plugins/vite.md)
@@ -42,6 +31,18 @@
   * [Nucleus](config/publishers/nucleus.md)
   * [S3](config/publishers/s3.md)
   * [Snapcraft](config/publishers/snapcraft.md)
+* [Hooks](config/hooks.md)
+
+## Core Concepts
+
+* [Why Electron Forge](core-concepts/why-electron-forge.md)
+* [Build Lifecycle](core-concepts/build-lifecycle.md)
+
+## Built-in Templates <a href="#templates" id="templates"></a>
+
+* [Webpack + Typescript](templates/typescript-+-webpack-template.md)
+* [Webpack](templates/webpack-template.md)
+* [Vite](templates/vite.md)
 
 ## Guides
 

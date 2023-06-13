@@ -6,9 +6,9 @@ description: How to use the command line interface (CLI) commands for Electron F
 
 ## Overview
 
-Forge's CLI is the main way to run Electron Forge commands. It consists of a thin wrapper for its core API. Configuration for these commands is done through your [Forge configuration](configuration.md) object.
+Forge's CLI is the main way to run Electron Forge commands. It consists of a thin wrapper for its core API. Configuration for these commands is done through your [Forge configuration](config/configuration.md) object.
 
-If you want to use the core API programmatically, see the [#programmatic-usage](#programmatic-usage "mention") section below.
+If you want to use the core API programmatically, see the [#programmatic-usage](cli.md#programmatic-usage "mention") section below.
 
 ## Installation
 
@@ -196,14 +196,16 @@ All flags are optional.
 <pre class="language-bash"><code class="lang-bash"><strong># By default, the publish command corresponds to a publish npm script:
 </strong>yarn run publish --from-dry-run
 # If there is no publish script:
-yarn electron-forge publish --from-dry-run</code></pre>
+yarn electron-forge publish --from-dry-run
+</code></pre>
 {% endtab %}
 
 {% tab title="npm" %}
 <pre class="language-bash"><code class="lang-bash"><strong># By default, the publish command corresponds to a publish npm script:
 </strong>npm run publish -- --from-dry-run
 # If there is no publish script:
-npx electron-forge publish -- --from-dry-run</code></pre>
+npx electron-forge publish -- --from-dry-run
+</code></pre>
 {% endtab %}
 {% endtabs %}
 
