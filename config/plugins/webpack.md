@@ -289,7 +289,7 @@ If the asset relocator loader does not work for your native module, you may want
 
 #### Enabling Node integration in your app code
 
-In Electron, you can enable Node.js in the renderer process with [`BrowserWindow` constructor options](https://www.electronjs.org/docs/latest/api/browser-window). Renderers with the following options enabled will have a browser-like web environment with access to Node.js [`require`](https://nodejs.org/en/knowledge/getting-started/what-is-require/) and all of its core APIs:
+In Electron, you can enable Node.js in the renderer process with [`BrowserWindow` constructor options](https://www.electronjs.org/docs/latest/api/browser-window). Renderers with the following options enabled will have a browser-like web environment with access to Node.js [`require`](https://nodejs.org/api/modules.html#requireid) and all of its core APIs:
 
 {% code title="main.js (Main Process)" %}
 ```javascript
