@@ -43,9 +43,9 @@ module.exports = [
         presets: ['@babel/preset-react']
       }
     }
-  },
+  }
   // ... existing loader config ...
-]
+];
 ```
 {% endcode %}
 

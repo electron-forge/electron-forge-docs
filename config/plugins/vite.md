@@ -45,22 +45,22 @@ module.exports = {
             // `entry` is an alias for `build.lib.entry`
             // in the corresponding file of `config`.
             entry: 'src/main.js',
-            config: 'vite.main.config.mjs',
+            config: 'vite.main.config.mjs'
           },
           {
             entry: 'src/preload.js',
-            config: 'vite.preload.config.mjs',
-          },
+            config: 'vite.preload.config.mjs'
+          }
         ],
         renderer: [
           {
             name: 'main_window',
-            config: 'vite.renderer.config.mjs',
-          },
-        ],
-      },
-    },
-  ],
+            config: 'vite.renderer.config.mjs'
+          }
+        ]
+      }
+    }
+  ]
 };
 ```
 {% endtab %}
@@ -111,11 +111,11 @@ Vite's build config generates a separate entry for the main process and preload 
 Your `main` entry in your `package.json` file needs to point at `".vite/build/main"`, like so:
 
 {% code title="package.json" %}
-```javascript
+```json
 {
   "name": "my-vite-app",
   "main": ".vite/build/main.js",
-  ...
+  // ...
 }
 ```
 {% endcode %}
@@ -137,10 +137,10 @@ export default defineConfig({
     rollupOptions: {
       external: [
         'serialport',
-        'sqlite3',
-      ],
-    },
-  },
+        'sqlite3'
+      ]
+    }
+  }
 });
 ```
 {% endcode %}
@@ -156,7 +156,7 @@ In the case of the `main_window`, the global variables will be named `MAIN_WINDO
 
 {% code title="main.js" %}
 ```javascript
-const mainWindow = new BrowserWindow({...});
+const mainWindow = new BrowserWindow({ /* ... */ });
 
 if (MAIN_WINDOW_VITE_DEV_SERVER_URL) {
   mainWindow.loadURL(MAIN_WINDOW_VITE_DEV_SERVER_URL);

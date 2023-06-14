@@ -18,7 +18,7 @@ The options object is documented in [`PublisherOptions`](https://js.electronforg
 
 ```javascript
 export default class MyPublisher extends PublisherBase {
-  async publish(opts) {
+  async publish (opts) {
     for (const result of opts.makeResults) {
       await createVersionIfNotExists();
       await uploadDistributable(result);

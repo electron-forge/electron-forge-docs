@@ -29,6 +29,8 @@ jobs:
       run: npm install --save-dev @electron/lint-roller
     - name: Run markdownlint
       run: npx electron-markdownlint "**/*.md"
+    - name: Lint JS in Markdown with standard
+      run: npx electron-lint-markdown-standard --root . --ignore-path .markdownlintignore --semi --fix "**/*.md"
     - name: Lint links
       run: npx electron-lint-markdown-links --root . --ignore-path .markdownlintignore "**/*.md"
       if: ${{ always() }}

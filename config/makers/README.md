@@ -12,7 +12,7 @@ Each maker has to be configured in the `makers` section of your forge configurat
 
 {% tabs %}
 {% tab title="package.json" %}
-```javascript
+```json
 // If your config is only in package.json:
 // Only showing the relevant configuration for brevity
 {
@@ -26,7 +26,8 @@ Each maker has to be configured in the `makers` section of your forge configurat
               // Config here
           }
         }
-    ]
+      ]
+    }
   }
 }
 ```
@@ -37,16 +38,16 @@ Each maker has to be configured in the `makers` section of your forge configurat
 // If you have set config.forge to a JavaScript file path in package.json:
 // Only showing the relevant configuration for brevity
 module.exports = {
-    makers: [
-        {
-            name: '@electron-forge/maker-zip',
-            platforms: ['darwin', 'linux'],
-            config: {
-                // Config here
-            }
-        }
-    ]
-}
+  makers: [
+    {
+      name: '@electron-forge/maker-zip',
+      platforms: ['darwin', 'linux'],
+      config: {
+        // Config here
+      }
+    }
+  ]
+};
 ```
 {% endtab %}
 {% endtabs %}

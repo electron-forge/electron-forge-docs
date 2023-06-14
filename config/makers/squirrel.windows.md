@@ -24,10 +24,10 @@ module.exports = {
       name: '@electron-forge/maker-squirrel',
       config: {
         certificateFile: './cert.pfx',
-        certificatePassword: process.env.CERTIFICATE_PASSWORD,
-      },
-    },
-  ],
+        certificatePassword: process.env.CERTIFICATE_PASSWORD
+      }
+    }
+  ]
 };
 ```
 {% endcode %}
@@ -70,10 +70,10 @@ module.exports = {
       config: {
         authors: 'Alice and Bob',
         description: 'An example Electron app'
-      },
-    },
+      }
+    }
   ]
-}
+};
 ```
 {% endcode %}
 

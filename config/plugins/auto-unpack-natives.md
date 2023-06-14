@@ -39,11 +39,11 @@ module.exports = {
     asar: true // or an object containing your asar options
   },
   plugins: [
-   {
-     name: '@electron-forge/plugin-auto-unpack-natives',
-     config: {}
-   }
+    {
+      name: '@electron-forge/plugin-auto-unpack-natives',
+      config: {}
+    }
   ]
-}
+};
 ```
 {% endcode %}
