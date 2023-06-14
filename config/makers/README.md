@@ -12,7 +12,7 @@ Each maker has to be configured in the `makers` section of your forge configurat
 
 {% tabs %}
 {% tab title="package.json" %}
-```json
+```jsonc
 // If your config is only in package.json:
 // Only showing the relevant configuration for brevity
 {

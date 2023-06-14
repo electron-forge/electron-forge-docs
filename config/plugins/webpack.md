@@ -60,9 +60,9 @@ module.exports = {
 {% endtab %}
 
 {% tab title="package.json" %}
-```json
+```jsonc
 {
-  //...
+  // ...
   "config": {
     "forge": {
       "plugins": [
@@ -86,7 +86,7 @@ module.exports = {
       ]
     }
   }
-  //...
+  // ...
 }
 ```
 {% endtab %}
@@ -103,7 +103,7 @@ You need to do two things in your project files in order to make this plugin wor
 First, your `main` entry in your `package.json` file needs to point at `"./.webpack/main"` like so:
 
 {% code title="package.json" %}
-```json
+```jsonc
 {
   "name": "my-app",
   "main": "./.webpack/main",

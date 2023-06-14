@@ -66,9 +66,9 @@ module.exports = {
 {% endtab %}
 
 {% tab title="package.json" %}
-```json
+```jsonc
 {
-  //...
+  // ...
   "config": {
     "forge": {
       "plugins": [
@@ -96,7 +96,7 @@ module.exports = {
       ]
     }
   }
-  //...
+  // ...
 }
 ```
 {% endtab %}
@@ -111,7 +111,7 @@ Vite's build config generates a separate entry for the main process and preload 
 Your `main` entry in your `package.json` file needs to point at `".vite/build/main"`, like so:
 
 {% code title="package.json" %}
-```json
+```jsonc
 {
   "name": "my-vite-app",
   "main": ".vite/build/main.js",

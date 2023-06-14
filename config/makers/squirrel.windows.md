@@ -47,7 +47,7 @@ Squirrel.Windows requires mandatory package metadata to satisfy the [`.nuspec`](
 By default, the Squirrel.Windows maker fetches the `author` and `description` fields in the  project's package.json file.
 
 {% code title="package.json" %}
-```json
+```jsonc
 {
   // ...
   "author": "Alice and Bob",

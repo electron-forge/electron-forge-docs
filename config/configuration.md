@@ -71,7 +71,7 @@ module.exports = {
 {% endtab %}
 
 {% tab title="package.json" %}
-```json
+```jsonc
 // Only the relevant section of package.json is shown, for brevity.
 {
   "config": {
