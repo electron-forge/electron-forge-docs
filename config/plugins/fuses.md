@@ -29,7 +29,6 @@ npm install --save-dev @electron-forge/plugin-fuses @electron/fuses
 
 ## Usage
 
-### Plugin configuration
 
 You can use the `FusesPlugin` constructor just like the `flipFuses` function from `@electron/fuses`, except that the plugin already takes care of the Electron path for you, so you only need to provide the configuration object. Please refer to the [`@electron/fuses` docs](https://github.com/electron/fuses#usage) to learn more about supported fuses.
 
