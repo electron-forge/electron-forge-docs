@@ -2,10 +2,9 @@
 description: Toggle Electron functionality at package-time with Electron Fuses.
 ---
 
-> Added in version 6.1.0
-
 # Fuses Plugin
 
+> Added in version 6.1.0
 This plugin allows flipping [Electron Fuses](https://github.com/electron/fuses) when packaging your app with Electron Forge. Fuses are bits in the Electron binary that allow certain features to be enabled/disabled when your app is packaged.
 
 ## Installation
