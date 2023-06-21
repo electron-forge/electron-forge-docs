@@ -20,6 +20,6 @@ npm init electron-app@latest my-new-app -- --template=vite
 {% endtab %}
 {% endtabs %}
 
-Once you've initialized the template, you'll need to run `npm start` in the generated directory.
+Once you've initialized the template, you should add electron to devDependencies first and you'll need to run `npm start` in the generated directory.
 
 See the [Vite Plugin](../config/plugins/vite.md) documentation for Electron Forge-specific configuration options.
