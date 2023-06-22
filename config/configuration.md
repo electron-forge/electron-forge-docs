@@ -22,14 +22,14 @@ module.exports = {
       name: '@electron-forge/maker-zip'
     }
   ]
-}
+};
 ```
 {% endcode %}
 {% endtab %}
 
 {% tab title="package.json" %}
 {% code title="package.json" %}
-```javascript
+```json
 {
   "name": "my-app",
   "version": "0.0.1",
@@ -59,19 +59,19 @@ We recommend using using JavaScript for your config file since it enables condit
 {% tab title="forge.config.js" %}
 ```javascript
 module.exports = {
-  packagerConfig: { ... },
-  rebuildConfig: { ... },
-  makers: [ ... ],
-  publishers: [ ... ],
-  plugins: [ ... ],
-  hooks: { ... },
+  packagerConfig: { /* ... */ },
+  rebuildConfig: { /* ... */ },
+  makers: [],
+  publishers: [],
+  plugins: [],
+  hooks: { /* ... */ },
   buildIdentifier: 'my-build'
-}
+};
 ```
 {% endtab %}
 
 {% tab title="package.json" %}
-```javascript
+```jsonc
 // Only the relevant section of package.json is shown, for brevity.
 {
   "config": {
@@ -145,7 +145,7 @@ module.exports = {
   packagerConfig: {
     appBundleId: fromBuildIdentifier({ beta: 'com.beta.app', prod: 'com.app' })
   }
-}
+};
 ```
 {% endcode %}
 

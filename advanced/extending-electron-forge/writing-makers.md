@@ -20,11 +20,11 @@ If the issue is a missing dependency you should log out a **helpful** error mess
 
 ```javascript
 export default class MyMaker extends MakerBase {
-  isSupportedOnCurrentPlatform() {
+  isSupportedOnCurrentPlatform () {
     return process.platform === 'linux' && this.isFakeRootInstalled();
   }
-  
-  isFakeRootInstalled() { ... }
+
+  isFakeRootInstalled () { /* ... */ }
 }
 ```
 
@@ -38,7 +38,7 @@ The options object is documented in [`MakerOptions`](https://js.electronforge.io
 
 ```javascript
 export default class MyMaker extends MakerBase {
-  async make(opts) {
+  async make (opts) {
     const pathToMagicInstaller = await makeMagicInstaller(opts.dir);
     return [pathToMagicInstaller];
   }

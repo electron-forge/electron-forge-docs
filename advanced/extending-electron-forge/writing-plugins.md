@@ -10,13 +10,13 @@ The possible hook names and the parameters passed to the hook function you retur
 
 ```javascript
 export default class MyPlugin extends PluginBase {
-  getHooks() {
+  getHooks () {
     return {
-      prePackage: [this.prePackage],
+      prePackage: [this.prePackage]
     };
   }
-  
-  prePackage() {
+
+  prePackage () {
     console.log('running prePackage hook');
   }
 }
@@ -34,11 +34,11 @@ Please note that overriding the start logic here only works in **development** i
 
 ```javascript
 export default class MyPlugin extends Pluginbase {
-  async startLogic(opts) {
+  async startLogic (opts) {
     await this.compileMainProcess();
     return null;
   }
-  
-  compileMainProcess() { ... }
+
+  compileMainProcess () { /* ... */ }
 }
 ```

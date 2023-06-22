@@ -41,10 +41,10 @@ All possible configuration options are documented in [`LocalElectronPluginConfig
     {
       name: '@electron-forge/plugin-local-electron',
       config: {
-        electronPath: '/Users/me/projects/electron/out/Testing',
-      },
-    },
-  ],
+        electronPath: '/Users/me/projects/electron/out/Testing'
+      }
+    }
+  ]
 }
 ```
 {% endcode %}

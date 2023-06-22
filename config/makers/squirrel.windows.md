@@ -24,10 +24,10 @@ module.exports = {
       name: '@electron-forge/maker-squirrel',
       config: {
         certificateFile: './cert.pfx',
-        certificatePassword: process.env.CERTIFICATE_PASSWORD,
-      },
-    },
-  ],
+        certificatePassword: process.env.CERTIFICATE_PASSWORD
+      }
+    }
+  ]
 };
 ```
 {% endcode %}
@@ -47,7 +47,7 @@ Squirrel.Windows requires mandatory package metadata to satisfy the [`.nuspec`](
 By default, the Squirrel.Windows maker fetches the `author` and `description` fields in the  project's package.json file.
 
 {% code title="package.json" %}
-```json
+```jsonc
 {
   // ...
   "author": "Alice and Bob",
@@ -70,10 +70,10 @@ module.exports = {
       config: {
         authors: 'Alice and Bob',
         description: 'An example Electron app'
-      },
-    },
+      }
+    }
   ]
-}
+};
 ```
 {% endcode %}
 

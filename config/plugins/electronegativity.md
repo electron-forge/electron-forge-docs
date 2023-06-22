@@ -33,18 +33,16 @@ Add this plugin to the [`plugins`](../configuration.md#plugins) array in your Fo
 {% code title="forge.config.js" %}
 ```javascript
 module.exports = {
-  //...
-  {
-    plugins: [
-      {
-        name: '@electron-forge/plugin-electronegativity',
-        config: {
-          isSarif: true
-        }
+  // ...
+  plugins: [
+    {
+      name: '@electron-forge/plugin-electronegativity',
+      config: {
+        isSarif: true
       }
-    ]
-  }
-  //...
-}
+    }
+  ]
+  // ...
+};
 ```
 {% endcode %}
