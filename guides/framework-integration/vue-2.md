@@ -15,16 +15,28 @@ Create a standard Electron per the [Getting Started](../../README.md#getting-sta
 Add the Vue 2 package to your `dependencies`:
 
 {% tabs %}
-{% tab title="NPM" %}
+{% tab title="yarn" %}
+
 ```bash
-npm install --save vue
+yarn add vue@2
 ```
+
 {% endtab %}
 
-{% tab title="Yarn" %}
+{% tab title="pnpm" %}
+
 ```bash
-yarn add vue
+pnpm add vue@2
 ```
+
+{% endtab %}
+
+{% tab title="npm" %}
+
+```bash
+npm install --save vue@2
+```
+
 {% endtab %}
 {% endtabs %}
 
@@ -42,24 +54,27 @@ Add the following before the closing `</body>` tag:
 </div>
 <script type="module" src="./renderer.js"></script>
 ```
+
 {% endtab %}
 
 {% tab title="src/renderer.js" %}
+
 ```javascript
 // Since we declared the script as type=module in the HTML file,
 // we can use ES Modules (adapted from the Vue 2 Introduction
 // https://vuejs.org/v2/guide/#Declarative-Rendering
 
 // Alternatively, omit the .min from the path for Vue debugging purposes.
-import Vue from '../node_modules/vue/dist/vue.esm.browser.min.js';
+import Vue from "../node_modules/vue/dist/vue.esm.browser.min.js";
 
 const app = new Vue({
-  el: '#app',
+  el: "#app",
   data: {
-    message: 'Hello Vue!'
-  }
+    message: "Hello Vue!",
+  },
 });
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -70,16 +85,28 @@ For advanced use cases such as single file components, it's recommended to use t
 Create the app with the [Webpack template](../../templates/webpack-template.md) or the [TypeScript + Webpack template](../../templates/typescript-+-webpack-template.md). Add the following packages to your `devDependencies` so that the single file components get compiled and loaded correctly:
 
 {% tabs %}
-{% tab title="NPM" %}
+{% tab title="yarn" %}
+
 ```bash
-npm install --save-dev vue-loader vue-template-compiler
+yarn add -D vue-loader vue-template-compiler
 ```
+
 {% endtab %}
 
-{% tab title="Yarn" %}
+{% tab title="pnpm" %}
+
 ```bash
-yarn add --dev vue-loader vue-template-compiler
+pnpm add -D vue-loader vue-template-compiler
 ```
+
+{% endtab %}
+
+{% tab title="npm" %}
+
+```
+npm install --save-dev vue-loader vue-template-compiler
+```
+
 {% endtab %}
 {% endtabs %}
 
@@ -88,16 +115,28 @@ Setting up the [`vue-loader` Webpack module](https://vue-loader.vuejs.org/guide/
 Add the Vue 2 package to your `dependencies`:
 
 {% tabs %}
-{% tab title="NPM" %}
+{% tab title="yarn" %}
+
 ```bash
-npm install --save vue
+yarn add vue@2
 ```
+
 {% endtab %}
 
-{% tab title="Yarn" %}
+{% tab title="pnpm" %}
+
 ```bash
-yarn add vue
+pnpm add vue@2
 ```
+
+{% endtab %}
+
+{% tab title="npm" %}
+
+```bash
+npm install --save vue@2
+```
+
 {% endtab %}
 {% endtabs %}
 
