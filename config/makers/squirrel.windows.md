@@ -6,11 +6,7 @@ description: Create a Windows installer for your Electron app using Electron For
 
 The Squirrel.Windows target builds your application using the [Squirrel.Windows](https://github.com/Squirrel/Squirrel.Windows) framework. It generates three files:
 
-| File                   | Description                                           |
-| ---------------------- | ----------------------------------------------------- |
-| `{appName} Setup.exe`  | The main executable installer for your application    |
-| `{appName}-full.nupkg` | The NuGet package file used for updates               |
-| `RELEASES`             | Metadata file used to check if an update is available |
+<table><thead><tr><th width="258">File</th><th>Description</th></tr></thead><tbody><tr><td><code>{appName} Setup.exe</code></td><td>The main executable installer for your application</td></tr><tr><td><code>{appName}-full.nupkg</code></td><td>The NuGet package file used for updates</td></tr><tr><td><code>RELEASES</code></td><td>Metadata file used to check if an update is available</td></tr></tbody></table>
 
 Squirrel.Windows is a no-prompt, no-hassle, no-admin method of installing Windows applications, and is therefore the most user friendly you can get.
 
@@ -18,7 +14,7 @@ You can only build the Squirrel.Windows target on a Windows machine or on a macO
 
 ## Usage
 
-Add this module to the [makers](./) section of your [Forge configuration](../../configuration.md):
+Add this module to the [makers](./) section of your [Forge configuration](../configuration.md):
 
 {% code title="forge.config.js" %}
 ```javascript
@@ -28,10 +24,10 @@ module.exports = {
       name: '@electron-forge/maker-squirrel',
       config: {
         certificateFile: './cert.pfx',
-        certificatePassword: process.env.CERTIFICATE_PASSWORD,
-      },
-    },
-  ],
+        certificatePassword: process.env.CERTIFICATE_PASSWORD
+      }
+    }
+  ]
 };
 ```
 {% endcode %}
@@ -51,7 +47,7 @@ Squirrel.Windows requires mandatory package metadata to satisfy the [`.nuspec`](
 By default, the Squirrel.Windows maker fetches the `author` and `description` fields in the  project's package.json file.
 
 {% code title="package.json" %}
-```json
+```jsonc
 {
   // ...
   "author": "Alice and Bob",
@@ -74,10 +70,10 @@ module.exports = {
       config: {
         authors: 'Alice and Bob',
         description: 'An example Electron app'
-      },
-    },
+      }
+    }
   ]
-}
+};
 ```
 {% endcode %}
 

@@ -21,7 +21,7 @@ If you are using &lt; 1.8 you should really be updating Electron anyway.
 {% endhint %}
 
 {% code title="launch.config" %}
-```javascript
+```jsonc
 {
   "type": "node",
   "request": "launch",

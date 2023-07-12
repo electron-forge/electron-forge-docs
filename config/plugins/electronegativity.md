@@ -26,25 +26,23 @@ npm install --save-dev @electron-forge/plugin-electronegativity
 
 ## Usage
 
-Add this plugin to the [`plugins`](../../configuration.md#plugins) array in your Forge configuration. All [programmatic options for Electronegativity](https://github.com/doyensec/electronegativity#programmatically), except for `input` and `electronVersion`.
+Add this plugin to the [`plugins`](../configuration.md#plugins) array in your Forge configuration. All [programmatic options for Electronegativity](https://github.com/doyensec/electronegativity#programmatically), except for `input` and `electronVersion`.
 
 ### Example
 
 {% code title="forge.config.js" %}
 ```javascript
 module.exports = {
-  //...
-  {
-    plugins: [
-      {
-        name: '@electron-forge/plugin-electronegativity',
-        config: {
-          isSarif: true
-        }
+  // ...
+  plugins: [
+    {
+      name: '@electron-forge/plugin-electronegativity',
+      config: {
+        isSarif: true
       }
-    ]
-  }
-  //...
-}
+    }
+  ]
+  // ...
+};
 ```
 {% endcode %}

@@ -12,13 +12,13 @@ Publishers must implement this method to publish the artifacts returned from mak
 
 Please note for a given version, publish will be called multiple times, once for each set of "platform" and "arch". This means if you are publishing `darwin` and `win32` artifacts to somewhere like GitHub on the first publish call, you will have to create the version on GitHub and the second call will just be appending files to the existing version.  Your `publish` implementation will not be aware that another call is coming, however it must just be able to handle this case.
 
-The `config` for the publisher will be available on `this.config` .
+The `config` for the publisher will be available on `this.config`.
 
-The options object is documented in [`PublisherOptions`](https://js.electronforge.io/interfaces/_electron_forge_publisher_base.PublisherOptions.html) 
+The options object is documented in [`PublisherOptions`](https://js.electronforge.io/interfaces/_electron_forge_publisher_base.PublisherOptions.html).
 
 ```javascript
 export default class MyPublisher extends PublisherBase {
-  async publish(opts) {
+  async publish (opts) {
     for (const result of opts.makeResults) {
       await createVersionIfNotExists();
       await uploadDistributable(result);

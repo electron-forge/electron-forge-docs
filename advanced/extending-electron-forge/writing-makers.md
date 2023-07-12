@@ -2,7 +2,7 @@
 
 An Electron Forge Maker has to export a single class that extends our base maker. The base maker can be depended on by installing`@electron-forge/maker-base`.
 
-The `MakerBase` class has some helper methods for your convenience. Check out the interface of [`MakerBase`](https://js.electronforge.io/classes/_electron_forge_maker_base.Maker.html) for more advanced API details.
+The `MakerBase` class has some helper methods for your convenience. Check out the interface of [`MakerBase`](https://js.electronforge.io/classes/_electron_forge_maker_base.MakerBase.html) for more advanced API details.
 
 | Method | Description |
 | :--- | :--- |
@@ -20,11 +20,11 @@ If the issue is a missing dependency you should log out a **helpful** error mess
 
 ```javascript
 export default class MyMaker extends MakerBase {
-  isSupportedOnCurrentPlatform() {
+  isSupportedOnCurrentPlatform () {
     return process.platform === 'linux' && this.isFakeRootInstalled();
   }
-  
-  isFakeRootInstalled() { ... }
+
+  isFakeRootInstalled () { /* ... */ }
 }
 ```
 
@@ -38,7 +38,7 @@ The options object is documented in [`MakerOptions`](https://js.electronforge.io
 
 ```javascript
 export default class MyMaker extends MakerBase {
-  async make(opts) {
+  async make (opts) {
     const pathToMagicInstaller = await makeMagicInstaller(opts.dir);
     return [pathToMagicInstaller];
   }

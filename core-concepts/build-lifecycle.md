@@ -78,10 +78,10 @@ After the Publish step, your app distributables will be available to download by
 
 Your Electron application might have custom build needs that aren't handled with the most basic Forge pipeline described above. To solve this issue, Electron Forge exposes callback hooks at various points in the build process.
 
-These hooks can be used to implement custom logic that your application needs. For instance, you can perform actions between the Package and Make steps with the [#premake](../configuration.md#premake "mention") hook.
+These hooks can be used to implement custom logic that your application needs. For instance, you can perform actions between the Package and Make steps with the `premake` hook.
 
 {% hint style="info" %}
-For a full list of Forge hooks and usage examples, see the [#hooks](../configuration.md#hooks "mention") section in the Configuration docs.
+For a full list of Forge hooks and usage examples, see the [hooks.md](../config/hooks.md "mention") documentation.
 {% endhint %}
 
 If you want to share a specific sequence of build hook logic, you can modularize your hook code into a **plugin** instead. This is how Forge's [webpack.md](../config/plugins/webpack.md "mention") works, for instance. For more details on authoring custom plugins, see the [writing-plugins.md](../advanced/extending-electron-forge/writing-plugins.md "mention") guide.

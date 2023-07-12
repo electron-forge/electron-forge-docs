@@ -34,7 +34,7 @@ To sign Electron apps, you may require two separate certificates:
 * The **Developer ID Installer** certificate is for apps distributed to the Mac App Store.
 * The **Developer ID Application** certificate is for apps distributed outside the Mac App Store.
 
-Once you have an Apple Developer Program membership, you first need to install them onto your machine. We recommend[ loading them through Xcode](https://help.apple.com/xcode/mac/current/#/dev3a05256b8).
+Once you have an Apple Developer Program membership, you first need to install them onto your machine. We recommend [loading them through Xcode](https://help.apple.com/xcode/mac/current/#/dev3a05256b8).
 
 {% hint style="success" %}
 **Verifying your certificate is installed**
@@ -64,7 +64,7 @@ module.exports = {
   packagerConfig: {
     osxSign: {} // object must exist even if empty
   }
-}
+};
 ```
 {% endcode %}
 
@@ -91,12 +91,12 @@ module.exports = {
         // to specific files in your packaged app.
         return {
           entitlements: 'path/to/entitlements.plist'
-        }
+        };
       }
     }
   }
   // ...
-}
+};
 ```
 {% endcode %}
 
@@ -136,18 +136,18 @@ There are two mandatory fields for `osxNotarize` if you are using this strategy:
 {% code title="forge.config.js" %}
 ```javascript
 module.exports = {
-  //...
+  // ...
   packagerConfig: {
     // ...
     osxNotarize: {
       tool: 'notarytool',
       appleId: process.env.APPLE_ID,
       appleIdPassword: process.env.APPLE_PASSWORD,
-      teamId: process.env.APPLE_TEAM_ID,
+      teamId: process.env.APPLE_TEAM_ID
     }
   }
-  //...
-}
+  // ...
+};
 ```
 {% endcode %}
 
@@ -170,18 +170,18 @@ There are three mandatory fields for `osxNotarize` if you are using this strateg
 {% code title="forge.config.js" %}
 ```javascript
 module.exports = {
-  //...
+  // ...
   packagerConfig: {
     // ...
     osxNotarize: {
       tool: 'notarytool',
       appleApiKey: process.env.APPLE_API_KEY,
       appleApiKeyId: process.env.APPLE_API_KEY_ID,
-      appleApiIssuer: process.env.APPLE_API_ISSUER,
+      appleApiIssuer: process.env.APPLE_API_ISSUER
     }
   }
-  //...
-}
+  // ...
+};
 ```
 {% endcode %}
 
@@ -205,17 +205,17 @@ There are two mandatory fields for `osxNotarize` if you are using this strategy:
 {% code title="forge.config.js" %}
 ```javascript
 module.exports = {
-  //...
+  // ...
   packagerConfig: {
     // ...
     osxNotarize: {
       tool: 'notarytool',
       keychain: 'my-keychain',
-      keychainProfile: 'my-keychain-profile',
+      keychainProfile: 'my-keychain-profile'
     }
   }
-  //...
-}
+  // ...
+};
 ```
 {% endcode %}
 
@@ -232,9 +232,9 @@ module.exports = {
       tool: 'notarytool',
       appleId: process.env.APPLE_ID,
       appleIdPassword: process.env.APPLE_PASSWORD,
-      teamId: process.env.APPLE_TEAM_ID,
-    },
-  },
+      teamId: process.env.APPLE_TEAM_ID
+    }
+  }
 };
 ```
 {% endcode %}

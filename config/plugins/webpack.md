@@ -28,13 +28,13 @@ npm install --save-dev @electron-forge/plugin-webpack
 
 You must provide two webpack configuration files: one for the main process in `mainConfig`, and one for the renderer process in `renderer.config`. The complete config options are available in the API docs under [`WebpackPluginConfig`](https://js.electronforge.io/interfaces/\_electron\_forge\_plugin\_webpack.WebpackPluginConfig.html).
 
-For example, this is the [configuration](../../configuration.md) taken from Forge's [webpack template](../../templates/webpack-template.md):
+For example, this is the [configuration](../configuration.md) taken from Forge's [webpack template](../../templates/webpack-template.md):
 
 {% tabs %}
 {% tab title="forge.config.js" %}
 ```javascript
 module.exports = {
-  //...
+  // ...
   plugins: [
     {
       name: '@electron-forge/plugin-webpack',
@@ -49,20 +49,20 @@ module.exports = {
             preload: {
               js: './src/preload.js'
             }
-          }],
+          }]
         }
       }
     }
   ]
-  //...
-}
+  // ...
+};
 ```
 {% endtab %}
 
 {% tab title="package.json" %}
-```json
+```jsonc
 {
-  //...
+  // ...
   "config": {
     "forge": {
       "plugins": [
@@ -86,7 +86,7 @@ module.exports = {
       ]
     }
   }
-  //...
+  // ...
 }
 ```
 {% endtab %}
@@ -103,11 +103,11 @@ You need to do two things in your project files in order to make this plugin wor
 First, your `main` entry in your `package.json` file needs to point at `"./.webpack/main"` like so:
 
 {% code title="package.json" %}
-```javascript
+```jsonc
 {
   "name": "my-app",
   "main": "./.webpack/main",
-  ...
+  // ...
 }
 ```
 {% endcode %}
@@ -127,7 +127,7 @@ In the case of the `main_window` entry point in the earlier example, the global 
 ```javascript
 const mainWindow = new BrowserWindow({
   webPreferences: {
-    preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
+    preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY
   }
 });
 
@@ -155,7 +155,7 @@ ipcMain.on('get-preload-path', (e) => {
 const { contextBridge, ipcRenderer } = require('electron');
 
 contextBridge.exposeInMainWorld('electron', {
-  getPreloadPath: () => ipcRenderer.sendSync('get-preload-path');
+  getPreloadPath: () => ipcRenderer.sendSync('get-preload-path')
 });
 ```
 {% endcode %}
@@ -200,30 +200,30 @@ In development mode, you can change most `webpack-dev-server` options by setting
   config: {
     // other Webpack plugin config...
     devServer: {
-      stats: 'verbose',
-    },
-    //...
-  },
+      stats: 'verbose'
+    }
+    // ...
+  }
 }
 ```
 {% endcode %}
 
 #### devContentSecurityPolicy
 
-In development mode, you can set a[ Content Security Policy (CSP) ](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)by setting `devContentSecurityPolicy` in your Forge Webpack plugin configuration.
+In development mode, you can set a [Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) by setting `devContentSecurityPolicy` in your Forge Webpack plugin configuration.
 
 ```javascript
 {
   name: '@electron-forge/plugin-webpack',
   config: {
     // other Webpack plugin config...
-    devContentSecurityPolicy: `default-src 'self' 'unsafe-inline' data:; script-src 'self' 'unsafe-eval' 'unsafe-inline' data:`,
+    devContentSecurityPolicy: 'default-src \'self\' \'unsafe-inline\' data:; script-src \'self\' \'unsafe-eval\' \'unsafe-inline\' data:',
     // other Webpack plugin config...
     mainConfig: './webpack.main.config.js',
     renderer: {
       /* renderer config here, see above section */
-    },
-  },
+    }
+  }
 }
 ```
 
@@ -265,7 +265,7 @@ module.exports = {
         // relocator loader generates a "fake" .node file which is really
         // a cjs file.
         test: /native_modules\/.+\.node$/,
-        use: 'node-loader',
+        use: 'node-loader'
       },
       {
         test: /\.(m?js|node)$/,
@@ -273,13 +273,13 @@ module.exports = {
         use: {
           loader: '@vercel/webpack-asset-relocator-loader',
           options: {
-            outputAssetBase: 'native_modules',
-          },
-        },
-      },
+            outputAssetBase: 'native_modules'
+          }
+        }
+      }
     ]
   }
-}
+};
 ```
 {% endcode %}
 
@@ -289,15 +289,15 @@ If the asset relocator loader does not work for your native module, you may want
 
 #### Enabling Node integration in your app code
 
-In Electron, you can enable Node.js in the renderer process with [`BrowserWindow` constructor options](https://www.electronjs.org/docs/latest/api/browser-window). Renderers with the following options enabled will have a browser-like web environment with access to Node.js [`require`](https://nodejs.org/en/knowledge/getting-started/what-is-require/) and all of its core APIs:
+In Electron, you can enable Node.js in the renderer process with [`BrowserWindow` constructor options](https://www.electronjs.org/docs/latest/api/browser-window). Renderers with the following options enabled will have a browser-like web environment with access to Node.js [`require`](https://nodejs.org/api/modules.html#requireid) and all of its core APIs:
 
 {% code title="main.js (Main Process)" %}
 ```javascript
 const win = new BrowserWindow({
-    webPreferences: {
-        contextIsolation: false,
-        nodeIntegration: true,
-    }
+  webPreferences: {
+    contextIsolation: false,
+    nodeIntegration: true
+  }
 });
 ```
 {% endcode %}
@@ -367,7 +367,7 @@ webpack({
   // ...
   plugins: [
     {
-      apply(compiler) {
+      apply (compiler) {
         compiler.hooks.compilation.tap('webpack-asset-relocator-loader', compilation => {
           relocateLoader.initAssetCache(compilation, outputAssetBase);
         });
