@@ -1,10 +1,21 @@
 ---
 description: Import an existing Electron project to use Electron Forge.
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
 # Importing an Existing Project
 
-If you already have an Electron project and want to try out Electron Forge, you can either use Forge's import script or manually install Forge yourself.
+If you already have an Electron app and want to try out Electron Forge, you can either use Forge's `import` script or manually configure Forge yourself.
 
 These steps will get you set up with a basic build pipeline that can create [squirrel.windows.md](config/makers/squirrel.windows.md "mention") (Windows), [zip.md](config/makers/zip.md "mention") (macOS), and [deb.md](config/makers/deb.md "mention") (Linux) installers when running `electron-forge make`.
 
@@ -38,7 +49,7 @@ npm exec --package=@electron-forge/cli -c "electron-forge import"
 {% endtab %}
 {% endtabs %}
 
-This script will set up Forge to package and&#x20;
+This script will set up Forge to package your app and build installers for it.
 
 {% hint style="info" %}
 If you're already using other Electron tooling, it will try to automatically migrate the settings as much as possible, but some of it may need to be migrated manually.
@@ -73,13 +84,14 @@ npm install --save-dev @electron-forge/cli @electron-forge/maker-squirrel @elect
 To start using Forge, add a few command scripts to your package.json file:
 
 {% code title="package.json" %}
-```jsonc
+```json
 {
   // ...
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
-    "make": "electron-forge make"
+    "make": "electron-forge make",
+    "publish": "electron-forge publish"
   }
   // ... 
 }
@@ -89,7 +101,7 @@ To start using Forge, add a few command scripts to your package.json file:
 Then, set up your Forge [configuration.md](config/configuration.md "mention") in the `config.forge` field in package.json.
 
 {% code title="package.json" %}
-```jsonc
+```json
 {
   // ...
   "config": {
@@ -124,11 +136,11 @@ Then, set up your Forge [configuration.md](config/configuration.md "mention") in
 ```
 {% endcode %}
 
-In the above object, we configure each Maker that we installed into the `makers` array. We also create an empty `packagerConfig` object that you should edit to your app's needs.
+In the above object, we configure each Maker that we installed into the `makers` array. We also create an empty `packagerConfig` object that you should edit to your app's packaging needs.
 
 ### Adding Squirrel.Windows boilerplate
 
-When distributing a Squirrel.Windows app, we recommend installing [`electron-squirrel-startup`](https://github.com/mongodb-js/electron-squirrel-startup) as a runtime dependency to handle Squirrel events.
+When distributing a [squirrel.windows.md](config/makers/squirrel.windows.md "mention") app, we recommend installing [`electron-squirrel-startup`](https://github.com/mongodb-js/electron-squirrel-startup) as a runtime dependency to handle Squirrel events.
 
 {% tabs %}
 {% tab title="Yarn" %}
@@ -153,3 +165,52 @@ Then, add the following snippet as early as possible in the main process executi
 if (require('electron-squirrel-startup')) app.quit();
 ```
 {% endcode %}
+
+### Optional: publishing your app
+
+You can also configure Forge to upload your release artifacts to a self-hosted release server such as [electron-release-server.md](config/publishers/electron-release-server.md "mention") or [nucleus.md](config/publishers/nucleus.md "mention"), or cloud storage providers such as [s3.md](config/publishers/s3.md "mention").
+
+For example, for the S3 Publisher:
+
+{% tabs %}
+{% tab title="Yarn" %}
+```shell
+cd my-app
+yarn add --dev @electron-forge/publisher-s3
+```
+{% endtab %}
+
+{% tab title="npm" %}
+```bash
+cd my-app
+npm install --save-dev @electron-forge/publisher-s3
+```
+{% endtab %}
+{% endtabs %}
+
+{% code title="package.json" %}
+```json
+{
+  // ...
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [ /* ... */],
+      "publishers": [
+        {
+        "name": "@electron-forge/publisher-s3",
+        "platforms": ["darwin", "linux"],
+          "config": {
+            "bucket": "my-bucket",
+            "folder": "my/key/prefix"
+          }
+        }
+      ]
+    }
+  }
+  // ...
+}
+```
+{% endcode %}
+
+See the [publishers](config/publishers/ "mention") documentation for more information.
