@@ -4,7 +4,7 @@ description: Create a new Electron app with Vite.
 
 # Vite
 
-To get you up and running as fast as possible with Vite, we provide a template that makes use of the [`@electron-forge/plugin-vite` module](../config/plugins/vite.md), plus some preset Vite configuration options.
+To get you up and running as fast as possible with [Vite](https://vitejs.dev/), we provide a template that makes use of the [`@electron-forge/plugin-vite` module](../config/plugins/vite.md), plus some preset Vite configuration options.
 
 {% tabs %}
 {% tab title="Yarn" %}
