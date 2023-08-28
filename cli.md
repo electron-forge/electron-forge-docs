@@ -10,6 +10,11 @@ Forge's CLI is the main way to run Electron Forge commands. It consists of a thi
 
 If you want to use the core API programmatically, see the [#programmatic-usage](cli.md#programmatic-usage "mention") section below.
 
+{% hint style="info" %}
+Forge's CLI uses comma-separated value strings to pass multiple arguments into a single flag. Depending on your terminal, these comma-separated values may need to be enclosed in quotation marks.
+{% endhint %}
+
+
 ## Installation
 
 To use the Forge CLI, install the `@electron-forge/cli` module into your project as a devDependency. If you're using the `create-electron-app` script, this module will already be installed for you.
