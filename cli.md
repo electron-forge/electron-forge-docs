@@ -118,18 +118,18 @@ All flags are optional.
 {% tab title="Yarn" %}
 ```bash
 # By default, the package command corresponds to a package npm script:
-yarn package --arch=ia32
+yarn package --arch="ia32"
 # If there is no package script:
-yarn electron-forge package --arch=ia32
+yarn electron-forge package --arch="ia32"
 ```
 {% endtab %}
 
 {% tab title="npm" %}
 ```bash
 # By default, the package command corresponds to a package npm script:
-npm run package -- --arch=ia32
+npm run package -- --arch="ia32"
 # If there is no package script:
-npx electron-forge package --arch=ia32
+npx electron-forge package --arch="ia32"
 ```
 {% endtab %}
 {% endtabs %}
@@ -146,29 +146,47 @@ All flags are optional.
 
 | Flag             | Value                               | Description                                                                                                                                                                                                                  |
 | ---------------- | ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `--arch`         | Architecture, e.g. `x64`            | Target architecture to make for. Defaults to the arch that you're running on (the "host" arch). Allowed values are: "ia32", "x64", "armv7l", "arm64", "universal", or "mips64el". Multiple values should be comma-separated. **On Windows, when passing multiple values, they should be enclosed in quotes. For example: `--arch "x64,ia32"`**. |
+| `--arch`         | Architecture, e.g. `x64`            | Target architecture to make for. Defaults to the arch that you're running on (the "host" arch). Allowed values are: "ia32", "x64", "armv7l", "arm64", "universal", or "mips64el". Multiple values should be comma-separated. |
 | `--platform`     | Platform, e.g. `mas`                | Target platform to make for, please note you normally can only target platform X from platform X. This defaults to the platform you're running on (the "host" platform).                                                     |
 | `--targets`      | Comma separated list of maker names | Override your make targets for this run. The maker name is the full node module name, e.g. `@electron-forge/maker-deb`. By default, the make targets used are the ones available and configured for the given platform.      |
 | `--skip-package` | N/A                                 | Set if you want to skip the packaging step, useful if you are running sequential makes and want to save time. By default, packaging is **not** skipped.                                                                      |
 
 #### Usage
 
+Basic usage:
+
 {% tabs %}
 {% tab title="Yarn" %}
 ```bash
 # By default, the make command corresponds to a make npm script:
-yarn make --arch=ia32
+yarn make --arch="ia32"
 # If there is no make script:
-yarn electron-forge make --arch=ia32
+yarn electron-forge make --arch="ia32"
 ```
 {% endtab %}
 
 {% tab title="npm" %}
 ```bash
 # By default, the make command corresponds to a make npm script:
-npm run make -- --arch=ia32
+npm run make -- --arch="ia32"
 # If there is no make script:
-npx electron-forge make --arch=ia32
+npx electron-forge make --arch="ia32"
+```
+{% endtab %}
+{% endtabs %}
+
+Building for ia32 and x64 architectures:
+
+{% tabs %}
+{% tab title="Yarn" %}
+```bash
+yarn make --arch="ia32,x64"
+```
+{% endtab %}
+
+{% tab title="npm" %}
+```bash
+npm run make -- --arch="ia32,x64"
 ```
 {% endtab %}
 {% endtabs %}
