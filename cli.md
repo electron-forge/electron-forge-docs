@@ -10,6 +10,11 @@ Forge's CLI is the main way to run Electron Forge commands. It consists of a thi
 
 If you want to use the core API programmatically, see the [#programmatic-usage](cli.md#programmatic-usage "mention") section below.
 
+{% hint style="info" %}
+Forge's CLI uses comma-separated value strings to pass multiple arguments into a single flag. Depending on your terminal, these comma-separated values may need to be enclosed in quotation marks.
+{% endhint %}
+
+
 ## Installation
 
 To use the Forge CLI, install the `@electron-forge/cli` module into your project as a devDependency. If you're using the `create-electron-app` script, this module will already be installed for you.
@@ -118,18 +123,18 @@ All flags are optional.
 {% tab title="Yarn" %}
 ```bash
 # By default, the package command corresponds to a package npm script:
-yarn package --arch=ia32
+yarn package --arch="ia32"
 # If there is no package script:
-yarn electron-forge package --arch=ia32
+yarn electron-forge package --arch="ia32"
 ```
 {% endtab %}
 
 {% tab title="npm" %}
 ```bash
 # By default, the package command corresponds to a package npm script:
-npm run package -- --arch=ia32
+npm run package -- --arch="ia32"
 # If there is no package script:
-npx electron-forge package --arch=ia32
+npx electron-forge package --arch="ia32"
 ```
 {% endtab %}
 {% endtabs %}
@@ -153,22 +158,40 @@ All flags are optional.
 
 #### Usage
 
+Basic usage:
+
 {% tabs %}
 {% tab title="Yarn" %}
 ```bash
 # By default, the make command corresponds to a make npm script:
-yarn make --arch=ia32
+yarn make --arch="ia32"
 # If there is no make script:
-yarn electron-forge make --arch=ia32
+yarn electron-forge make --arch="ia32"
 ```
 {% endtab %}
 
 {% tab title="npm" %}
 ```bash
 # By default, the make command corresponds to a make npm script:
-npm run make -- --arch=ia32
+npm run make -- --arch="ia32"
 # If there is no make script:
-npx electron-forge make --arch=ia32
+npx electron-forge make --arch="ia32"
+```
+{% endtab %}
+{% endtabs %}
+
+Building for ia32 and x64 architectures:
+
+{% tabs %}
+{% tab title="Yarn" %}
+```bash
+yarn make --arch="ia32,x64"
+```
+{% endtab %}
+
+{% tab title="npm" %}
+```bash
+npm run make -- --arch="ia32,x64"
 ```
 {% endtab %}
 {% endtabs %}
