@@ -6,6 +6,12 @@ description: >-
 
 # Signing a Windows app
 
+{% hint style="warning" %}
+Starting June 1, 2023 at 00:00 UTC, private keys for code signing certificates need to be stored on a hardware storage module compliant with FIPS 140 Level 2, Common Criteria EAL 4+ or equivalent.\
+\
+In practice, this means that software-based OV certificates used in the steps below will no longer be available for purchase. For instructions on how to sign applications with newer token-based certificates, consult your Certificate Authority's documentation.
+{% endhint %}
+
 ## Prerequisites
 
 ### Installing Visual Studio
