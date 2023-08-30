@@ -32,6 +32,13 @@ npm install --save react react-dom
 npm install --save-dev @types/react @types/react-dom
 ```
 {% endtab %}
+
+{% tab title="Bun" %}
+```bash
+bun add react react-dom
+bun add --dev @types/react @types/react-dom
+```
+{% endtab %}
 {% endtabs %}
 
 ### Integrate React code

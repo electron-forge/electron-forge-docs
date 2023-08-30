@@ -26,6 +26,12 @@ npm install --save vue
 yarn add vue
 ```
 {% endtab %}
+
+{% tab title="Bun" %}
+```bash
+bun add vue
+```
+{% endtab %}
 {% endtabs %}
 
 ### Integrate Vue 2 code
@@ -81,6 +87,12 @@ npm install --save-dev vue-loader vue-template-compiler
 yarn add --dev vue-loader vue-template-compiler
 ```
 {% endtab %}
+
+{% tab title="Bun" %}
+```bash
+bun add --dev vue-loader vue-template-compiler
+```
+{% endtab %}
 {% endtabs %}
 
 Setting up the [`vue-loader` Webpack module](https://vue-loader.vuejs.org/guide/#webpack-configuration) is left as an exercise for the reader _(hint: `vue-loader` Webpack config should ideally go in the renderer configuration only)_.
@@ -97,6 +109,12 @@ npm install --save vue
 {% tab title="Yarn" %}
 ```bash
 yarn add vue
+```
+{% endtab %}
+
+{% tab title="Bun" %}
+```bash
+bun add vue
 ```
 {% endtab %}
 {% endtabs %}

@@ -20,6 +20,12 @@ yarn add --dev @electron-forge/plugin-vite
 npm install --save-dev @electron-forge/plugin-vite
 ```
 {% endtab %}
+
+{% tab title="Bun" %}
+```shell
+bun add --dev @electron-forge/plugin-vite
+```
+{% endtab %}
 {% endtabs %}
 
 ## Usage

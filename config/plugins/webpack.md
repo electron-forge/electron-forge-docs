@@ -20,6 +20,12 @@ yarn add --dev @electron-forge/plugin-webpack
 npm install --save-dev @electron-forge/plugin-webpack
 ```
 {% endtab %}
+
+{% tab title="Bun" %}
+```shell
+bun add --dev @electron-forge/plugin-webpack
+```
+{% endtab %}
 {% endtabs %}
 
 ## Usage
@@ -247,6 +253,12 @@ yarn add --dev node-loader @vercel/webpack-asset-relocator-loader@1.7.3
 {% tab title="npm" %}
 ```shell
 npm install --save-dev node-loader @vercel/webpack-asset-relocator-loader@1.7.3
+```
+{% endtab %}
+
+{% tab title="Bun" %}
+```shell
+bun add --dev node-loader @vercel/webpack-asset-relocator-loader@1.7.3
 ```
 {% endtab %}
 {% endtabs %}

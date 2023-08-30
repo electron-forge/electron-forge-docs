@@ -31,6 +31,12 @@ yarn add --dev @electron-forge/cli
 npm install --save-dev @electron-forge/cli
 ```
 {% endtab %}
+
+{% tab title="Bun" %}
+```bash
+bun add --dev @electron-forge/cli
+```
+{% endtab %}
 {% endtabs %}
 
 ## Bootstrap commands
@@ -70,6 +76,12 @@ yarn electron-forge init --template=webpack
 npx electron-forge init --template=webpack
 ```
 {% endtab %}
+
+{% tab title="Bun" %}
+```bash
+npx electron-forge init --template=webpack
+```
+{% endtab %}
 {% endtabs %}
 
 ### Import
@@ -92,6 +104,12 @@ yarn electron-forge import
 {% tab title="npm" %}
 ```bash
 npx electron-forge import
+```
+{% endtab %}
+
+{% tab title="Bun" %}
+```bash
+bunx electron-forge import
 ```
 {% endtab %}
 {% endtabs %}
@@ -137,6 +155,15 @@ npm run package -- --arch="ia32"
 npx electron-forge package --arch="ia32"
 ```
 {% endtab %}
+
+{% tab title="Bun" %}
+```bash
+# By default, the package command corresponds to a package npm script:
+bun run package -- --arch="ia32"
+# If there is no package script:
+bunx electron-forge package --arch="ia32"
+```
+{% endtab %}
 {% endtabs %}
 
 ### Make
@@ -178,6 +205,15 @@ npm run make -- --arch="ia32"
 npx electron-forge make --arch="ia32"
 ```
 {% endtab %}
+
+{% tab title="Bun" %}
+```bash
+# By default, the make command corresponds to a make npm script:
+bun run make -- --arch="ia32"
+# If there is no make script:
+bunx electron-forge make --arch="ia32"
+```
+{% endtab %}
 {% endtabs %}
 
 Building for ia32 and x64 architectures:
@@ -192,6 +228,12 @@ yarn make --arch="ia32,x64"
 {% tab title="npm" %}
 ```bash
 npm run make -- --arch="ia32,x64"
+```
+{% endtab %}
+
+{% tab title="Bun" %}
+```bash
+bun run make --arch="ia32,x64"
 ```
 {% endtab %}
 {% endtabs %}
@@ -228,6 +270,14 @@ yarn electron-forge publish --from-dry-run
 </strong>npm run publish -- --from-dry-run
 # If there is no publish script:
 npx electron-forge publish -- --from-dry-run
+</code></pre>
+{% endtab %}
+
+{% tab title="Bun" %}
+<pre class="language-bash"><code class="lang-bash"><strong># By default, the publish command corresponds to a publish npm script:
+</strong>bun run publish -- --from-dry-run
+# If there is no publish script:
+bunx electron-forge publish -- --from-dry-run
 </code></pre>
 {% endtab %}
 {% endtabs %}
@@ -272,6 +322,15 @@ yarn electron-forge start --enable-logging
 npm start --enable-logging
 # if there is no start script
 npx electron-forge start --enable-logging
+```
+{% endtab %}
+
+{% tab title="Bun" %}
+```bash
+# By default, the start command corresponds to a start npm script:
+bun run start --enable-logging
+# if there is no start script
+bunx electron-forge start --enable-logging
 ```
 {% endtab %}
 {% endtabs %}

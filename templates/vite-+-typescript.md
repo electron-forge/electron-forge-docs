@@ -14,6 +14,12 @@ yarn create electron-app my-new-app --template=vite-typescript
 npm init electron-app@latest my-new-app -- --template=vite-typescript
 ```
 {% endtab %}
+
+{% tab title="Bun" %}
+```bash
+bunx create-electron-app my-new-app --template=vite-typescript
+```
+{% endtab %}
 {% endtabs %}
 
 Once you've initialized the template, you'll need to run `npm start` in the generated directory.

@@ -77,6 +77,13 @@ cd my-app
 npm install --save-dev @electron-forge/cli @electron-forge/maker-squirrel @electron-forge/maker-deb @electron-forge/maker-zip
 ```
 {% endtab %}
+
+{% tab title="Bun" %}
+```bash
+cd my-app
+bun add --dev @electron-forge/cli @electron-forge/maker-squirrel @electron-forge/maker-deb @electron-forge/maker-zip
+```
+{% endtab %}
 {% endtabs %}
 
 ### Configuring package.json
@@ -156,6 +163,13 @@ cd my-app
 npm install electron-squirrel-startup
 ```
 {% endtab %}
+
+{% tab title="Bun" %}
+```bash
+cd my-app
+bun add electron-squirrel-startup
+```
+{% endtab %}
 {% endtabs %}
 
 Then, add the following snippet as early as possible in the main process execution (before the `app.ready` event).
@@ -184,6 +198,13 @@ yarn add --dev @electron-forge/publisher-s3
 ```bash
 cd my-app
 npm install --save-dev @electron-forge/publisher-s3
+```
+{% endtab %}
+
+{% tab title="Bun" %}
+```bash
+cd my-app
+bun add --dev @electron-forge/publisher-s3
 ```
 {% endtab %}
 {% endtabs %}

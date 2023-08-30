@@ -22,6 +22,12 @@ yarn add --dev @electron-forge/plugin-auto-unpack-natives
 npm install --save-dev @electron-forge/plugin-auto-unpack-natives
 ```
 {% endtab %}
+
+{% tab title="Bun" %}
+```shell
+bun add --dev @electron-forge/plugin-auto-unpack-natives
+```
+{% endtab %}
 {% endtabs %}
 
 ## Usage

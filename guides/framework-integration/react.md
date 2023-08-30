@@ -26,6 +26,12 @@ yarn add --dev @babel/core @babel/preset-react babel-loader
 npm install --save-dev @babel/core @babel/preset-react babel-loader
 ```
 {% endtab %}
+
+{% tab title="Bun" %}
+```text
+bun add --dev @babel/core @babel/preset-react babel-loader
+```
+{% endtab %}
 {% endtabs %}
 
 Set up the [`babel-loader`](https://www.npmjs.com/package/babel-loader)module with the [React preset](https://babeljs.io/docs/en/babel-preset-react) in `webpack.rules.js`:
@@ -63,6 +69,12 @@ yarn add react react-dom
 {% tab title="NPM" %}
 ```bash
 npm install --save react react-dom
+```
+{% endtab %}
+
+{% tab title="Bun" %}
+```bash
+bun add react react-dom
 ```
 {% endtab %}
 {% endtabs %}

@@ -26,6 +26,12 @@ yarn add --dev @electron-forge/plugin-local-electron
 npm install --save-dev @electron-forge/plugin-local-electron
 ```
 {% endtab %}
+
+{% tab title="Bun" %}
+```bash
+bun add --dev @electron-forge/plugin-local-electron
+```
+{% endtab %}
 {% endtabs %}
 
 ### Usage

@@ -22,6 +22,12 @@ yarn add --dev @electron-forge/plugin-electronegativity
 npm install --save-dev @electron-forge/plugin-electronegativity
 ```
 {% endtab %}
+
+{% tab title="Bun" %}
+```shell
+bun add --dev @electron-forge/plugin-electronegativity
+```
+{% endtab %}
 {% endtabs %}
 
 ## Usage

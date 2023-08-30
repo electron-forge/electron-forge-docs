@@ -18,6 +18,13 @@ yarn create electron-app my-new-app --template=webpack-typescript
 npm init electron-app@latest my-new-app -- --template=webpack-typescript
 ```
 {% endtab %}
+
+{% tab title="Bun" %}
+```bash
+bunx create-electron-app@latest my-new-app -- --template=webpack-typescript
+```
+{% endtab %}
+
 {% endtabs %}
 
 {% hint style="warning" %}

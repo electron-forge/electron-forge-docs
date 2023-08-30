@@ -24,6 +24,12 @@ yarn create electron-app my-app
 npm init electron-app@latest my-app
 ```
 {% endtab %}
+
+{% tab title="Bun" %}
+```bash
+bunx create-electron-app@latest my-app
+```
+{% endtab %}
 {% endtabs %}
 
 {% hint style="warning" %}
@@ -50,6 +56,12 @@ yarn create electron-app my-app --template=webpack
 {% tab title="npm" %}
 ```bash
 npm init electron-app@latest my-app -- --template=webpack
+```
+{% endtab %}
+
+{% tab title="Bun" %}
+```bash
+bunx create-electron-app@latest my-app -- --template=webpack
 ```
 {% endtab %}
 {% endtabs %}
@@ -85,6 +97,13 @@ cd my-app
 npm start
 ```
 {% endtab %}
+
+{% tab title="Bun" %}
+```bash
+cd my-app
+bun run start
+```
+{% endtab %}
 {% endtabs %}
 
 ## Building distributables
@@ -103,6 +122,12 @@ yarn make
 npm run make
 ```
 {% endtab %}
+
+{% tab title="Bun" %}
+```bash
+bun run make
+```
+{% endtab %}
 {% endtabs %}
 
 ## Publishing your app
@@ -119,6 +144,12 @@ yarn run publish
 {% tab title="npm" %}
 ```bash
 npm run publish
+```
+{% endtab %}
+
+{% tab title="Bun" %}
+```bash
+bun run publish
 ```
 {% endtab %}
 {% endtabs %}
