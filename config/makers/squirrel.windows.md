@@ -10,7 +10,7 @@ The Squirrel.Windows target builds your application using the [Squirrel.Windows]
 
 Squirrel.Windows is a no-prompt, no-hassle, no-admin method of installing Windows applications, and is therefore the most user friendly you can get.
 
-You can only build the Squirrel.Windows target on a Windows machine or on a macOS or Linux machine with `mono` and `wine` installed.
+You can only build the Squirrel.Windows target on a Windows machine or on a Linux machine with `mono` and `wine` installed.
 
 ## Usage
 
