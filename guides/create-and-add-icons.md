@@ -61,6 +61,10 @@ module.exports = {
 Forge will automatically add the correct extension for each platform, so appending `.ico` or `.icns` to the path is not required.
 {% endhint %}
 
+{% hint style="info" %}
+Operating systems have an icon cache. Resetting the cache is recommended if the icon is not updated or still uses the default one.
+{% endhint %}
+
 After the config has been updated, build your project to generate your executable with the Make command.
 
 ### Linux
