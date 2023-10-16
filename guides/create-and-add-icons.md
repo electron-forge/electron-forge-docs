@@ -16,7 +16,7 @@ On platforms that have high-DPI support (such as Apple Retina displays), you can
 
 If you want to support different displays with different DPI densities at the same time, you can put images with different sizes in the same folder and use the filename without DPI suffixes. For example:
 
-```text
+```
 images/
 ├── icon.png
 ├── icon@2x.png
@@ -143,3 +143,15 @@ module.exports = {
 ```
 
 Once again, once you are done configuring your icons, don't forget to build your project with the Make command.
+
+## Troubleshooting
+
+If your app icon is not appearing after following the above instructions, try the workarounds listed below.
+
+### Refresh icon cache (Windows)
+
+Windows caches all application icons in a hidden Icon Cache Database. If your Electron app's icon is not showing up, you may need to rebuild this cache. To invalidate the cache, use the system `ie4uinit.exe` utility:
+
+```sh
+ie4uinit.exe -show
+```
