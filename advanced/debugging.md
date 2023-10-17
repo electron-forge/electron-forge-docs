@@ -26,9 +26,9 @@ If you are using &lt; 1.8 you should really be updating Electron anyway.
   "type": "node",
   "request": "launch",
   "name": "Electron Main",
-  "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron-forge-vscode-nix",
+  "runtimeExecutable": "${workspaceFolder}/node_modules/@electron-forge/cli/script/vscode.sh",
   "windows": {
-    "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron-forge-vscode-win.cmd"
+    "runtimeExecutable": "${workspaceFolder}/node_modules/@electron-forge/cli/script/vscode.cmd"
   },
   // runtimeArgs will be passed directly to your Electron application
   "runtimeArgs": [
