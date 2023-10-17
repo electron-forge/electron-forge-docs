@@ -35,7 +35,8 @@ If you are using &lt; 1.8 you should really be updating Electron anyway.
     "foo",
     "bar"
   ],
-  "cwd": "${workspaceFolder}"
+  "cwd": "${workspaceFolder}",
+  "console": "integratedTerminal"
 }
 ```
 {% endcode %}
