@@ -7,7 +7,7 @@ description: 'How to create an Electron app with React, TypeScript, and Electron
 Adding React support to the TypeScript + Webpack template is fairly straightforward and doesn't require a complicated boilerplate to get started.
 
 {% hint style="info" %}
-The following guide has been tested with React 17, TypeScript 4.3, and Webpack 5.
+The following guide has been tested with React 18, TypeScript 4.3, and Webpack 5.
 {% endhint %}
 
 ### Create the app and setup the TypeScript config
