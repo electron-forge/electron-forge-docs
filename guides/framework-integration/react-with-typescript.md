@@ -1,5 +1,5 @@
 ---
-description: 'How to create an Electron app with React, TypeScript, and Electron Forge'
+description: How to create an Electron app with React, TypeScript, and Electron Forge
 ---
 
 # React with TypeScript
@@ -56,5 +56,4 @@ import './app';
 {% endtab %}
 {% endtabs %}
 
-For more about React, see [their documentation](https://reactjs.org/docs/hello-world.html).
-
+For more about React, see [their documentation](https://react.dev/learn/add-react-to-an-existing-project).

@@ -22,7 +22,7 @@ yarn add --dev @babel/core @babel/preset-react babel-loader
 {% endtab %}
 
 {% tab title="NPM" %}
-```text
+```
 npm install --save-dev @babel/core @babel/preset-react babel-loader
 ```
 {% endtab %}
@@ -90,5 +90,4 @@ import './app.jsx';
 {% endtab %}
 {% endtabs %}
 
-For more about React, see [their documentation](https://reactjs.org/docs/hello-world.html).
-
+For more about React, see their [documentation](https://react.dev/learn/add-react-to-an-existing-project).
