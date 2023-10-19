@@ -22,7 +22,7 @@ yarn add --dev @babel/core @babel/preset-react babel-loader
 {% endtab %}
 
 {% tab title="NPM" %}
-```
+```bash
 npm install --save-dev @babel/core @babel/preset-react babel-loader
 ```
 {% endtab %}
