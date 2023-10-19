@@ -1,51 +1,74 @@
 # Debugging
 
-## Debugging on the Command Line
+In Electron apps, the main and renderer processes have different debugging mechanisms:
 
-If you're using Electron 1.8 or later, you can specify the `--inspect-electron` flag when running `electron-forge start`, which will set the [Electron `--inspect`flag](http://electronjs.org/docs/tutorial/debugging-main-process#--inspectport) with the default debugger port.
+* Renderer processes can be debugged using Chromium DevTools.
+* The main process can be debugged via the `--inspect` and `--inspect-brk` command line flags.
 
+This guide goes over Forge-specific ways of debugging the main process through the command line or with a code editor.
+
+{% hint style="info" %}
+Each section in this guide assumes your `package.json` has a `"start": "electron-forge start"` script.
+{% endhint %}
+
+For more general information on debugging Electron apps, see the [main Electron docs on Application Debugging](https://www.electronjs.org/docs/latest/tutorial/application-debugging#renderer-process).
+
+## Debugging on the command line
+
+You can specify the `--inspect-electron` flag when running `electron-forge start`. Internally, this will activate the [Electron `--inspect`flag](http://electronjs.org/docs/tutorial/debugging-main-process#--inspectport), and the main process will listen for a debugging client on port 5858.
+
+{% tabs %}
+{% tab title="Yarn" %}
 ```bash
-electron-forge start --inspect-electron
+yarn start --inspect-electron
 ```
+{% endtab %}
 
-This will allow you to open `chrome://inspect` in Google Chrome and attach a debugger to the main process of your app.
+{% tab title="npm" %}
+```bash
+npm run start -- --inspect-electron
+```
+{% endtab %}
+{% endtabs %}
+
+Once your app is active, open [`chrome://inspect`](chrome://inspect) in any Chromium-based browser to attach a debugger to the main process of your app.
+
+{% hint style="info" %}
+To add a breakpoint at the first line of execution when debugging, you can use Forge's `--inspect-brk-electron` flag instead.
+{% endhint %}
 
 ## Debugging with VS Code
 
-Debugging your Electron main process through VS Code is ridiculously easy with Forge. Simply add this as a launch config in VSCode and you're good to go.
+To debug the main process through VS Code, add the following [Node.js launch configuration](https://code.visualstudio.com/docs/nodejs/nodejs-debugging):
 
-{% hint style="info" %}
-You need to be using Electron 1.8 or later for this launch config to work.
-
-If you are using &lt; 1.8 you should really be updating Electron anyway.
-{% endhint %}
-
-{% code title="launch.config" %}
-```jsonc
+{% code title=".vscode/launch.json" %}
+```json5
 {
-  "type": "node",
-  "request": "launch",
-  "name": "Electron Main",
-  "runtimeExecutable": "${workspaceFolder}/node_modules/@electron-forge/cli/script/vscode.sh",
-  "windows": {
-    "runtimeExecutable": "${workspaceFolder}/node_modules/@electron-forge/cli/script/vscode.cmd"
-  },
-  // runtimeArgs will be passed directly to your Electron application
-  "runtimeArgs": [
-    "foo",
-    "bar"
-  ],
-  "cwd": "${workspaceFolder}",
-  "console": "integratedTerminal"
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Electron Main",
+      "runtimeExecutable": "${workspaceFolder}/node_modules/@electron-forge/cli/script/vscode.sh",
+      "windows": {
+        "runtimeExecutable": "${workspaceFolder}/node_modules/@electron-forge/cli/script/vscode.cmd"
+      },
+      // runtimeArgs will be passed directly to your Electron application
+      "runtimeArgs": [
+        "foo",
+        "bar"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    }
+  ]
 }
 ```
 {% endcode %}
 
-## Debugging with WebStorm or Other Jetbrains IDEs
+Once this configuration is added, launch the app via VS Code's Run and Debug view to start debugging.
 
-{% hint style="info" %}
-This assumes your `package.json` has a `"start": "electron-forge start"` script.
-{% endhint %}
+## Debugging with WebStorm or Other Jetbrains IDEs
 
 1. Access the `Run > Debug...` menu and select the `Edit Configurations...` option to open the `Run/Debug Configurations` window.
 2. Click on the `Add new configuration` button (the `+` icon) in the upper-left corner and select the `npm` template.
