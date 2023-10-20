@@ -61,10 +61,6 @@ module.exports = {
 Forge will automatically add the correct extension for each platform, so appending `.ico` or `.icns` to the path is not required.
 {% endhint %}
 
-{% hint style="info" %}
-Operating systems have an icon cache. Resetting the cache is recommended if the icon is not updated or still uses the default one.
-{% endhint %}
-
 After the config has been updated, build your project to generate your executable with the Make command.
 
 ### Linux
@@ -150,9 +146,9 @@ Once again, once you are done configuring your icons, don't forget to build your
 
 ## Troubleshooting
 
-If your app icon is not appearing after following the above instructions, try the workarounds listed below.
+Operating systems have an icon cache. Resetting the cache is recommended if the icon is not updated or still uses the default one.
 
-### Refresh icon cache (Windows)
+### Refreshing the icon cache (Windows)
 
 Windows caches all application icons in a hidden Icon Cache Database. If your Electron app's icon is not showing up, you may need to rebuild this cache. To invalidate the cache, use the system `ie4uinit.exe` utility:
 
