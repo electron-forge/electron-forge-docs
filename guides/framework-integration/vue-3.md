@@ -1,34 +1,26 @@
 ---
-description: How to create an Electron app with Vue 3 and Electron Forge
+description: How to create an Electron app with Vue and Electron Forge
 ---
 
-# Vue 3
+# Vue
 
-Adding Vue 3 support to a basic Electron Forge template.
+Vue can be added to Electron Forge's Vite template with a few setup steps.
 
-### Create the app
+{% hint style="info" %}
 
-Create a standard Electron project per the [Vite](../../templates/vite.md) guide.
+The following guide has been tested with Vue 3 and Vite 4.
 
-### Add the Vue 3 dependency
+{% endhint %}
 
-Add the Vue 3 package to your `dependencies`:
+## Setting up the app
+
+Create an Electron app using Electron Forge's [Vite](../../templates/vite.md) template.
 
 {% tabs %}
 {% tab title="yarn" %}
 
 ```bash
-yarn add vue
-yarn add -D @vitejs/plugin-vue
-```
-
-{% endtab %}
-
-{% tab title="pnpm" %}
-
-```bash
-pnpm add vue
-pnpm add -D @vitejs/plugin-vue
+yarn create electron-app my-vue-app --template=vite
 ```
 
 {% endtab %}
@@ -36,29 +28,64 @@ pnpm add -D @vitejs/plugin-vue
 {% tab title="npm" %}
 
 ```bash
-npm install --save vue
+npm init electron-app@latest my-vue-app -- --template=vite
+```
+
+{% endtab %}
+{% endtabs %}
+
+## Adding dependencies
+
+Add the `vue` npm package to your `dependencies` and the `@vitejs/plugin-vue` package to your `devDependencies`:
+
+{% tabs %}
+{% tab title="yarn" %}
+
+```bash
+yarn add vue
+yarn add --dev @vitejs/plugin-vue
+```
+
+{% endtab %}
+
+{% tab title="npm" %}
+
+```bash
+npm install vue
 npm install --save-dev @vitejs/plugin-vue
 ```
 
 {% endtab %}
 {% endtabs %}
 
-### Integrate Vue 3 code
+## Integrating Vue code
 
-You should now be able to start writing and using Vue 3 components in your Electron app. The following is a very minimal example of how to start to add Vue 3 code:
+You should now be able to start using Vue components in your Electron app. The following is a very minimal example of how to start to add Vue code:
 
 {% tabs %}
 {% tab title="src/index.html" %}
-Add the following before the closing `</body>` tag:
 
-```markup
-<div id="app"></div>
-<script type="module" src="./renderer.js"></script>
+Replace the contents of `src/index.html` with a `<div>` element with the `#app` id.
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World!</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/renderer.js"></script>
+  </body>
+</html>
 ```
 
 {% endtab %}
 
 {% tab title="src/App.vue" %}
+
+Add the contents from the template back to `src/App.vue`.
 
 ```vue
 <template>
@@ -75,6 +102,8 @@ console.log('👋 This message is being logged by "App.vue", included via Vite')
 
 {% tab title="src/renderer.js" %}
 
+Mount `App.vue` into the DOM with Vue's `createApp` API.
+
 ```javascript
 import { createApp } from "vue";
 import App from "./App.vue";
@@ -85,6 +114,8 @@ createApp(App).mount("#app");
 {% endtab %}
 
 {% tab title="vite.renderer.config.mjs" %}
+
+Configure the Vue plugin for Vite.js.
 
 ```javascript
 import { defineConfig } from "vite";
