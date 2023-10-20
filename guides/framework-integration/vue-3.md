@@ -2,9 +2,9 @@
 description: How to create an Electron app with Vue and Electron Forge
 ---
 
-# Vue
+# Vue 3
 
-Vue can be added to Electron Forge's Vite template with a few setup steps.
+Vue 3 can be added to Electron Forge's Vite template with a few setup steps.
 
 {% hint style="info" %}
 
@@ -58,14 +58,14 @@ npm install --save-dev @vitejs/plugin-vue
 {% endtab %}
 {% endtabs %}
 
-## Integrating Vue code
+## Integrating Vue 3 code
 
-You should now be able to start using Vue components in your Electron app. The following is a very minimal example of how to start to add Vue code:
+You should now be able to start using Vue components in your Electron app. The following is a very minimal example of how to start to add Vue 3 code:
 
 {% tabs %}
 {% tab title="src/index.html" %}
 
-Replace the contents of `src/index.html` with a `<div>` element with the `#app` id.
+Replace the contents of `src/index.html` with a `<div>` element with the `#app` id attribute.
 
 ```html
 <!DOCTYPE html>
