@@ -13,6 +13,7 @@
   * [Electronegativity Plugin](config/plugins/electronegativity.md)
   * [Auto Unpack Native Modules Plugin](config/plugins/auto-unpack-natives.md)
   * [Local Electron Plugin](config/plugins/local-electron.md)
+  * [Fuses Plugin](config/plugins/fuses.md)
 * [Makers](config/makers/README.md)
   * [AppX](config/makers/appx.md)
   * [deb](config/makers/deb.md)
