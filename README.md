@@ -12,6 +12,10 @@ Electron Forge is an all-in-one tool for packaging and distributing Electron app
 
 To get started with Electron Forge, we first need to initialize a new project with `create-electron-app`. This script is a convenient wrapper around Forge's [Init](cli.md#Init) command.
 
+{% hint style="warning" %}
+Electron Forge 6 works best with Yarn Classic (v1.x) and npm. If you are using a newer version of Yarn, you can downgrade to Classic using the [`yarn set version`](https://yarnpkg.com/cli/set/version) command.
+{% endhint %}
+
 {% tabs %}
 {% tab title="Yarn" %}
 ```bash
@@ -43,7 +47,7 @@ Forge's initialization scripts can add additional template code with the `--temp
 {% tabs %}
 {% tab title="yarn" %}
 ```bash
-yarn create electron-app --template=webpack
+yarn create electron-app my-app --template=webpack
 ```
 {% endtab %}
 
@@ -59,13 +63,13 @@ There are currently two first-party templates:
 * `webpack`
 * `webpack-typescript`
 
-Both of these templates are built around the [Webpack Plugin](\(../config/plugins/webpack.md\)), which bundles your JavaScript code for production and includes a dev server to provide a better development experience. The `webpack-typescript` template also wires up your project for TypeScript support.
+Both of these templates are built around the [Webpack Plugin](config/plugins/webpack.md), which bundles your JavaScript code for production and includes a dev server to provide a better development experience. The `webpack-typescript` template also wires up your project for TypeScript support.
 
 {% hint style="info" %}
 We highly recommend using these templates when initializing your app to take advantage of modern front-end JavaScript tooling.
 {% endhint %}
 
-To learn more about authoring your own templates for Electron Forge, check out the [Writing Templates](advanced/extending-electron-forge/writing-templates/) guide!
+To learn more about authoring your own templates for Electron Forge, check out the [Writing Templates](advanced/extending-electron-forge/writing-templates.md) guide!
 
 ## Starting your app
 

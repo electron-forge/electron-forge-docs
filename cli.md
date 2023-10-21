@@ -6,9 +6,14 @@ description: How to use the command line interface (CLI) commands for Electron F
 
 ## Overview
 
-Forge's CLI is the main way to run Electron Forge commands. It consists of a thin wrapper for its core API. Configuration for these commands is done through your [Forge configuration](configuration.md) object.
+Forge's CLI is the main way to run Electron Forge commands. It consists of a thin wrapper for its core API. Configuration for these commands is done through your [Forge configuration](config/configuration.md) object.
 
-If you want to use the core API programmatically, see the [#undefined](cli.md#undefined "mention") section below.
+If you want to use the core API programmatically, see the [#programmatic-usage](cli.md#programmatic-usage "mention") section below.
+
+{% hint style="info" %}
+Forge's CLI uses comma-separated value strings to pass multiple arguments into a single flag. Depending on your terminal, these comma-separated values may need to be enclosed in quotation marks.
+{% endhint %}
+
 
 ## Installation
 
@@ -118,18 +123,18 @@ All flags are optional.
 {% tab title="Yarn" %}
 ```bash
 # By default, the package command corresponds to a package npm script:
-yarn package --arch=ia32
+yarn package --arch="ia32"
 # If there is no package script:
-yarn electron-forge package --arch=ia32
+yarn electron-forge package --arch="ia32"
 ```
 {% endtab %}
 
 {% tab title="npm" %}
 ```bash
 # By default, the package command corresponds to a package npm script:
-npm run package -- --arch=ia32
+npm run package -- --arch="ia32"
 # If there is no package script:
-npx electron-forge package --arch=ia32
+npx electron-forge package --arch="ia32"
 ```
 {% endtab %}
 {% endtabs %}
@@ -153,22 +158,40 @@ All flags are optional.
 
 #### Usage
 
+Basic usage:
+
 {% tabs %}
 {% tab title="Yarn" %}
 ```bash
 # By default, the make command corresponds to a make npm script:
-yarn make --arch=ia32
+yarn make --arch="ia32"
 # If there is no make script:
-yarn electron-forge make --arch=ia32
+yarn electron-forge make --arch="ia32"
 ```
 {% endtab %}
 
 {% tab title="npm" %}
 ```bash
 # By default, the make command corresponds to a make npm script:
-npm run make -- --arch=ia32
+npm run make -- --arch="ia32"
 # If there is no make script:
-npx electron-forge make --arch=ia32
+npx electron-forge make --arch="ia32"
+```
+{% endtab %}
+{% endtabs %}
+
+Building for ia32 and x64 architectures:
+
+{% tabs %}
+{% tab title="Yarn" %}
+```bash
+yarn make --arch="ia32,x64"
+```
+{% endtab %}
+
+{% tab title="npm" %}
+```bash
+npm run make -- --arch="ia32,x64"
 ```
 {% endtab %}
 {% endtabs %}
@@ -196,14 +219,16 @@ All flags are optional.
 <pre class="language-bash"><code class="lang-bash"><strong># By default, the publish command corresponds to a publish npm script:
 </strong>yarn run publish --from-dry-run
 # If there is no publish script:
-yarn electron-forge publish --from-dry-run</code></pre>
+yarn electron-forge publish --from-dry-run
+</code></pre>
 {% endtab %}
 
 {% tab title="npm" %}
 <pre class="language-bash"><code class="lang-bash"><strong># By default, the publish command corresponds to a publish npm script:
 </strong>npm run publish -- --from-dry-run
 # If there is no publish script:
-npx electron-forge publish -- --from-dry-run</code></pre>
+npx electron-forge publish -- --from-dry-run
+</code></pre>
 {% endtab %}
 {% endtabs %}
 
@@ -261,8 +286,8 @@ const { api } = require('@electron-forge/core');
 const main = async () => {
   await api.package({
     // add package command options here
-  })
-}
+  });
+};
 
 main();
 ```

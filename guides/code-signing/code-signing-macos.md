@@ -34,7 +34,7 @@ To sign Electron apps, you may require two separate certificates:
 * The **Developer ID Installer** certificate is for apps distributed to the Mac App Store.
 * The **Developer ID Application** certificate is for apps distributed outside the Mac App Store.
 
-Once you have an Apple Developer Program membership, you first need to install them onto your machine. We recommend[ loading them through Xcode](https://help.apple.com/xcode/mac/current/#/dev3a05256b8).
+Once you have an Apple Developer Program membership, you first need to install them onto your machine. We recommend [loading them through Xcode](https://help.apple.com/xcode/mac/current/#/dev3a05256b8).
 
 {% hint style="success" %}
 **Verifying your certificate is installed**
@@ -56,7 +56,19 @@ In Electron Forge, macOS apps are signed and notarized at the **Package** step b
 Under the hood, Electron Forge uses the [`@electron/osx-sign`](https://github.com/electron/osx-sign) tool to sign your macOS application.
 {% endhint %}
 
-The `osxSign` comes with default settings that should work out the box for most Electron apps, and its configuration object has no mandatory fields.
+To enable code signing on macOS, ensure that `packagerConfig.osxSign` exists in your Forge configuration.
+
+{% code title="forge.config.js" %}
+```javascript
+module.exports = {
+  packagerConfig: {
+    osxSign: {} // object must exist even if empty
+  }
+};
+```
+{% endcode %}
+
+The `osxSign` config comes with defaults that work out of the box in most cases, so we recommend you start with an empty configuration object.
 
 For a full list of configuration options, see the [`OsxSignOptions`](https://js.electronforge.io/modules/\_electron\_forge\_shared\_types.InternalOptions.html#OsxSignOptions) type in the Forge API docs. For more detailed information on how to configure these options, see the [`@electron/osx-sign` documentation](https://github.com/electron/osx-sign).
 
@@ -79,12 +91,12 @@ module.exports = {
         // to specific files in your packaged app.
         return {
           entitlements: 'path/to/entitlements.plist'
-        }
+        };
       }
     }
   }
   // ...
-}
+};
 ```
 {% endcode %}
 
@@ -124,18 +136,18 @@ There are two mandatory fields for `osxNotarize` if you are using this strategy:
 {% code title="forge.config.js" %}
 ```javascript
 module.exports = {
-  //...
+  // ...
   packagerConfig: {
     // ...
     osxNotarize: {
       tool: 'notarytool',
       appleId: process.env.APPLE_ID,
       appleIdPassword: process.env.APPLE_PASSWORD,
-      teamId: process.env.APPLE_TEAM_ID,
+      teamId: process.env.APPLE_TEAM_ID
     }
   }
-  //...
-}
+  // ...
+};
 ```
 {% endcode %}
 
@@ -158,18 +170,18 @@ There are three mandatory fields for `osxNotarize` if you are using this strateg
 {% code title="forge.config.js" %}
 ```javascript
 module.exports = {
-  //...
+  // ...
   packagerConfig: {
     // ...
     osxNotarize: {
       tool: 'notarytool',
-      appleApiKey: process.env.APPLE_API_KEY
-      appleApiKeyId: process.env.APPLE_API_KEY_ID
+      appleApiKey: process.env.APPLE_API_KEY,
+      appleApiKeyId: process.env.APPLE_API_KEY_ID,
       appleApiIssuer: process.env.APPLE_API_ISSUER
     }
   }
-  //...
-}
+  // ...
+};
 ```
 {% endcode %}
 
@@ -193,17 +205,17 @@ There are two mandatory fields for `osxNotarize` if you are using this strategy:
 {% code title="forge.config.js" %}
 ```javascript
 module.exports = {
-  //...
+  // ...
   packagerConfig: {
     // ...
     osxNotarize: {
       tool: 'notarytool',
-      keychain: 'my-keychain'
+      keychain: 'my-keychain',
       keychainProfile: 'my-keychain-profile'
     }
   }
-  //...
-}
+  // ...
+};
 ```
 {% endcode %}
 
@@ -218,11 +230,11 @@ module.exports = {
     osxSign: {},
     osxNotarize: {
       tool: 'notarytool',
-      appleId: process.env.APPLE_ID
+      appleId: process.env.APPLE_ID,
       appleIdPassword: process.env.APPLE_PASSWORD,
       teamId: process.env.APPLE_TEAM_ID
-    },
-  },
+    }
+  }
 };
 ```
 {% endcode %}

@@ -33,7 +33,6 @@ Configuration options are documented in [`MakerRpmConfig`](https://js.electronfo
   name: '@electron-forge/maker-rpm',
   config: {
     options: {
-      maintainer: 'Joe Bloggs',
       homepage: 'http://example.com'
     }
   }

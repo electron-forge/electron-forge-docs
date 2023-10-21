@@ -20,4 +20,4 @@ npm init electron-app@latest my-new-app -- --template=webpack
 {% endtab %}
 {% endtabs %}
 
-Once you've initialized the template, you'll need to run `npm start`in the generated directory. See the [Webpack Plugin](../config/plugins/webpack.md) documentation for Electron Forge-specific configuration options.
+Once you've initialized the template, you'll need to run `npm start` in the generated directory. See the [Webpack Plugin](../config/plugins/webpack.md) documentation for Electron Forge-specific configuration options.

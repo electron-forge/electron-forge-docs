@@ -6,17 +6,17 @@ An Electron Forge Plugin has to export a single class that extends our base plug
 
 If implemented this method will be once during plugin initialization inside Forge, this method is called only once and shouldn't result in any side effects being executed.  You must return an object in a similar format to `forgeConfig.hooks`.  i.e. an object map between hook names and an array of hook functions.
 
-The possible hook names and the parameters passed to the hook function you return are documented over in the [Configuration](../../configuration.md) section of the docs.
+The possible hook names and the parameters passed to the hook function you return are documented over in the [Configuration](../../config/configuration.md) section of the docs.
 
 ```javascript
 export default class MyPlugin extends PluginBase {
-  getHooks() {
+  getHooks () {
     return {
-      prePackage: [this.prePackage],
+      prePackage: [this.prePackage]
     };
   }
-  
-  prePackage() {
+
+  prePackage () {
     console.log('running prePackage hook');
   }
 }
@@ -34,11 +34,11 @@ Please note that overriding the start logic here only works in **development** i
 
 ```javascript
 export default class MyPlugin extends Pluginbase {
-  async startLogic(opts) {
+  async startLogic (opts) {
     await this.compileMainProcess();
     return null;
   }
-  
-  compileMainProcess() { ... }
+
+  compileMainProcess () { /* ... */ }
 }
 ```
