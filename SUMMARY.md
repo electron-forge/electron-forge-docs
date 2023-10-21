@@ -56,7 +56,6 @@
   * [Parcel](guides/framework-integration/parcel.md)
   * [React](guides/framework-integration/react.md)
   * [React with TypeScript](guides/framework-integration/react-with-typescript.md)
-  * [Vue 2](guides/framework-integration/vue-2.md)
   * [Vue 3](guides/framework-integration/vue-3.md)
 * [Developing with WSL](guides/developing-with-wsl.md)
 
