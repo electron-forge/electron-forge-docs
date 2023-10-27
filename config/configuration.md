@@ -50,7 +50,7 @@ module.exports = {
 {% endtabs %}
 
 {% hint style="info" %}
-We recommend using using JavaScript for your config file since it enables conditional logic within your configuration.
+We recommend using JavaScript for your config file since it enables conditional logic within your configuration.
 {% endhint %}
 
 ## Configuration options
