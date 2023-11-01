@@ -105,10 +105,10 @@ console.log('👋 This message is being logged by "App.vue", included via Vite')
 Mount `App.vue` into the DOM with Vue's `createApp` API.
 
 ```javascript
-import { createApp } from "vue";
-import App from "./App.vue";
+import { createApp } from 'vue';
+import App from './App.vue';
 
-createApp(App).mount("#app");
+createApp(App).mount('#app');
 ```
 
 {% endtab %}
@@ -118,12 +118,12 @@ createApp(App).mount("#app");
 Configure the Vue plugin for Vite.js.
 
 ```javascript
-import { defineConfig } from "vite";
-import vue from "@vitejs/plugin-vue";
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
 
 // https://vitejs.dev/config
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [vue()]
 });
 ```
 
