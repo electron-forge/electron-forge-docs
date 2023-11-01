@@ -41,22 +41,22 @@ You can use the `FusesPlugin` constructor just like the `flipFuses` function fro
 {% tabs %}
 {% tab title="forge.config.js" %}
 ```js
-const { FusesPlugin } = require('@electron-forge/plugin-fuses')
-const { FuseV1Options, FuseVersion } = require('@electron/fuses')
+const { FusesPlugin } = require('@electron-forge/plugin-fuses');
+const { FuseV1Options, FuseVersion } = require('@electron/fuses');
 
 const forgeConfig = {
   // ...
   plugins: [
     new FusesPlugin({
       version: FuseVersion.V1,
-      [FuseV1Options.RunAsNode]: false,
+      [FuseV1Options.RunAsNode]: false
       // ...any other options supported by @electron/fuses
-    }),
-  ],
+    })
+  ]
   // ...
-}
+};
 
-module.exports = forgeConfig
+module.exports = forgeConfig;
 ```
 
 {% endtab %}
@@ -67,22 +67,22 @@ The example above assumes you're using `@electron/fuses` v1.x, which is the late
 {% tabs %}
 {% tab title="forge.config.js" %}
 ```js
-const { FusesPlugin } = require('@electron-forge/plugin-fuses')
-const { FuseV2Options, FuseVersion } = require('@electron/fuses')
+const { FusesPlugin } = require('@electron-forge/plugin-fuses');
+const { FuseV2Options, FuseVersion } = require('@electron/fuses');
 
 const forgeConfig = {
   // ...
   plugins: [
     new FusesPlugin({
       version: FuseVersion.V2,
-      [FuseV2Options.SomeV2OnlyFuse]: false,
+      [FuseV2Options.SomeV2OnlyFuse]: false
       // ...any other options supported by @electron/fuses
-    }),
-  ],
+    })
+  ]
   // ...
-}
+};
 
-module.exports = forgeConfig
+module.exports = forgeConfig;
 ```
 
 {% endtab %}
