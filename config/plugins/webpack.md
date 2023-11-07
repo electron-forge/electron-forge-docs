@@ -112,7 +112,7 @@ const App: FunctionComponent = () => (
 export default hot(module)(App)
 ```
 
-You can use this pattern in any other other components depending on what you want to reload. For example, if you use the `hot()` HOC for an `AppBar` component and make a change to a child of `AppBar` then the entire `AppBar` gets reloaded, but the higher-level `App` layout remains otherwise unchanged.  In essence, a change will propogate up to the first `hot()` HOC found in a component tree.
+You can use this pattern in any other components depending on what you want to reload. For example, if you use the `hot()` HOC for an `AppBar` component and make a change to a child of `AppBar`, then the entire `AppBar` gets reloaded, but the higher-level `App` layout remains otherwise unchanged. In essence, a change will propagate up to the first `hot()` HOC found in a component tree.
 
 ## What happens in production?
 
