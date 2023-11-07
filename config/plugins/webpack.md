@@ -377,6 +377,26 @@ webpack({
 });
 ```
 
+### Hot Reloading for React
+
+If you're using React components, you may want to have HMR automatically pick up a change and reload the component without having to manually refresh the page. This is possible by installing [`react-hot-loader`](https://github.com/gaearon/react-hot-loader) to define which modules should be hot reloaded.
+
+Here's a usage example in TypeScript with `App` being the topmost component in a React component tree:
+
+```typescript
+import { hot } from "react-hot-loader";
+
+const App: FunctionComponent = () => (
+  <div>
+    ...
+  </div>
+);
+
+export default hot(module)(App)
+```
+
+You can use this pattern in any other components depending on what you want to reload. For example, if you use the `hot()` HOC for an `AppBar` component and make a change to a child of `AppBar`, then the entire `AppBar` gets reloaded, but the higher-level `App` layout remains otherwise unchanged. In essence, a change will propagate up to the first `hot()` HOC found in a component tree.
+
 ## What happens in production?
 
 In theory, you shouldn't need to care. In development, we spin up `webpack-dev-server` instances to power your renderer processes. In production, we just build the static files.
