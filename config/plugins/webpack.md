@@ -99,7 +99,8 @@ All your renderer processes in development will have hot reloading enabled by de
 
 If you're using React components, you may want to have HMR automatically pick up a change and reload the component without having to manually refresh the page. This is possible by installing [`react-hot-loader`](https://github.com/gaearon/react-hot-loader) to define which modules should be hot reloaded.
 
-Here's a usage example in typescript with `App` being the topmost component in a react component tree: 
+Here's a usage example in TypeScript with `App` being the topmost component in a React component tree:
+
 ```typescript
 import { hot } from "react-hot-loader";
 
