@@ -237,19 +237,10 @@ If you used the [Webpack](../../templates/webpack-template.md) or [TypeScript + 
 
 If you are setting up the plugin manually, you can make native modules work by adding the following two loaders to your `module.rules` configuration in your Webpack config. Ensure you install both [`node-loader`](https://www.npmjs.com/package/node-loader) and [`@vercel/webpack-asset-relocator-loader`](https://www.npmjs.com/package/@vercel/webpack-asset-relocator-loader) as development dependencies.
 
-{% tabs %}
-{% tab title="Yarn" %}
-```shell
-yarn add --dev node-loader @vercel/webpack-asset-relocator-loader@1.7.3
-```
-{% endtab %}
 
-{% tab title="npm" %}
-```shell
+```bash
 npm install --save-dev node-loader @vercel/webpack-asset-relocator-loader@1.7.3
 ```
-{% endtab %}
-{% endtabs %}
 
 {% hint style="warning" %}
 Electron Forge monkeypatches the asset relocator loader in order for it to work with Electron properly, so the version has been pinned to ensure compatibility. If you upgrade that version, you do so at your own risk.

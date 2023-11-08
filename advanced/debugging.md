@@ -17,19 +17,9 @@ For more general information on debugging Electron apps, see the [main Electron 
 
 You can specify the `--inspect-electron` flag when running `electron-forge start`. Internally, this will activate the [Electron `--inspect`flag](http://electronjs.org/docs/tutorial/debugging-main-process#--inspectport), and the main process will listen for a debugging client on port 5858.
 
-{% tabs %}
-{% tab title="Yarn" %}
-```bash
-yarn start --inspect-electron
-```
-{% endtab %}
-
-{% tab title="npm" %}
 ```bash
 npm run start -- --inspect-electron
 ```
-{% endtab %}
-{% endtabs %}
 
 Once your app is active, open [`chrome://inspect`](chrome://inspect) in any Chromium-based browser to attach a debugger to the main process of your app.
 

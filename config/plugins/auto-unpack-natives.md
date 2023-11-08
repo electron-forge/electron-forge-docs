@@ -10,19 +10,9 @@ This plugin will automatically add all native Node modules in your `node_modules
 
 ## Installation
 
-{% tabs %}
-{% tab title="Yarn" %}
-```shell
-yarn add --dev @electron-forge/plugin-auto-unpack-natives
-```
-{% endtab %}
-
-{% tab title="npm" %}
 ```shell
 npm install --save-dev @electron-forge/plugin-auto-unpack-natives
 ```
-{% endtab %}
-{% endtabs %}
 
 ## Usage
 

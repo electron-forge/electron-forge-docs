@@ -13,29 +13,16 @@ Electron Forge is an all-in-one tool for packaging and distributing Electron app
 To get started with Electron Forge, we first need to initialize a new project with `create-electron-app`. This script is a convenient wrapper around Forge's [Init](cli.md#Init) command.
 
 {% hint style="warning" %}
-Electron Forge 6 works best with Yarn Classic (v1.x) and npm. If you are using a newer version of Yarn, you can downgrade to Classic using the [`yarn set version`](https://yarnpkg.com/cli/set/version) command.
+Electron Forge 6 currently only supports Yarn Classic (v1.x) and npm. If you are using a newer version of Yarn, you can downgrade to Classic using the [`yarn set version`](https://yarnpkg.com/cli/set/version) command.
 {% endhint %}
 
-{% tabs %}
-{% tab title="Yarn" %}
-```bash
-yarn create electron-app my-app
-```
-{% endtab %}
-
-{% tab title="npm" %}
 ```bash
 npm init electron-app@latest my-app
 ```
-{% endtab %}
-{% endtabs %}
-
 {% hint style="warning" %}
 If you used the `create-electron-app` script before during Forge `6.0.0-beta`, we recommend you uninstall the package globally before running the command again.
 
 ```bash
-yarn global remove create-electron-app
-# or
 npm uninstall -g create-electron-app
 ```
 {% endhint %}
@@ -44,19 +31,9 @@ npm uninstall -g create-electron-app
 
 Forge's initialization scripts can add additional template code with the `--template=[template-name]` flag.
 
-{% tabs %}
-{% tab title="yarn" %}
-```bash
-yarn create electron-app my-app --template=webpack
-```
-{% endtab %}
-
-{% tab title="npm" %}
 ```bash
 npm init electron-app@latest my-app -- --template=webpack
 ```
-{% endtab %}
-{% endtabs %}
 
 There are currently two first-party templates:
 
@@ -75,57 +52,26 @@ To learn more about authoring your own templates for Electron Forge, check out t
 
 You should now have a directory called `my-app` with all the files you need for a basic Electron app.
 
-{% tabs %}
-{% tab title="Yarn" %}
-```bash
-cd my-app
-yarn start
-```
-{% endtab %}
-
-{% tab title="npm" %}
 ```bash
 cd my-app
 npm start
 ```
-{% endtab %}
-{% endtabs %}
 
 ## Building distributables
 
 So you've got an **amazing** application there, and you want to package it all up and share it with the world. If you run the `make` script, Electron Forge will generate you platform specific distributables for you to share with everyone. For more information on what kind of distributables you can make, check out the [Makers](config/makers/) documentation.
 
-{% tabs %}
-{% tab title="yarn" %}
-```bash
-yarn make
-```
-{% endtab %}
-
-{% tab title="npm" %}
 ```bash
 npm run make
 ```
-{% endtab %}
-{% endtabs %}
 
 ## Publishing your app
 
 Now you have distributables that you can share with your users. If you run the `publish` script, Electron Forge will then publish the platform-specific distributables for you, using the publishing method of your choice. For more information on what publishers we currently support, check out the [Publishers](config/publishers/) documentation.
 
-{% tabs %}
-{% tab title="yarn" %}
-```bash
-yarn run publish
-```
-{% endtab %}
-
-{% tab title="npm" %}
 ```bash
 npm run publish
 ```
-{% endtab %}
-{% endtabs %}
 
 ## Advanced Usage
 

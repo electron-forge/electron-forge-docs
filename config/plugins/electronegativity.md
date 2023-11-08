@@ -10,19 +10,9 @@ The Electronegativity plugin integrates Doyensec's [Electronegativity tool](http
 
 ## Installation
 
-{% tabs %}
-{% tab title="Yarn" %}
-```shell
-yarn add --dev @electron-forge/plugin-electronegativity
-```
-{% endtab %}
-
-{% tab title="npm" %}
 ```shell
 npm install --save-dev @electron-forge/plugin-electronegativity
 ```
-{% endtab %}
-{% endtabs %}
 
 ## Usage
 

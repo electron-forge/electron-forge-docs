@@ -14,19 +14,9 @@ The following guide has been tested with React 18, Babel 7, and Webpack 5.
 
 Create the app with the [Webpack template](../../templates/webpack-template.md). Add the following packages to your `devDependencies` so that JSX and other React features can be used properly:
 
-{% tabs %}
-{% tab title="Yarn" %}
-```bash
-yarn add --dev @babel/core @babel/preset-react babel-loader
-```
-{% endtab %}
-
-{% tab title="NPM" %}
 ```bash
 npm install --save-dev @babel/core @babel/preset-react babel-loader
 ```
-{% endtab %}
-{% endtabs %}
 
 Set up the [`babel-loader`](https://www.npmjs.com/package/babel-loader)module with the [React preset](https://babeljs.io/docs/en/babel-preset-react) in `webpack.rules.js`:
 
@@ -53,19 +43,9 @@ module.exports = [
 
 Add the basic React packages to your `dependencies`:
 
-{% tabs %}
-{% tab title="Yarn" %}
-```bash
-yarn add react react-dom
-```
-{% endtab %}
-
-{% tab title="NPM" %}
 ```bash
 npm install --save react react-dom
 ```
-{% endtab %}
-{% endtabs %}
 
 ### Integrate React code
 
