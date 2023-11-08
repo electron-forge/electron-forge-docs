@@ -25,5 +25,6 @@ jobs:
         with:
           field: Opened
           field-value: ${{ github.event.pull_request.created_at || github.event.issue.created_at }}
+          owner: electron
           project-number: 89
           token: ${{ steps.generate-token.outputs.token }}
