@@ -18,21 +18,10 @@ Create the app with the [TypeScript + Webpack template](../../templates/typescri
 
 Add the basic React packages to your `dependencies` and the corresponding types to your `devDependencies`:
 
-{% tabs %}
-{% tab title="Yarn" %}
-```bash
-yarn add react react-dom
-yarn add --dev @types/react @types/react-dom
-```
-{% endtab %}
-
-{% tab title="NPM" %}
 ```bash
 npm install --save react react-dom
 npm install --save-dev @types/react @types/react-dom
 ```
-{% endtab %}
-{% endtabs %}
 
 ### Integrate React code
 

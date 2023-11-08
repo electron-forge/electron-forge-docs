@@ -19,19 +19,9 @@ Forge's CLI uses comma-separated value strings to pass multiple arguments into a
 
 To use the Forge CLI, install the `@electron-forge/cli` module into your project as a devDependency. If you're using the `create-electron-app` script, this module will already be installed for you.
 
-{% tabs %}
-{% tab title="Yarn" %}
-```bash
-yarn add --dev @electron-forge/cli
-```
-{% endtab %}
-
-{% tab title="npm" %}
 ```bash
 npm install --save-dev @electron-forge/cli
 ```
-{% endtab %}
-{% endtabs %}
 
 ## Bootstrap commands
 
@@ -58,19 +48,9 @@ All flags are optional.
 
 #### Usage
 
-{% tabs %}
-{% tab title="Yarn" %}
-```bash
-yarn electron-forge init --template=webpack
-```
-{% endtab %}
-
-{% tab title="npm" %}
 ```bash
 npx electron-forge init --template=webpack
 ```
-{% endtab %}
-{% endtabs %}
 
 ### Import
 
@@ -82,19 +62,9 @@ There are no options for the Import command.
 
 #### Usage
 
-{% tabs %}
-{% tab title="Yarn" %}
-```bash
-yarn electron-forge import
-```
-{% endtab %}
-
-{% tab title="npm" %}
 ```bash
 npx electron-forge import
 ```
-{% endtab %}
-{% endtabs %}
 
 ## Build commands
 
@@ -119,25 +89,12 @@ All flags are optional.
 
 #### Usage
 
-{% tabs %}
-{% tab title="Yarn" %}
-```bash
-# By default, the package command corresponds to a package npm script:
-yarn package --arch="ia32"
-# If there is no package script:
-yarn electron-forge package --arch="ia32"
-```
-{% endtab %}
-
-{% tab title="npm" %}
 ```bash
 # By default, the package command corresponds to a package npm script:
 npm run package -- --arch="ia32"
 # If there is no package script:
 npx electron-forge package --arch="ia32"
 ```
-{% endtab %}
-{% endtabs %}
 
 ### Make
 
@@ -160,41 +117,18 @@ All flags are optional.
 
 Basic usage:
 
-{% tabs %}
-{% tab title="Yarn" %}
-```bash
-# By default, the make command corresponds to a make npm script:
-yarn make --arch="ia32"
-# If there is no make script:
-yarn electron-forge make --arch="ia32"
-```
-{% endtab %}
-
-{% tab title="npm" %}
 ```bash
 # By default, the make command corresponds to a make npm script:
 npm run make -- --arch="ia32"
 # If there is no make script:
 npx electron-forge make --arch="ia32"
 ```
-{% endtab %}
-{% endtabs %}
 
 Building for ia32 and x64 architectures:
 
-{% tabs %}
-{% tab title="Yarn" %}
-```bash
-yarn make --arch="ia32,x64"
-```
-{% endtab %}
-
-{% tab title="npm" %}
 ```bash
 npm run make -- --arch="ia32,x64"
 ```
-{% endtab %}
-{% endtabs %}
 
 ### Publish
 
@@ -214,23 +148,11 @@ All flags are optional.
 
 #### Usage
 
-{% tabs %}
-{% tab title="Yarn" %}
-<pre class="language-bash"><code class="lang-bash"><strong># By default, the publish command corresponds to a publish npm script:
-</strong>yarn run publish --from-dry-run
-# If there is no publish script:
-yarn electron-forge publish --from-dry-run
-</code></pre>
-{% endtab %}
-
-{% tab title="npm" %}
 <pre class="language-bash"><code class="lang-bash"><strong># By default, the publish command corresponds to a publish npm script:
 </strong>npm run publish -- --from-dry-run
 # If there is no publish script:
 npx electron-forge publish -- --from-dry-run
 </code></pre>
-{% endtab %}
-{% endtabs %}
 
 ## Dev commands
 
@@ -256,25 +178,12 @@ All flags are optional.
 
 #### Usage
 
-{% tabs %}
-{% tab title="Yarn" %}
-```bash
-# By default, the start command corresponds to a start npm script:
-yarn start --enable-logging
-# if there is no start script
-yarn electron-forge start --enable-logging
-```
-{% endtab %}
-
-{% tab title="npm" %}
 ```bash
 # By default, the start command corresponds to a start npm script:
 npm start --enable-logging
 # if there is no start script
 npx electron-forge start --enable-logging
 ```
-{% endtab %}
-{% endtabs %}
 
 ## Programmatic usage
 

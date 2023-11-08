@@ -14,19 +14,9 @@ If you want to set up a local build of Electron, you should check out [Electron 
 
 ### Installation
 
-{% tabs %}
-{% tab title="Yarn" %}
-```bash
-yarn add --dev @electron-forge/plugin-local-electron
-```
-{% endtab %}
-
-{% tab title="npm" %}
 ```bash
 npm install --save-dev @electron-forge/plugin-local-electron
 ```
-{% endtab %}
-{% endtabs %}
 
 ### Usage
 
