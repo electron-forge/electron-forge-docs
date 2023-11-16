@@ -111,7 +111,7 @@ For further reading on entitlements, see the following pages in Apple developer 
 Under the hood, Electron Forge uses the [`@electron/notarize`](https://github.com/electron/notarize) tool to notarize your macOS application.
 {% endhint %}
 
-The `osxNotarize` configuration object can be set up to either use the `legacy` or `notarytool` strategies. If you are using Xcode 13 or higher, we strongly recommend using `notarytool`. The `legacy` tooling will be removed when Apple sunsets `altool` (projected for Fall 2023).
+The `osxNotarize` configuration object only supports `notarytool` as of Electron Forge v7.0.0.
 
 The `notarytool` command has three authentication options, which are detailed below. Note that you will want to use a `forge.config.js` configuration so that you can load environment variables into your Forge config.
 

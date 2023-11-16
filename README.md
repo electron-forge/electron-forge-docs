@@ -13,19 +13,12 @@ Electron Forge is an all-in-one tool for packaging and distributing Electron app
 To get started with Electron Forge, we first need to initialize a new project with `create-electron-app`. This script is a convenient wrapper around Forge's [Init](cli.md#Init) command.
 
 {% hint style="warning" %}
-Electron Forge 6 currently only supports Yarn Classic (v1.x) and npm. If you are using a newer version of Yarn, you can downgrade to Classic using the [`yarn set version`](https://yarnpkg.com/cli/set/version) command.
+Electron Forge 7 currently only supports Yarn Classic (v1.x) and npm. If you are using a newer version of Yarn, you can downgrade to Classic using the [`yarn set version`](https://yarnpkg.com/cli/set/version) command.
 {% endhint %}
 
 ```bash
 npm init electron-app@latest my-app
 ```
-{% hint style="warning" %}
-If you used the `create-electron-app` script before during Forge `6.0.0-beta`, we recommend you uninstall the package globally before running the command again.
-
-```bash
-npm uninstall -g create-electron-app
-```
-{% endhint %}
 
 ### Using templates
 
@@ -35,12 +28,14 @@ Forge's initialization scripts can add additional template code with the `--temp
 npm init electron-app@latest my-app -- --template=webpack
 ```
 
-There are currently two first-party templates:
+There are currently four first-party templates:
 
 * `webpack`
 * `webpack-typescript`
+* `vite`
+* `vite-typescript`
 
-Both of these templates are built around the [Webpack Plugin](config/plugins/webpack.md), which bundles your JavaScript code for production and includes a dev server to provide a better development experience. The `webpack-typescript` template also wires up your project for TypeScript support.
+Both of these templates are built around plugins that bundle your JavaScript code for production and includes a dev server to provide a better developer experience.
 
 {% hint style="info" %}
 We highly recommend using these templates when initializing your app to take advantage of modern front-end JavaScript tooling.
