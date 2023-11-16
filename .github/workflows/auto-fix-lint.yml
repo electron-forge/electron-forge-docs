@@ -5,6 +5,7 @@ on:
     branches:
       - v6
       - v7
+  workflow_dispatch:
 
 permissions:
   contents: read
