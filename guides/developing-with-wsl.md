@@ -23,7 +23,7 @@ npm_config_platform=win32 npm install
 
 ```
 
-Then, start the Electron app in development mode as usual via `npm start` or `yarn start` _\(respectively\)_.
+Then, start the Electron app in development mode as usual via `npm start`.
 
 For package/make/publish, you'll still need to specify the platform if you want to generate bundles/distributables for Windows.
 

@@ -8,19 +8,9 @@ This plugin makes it easy to set up standard Vite tooling to compile both your m
 
 ## Installation
 
-{% tabs %}
-{% tab title="yarn" %}
-```shell
-yarn add --dev @electron-forge/plugin-vite
-```
-{% endtab %}
-
-{% tab title="npm" %}
 ```shell
 npm install --save-dev @electron-forge/plugin-vite
 ```
-{% endtab %}
-{% endtabs %}
 
 ## Usage
 

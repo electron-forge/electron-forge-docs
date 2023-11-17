@@ -20,19 +20,9 @@ For an updated list of the features that can be enabled/disabled using Fuses, pl
 This plugin has a peer dependency on `@electron/fuses`, so don't forget to install it too!
 {% endhint %}
 
-{% tabs %}
-{% tab title="yarn" %}
-```shell
-yarn add --dev @electron-forge/plugin-fuses @electron/fuses
-```
-{% endtab %}
-
-{% tab title="npm" %}
 ```shell
 npm install --save-dev @electron-forge/plugin-fuses @electron/fuses
 ```
-{% endtab %}
-{% endtabs %}
 
 ## Usage
 

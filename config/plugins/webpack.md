@@ -8,19 +8,9 @@ This plugin makes it easy to set up standard [webpack](https://webpack.js.org/) 
 
 ## Installation
 
-{% tabs %}
-{% tab title="yarn" %}
-```shell
-yarn add --dev @electron-forge/plugin-webpack
-```
-{% endtab %}
-
-{% tab title="npm" %}
 ```shell
 npm install --save-dev @electron-forge/plugin-webpack
 ```
-{% endtab %}
-{% endtabs %}
 
 ## Usage
 

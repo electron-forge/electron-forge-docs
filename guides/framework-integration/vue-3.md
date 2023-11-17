@@ -16,47 +16,18 @@ The following guide has been tested with Vue 3 and Vite 4.
 
 Create an Electron app using Electron Forge's [Vite](../../templates/vite.md) template.
 
-{% tabs %}
-{% tab title="yarn" %}
-
-```bash
-yarn create electron-app my-vue-app --template=vite
-```
-
-{% endtab %}
-
-{% tab title="npm" %}
-
 ```bash
 npm init electron-app@latest my-vue-app -- --template=vite
 ```
-
-{% endtab %}
-{% endtabs %}
 
 ## Adding dependencies
 
 Add the `vue` npm package to your `dependencies` and the `@vitejs/plugin-vue` package to your `devDependencies`:
 
-{% tabs %}
-{% tab title="yarn" %}
-
-```bash
-yarn add vue
-yarn add --dev @vitejs/plugin-vue
-```
-
-{% endtab %}
-
-{% tab title="npm" %}
-
 ```bash
 npm install vue
 npm install --save-dev @vitejs/plugin-vue
 ```
-
-{% endtab %}
-{% endtabs %}
 
 ## Integrating Vue 3 code
 
