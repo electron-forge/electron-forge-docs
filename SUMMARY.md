@@ -31,6 +31,7 @@
   * [GitHub](config/publishers/github.md)
   * [Nucleus](config/publishers/nucleus.md)
   * [S3](config/publishers/s3.md)
+  * [GCS](config/publishers/gcs.md)
   * [Snapcraft](config/publishers/snapcraft.md)
 * [Hooks](config/hooks.md)
 
