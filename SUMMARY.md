@@ -29,9 +29,9 @@
   * [Bitbucket](config/publishers/bitbucket.md)
   * [Electron Release Server](config/publishers/electron-release-server.md)
   * [GitHub](config/publishers/github.md)
+  * [Google Cloud Storage](config/publishers/gcs.md)
   * [Nucleus](config/publishers/nucleus.md)
   * [S3](config/publishers/s3.md)
-  * [GCS](config/publishers/gcs.md)
   * [Snapcraft](config/publishers/snapcraft.md)
 * [Hooks](config/hooks.md)
 
