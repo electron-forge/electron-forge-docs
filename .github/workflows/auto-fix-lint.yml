@@ -23,6 +23,8 @@ jobs:
         creds: ${{ secrets.GH_APP_CREDS }}
         export-git-user: true
     - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11  # tag: v4.1.1
+      with:
+        token: ${{ steps.generate-token.outputs.token }}
     - name: Setup Node.js
       uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65  # tag: v4.0.0
       with:
