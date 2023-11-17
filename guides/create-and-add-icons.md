@@ -93,7 +93,7 @@ const win = new BrowserWindow({
 </strong>})
 </code></pre>
 
-Once the path to the icon has been configured, build your project to generate your executable with either `yarn make` or `npm run make`.
+Once the path to the icon has been configured, build your project to generate your executable with either `npm run make`.
 
 ## Configuring installer icons
 
