@@ -30,11 +30,11 @@ module.exports = {
       config: {
         storageOptions: {
           // add additional Storage constructor parameters here
-          projectId: "my-project-id",
+          projectId: 'my-project-id'
         },
         bucket: 'my-bucket',
         folder: 'custom-folder-name',
-        public: true,
+        public: true
       }
     }
   ]
