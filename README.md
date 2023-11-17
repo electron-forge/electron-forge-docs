@@ -13,7 +13,7 @@ Electron Forge is an all-in-one tool for packaging and distributing Electron app
 To get started with Electron Forge, we first need to initialize a new project with `create-electron-app`. This script is a convenient wrapper around Forge's [Init](cli.md#Init) command.
 
 {% hint style="warning" %}
-Electron Forge 7 currently only supports Yarn Classic (v1.x) and npm. If you are using a newer version of Yarn, you can downgrade to Classic using the [`yarn set version`](https://yarnpkg.com/cli/set/version) command.
+Electron Forge currently only supports npm and Yarn Classic. If you are using Yarn >=2, please use the `nodeLinker: node-modules` install mode.
 {% endhint %}
 
 ```bash
