@@ -34,9 +34,9 @@ npm install --save-dev @vitejs/plugin-vue
 You should now be able to start using Vue components in your Electron app. The following is a very minimal example of how to start to add Vue 3 code:
 
 {% tabs %}
-{% tab title="src/index.html" %}
+{% tab title="index.html" %}
 
-Replace the contents of `src/index.html` with a `<div>` element with the `#app` id attribute.
+Replace the contents of `index.html` with a `<div>` element with the `#app` id attribute.
 
 ```html
 <!DOCTYPE html>
