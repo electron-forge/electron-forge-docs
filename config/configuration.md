@@ -98,7 +98,7 @@ All properties are optional
 
 The top level property `packagerConfig` on the configuration object maps directly to the options sent to [`electron-packager`](https://github.com/electron/electron-packager) during the package step of Electron Forge's build process.
 
-The options you can put in this object are documented in the [Electron Packager API docs](https://electron.github.io/packager/master/interfaces/electronpackager.options.html).
+The options you can put in this object are documented in the [Electron Packager API docs](https://electron.github.io/packager/main/interfaces/Options.html).
 
 {% hint style="warning" %}
 You can not override the `dir`, `arch`, `platform, out` or `electronVersion` options as they are set by Electron Forge internally.
