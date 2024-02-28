@@ -30,10 +30,10 @@ npm init electron-app@latest my-app -- --template=webpack
 
 There are currently four first-party templates:
 
-* `webpack`
-* `webpack-typescript`
-* `vite`
-* `vite-typescript`
+- `webpack`
+- `webpack-typescript`
+- `vite`
+- `vite-typescript`
 
 Both of these templates are built around plugins that bundle your JavaScript code for production and includes a dev server to provide a better developer experience.
 
@@ -62,11 +62,19 @@ npm run make
 
 ## Publishing your app
 
-Now you have distributables that you can share with your users. If you run the `publish` script, Electron Forge will then publish the platform-specific distributables for you, using the publishing method of your choice. For more information on what publishers we currently support, check out the [Publishers](config/publishers/) documentation.
+Now you have distributables that you can share with your users. If you run the `publish` script, Electron Forge will then publish the platform-specific distributables for you, using the publishing method of your choice. For example, if you are using GitHub as a publisher, you can install it using:
+
+```bash
+npm install -D @electron-forge/publisher-github
+```
+
+And then run
 
 ```bash
 npm run publish
 ```
+
+For more information on what publishers we currently support, check out the [Publishers](config/publishers/) documentation.
 
 ## Advanced Usage
 
@@ -74,6 +82,6 @@ Once you've got a basic app starting, building and publishing, it's time to add 
 
 You can also check out the documentation on some of our more advanced features like:
 
-* [Adding plugins](config/plugins/)
-* [Debugging your app](advanced/debugging.md)
-* [Writing your own makers, publishers and plugins](advanced/extending-electron-forge/)
+- [Adding plugins](config/plugins/)
+- [Debugging your app](advanced/debugging.md)
+- [Writing your own makers, publishers and plugins](advanced/extending-electron-forge/)
