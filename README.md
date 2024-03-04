@@ -60,9 +60,17 @@ So you've got an **amazing** application there, and you want to package it all u
 npm run make
 ```
 
+## Choosing publishing method 
+
+```bash
+npm install -D @electron-forge/publisher-github
+```
+
+For more information on what publishers we currently support, check out the [Publishers](config/publishers/) documentation.
+
 ## Publishing your app
 
-Now you have distributables that you can share with your users. If you run the `publish` script, Electron Forge will then publish the platform-specific distributables for you, using the publishing method of your choice. For more information on what publishers we currently support, check out the [Publishers](config/publishers/) documentation.
+Now you have distributables that you can share with your users. If you run the `publish` script, Electron Forge will then publish the platform-specific distributables for you, using the publishing method of your choice.
 
 ```bash
 npm run publish
