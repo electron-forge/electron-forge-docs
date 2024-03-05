@@ -68,7 +68,7 @@ Now you have distributables that you can share with your users. If you run the `
 npm install -D @electron-forge/publisher-github
 ```
 
-And then run
+And then run:
 
 ```bash
 npm run publish
