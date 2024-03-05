@@ -62,7 +62,7 @@ npm run make
 
 ## Publishing your app
 
-Now you have distributables that you can share with your users. If you run the `publish` script, Electron Forge will then publish the platform-specific distributables for you, using the publishing method of your choice. For example, if you are using GitHub as a publisher, you can install it using:
+Now you have distributables that you can share with your users. If you run the `publish` script, Electron Forge will then publish the platform-specific distributables for you, using the publishing method of your choice. For example, if you want to publish your assets to GitHub, you can install it using:
 
 ```bash
 npm install -D @electron-forge/publisher-github
