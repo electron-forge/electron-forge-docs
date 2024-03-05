@@ -30,10 +30,10 @@ npm init electron-app@latest my-app -- --template=webpack
 
 There are currently four first-party templates:
 
-- `webpack`
-- `webpack-typescript`
-- `vite`
-- `vite-typescript`
+* `webpack`
+* `webpack-typescript`
+* `vite`
+* `vite-typescript`
 
 Both of these templates are built around plugins that bundle your JavaScript code for production and includes a dev server to provide a better developer experience.
 
