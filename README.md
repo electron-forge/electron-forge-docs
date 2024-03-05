@@ -82,6 +82,6 @@ Once you've got a basic app starting, building and publishing, it's time to add 
 
 You can also check out the documentation on some of our more advanced features like:
 
-- [Adding plugins](config/plugins/)
-- [Debugging your app](advanced/debugging.md)
-- [Writing your own makers, publishers and plugins](advanced/extending-electron-forge/)
+* [Adding plugins](config/plugins/)
+* [Debugging your app](advanced/debugging.md)
+* [Writing your own makers, publishers and plugins](advanced/extending-electron-forge/)
