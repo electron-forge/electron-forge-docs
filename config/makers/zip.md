@@ -10,6 +10,16 @@ The Zip target builds basic `.zip` files containing your packaged application.Th
 
 ```javascript
 {
-  name: '@electron-forge/maker-zip'
+  name: '@electron-forge/maker-zip',
+  config: (arch) => ({
+    macUpdateManifestBaseUrl: (config) => {
+      const parsed = new URL(config.macUpdateManifestBaseUrl);
+      if (!parsed.pathname.endsWith('/RELEASES.json')) {
+        parsed.pathname += '/RELEASES.json';
+      }
+      return parsed.toString();
+    }
+  })
 }
+
 ```
