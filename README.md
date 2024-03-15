@@ -68,7 +68,7 @@ Now you have distributables that you can share with your users. If you run the `
 npm install --save-dev @electron-forge/publisher-github
 ```
 
-Once you have [configured the publisher according to the documentation](config/publishers/github), run the following command to upload your distributables:
+Once you have [configured the publisher according to the documentation](config/publishers/github.md), run the following command to upload your distributables:
 
 ```bash
 npm run publish
