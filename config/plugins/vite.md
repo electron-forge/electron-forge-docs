@@ -68,17 +68,17 @@ module.exports = {
             "build": [
               {
                 "entry": "src/main.js",
-                "config": "vite.main.config.mjs",
+                "config": "vite.main.config.mjs"
               },
               {
                 "entry": "src/preload.js",
-                "config": "vite.preload.config.mjs",
+                "config": "vite.preload.config.mjs"
               },
             ],
             "renderer": [
               {
                 "name": "main_window",
-                "config": "vite.renderer.config.mjs",
+                "config": "vite.renderer.config.mjs"
               }
             ]
           }
