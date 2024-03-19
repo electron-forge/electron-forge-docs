@@ -8,6 +8,8 @@ In Electron Forge, hooks are asynchronous callback functions that allow you to i
 
 Each hook function comes with the Forge configuration object as a first parameter.
 
+Any writes to `stdout` and `stderr` from within a hook function will be printed in the console after the Forge build completes.
+
 {% hint style="info" %}
 To read more about the different stages in Forge's build process, please refer to the [build-lifecycle.md](../core-concepts/build-lifecycle.md "mention") documentation.
 {% endhint %}
