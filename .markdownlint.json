@@ -1,6 +1,0 @@
-{
-  "extends": "@electron/lint-roller/configs/markdownlint.json",
-  "fenced-code-language": false,
-  "blanks-around-fences": false,
-  "no-multiple-blanks": false
-}
