@@ -4,9 +4,15 @@ The Electron Release Server target publishes all your artifacts to a hosted inst
 
 Please note that Electron Release Server is a community powered project and is not associated with Electron Forge or the Electron project directly.
 
-Configuration options are documented in [`PublisherERSConfig`](https://js.electronforge.io/interfaces/\_electron\_forge\_publisher\_electron\_release\_server.PublisherERSConfig.html).
+## Installation
 
-### Usage
+```bash
+npm install --save-dev @electron-forge/publisher-electron-release-server
+```
+
+## Usage
+
+To use `@electron-forge/publisher-electron-release-server`, add it to the `publishers` array in your [Forge configuration](../configuration.md):
 
 {% code title="forge.config.js" %}
 ```javascript
@@ -25,3 +31,5 @@ module.exports = {
 };
 ```
 {% endcode %}
+
+Configuration options are documented in [`PublisherERSConfig`](https://js.electronforge.io/interfaces/\_electron\_forge\_publisher\_electron\_release\_server.PublisherERSConfig.html).

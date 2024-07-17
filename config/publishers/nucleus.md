@@ -2,13 +2,15 @@
 
 The Nucleus target publishes all your artifacts to an instance of Nucleus Update Server, this update service supports all three platforms. Check out the README at [`atlassian/nucleus`](https://github.com/atlassian/nucleus) for more information on this project.
 
-Configuration options are documented in [`PublisherNucleusConfig`](https://js.electronforge.io/interfaces/\_electron\_forge\_publisher\_nucleus.PublisherNucleusConfig.html)
+## Installation
 
-{% hint style="warning" %}
-We recommend you set the `token` option using an environment variable, don't hard code it into your config
-{% endhint %}
+```bash
+npm install --save-dev @electron-forge/publisher-nucleus
+```
 
 ## Usage
+
+To use `@electron-forge/publisher-nucleus`, add it to the `publishers` array in your [Forge configuration](../configuration.md):
 
 {% code title="forge.config.js" %}
 ```javascript
@@ -28,3 +30,5 @@ module.exports = {
 };
 ```
 {% endcode %}
+
+Configuration options are documented in [`PublisherNucleusConfig`](https://js.electronforge.io/interfaces/\_electron\_forge\_publisher\_nucleus.PublisherNucleusConfig.html).

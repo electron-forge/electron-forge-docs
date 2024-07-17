@@ -1,18 +1,20 @@
----
-description: >-
-  The Bitbucket publish target allows you to publish your artifacts directly to
-  Bitbucket where users will be able to download them.
----
-
 # Bitbucket
+
+The Bitbucket publish target allows you to publish your artifacts directly to Bitbucket where users will be able to download them.
 
 {% hint style="warning" %}
 This publish target is for [Bitbucket Cloud](https://bitbucket.org) only and will not work with self hosted Bitbucket Server instances.
 {% endhint %}
 
-Full configuration options are documented in [`PublisherBitbucketConfig`](https://js.electronforge.io/interfaces/\_electron\_forge\_publisher\_bitbucket.PublisherBitbucketConfig.html).
+## Installation
+
+```bash
+npm install --save-dev @electron-forge/publisher-bitbucket
+```
 
 ## Usage
+
+To use `@electron-forge/publisher-bitbucket`, add it to the `publishers` array in your [Forge configuration](../configuration.md):
 
 {% code title="forge.config.js" %}
 ```javascript
@@ -37,18 +39,7 @@ module.exports = {
 ```
 {% endcode %}
 
-you can (and should) use environment variables for the authentication
-
-{% code title="env.sh" %}
-```bash
-BITBUCKET_USERNAME="myusername"
-BITBUCKET_APP_PASSWORD="mysecretapppassword"
-```
-{% endcode %}
-
-```bash
-$ source env.sh
-```
+Full configuration options are documented in [`PublisherBitbucketConfig`](https://js.electronforge.io/interfaces/\_electron\_forge\_publisher\_bitbucket.PublisherBitbucketConfig.html).
 
 {% hint style="info" %}
 Your artifacts can be found under the `Downloads` tab of your Bitbucket repository.
