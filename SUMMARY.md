@@ -12,6 +12,7 @@
 ## Configuration <a href="#config" id="config"></a>
 
 * [Overview](config/configuration.md)
+* [TypeScript Configuration](config/typescript-configuration.md)
 * [Plugins](config/plugins/README.md)
   * [Webpack Plugin](config/plugins/webpack.md)
   * [Vite Plugin](config/plugins/vite.md)
