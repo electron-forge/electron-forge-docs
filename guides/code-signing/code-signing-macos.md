@@ -154,7 +154,7 @@ Despite the name, `appleIdPassword` is **not** the password for your Apple ID ac
 
 #### Option 2: Using an App Store Connect API key
 
-You can generate an App Store Connect API key to authenticate `notarytool` by going to the [App Store Connect access page](https://appstoreconnect.apple.com/access/api) and using the "Keys" tab. This API key will look something like `AuthKey_ABCD123456.p8` and can only be downloaded once.
+You can generate an App Store Connect API key to authenticate `notarytool` by going to the [App Store Connect access page](https://appstoreconnect.apple.com/access/integrations/api) and using the "Team Keys" tab. This API key will look something like `AuthKey_ABCD123456.p8` and can only be downloaded once.
 
 There are three mandatory fields for `osxNotarize` if you are using this strategy:
 
