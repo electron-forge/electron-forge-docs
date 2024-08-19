@@ -6,8 +6,16 @@ description: Create a new Electron app with webpack and TypeScript.
 
 To get you up and running as fast as possible with [TypeScript](https://www.typescriptlang.org/) and [webpack](https://webpack.js.org/), we provide a template that makes use of the [`@electron-forge/plugin-webpack` module](../config/plugins/webpack.md) with sane TypeScript configuration defaults.
 
+With npm:
+
 ```bash
 npm init electron-app@latest my-new-app -- --template=webpack-typescript
+```
+
+With yarn:
+
+```bash
+yarn create electron-app my-new-app --template=webpack-typescript
 ```
 
 {% hint style="warning" %}
