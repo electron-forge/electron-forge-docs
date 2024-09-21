@@ -30,7 +30,7 @@ const config: ForgeConfig = {
   packagerConfig: {
     asar: true,
     osxSign: {}
-  }
+  },
   makers: [
     {
       name: '@electron-forge/maker-squirrel',
