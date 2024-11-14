@@ -183,7 +183,7 @@ module.exports = {
 
 #### Option 3: Using a keychain
 
-Instead of providing environment variables to the Forge config passed to `notarytool`, you can choose to use a macOS [keychain](https://support.apple.com/en-ca/guide/mac-help/mchlf375f392/mac) containing either set of credentials (either Option 1 or Option 2 above).
+Instead of providing environment variables to the Forge config passed to `notarytool`, you can choose to use a macOS [keychain](https://support.apple.com/en-ca/guide/keychain-access/welcome/mac) containing either set of credentials (either Option 1 or Option 2 above).
 
 You can do this directly in your terminal via the `notarytool store-credentials` command. For usage information, you can refer to the man page for `notarytool`:
 
