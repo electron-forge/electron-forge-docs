@@ -17,7 +17,7 @@ The following guide has been tested with Vue 3 and Vite 4.
 Create an Electron app using Electron Forge's [Vite](../../templates/vite.md) template.
 
 ```bash
-npm init electron-app@latest my-vue-app -- --template=vite
+npx create-electron-app@latest my-vue-app --template=vite
 ```
 
 ## Adding dependencies

@@ -17,7 +17,7 @@ Electron Forge currently only supports npm and Yarn Classic. If you are using Ya
 {% endhint %}
 
 ```bash
-npm init electron-app@latest my-app
+npx create-electron-app@latest my-app
 ```
 
 ### Using templates
@@ -25,7 +25,7 @@ npm init electron-app@latest my-app
 Forge's initialization scripts can add additional template code with the `--template=[template-name]` flag.
 
 ```bash
-npm init electron-app@latest my-app -- --template=webpack
+npx create-electron-app@latest my-app --template=webpack
 ```
 
 There are currently four first-party templates:
