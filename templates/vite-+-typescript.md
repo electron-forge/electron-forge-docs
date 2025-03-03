@@ -15,3 +15,8 @@ npx create-electron-app@latest my-new-app --template=vite-typescript
 Once you've initialized the template, you'll need to run `npm start` in the generated directory.
 
 See the [Vite Plugin](../config/plugins/vite.md) documentation for Electron Forge-specific configuration options.
+
+
+**Note:** If `electron` is missing in `package.json`, install it manually:
+```sh
+npm install electron --save-dev
