@@ -153,7 +153,7 @@ In your `forge.config.ts`, add the following:
 {% code title="forge.config.ts" %}
 ```typescript
 // Add import:
-import { windowsSign } from "./src/util/windowsSign";
+import { windowsSign } from "./windowsSign";
 
 const config: ForgeConfig = {
   packagerConfig: {
