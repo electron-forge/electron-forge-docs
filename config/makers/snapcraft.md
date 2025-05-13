@@ -40,7 +40,7 @@ module.exports = {
 ```
 {% endcode %}
 
-Configuration options are documented in [`MakerSnapConfig`](https://js.electronforge.io/modules/\_electron\_forge\_maker\_snap.html#MakerSnapConfig).
+Configuration options are documented in [`MakerSnapConfig`](https://js.electronforge.io/types/_electron_forge_maker_snap.MakerSnapConfig.html).
 
 ## Debugging
 

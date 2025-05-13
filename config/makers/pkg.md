@@ -45,7 +45,7 @@ module.exports = {
 ```
 {% endcode %}
 
-All configuration options are optional, and options are documented in the API docs for [`MakerPkgConfig`](https://js.electronforge.io/interfaces/_electron_forge_maker_pkg.MakerPKGConfig.html).
+All configuration options are optional, and options are documented in the API docs for [`MakerPKGConfig`](https://js.electronforge.io/interfaces/_electron_forge_maker_pkg.MakerPKGConfig.html).
 
 ### Adding installation scripts
 

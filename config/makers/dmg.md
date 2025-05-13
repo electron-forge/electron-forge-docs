@@ -36,7 +36,7 @@ module.exports = {
 ```
 {% endcode %}
 
-Configuration options are documented in [`MakerDMGConfig`](https://js.electronforge.io/interfaces/\_electron\_forge\_maker\_dmg.MakerDMGConfig.html).
+Configuration options are documented in [`MakerDMGConfig`](https://js.electronforge.io/classes/_electron_forge_maker_dmg.MakerDMG.html).
 
 ## Debugging
 
