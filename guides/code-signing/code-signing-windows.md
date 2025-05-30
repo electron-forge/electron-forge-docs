@@ -63,7 +63,7 @@ module.exports = {
 
 [Azure Trusted Signing](https://azure.microsoft.com/en-us/products/trusted-signing) is Microsoft's modern cloud-based alternative to EV certificates. It is the cheapest option for code signing on Windows, and it gets rid of SmartScreen warnings.
 
-As of November 2024, Azure Trusted Signing is available to organizations with 3+ years of verifiable business history and to individuals. Microsoft is [looking to make the program available](https://github.com/Azure/trusted-signing-action/issues/42#issuecomment-2488402061) to organizations with a shorter history, too. If you're reading this at a later point, it could make sense to check.
+As of May 2025, Azure Trusted Signing is [available](https://techcommunity.microsoft.com/blog/microsoft-security-blog/trusted-signing-public-preview-update/4399713) to US and Canada-based organizations with 3+ years of verifiable business history. Microsoft is looking to make the program more widely available. If you're reading this at a later point, it could make sense to check if the eligibility criteria have changed.
 
 ### Prerequisites <a href="#prerequisites-trusted-signing" id="prerequisites-trusted-signing"></a>
 
