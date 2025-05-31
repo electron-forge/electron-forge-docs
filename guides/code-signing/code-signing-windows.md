@@ -78,7 +78,7 @@ Then install the dependencies for local code signing as described [here](https:/
 In your project directory, do the following:
 
 1. Install the `dotenv-cli` package: `npm i -D dotenv-cli`
-2. Update `@electron/windows-sign` to version 1.2.0 or later: `npm update @electron/windows-sign`
+2. Update `@electron/windows-sign` to version 1.2.2 or later: `npm update @electron/windows-sign`
 
 #### Creating the `.env.trustedsigning` file
 
@@ -144,7 +144,9 @@ Some notes:
 
 We specify the `/v` and `/debug` parameters even though they aren't technically required. This ensures that warnings are logged if timestamping fails.
 
-**Do not** use the `debug` parameter on the `WindowsSignOptions`. Similarly, **do not** enable the `DEBUG` environment variable for `electron-windows-sign`. (If you do either of them, the `debug` npm package will log all debug messages to stderr. An executable in `@electron/windows-sign` will interpret the existence of messages printed to stderr as a signing failure. Then your build will fail.)
+{% hint style="info" %}
+Set the environment variable `DEBUG` to `electron-windows-sign` to get verbose debug output while signing.
+{% endhint %}
 
 #### Adjusting your `forge.config.ts`
 
