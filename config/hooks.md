@@ -63,7 +63,7 @@ module.exports = {
   * **`appProcess:`**[**`ChildProcess`**](https://nodejs.org/api/child_process.html#class-childprocess) **-** Node.js child process instance
 * **Returns: `Promise<void>`**
 
-`postStart()` called after Forge's **`start`** command launches the app in dev mode.
+`postStart()` is called after Forge's **`start`** command launches the app in dev mode.
 
 You can use this hook to attach listeners to the spawned child process.
 
