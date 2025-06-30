@@ -13,5 +13,5 @@ npx create-electron-app@latest my-new-app --template=webpack
 Once you've initialized the template, you'll need to run `npm start` in the generated directory. See the [Webpack Plugin](../config/plugins/webpack.md) documentation for Electron Forge-specific configuration options.
 
 {% hint style="warning" %}
-Executing `npm start` immediately after creating the app will reliably produce two errors due to [an issue with electron](https://github.com/electron/electron/issues/41614)that is currently marked as "wontfix." The appropriate solution for you depends on your specific app, but a temporary fix can be performed with two changes to `main.js`. First, comment out line 23 (`mainWindow.webContents.openDevTools()`), second, add `app.disableHardwareAcceleration()` at the end of the file.
+Executing `npm start` immediately after creating the app will reliably produce two errors due to [an issue with electron](https://github.com/electron/electron/issues/41614)that is currently marked as "wontfix." A temporary fix for one of the errors can be performed by commenting out line 23 (`mainWindow.webContents.openDevTools()`) until you have found a solution that is appropriate with your specific app.
 {% endhint %}
