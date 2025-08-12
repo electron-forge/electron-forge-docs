@@ -30,6 +30,7 @@ You should now be able to start writing and using React components in your Elect
 {% tabs %}
 {% tab title="src/app.tsx" %}
 ```tsx
+import React from 'react';
 import { createRoot } from 'react-dom/client';
 
 const root = createRoot(document.body);
