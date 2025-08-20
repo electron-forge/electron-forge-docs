@@ -95,10 +95,11 @@ The easiest way to handle these arguments and stop your app launching multiple t
 
 {% code title="main.js" %}
 ```javascript
-const { app } = require('electron');
+import { app } from 'electron';
+import started from 'electron-squirrel-startup';
 
 // run this as early in the main process as possible
-if (require('electron-squirrel-startup')) app.quit();
+if (started) app.quit();
 ```
 {% endcode %}
 
