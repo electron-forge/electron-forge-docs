@@ -45,4 +45,4 @@ Configuration options are documented in [`MakerMSIXConfig`](https://js.electronf
 
 ## Debugging
 
-For advanced debug logging for this maker, set the log level in the config to debug, `{logLevel = 'debug'}` environment variable.
+For advanced debug logging for this maker, add the `DEBUG=electron-windows-msix*` environment variable or set the log level to `debug` in the config object `{logLevel = 'debug'}`.
