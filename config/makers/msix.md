@@ -23,6 +23,7 @@ npm install --save-dev @electron-forge/maker-msix
 To use `@electron-forge/maker-msix`, add it to the `makers` array in your [Forge configuration](../configuration.md):
 
 {% code title="forge.config.js" %}
+
 ```javascript
 module.exports = {
   makers: [
@@ -39,9 +40,10 @@ module.exports = {
   ]
 };
 ```
+
 {% endcode %}
 
-Configuration options are documented in [`MakerMSIXConfig`](https://js.electronforge.io/interfaces/\_electron\_forge\_maker\_msix.MakerMSIXConfig.html).
+Configuration options are documented in [`MakerMSIXConfig`](https://js.electronforge.io/interfaces/_electron_forge_maker_msix.MakerMSIXConfig.html).
 
 ## Debugging
 
