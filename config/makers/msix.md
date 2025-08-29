@@ -33,7 +33,7 @@ module.exports = {
         manifestVariables: {
           publisher: 'Electron Dev'
         },
-      cert: 'C:\\cert.pfx'
+      cert: 'C:\\cert.pfx',
       cert_pass: '12345'
       }
     }
