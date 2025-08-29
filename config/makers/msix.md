@@ -6,7 +6,7 @@ description: >-
 
 # MSIX
 
-The MSIX target builds `.msix` packages which can be directly distributed to end user or to the [Microsoft Store](https://apps.microsoft.com/home).
+The [MSIX](https://learn.microsoft.com/en-us/windows/msix/overview) target builds `.msix` packages, which can be directly distributed to end user or to the [Microsoft Store](https://apps.microsoft.com/home).
 
 ## Requirements
 
@@ -47,4 +47,5 @@ Configuration options are documented in [`MakerMSIXConfig`](https://js.electronf
 
 ## Debugging
 
-For advanced debug logging for this maker, add the `DEBUG=electron-windows-msix*` environment variable or set the log level to `debug` in the config object `{logLevel = 'debug'}`.
+For advanced debug logging for this maker, add the `DEBUG=electron-windows-msix*` environment variable
+or set the `logLevel` to `debug` in the maker config.
