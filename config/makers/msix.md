@@ -33,8 +33,10 @@ module.exports = {
         manifestVariables: {
           publisher: 'Electron Dev'
         },
-        cert: 'C:\\cert.pfx',
-        cert_pass: '12345'
+        windowsSignOptions : {
+          certificateFile: 'C:\\devcert.pfx',
+          certificatePassword: "122345"
+        }
       }
     }
   ]
@@ -44,6 +46,8 @@ module.exports = {
 {% endcode %}
 
 Configuration options are documented in [`MakerMSIXConfig`](https://js.electronforge.io/interfaces/_electron_forge_maker_msix.MakerMSIXConfig.html).
+
+The maker-msix utilizes @electron/windows-sign via `windowsSignOptions` property, see documentation here [windows-sign](https://github.com/electron/windows-sign/blob/main/README.md).
 
 ## Debugging
 
