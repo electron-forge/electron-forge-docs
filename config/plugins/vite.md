@@ -62,7 +62,7 @@ module.exports = {
 {% endtab %}
 
 {% tab title="package.json" %}
-```jsonc
+```json
 {
   // ...
   "config": {
@@ -107,7 +107,7 @@ Vite's build config generates a separate entry for the main process and preload 
 Your `main` entry in your `package.json` file needs to point at `".vite/build/main"`, like so:
 
 {% code title="package.json" %}
-```jsonc
+```json
 {
   "name": "my-vite-app",
   "main": ".vite/build/main.js",
@@ -119,6 +119,28 @@ Your `main` entry in your `package.json` file needs to point at `".vite/build/ma
 If using the Vite template, this should be automatically set up for you.
 
 ## Advanced configuration
+
+### Build concurrency
+
+Under the hood, the Vite plugin spawns a separate Vite build for each target. These builds first run in parallel for all renderer targets, then for all main and preload targets. Vite can sometimes use a lot of memory, and having many builds simultaneously can cause Out of Memory issues (see [vitejs/vite#2433](https://github.com/vitejs/vite/issues/2433)).
+
+Starting from Forge v7.9.0, you can pass a boolean or integer value to the plugin's `concurrent` option to limit how many build jobs run at once to alleviate memory issues.
+
+{% code title="forge.config.js" %}
+```javascript
+module.exports = {
+  plugins: {
+    name: '@electron-forge/plugin-vite',
+    config: {
+      build: [/*...*/],
+      renderer: [/*...*/],
+      concurrent: false // accepts a boolean or positive integer
+    }
+  }
+};
+
+```
+{% endcode %}
 
 ### Native Node modules
 
