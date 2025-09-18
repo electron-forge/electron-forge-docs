@@ -12,12 +12,11 @@ Electron Forge is an all-in-one tool for packaging and distributing Electron app
 * [Git](https://git-scm.com/)
 * A JavaScript package manager:
   * [npm](https://www.npmjs.com/)
-  * [Yarn Classic](https://classic.yarnpkg.com/)
+  * [Yarn](https://yarnpkg.com/)
   * [pnpm](https://pnpm.io/) (as of Forge v7.7.0)
 
 {% hint style="warning" %}
-
-#### **Packaging requires `node_modules` to be on disk**
+**Packaging requires `node_modules` to be on disk**
 
 When packaging your Electron app, Forge crawls your project's `node_modules` folder to collect dependencies to bundle. Its module resolution algorithm is naive and doesn't take into account symlinked dependencies nor Yarn's Plug'n'Play (PnP) format.
 
