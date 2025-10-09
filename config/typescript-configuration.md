@@ -2,25 +2,19 @@
 description: Set up your Forge configuration to use TypeScript
 ---
 
-# TypeScript Configuration
-
-By default, Electron Forge's [configuration](./configuration.md) only supports JavaScript and JSON files as inputs.
-
-Forge also supports configuration files in other languages that transpile down to JavaScript as long as a transpiler is installed locally in your project's `devDependencies`. These configuration files follow the same format as `forge.config.js`.
+# TypeScript Setup
 
 ## Installation
 
-For TypeScript, we recommend installing [`ts-node`](https://github.com/TypeStrong/ts-node). Upon installation, it will automatically be registered as a module loader for `.ts` files.
+As of [Forge v7.8.1](https://github.com/electron/forge/releases/tag/v7.8.1), Electron Forge loads `forge.config.ts` files without any additional configuration using [`jiti`](https://github.com/unjs/jiti).
 
-```bash
-npm install --save-dev ts-node
-```
+{% hint style="warning" %}
+For older versions, follow the [#alternate-file-syntaxes](typescript-configuration.md#alternate-file-syntaxes "mention") section below with the [`ts-node`](https://github.com/TypeStrong/ts-node) package.
+{% endhint %}
 
 ## Configuration file
 
-Once you have `ts-node` installed, Forge will be able to load a `forge.config.ts` file from your project's root directory.
-
-This config format is functionally identical to `forge.config.js`.
+Forge's TypeScript format is functionally identical to `forge.config.js`. Types can be imported from the [`@electron-forge/shared-types`](https://www.npmjs.com/package/@electron-forge/shared-types) package.
 
 {% code title="forge.config.ts" %}
 ```typescript
@@ -85,3 +79,13 @@ const config: ForgeConfig = {
 export default config;
 ```
 {% endcode %}
+
+## Alternate file syntaxes
+
+Forge also supports configuration files in other languages that transpile down to JavaScript as long as a module loader for that language is installed locally in your project's `devDependencies`. For example, installing `coffeescript` enables Forge to read from a `forge.config.ts` file.
+
+These configuration files follow the same format as `forge.config.js`.
+
+{% hint style="info" %}
+The transpiler module you use needs to be compatible with [`interpret`](https://github.com/gulpjs/interpret) to work.
+{% endhint %}
