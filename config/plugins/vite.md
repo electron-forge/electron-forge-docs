@@ -132,13 +132,12 @@ module.exports = {
   plugins: {
     name: '@electron-forge/plugin-vite',
     config: {
-      build: [/*...*/],
-      renderer: [/*...*/],
+      build: [/* ... */],
+      renderer: [/* ... */],
       concurrent: false // accepts a boolean or positive integer
     }
   }
 };
-
 ```
 {% endcode %}
 
