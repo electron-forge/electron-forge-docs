@@ -6,6 +6,12 @@ description: >-
 
 # MSIX
 
+{% hint style="info" %}
+
+MSIX support was added in Electron Forge v7.10 and is currently **experimental**. Breaking changes to the configuration may be introduced between releases.
+
+{% endhint %}
+
 The [MSIX](https://learn.microsoft.com/en-us/windows/msix/overview) target builds `.msix` packages, which can be directly distributed to end user or to the [Microsoft Store](https://apps.microsoft.com/home).
 
 ## Requirements
