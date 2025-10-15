@@ -39,9 +39,9 @@ module.exports = {
         manifestVariables: {
           publisher: 'Electron Dev'
         },
-        windowsSignOptions : {
+        windowsSignOptions: {
           certificateFile: 'C:\\devcert.pfx',
-          certificatePassword: "122345"
+          certificatePassword: '122345'
         }
       }
     }
