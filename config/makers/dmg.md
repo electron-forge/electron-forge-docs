@@ -6,6 +6,8 @@ description: Generate a DMG with Electron Forge to distribute your Electron app 
 
 The DMG target builds Apple Disk Image (`.dmg`) files, which are the standard format for sharing macOS apps. The DMG acts like a ZIP file, but provides an easy way for users to take the app and put it in the `/Applications` directory.
 
+{% include "../../.gitbook/includes/static-file-auto-updates-wi....md" %}
+
 ## Requirements
 
 You can only build the DMG target on macOS machines.
