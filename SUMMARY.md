@@ -25,6 +25,7 @@
   * [deb](config/makers/deb.md)
   * [DMG](config/makers/dmg.md)
   * [Flatpak](config/makers/flatpak.md)
+  * [MSIX](config/makers/msix.md)
   * [pkg](config/makers/pkg.md)
   * [RPM](config/makers/rpm.md)
   * [Snapcraft](config/makers/snapcraft.md)
