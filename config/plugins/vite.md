@@ -141,6 +141,51 @@ module.exports = {
 ```
 {% endcode %}
 
+### Custom root for renderer
+
+Under the hood, the Vite plugin merge user based config with own config.
+{% code title="packages/plugin/vite/src/config/vite.renderer.config.ts" %}
+```typescript
+const config: UserConfig = {
+    root,
+    mode,
+    base: './',
+    build: {
+      copyPublicDir: true,
+      outDir: `.vite/renderer/${name}`,
+    },
+    plugins: [pluginExposeRenderer(name)],
+    resolve: {
+      preserveSymlinks: true,
+    },
+    clearScreen: false,
+  };
+```
+{% endcode %}
+
+Here, root is the absolute path to the root directory.
+
+If root is overridden in the user configuration, the resulting path before the build is incorrect, and the renderer files are not moved to the `out` directory.
+
+To avoid this behavior, you also need to update the relative path in the `build.outDir` field. See the example for more details.
+
+{% code title="vite.renderer.config.ts" %}
+```typescript
+import path from 'node:path';
+import { defineConfig } from 'vite';
+
+export default defineConfig({
+  base: './',
+  root: path.join(__dirname, 'src', 'renderer', 'MainWindow'),
+  build: {
+    copyPublicDir: true,
+    outDir: path.join('..', '..', '..', '.vite', 'renderer', 'main_window'),
+  },
+});
+
+```
+{% endcode %}
+
 ### Native Node modules
 
 If you used the [Vite](../../templates/vite.md) template to create your application, native modules will mostly work out of the box. However, to avoid possible build issues, we recommend instructing Vite to load them as external packages:
