@@ -61,6 +61,7 @@
   * [React with TypeScript](guides/framework-integration/react-with-typescript.md)
   * [Vue 3](guides/framework-integration/vue-3.md)
 * [Developing with WSL](guides/developing-with-wsl.md)
+* [Mac and Windows Distribution](guides/mac-store.md)
 
 ## Advanced
 
