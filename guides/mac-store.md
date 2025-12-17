@@ -101,4 +101,4 @@ You will also need a working help section in the menu of your app. The help sect
 
 If your app only has one window, the app should close completely when the window is closed.
 
-Once everything is ready, you need to download Transporter from the mac app store and upload your ```pkg``` file.
+Once everything is ready, you need to download Transporter from the Mac App Store and upload your ```pkg``` file.

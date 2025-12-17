@@ -41,7 +41,11 @@ module.exports = {
 ```
 {% endcode %}
 
-The UUID in the ```publisher``` field can be found on the Microsoft website that you use to create the app listing. The only trick is that Windows doesn't like dashes in any file or folder names.
+The UUID in the ```publisher``` field can be found on the Microsoft website that you use to create the app listing. 
+
+{% hint style="info" %}
+Windows does not like dashes in any file or folder names.
+{% endhint %}
 
 Configuration options are documented in [`MakerAppXConfig`](https://js.electronforge.io/interfaces/\_electron\_forge\_maker\_appx.MakerAppXConfig.html).
 
