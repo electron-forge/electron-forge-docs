@@ -29,15 +29,19 @@ module.exports = {
     {
       name: '@electron-forge/maker-appx',
       config: {
-        publisher: 'CN=developmentca',
-        devCert: 'C:\\devcert.pfx',
-        certPass: 'abcd'
+        publisher: 'CN=UUID',
+        publisherDisplayName: 'CompanyName',
+        displayName: 'AppName',
+        version: '1.0.0',
+        identityName: 'CompanyName.AppName'
       }
     }
   ]
 };
 ```
 {% endcode %}
+
+The UUID in the ```publisher``` field can be found on the Microsoft website that you use to create the app listing. The only trick is that Windows doesn't like dashes in any file or folder names.
 
 Configuration options are documented in [`MakerAppXConfig`](https://js.electronforge.io/interfaces/\_electron\_forge\_maker\_appx.MakerAppXConfig.html).
 

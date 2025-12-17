@@ -29,12 +29,18 @@ Although Electron does not integrate tightly with the IDE itself, Xcode is a hel
 
 Code signing certificates for macOS apps can only be obtained through Apple by purchasing a membership to the [Apple Developer Program](https://developer.apple.com/programs/).
 
-To sign Electron apps, you may require two separate certificates:
+If you want to submit your app to the Mac App Store, you will need to create the following certificates:
 
-* The **Developer ID Installer** certificate is for apps distributed to the Mac App Store.
-* The **Developer ID Application** certificate is for apps distributed outside the Mac App Store.
+- Apple Development
+- Apple Distribution
+- Mac Installer Distribution
 
-Once you have an Apple Developer Program membership, you first need to install them onto your machine. We recommend [loading them through Xcode](https://help.apple.com/xcode/mac/current/#/dev3a05256b8).
+If you want to distribution your app outside of the App Store, you will need the following certificates:
+
+- Developer ID Application
+- Developer ID Installer
+
+All of these certificates should be created through Xcode after you have signed up for an Apple Developer Account. If you have created them any other way, you will have to delete them.
 
 {% hint style="success" %}
 **Verifying your certificate is installed**
@@ -45,6 +51,12 @@ Once you have installed your certificate, you can check available code signing c
 security find-identity -p codesigning -v
 ```
 {% endhint %}
+
+### Creating provisioning profiles
+
+Once you have created the certificates, you need to go to your Apple Developer Account and create provisioning profiles. If you are submiting your app to the app store, you will need a development profile and a distribution profile. If you are submiting it outside of the app store, you will need a profile for the ```Developer ID Application``` certificate.
+
+You need to download these after creating them and double clicking them to install them on your computer. Not all of them can be installed locally, but just double-click on them anyway.
 
 ## Configuring Forge
 
@@ -62,43 +74,97 @@ To enable code signing on macOS, ensure that `packagerConfig.osxSign` exists in 
 ```javascript
 module.exports = {
   packagerConfig: {
-    osxSign: {} // object must exist even if empty
-  }
-};
-```
-{% endcode %}
-
-The `osxSign` config comes with defaults that work out of the box in most cases, so we recommend you start with an empty configuration object.
-
-For a full list of configuration options, see the [`OsxSignOptions`](https://js.electronforge.io/modules/\_electron\_forge\_shared\_types.InternalOptions.html#OsxSignOptions) type in the Forge API docs. For more detailed information on how to configure these options, see the [`@electron/osx-sign` documentation](https://github.com/electron/osx-sign).
-
-#### Customizing entitlements
-
-A common use case for modifying the default `osxSign` configuration is to customize its entitlements. In macOS, **entitlements** are privileges that grant apps certain capabilities (e.g. access to the camera, microphone, or USB devices). These are stored within the code signature in an app's executable file.
-
-By default, the `@electron/osx-sign` tool comes with a set of entitlements that should work on both MAS or direct distribution targets. See the complete set of default entitlement files [on GitHub](https://github.com/electron/osx-sign/tree/main/entitlements).
-
-{% code title="forge.config.js" %}
-```javascript
-module.exports = {
-  // ...
-  packagerConfig: {
-    // ...
     osxSign: {
+        binaries: [
+        './resources/bin/ffmpeg_intel_mac',
+        './resources/bin/ffmpeg_mac'
+      ],
+      identity: 'Apple Development',
+      platform: 'mas',
+      type: 'development',
+      provisioningProfile: 'development.provisionprofile',
       optionsForFile: (filePath) => {
-        // Here, we keep it simple and return a single entitlements.plist file.
-        // You can use this callback to map different sets of entitlements
-        // to specific files in your packaged app.
+        const entitlements = filePath.includes('.app/') ? 'entitlements.child.plist' : 'entitlements.plist';
         return {
-          entitlements: 'path/to/entitlements.plist'
-        };
+          hardenedRuntime: false,
+          entitlements
+        }
       }
     }
   }
-  // ...
 };
 ```
 {% endcode %}
+
+```binaries```: if your electron app calls any binaries, they need to be listed here so that they can be signed.
+
+```identity```: the name of the certificate.
+
+- App store development: Apple Development
+- App store distribution: Apple Distribution: FirstName LastName (TEAMID)
+- Outside distribution: Developer ID Application: FirstName LastName (TEAMID)
+
+```platform```: for the app store it is ```mas``` and for outside the app store it is ```darwin```
+
+```provisioningProfile```: the appropriate provisioning profile, as mentioned earlier.
+
+```optionsForFile```: for distribution outside of the app store, you may be able to rely on the defaults if you app doesn't need any extra entitlements. For the app store, you will definitely need to provide this.
+
+You need to add logic to determine which set of entitlements to use. If you specify more entitlements then your app uses, it will probably be rejected by the review process.
+
+For submission to the app store, ```hardenedRuntime``` should be false, but for distribution outside of the app store, it should be true.
+
+For a full list of configuration options, see the [`OsxSignOptions`](https://js.electronforge.io/modules/\_electron\_forge\_shared\_types.InternalOptions.html#OsxSignOptions) type in the Forge API docs. For more detailed information on how to configure these options, see the [`@electron/osx-sign` documentation](https://github.com/electron/osx-sign).
+
+#### Entitlements
+
+In macOS, **entitlements** are privileges that grant apps certain capabilities (e.g. access to the camera, microphone, or USB devices). These are stored within the code signature in an app's executable file.
+
+Here is an example main entitlements file. Add or remove entitlements depending on the needs of your app.
+
+{% code title="entitlements.plist" %}
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>com.apple.security.app-sandbox</key>
+    <true/>
+    <key>com.apple.security.files.user-selected.read-write</key>
+    <true/>
+    <key>com.apple.security.files.bookmarks.app-scope</key>
+    <true/>
+    <key>com.apple.security.network.client</key>
+    <true/>
+    <key>com.apple.security.print</key>
+    <true/>
+    <key>com.apple.security.device.usb</key>
+    <true/>
+    <key>com.apple.security.files.downloads.read-write</key>
+    <true />
+  </dict>
+</plist>
+```
+{% endcode %}
+
+Here is an example child entitlements file.
+
+{% code title="entitlements.child.plist" %}
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>com.apple.security.app-sandbox</key>
+    <true/>
+    <key>com.apple.security.inherit</key>
+    <true/>
+  </dict>
+</plist>
+```
+{% endcode %}
+
+Forge will add additional keys related to your provisioning profile. You should remove the ```app-sandbox``` key in both files when creating the set of entitlements you want to use outside of the app store, as that version does not run in a sandbox.
 
 For further reading on entitlements, see the following pages in Apple developer documentation:
 
@@ -225,6 +291,7 @@ module.exports = {
   packagerConfig: {
     osxSign: {},
     osxNotarize: {
+      tool: 'notarytool',
       appleId: process.env.APPLE_ID,
       appleIdPassword: process.env.APPLE_PASSWORD,
       teamId: process.env.APPLE_TEAM_ID
@@ -233,3 +300,9 @@ module.exports = {
 };
 ```
 {% endcode %}
+
+```appleId```: usually the email address you used to create your Apple account.
+
+```appleIdPassword```: a one-time password you can create. This is mentioned in the documentation. You create it via the Apple Developer website or something like that.
+
+```teamId```: that set of characters inside the brackets at the end of your identity name.
