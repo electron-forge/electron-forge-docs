@@ -193,9 +193,9 @@ There are two mandatory fields for `osxNotarize` if you are using this strategy:
 
 | Field             | Type   | Description                                                                                                                                                                                                   |
 | ----------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `appleId`         | string | Apple ID associated with your Apple Developer account                                                                                                                                                         |
-| `appleIdPassword` | string | App-specific password                                                                                                                                                                                         |
-| `teamId`          | string | The Apple Team ID you want to notarize under. You can find Team IDs for team you belong to by going to [`https://developer.apple.com/account/#/membership`](https://developer.apple.com/account/#/membership) |
+| `appleId`         | string | usually the email address you used to create your Apple Developer account.                                                                                                                                                         |
+| `appleIdPassword` | string | a one-time password that can be create via the Apple Developer website.                                                                                                                                                                                       |
+| `teamId`          | string | The Apple Team ID you want to notarize under. It is the set of characters inside the brackets at the end of your identity name. |
 
 {% code title="forge.config.js" %}
 ```javascript
@@ -204,6 +204,7 @@ module.exports = {
   packagerConfig: {
     // ...
     osxNotarize: {
+      tool: 'notarytool',
       appleId: process.env.APPLE_ID,
       appleIdPassword: process.env.APPLE_PASSWORD,
       teamId: process.env.APPLE_TEAM_ID
@@ -300,9 +301,3 @@ module.exports = {
 };
 ```
 {% endcode %}
-
-```appleId```: usually the email address you used to create your Apple account.
-
-```appleIdPassword```: a one-time password you can create. This is mentioned in the documentation. You create it via the Apple Developer website or something like that.
-
-```teamId```: that set of characters inside the brackets at the end of your identity name.
