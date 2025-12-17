@@ -193,8 +193,8 @@ There are two mandatory fields for `osxNotarize` if you are using this strategy:
 
 | Field             | Type   | Description                                                                                                                                                                                                   |
 | ----------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `appleId`         | string | usually the email address you used to create your Apple Developer account.                                                                                                                                                         |
-| `appleIdPassword` | string | a one-time password that can be create via the Apple Developer website.                                                                                                                                                                                       |
+| `appleId`         | string | Usually the email address you used to create your Apple Developer account.                                                                                                                                                         |
+| `appleIdPassword` | string | A one-time password that can be create via the Apple Developer website.                                                                                                                                                                                       |
 | `teamId`          | string | The Apple Team ID you want to notarize under. It is the set of characters inside the brackets at the end of your identity name. |
 
 {% code title="forge.config.js" %}
