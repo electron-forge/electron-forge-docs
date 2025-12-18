@@ -54,7 +54,7 @@ security find-identity -p codesigning -v
 
 ### Creating provisioning profiles
 
-Once you have created the certificates, you need to go to your Apple Developer Account and create provisioning profiles. If you are submiting your app to the app store, you will need a development profile and a distribution profile. If you are submiting it outside of the app store, you will need a profile for the ```Developer ID Application``` certificate.
+Once you have created the certificates, you need to go to your Apple Developer Account and create provisioning profiles. If you are submiting your app to the app store, you will need a Development profile and a Distribution profile. If you are submiting it outside of the app store, you will need a profile for the ```Developer ID Application``` certificate.
 
 You need to download these after creating them and double clicking them to install them on your computer. Not all of them can be installed locally, but just double-click on them anyway.
 
@@ -110,7 +110,7 @@ module.exports = {
 
 ```optionsForFile```: for distribution outside of the app store, you may be able to rely on the defaults if you app doesn't need any extra entitlements. For the app store, you will definitely need to provide this.
 
-You need to add logic to determine which set of entitlements to use. If you specify more entitlements then your app uses, it will probably be rejected by the review process.
+Your list of entitlements should contain only the ones your application needs. Adding extraneous entitlements could be cause for rejection during the review process.
 
 For submission to the app store, ```hardenedRuntime``` should be false, but for distribution outside of the app store, it should be true.
 
