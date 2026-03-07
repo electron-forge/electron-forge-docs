@@ -33,18 +33,18 @@ The following suffixes for DPI are also supported:
 
 The recommended file formats and icon sizes for each platform are as follows:
 
-| Operating system | Format                   | Size / notes                                                                                      |
-| ---------------- | ------------------------ | ------------------------------------------------------------------------------------------------- |
-| macOS            | `.icns`, optionally `.icon` | Use a 1024x1024 source image. Keep an `.icns` file for compatibility, and add an Icon Composer `.icon` file for macOS 26+. |
-| Windows          | `.ico`                   | 256x256 pixels                                                                                    |
-| Linux            | `.png`                   | 512x512 pixels                                                                                    |
+| Operating system | Format                      | Size / notes                                                                                                               |
+| ---------------- | --------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| macOS            | `.icns` (or `.icon`)        | Use a 1024x1024 source image. Keep an `.icns` file for compatibility, and add an Icon Composer `.icon` file for macOS 26+. |
+| Windows          | `.ico`                      | 256x256 pixels                                                                                                             |
+| Linux            | `.png`                      | 512x512 pixels                                                                                                             |
 
 {% hint style="warning" %}
 On Windows, ensure that your `.ico` file is exported from an image editor that supports the format (such as [GIMP](https://www.gimp.org/)). Renaming a `.png` file into `.ico` will result in a `Fatal error: Unable to set icon` error.
 {% endhint %}
 
 {% hint style="info" %}
-`@electron/packager` supports macOS Icon Composer files as of [electron/packager#1806](https://github.com/electron/packager/pull/1806). To support both macOS 26+ and earlier releases, provide both an `.icns` file and a `.icon` file.
+`@electron/packager` supports macOS Icon Composer files as of [`@electron/packager` v18.4.0](https://github.com/electron/packager/releases/tag/v18.4.0). To support both macOS 26+ and earlier releases, provide both an `.icns` file and a `.icon` file.
 {% endhint %}
 
 ## Setting the app icon
@@ -107,7 +107,7 @@ module.exports = {
 Electron Packager will use the `.icns` file on macOS versions earlier than 26, and the `.icon` file on macOS 26 and later.
 
 {% hint style="warning" %}
-Packaging a `.icon` file currently requires macOS 26 or later and Xcode 26 or later, because Electron Packager uses Apple's `actool` tool to compile the Icon Composer asset.
+Packaging an `.icon` file currently requires macOS 26 or later and Xcode 26 or later because Electron Packager uses Apple's `actool` tool to compile the Icon Composer asset.
 {% endhint %}
 
 {% hint style="info" %}
