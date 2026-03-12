@@ -85,7 +85,6 @@ Once you have [configured the publisher according to the documentation](config/p
 ```bash
 npm run publish
 ```
-
 For more information on what publishers we currently support, check out the [Publishers](config/publishers/) documentation.
 
 ## Advanced Usage
