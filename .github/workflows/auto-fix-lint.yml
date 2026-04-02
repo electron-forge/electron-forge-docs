@@ -22,7 +22,7 @@ jobs:
       with:
         creds: ${{ secrets.GH_APP_CREDS }}
         export-git-user: true
-    - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11  # tag: v4.1.1
+    - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11  # tag: v4.1.1 # zizmor: ignore[artipacked] persisted token is intentional; needed for the git push step below
       with:
         token: ${{ steps.generate-token.outputs.token }}
     - name: Setup Node.js
