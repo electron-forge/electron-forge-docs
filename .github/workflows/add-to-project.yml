@@ -1,6 +1,6 @@
 name: Add to Ecosystem WG Project
 
-on:
+on: # zizmor: ignore[dangerous-triggers] needed to access app creds for fork PRs; no PR code is checked out
   issues:
     types:
       - opened
