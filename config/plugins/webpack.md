@@ -198,9 +198,9 @@ Since [Electron 20](https://www.electronjs.org/blog/electron-20-0#renderers-sand
 
 A sandboxed preload script runs in a restricted environment: it does **not** have access to Node.js APIs such as `require`, `process`, or Node core modules. It can still use the [polyfilled subset of Node](https://www.electronjs.org/docs/latest/tutorial/sandbox#preload-scripts) that Electron exposes to sandboxed preloads (for example `electron`, and a limited version of `process`), which is enough to set up a [`contextBridge`](https://www.electronjs.org/docs/latest/api/context-bridge). This is the recommended, secure default for most apps.
 
-If your preload script worked in Forge 6 by calling `require` or otherwise depending on full Node.js access, it will fail under the sandboxed default. You have two options:
+If your preload script worked in Forge 6 by calling `require` or otherwise depending on full Node.js access, it will fail under the sandboxed default. You have two options for giving a preload full Node.js access.
 
-#### Give the preload full Node.js access
+#### Option 1: Enable `nodeIntegration` on the window entry point
 
 The preload's webpack target is derived from the `nodeIntegration` value of the entry point it belongs to. When `nodeIntegration` is `true` (set either on the entry point or on `renderer.nodeIntegration`), the preload is compiled with the `electronPreload` target instead, which grants full Node.js access.
 
@@ -221,6 +221,8 @@ The preload's webpack target is derived from the `nodeIntegration` value of the 
 {% hint style="warning" %}
 Enabling `nodeIntegration` disables the sandbox for that window's renderer as well, which reduces the security of your application. Prefer keeping the sandbox enabled and exposing only what you need through the `contextBridge`.
 {% endhint %}
+
+#### Option 2: Use a preload-only entry point
 
 If you only need full Node.js access in the preload but want to keep it as a standalone entry (for example to attach it to a `<webview>`), you can declare a **preload-only entry point**. It takes a `name` and a `preload` object, and its `nodeIntegration` value controls the preload's webpack target independently of any window:
 
