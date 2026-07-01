@@ -173,6 +173,71 @@ declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
 {% endcode %}
 {% endhint %}
 
+## Preload scripts
+
+You can attach a preload script to any window entry point by setting the `preload` key on that entry point, as shown in the [plugin configuration](#plugin-configuration) example above:
+
+```javascript
+{
+  name: 'main_window',
+  html: './src/renderer/index.html',
+  js: './src/renderer/index.js',
+  preload: {
+    js: './src/preload.js'
+  }
+}
+```
+
+### Preload scripts are sandboxed by default
+
+{% hint style="warning" %}
+This is a behavior change from Forge 6. If you are upgrading from 6.x, read this section carefully.
+{% endhint %}
+
+Since [Electron 20](https://www.electronjs.org/blog/electron-20-0#renderers-sandboxed-by-default), renderer processes (and their preload scripts) are **sandboxed by default**. To match this, the webpack plugin compiles each preload script with the [`sandboxedPreload` webpack target](https://webpack.js.org/configuration/target/) by default.
+
+A sandboxed preload script runs in a restricted environment: it does **not** have access to Node.js APIs such as `require`, `process`, or Node core modules. It can still use the [polyfilled subset of Node](https://www.electronjs.org/docs/latest/tutorial/sandbox#preload-scripts) that Electron exposes to sandboxed preloads (for example `electron`, and a limited version of `process`), which is enough to set up a [`contextBridge`](https://www.electronjs.org/docs/latest/api/context-bridge). This is the recommended, secure default for most apps.
+
+If your preload script worked in Forge 6 by calling `require` or otherwise depending on full Node.js access, it will fail under the sandboxed default. You have two options:
+
+#### Give the preload full Node.js access
+
+The preload's webpack target is derived from the `nodeIntegration` value of the entry point it belongs to. When `nodeIntegration` is `true` (set either on the entry point or on `renderer.nodeIntegration`), the preload is compiled with the `electronPreload` target instead, which grants full Node.js access.
+
+{% code title="Plugin configuration" %}
+```javascript
+{
+  name: 'main_window',
+  html: './src/renderer/index.html',
+  js: './src/renderer/index.js',
+  nodeIntegration: true, // preload is compiled with the `electronPreload` target
+  preload: {
+    js: './src/preload.js'
+  }
+}
+```
+{% endcode %}
+
+{% hint style="warning" %}
+Enabling `nodeIntegration` disables the sandbox for that window's renderer as well, which reduces the security of your application. Prefer keeping the sandbox enabled and exposing only what you need through the `contextBridge`.
+{% endhint %}
+
+If you only need full Node.js access in the preload but want to keep it as a standalone entry (for example to attach it to a `<webview>`), you can declare a **preload-only entry point**. It takes a `name` and a `preload` object, and its `nodeIntegration` value controls the preload's webpack target independently of any window:
+
+{% code title="Plugin configuration" %}
+```javascript
+{
+  name: 'main_window_preload',
+  nodeIntegration: true,
+  preload: {
+    js: './src/preload.js'
+  }
+}
+```
+{% endcode %}
+
+The generated global for this entry is derived from its `name` with the `_PRELOAD_WEBPACK_ENTRY` suffix — so the entry named `main_window_preload` above is exposed to the main process as `MAIN_WINDOW_PRELOAD_PRELOAD_WEBPACK_ENTRY`.
+
 ## Advanced configuration
 
 ### webpack-dev-server
