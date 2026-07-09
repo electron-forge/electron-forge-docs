@@ -143,24 +143,7 @@ module.exports = {
 
 ### Native Node modules
 
-If you used the [Vite](../../templates/vite.md) template to create your application, native modules will mostly work out of the box. However, to avoid possible build issues, we recommend instructing Vite to load them as external packages:
-
-{% code title="vite.main.config.js" %}
-```javascript
-import { defineConfig } from 'vite';
-
-export default defineConfig({
-  build: {
-    rollupOptions: {
-      external: [
-        'serialport',
-        'sqlite3'
-      ]
-    }
-  }
-});
-```
-{% endcode %}
+If you used the [Vite](../../templates/vite.md) template to create your application, native modules will mostly work out of the box. However, we recommend copying external dependencies also to avoid possible build issues.
 
 ### Hot Module Replacement (HMR)
 
