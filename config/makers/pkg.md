@@ -35,9 +35,9 @@ module.exports = {
   makers: [
     {
       name: '@electron-forge/maker-pkg',
+      platform: ['mas'],
       config: {
-        keychain: 'my-secret-ci-keychain'
-        // other configuration options
+        identity: '3rd Party Mac Developer Installer: FirstName LastName (TEAMID)'
       }
     }
   ]
