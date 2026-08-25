@@ -123,6 +123,33 @@ If you want to specify a platform/architecture combination for any build command
 See the [#build-commands](../cli.md#build-commands "mention") documentation for more details.
 {% endhint %}
 
+{% hint style="info" %}
+To ship runtime assets that live outside your bundled source code (for example, a tray icon or other binary file referenced at runtime), use [`extraResource`](https://electron.github.io/packager/main/interfaces/Options.html#extraresource). Files listed here are copied into the platform's resources directory (next to `app.asar`) and are available at runtime via `process.resourcesPath`.
+
+{% code title="forge.config.js" %}
+```javascript
+module.exports = {
+  packagerConfig: {
+    extraResource: ['./assets/tray-icon.png']
+  }
+};
+```
+{% endcode %}
+
+In the main process, resolve the file with `process.resourcesPath` when the app is packaged:
+
+```javascript
+const path = require('path');
+const { app, Tray } = require('electron');
+
+const iconPath = app.isPackaged
+  ? path.join(process.resourcesPath, 'tray-icon.png')
+  : path.join(__dirname, '..', 'assets', 'tray-icon.png');
+
+const tray = new Tray(iconPath);
+```
+{% endhint %}
+
 ### Electron Rebuild config
 
 The top level property `rebuildConfig` on the configuration object maps directly to the options sent to [`@electron/rebuild`](https://github.com/electron/rebuild) during both the [#package](../cli.md#package "mention") and [#start](../cli.md#start "mention") commands in Electron Forge.
