@@ -118,6 +118,24 @@ Your `main` entry in your `package.json` file needs to point at `".vite/build/ma
 
 If using the Vite template, this should be automatically set up for you.
 
+### Renderer base path
+
+Electron Forge sets Vite's [`base`](https://vitejs.dev/config/shared-options.html#base) option to `./` for renderer builds. A packaged renderer is loaded from a local `file://` URL rather than a web server, so relative asset URLs keep generated scripts, styles, and public assets inside the renderer's output directory. Overriding `base` with `/` makes those URLs resolve from the root of the filesystem and can cause the packaged window to load without its UI.
+
+When referencing files from Vite's [`public` directory](https://vitejs.dev/guide/assets.html#the-public-directory), use [`import.meta.env.BASE_URL`](https://vitejs.dev/guide/env-and-mode.html#built-in-constants) in JavaScript, TypeScript, or JSX so the URL follows the configured base path:
+
+```jsx
+<img src={`${import.meta.env.BASE_URL}my-logo.png`} alt="My logo" />
+```
+
+In a static HTML file, use an explicitly relative URL:
+
+```html
+<img src="./my-logo.png" alt="My logo">
+```
+
+Avoid root-relative URLs such as `/my-logo.png`. They can work against the development server but fail after the app is packaged.
+
 ## Advanced configuration
 
 ### Build concurrency
