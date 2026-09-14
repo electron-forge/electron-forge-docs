@@ -42,10 +42,10 @@ npx create-electron-app@latest my-app --template=webpack
 
 There are currently four first-party templates:
 
-* `webpack`
-* `webpack-typescript`
-* `vite`
-* `vite-typescript`
+- `webpack`
+- `webpack-typescript`
+- `vite`
+- `vite-typescript`
 
 All of these templates are built around plugins that bundle your JavaScript code for production and includes a dev server to provide a better developer experience.
 
@@ -71,6 +71,11 @@ So you've got an **amazing** application there, and you want to package it all u
 ```bash
 npm run make
 ```
+For those looking to publish to the Apple Store, you'll need to create a universal build.
+
+```bash
+npm run make -- --arch=universal --platform=mas
+```
 
 ## Publishing your app
 
@@ -94,6 +99,6 @@ Once you've got a basic app starting, building and publishing, it's time to add 
 
 You can also check out the documentation on some of our more advanced features like:
 
-* [Adding plugins](config/plugins/)
-* [Debugging your app](advanced/debugging.md)
-* [Writing your own makers, publishers and plugins](advanced/extending-electron-forge/)
+- [Adding plugins](config/plugins/)
+- [Debugging your app](advanced/debugging.md)
+- [Writing your own makers, publishers and plugins](advanced/extending-electron-forge/)
