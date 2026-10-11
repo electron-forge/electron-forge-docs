@@ -111,7 +111,7 @@ npx electron-forge package --arch="ia32"
 When packaging your Electron app, Forge crawls your project's `node_modules` folder to collect dependencies to bundle. Its module resolution algorithm is naive and doesn't take into account symlinked dependencies nor Yarn's Plug'n'Play (PnP) format.
 
 * If you are using Yarn >=2, please use the `nodeLinker: node-modules` install mode.
-* If you are using pnpm, please set `node-linker=hoisted` in your project's `.npmrc` configuration.
+* If you are using pnpm, please set `nodeLinker: hoisted` in your project's `pnpm-workspace.yaml` configuration. See the [pnpm settings documentation](https://pnpm.io/settings).
 {% endhint %}
 
 ### Make
