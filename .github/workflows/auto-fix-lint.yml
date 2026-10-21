@@ -29,6 +29,7 @@ jobs:
       uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65  # tag: v4.0.0
       with:
         node-version: lts/*
+        check-latest: true
     - name: Create a Temporary package.json
       run: npm init --yes
     - name: Install @electron/lint-roller
